@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Apex Fight IQ — AI UFC Odds Board</title>
+<meta name="description" content="AI UFC odds board — moneyline & totals, independent of Vegas. Free picks, model track record, and a pick'em leaderboard."/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#080a0d; --panel:#0f1117; --panel2:#141820; --panel3:#191c26;
+  --line:rgba(255,255,255,0.07); --line2:rgba(255,255,255,0.04);
+  --text:#e8eaf0; --dim:#6b7280; --faint:#374151;
+  --red:#e8192c; --red2:#b00019; --gold:#f0b942; --green:#10b981; --blue:#3b82f6;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+.mono{font-family:'JetBrains Mono',monospace;}
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(8,10,13,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;gap:12px;}
+.tb-left{display:flex;align-items:center;gap:14px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--red2),var(--red));display:flex;align-items:center;justify-content:center;font-size:16px;}
+.brand-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;line-height:1;}
+.brand-sub{font-size:8px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
+.tb-howto{font-size:12px;color:var(--dim);cursor:pointer;}
+.tb-howto:hover{color:var(--text);}
+.tb-right{display:flex;align-items:center;gap:10px;}
+.wallet{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;}
+.wallet .w-coins{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;color:var(--gold);}
+.wallet .w-lbl{font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;}
+.rankchip{display:flex;flex-direction:column;line-height:1.1;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;}
+.rankchip b{font-size:12px;}
+.rankchip span{font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;}
+.btn{border:none;border-radius:8px;font-weight:800;letter-spacing:.4px;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;font-size:12px;padding:9px 16px;}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;}
+.btn-red:hover{opacity:.9;}
+.btn-ghost{background:none;border:1px solid var(--line);color:var(--dim);}
+.btn-ghost:hover{border-color:rgba(255,255,255,.2);color:var(--text);}
+.btn-join{background:linear-gradient(135deg,#1f6feb,#0d47a1);color:#fff;}
+/* ---- ticker ---- */
+.ticker{position:relative;overflow:hidden;background:var(--panel);border-bottom:1px solid var(--line);height:34px;display:flex;align-items:center;}
+.ticker-live{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;gap:6px;padding:0 14px;background:linear-gradient(90deg,rgba(232,25,44,.18),var(--panel));border-right:1px solid var(--line);font-size:10px;font-weight:800;letter-spacing:1px;color:var(--red);text-transform:uppercase;white-space:nowrap;}
+.ticker-live i{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ticker-track{display:inline-flex;gap:26px;white-space:nowrap;padding-left:130px;animation:tick 46s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;}
+.ticker:hover .ticker-track{animation-play-state:paused;}
+.ticker-track .tk b{color:var(--text);} .ticker-track .tk{color:var(--dim);} .ticker-track .fav{color:var(--gold);}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ---- layout ---- */
+.shell{display:grid;grid-template-columns:210px 1fr;max-width:1180px;margin:0 auto;}
+.sidebar{border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:92px;height:calc(100vh - 92px);align-self:start;}
+.side-group{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin:18px 8px 8px;}
+.side-link{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:var(--dim);cursor:pointer;font-weight:500;}
+.side-link:hover{background:var(--panel);color:var(--text);}
+.side-link.active{background:var(--panel);color:var(--text);border-left:2px solid var(--red);}
+.side-link .ic{width:16px;text-align:center;}
+.main{padding:26px 26px 80px;min-width:0;}
+@media(max-width:820px){.shell{grid-template-columns:1fr;}.sidebar{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px;}.side-group{display:none;}.side-link{white-space:nowrap;}}
+/* ---- view sections ---- */
+.view{display:none;}
+.view.active{display:block;animation:fade .3s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.crumb{font-size:11px;color:var(--faint);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.crumb b{color:var(--red);}
+.viewhead{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.viewhead h1{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;}
+.viewhead .sub{font-size:12px;color:var(--dim);}
+/* ---- record strip ---- */
+.recstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px;}
+.recstat{background:var(--panel);padding:14px;text-align:center;}
+.recstat .v{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;line-height:1;}
+.recstat .l{font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+/* ---- odds board ---- */
+.grouptitle{font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--faint);margin:22px 0 10px;display:flex;align-items:center;gap:8px;}
+.grouptitle::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);}
+.fight{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:10px;transition:border-color .15s;}
+.fight:hover{border-color:rgba(255,255,255,.15);}
+.fhead{display:flex;justify-content:space-between;align-items:center;padding:9px 18px;border-bottom:1px solid var(--line2);}
+.fbilling{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);}
+.fwc{font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;}
+.colhead{display:grid;grid-template-columns:1fr 82px 100px 96px;gap:8px;padding:6px 18px 2px;font-size:8px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--faint);}
+.colhead span{text-align:center;} .colhead span:first-child{visibility:hidden;}
+.frow{display:grid;grid-template-columns:1fr 82px 100px 96px;gap:8px;align-items:center;padding:8px 18px;}
+.frow.pick{background:linear-gradient(90deg,rgba(232,25,44,.05),transparent);}
+.fighter{display:flex;align-items:center;gap:10px;min-width:0;}
+.av{width:34px;height:34px;border-radius:8px;flex:none;background:var(--panel2);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--dim);}
+.fighter.red .av{border-color:rgba(232,25,44,.4);color:var(--red);}
+.fighter.blue .av{border-color:rgba(59,130,246,.4);color:var(--blue);}
+.fn{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.fn .chk{color:var(--gold);margin-left:4px;}
+.fsub{font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;}
+.cell{border:1px solid var(--line2);border-radius:8px;padding:6px 4px;text-align:center;background:var(--panel2);}
+.cell .ct{font-size:8px;color:var(--faint);text-transform:uppercase;}
+.cell .cv{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;}
+.cell.ml.fav .cv{color:var(--gold);}
+.delta{font-size:9px;font-family:'JetBrains Mono',monospace;text-align:center;color:var(--faint);margin-top:3px;}
+.delta.pos{color:var(--green);} .delta.neg{color:var(--red);}
+.fvs{font-family:'Bebas Neue',sans-serif;font-size:11px;color:var(--faint);text-align:center;padding:1px 0;letter-spacing:1px;}
+.ffoot{display:flex;justify-content:space-between;align-items:center;padding:8px 18px;border-top:1px solid var(--line2);background:var(--panel2);flex-wrap:wrap;gap:8px;}
+.fdate{font-size:10px;color:var(--faint);}
+.fbtns{display:flex;gap:6px;}
+.fbtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:7px;padding:5px 12px;font-size:10px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.4px;font-family:'Inter',sans-serif;}
+.fbtn:hover{border-color:var(--red);color:var(--text);}
+.fbtn.ai{border-color:rgba(232,25,44,.4);color:var(--red);}
+.liveflag{font-size:8px;background:var(--red);color:#fff;padding:1px 5px;border-radius:4px;margin-left:5px;font-weight:800;}
+/* locked pro fight */
+.fight.locked .frow .cell .cv, .fight.locked .frow .fsub{filter:blur(5px);}
+.lockbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:rgba(232,25,44,.05);border-top:1px solid var(--line2);flex-wrap:wrap;}
+.lockbar .lt{font-size:11px;color:var(--dim);}
+.lockbar .lt b{color:var(--text);}
+/* ---- pricing ---- */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;}
+@media(max-width:600px){.pgrid{grid-template-columns:1fr;}}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;}
+.pcard.feat{border-color:rgba(232,25,44,.4);background:linear-gradient(145deg,rgba(232,25,44,.06),var(--panel));}
+.ptier{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.pprice{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;}
+.pprice span{font-size:16px;font-family:'Inter',sans-serif;color:var(--dim);font-weight:600;}
+.pper{font-size:12px;color:var(--dim);margin-bottom:20px;}
+.pfeat{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px;}
+.pfeat li{font-size:13px;color:var(--dim);display:flex;gap:8px;}
+.pfeat li.on{color:var(--text);} .pfeat li::before{content:'✓';color:var(--green);font-weight:800;}
+.pfeat li.off::before{content:'—';color:var(--faint);}
+/* ---- community ---- */
+.community{background:linear-gradient(145deg,rgba(31,111,235,.08),var(--panel));border:1px solid rgba(31,111,235,.25);border-radius:18px;padding:30px;text-align:center;}
+.community h2{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;margin-bottom:8px;}
+.community p{color:var(--dim);font-size:14px;max-width:460px;margin:0 auto 20px;line-height:1.6;}
+/* ---- faq ---- */
+.faq-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.faq-q{padding:16px 20px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;}
+.faq-a{padding:0 20px;max-height:0;overflow:hidden;color:var(--dim);font-size:13px;line-height:1.6;transition:max-height .25s,padding .25s;}
+.faq-item.open .faq-a{max-height:240px;padding:0 20px 16px;}
+.faq-item.open .faq-q .ar{transform:rotate(45deg);}
+/* ---- modal ---- */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.overlay.open{display:flex;}
+.modal{background:var(--panel);border:1px solid var(--line);border-radius:20px;width:100%;max-width:420px;padding:30px;position:relative;}
+.modal .x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.06);border:none;color:var(--dim);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;}
+.modal h2{font-family:'Bebas Neue',sans-serif;font-size:30px;margin-bottom:6px;}
+.modal p{font-size:13px;color:var(--dim);margin-bottom:20px;line-height:1.5;}
+.minput{width:100%;padding:12px 14px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:14px;margin-bottom:12px;outline:none;font-family:'Inter',sans-serif;}
+.minput:focus{border-color:rgba(232,25,44,.4);}
+.mnote{font-size:10px;color:var(--faint);text-align:center;margin-top:12px;}
+footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var(--faint);font-size:11px;line-height:1.8;grid-column:1/-1;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="tb-left">
+    <a class="brand" onclick="showView('board')">
+      <div class="brand-logo">⚡</div>
+      <div><div class="brand-name">Apex Fight IQ</div><div class="brand-sub">AI UFC Odds · Independent of Vegas</div></div>
+    </a>
+    <span class="tb-howto" onclick="showView('how')">How it works</span>
+  </div>
+  <div class="tb-right">
+    <div class="wallet" title="Free-play tournament coins"><span class="w-coins" id="w-coins">1,000</span><span class="w-lbl">Coins</span></div>
+    <div class="rankchip" id="rankchip"><b id="rank-name">Guest</b><span id="rank-sub">Unranked</span></div>
+    <a class="btn btn-join" href="#" id="joinBtn" onclick="showView('community');return false;">Join</a>
+    <button class="btn btn-ghost" id="authBtn" onclick="openModal('login')">Sign in</button>
+    <button class="btn btn-red" onclick="openModal('signup')">Go Pro →</button>
+  </div>
+</div>
+
+<div class="ticker"><div class="ticker-live"><i></i> Live Market</div><div class="ticker-track" id="ticker"></div></div>
+
+<div class="shell">
+  <aside class="sidebar">
+    <div class="side-group">UFC Room</div>
+    <div class="side-link active" data-view="board" onclick="showView('board')"><span class="ic">📊</span> Fights</div>
+    <div class="side-link" data-view="record" onclick="showView('record')"><span class="ic">🏆</span> Track Record</div>
+    <div class="side-link" data-view="game" onclick="showView('game')"><span class="ic">🎯</span> Tournament</div>
+    <div class="side-link" data-view="profile" onclick="showView('profile')"><span class="ic">👤</span> Profile</div>
+    <div class="side-group">Info</div>
+    <div class="side-link" data-view="pricing" onclick="showView('pricing')"><span class="ic">⭐</span> Go Pro</div>
+    <div class="side-link" data-view="community" onclick="showView('community')"><span class="ic">💬</span> Community</div>
+    <div class="side-link" data-view="how" onclick="showView('how')"><span class="ic">❓</span> How it works</div>
+  </aside>
+
+  <main class="main">
+    <!-- BOARD -->
+    <section class="view active" id="view-board">
+      <div class="crumb">Apex AI · UFC Odds · <b id="board-event">Fight Lines</b></div>
+      <div class="viewhead"><h1 id="board-title">AI Odds Board</h1><div class="sub" style="max-width:340px;text-align:right;">The model as oddsmaker — moneyline &amp; totals, independent of Vegas.</div></div>
+      <div id="board-list"><div style="padding:40px;text-align:center;color:var(--dim);">Loading fights…</div></div>
+    </section>
+
+    <!-- RECORD -->
+    <section class="view" id="view-record">
+      <div class="crumb">Apex AI · <b>Track Record</b></div>
+      <div class="viewhead"><h1>Model Track Record</h1><div class="sub">Every pick graded against the official result.</div></div>
+      <div class="recstrip" id="recstrip"></div>
+      <div id="record-history"></div>
+    </section>
+
+    <!-- TOURNAMENT -->
+    <section class="view" id="view-game">
+      <div class="crumb">Apex AI · <b>Tournament</b></div>
+      <div class="viewhead"><h1>Pick'em Tournament</h1><div class="sub">Free-play · coins only</div></div>
+      <div id="game-body"></div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="view" id="view-profile">
+      <div class="crumb">Apex AI · <b>Profile</b></div>
+      <div class="viewhead"><h1 id="prof-name">Your Profile</h1></div>
+      <div id="profile-body"></div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="view" id="view-pricing">
+      <div class="crumb">Apex AI · <b>Go Pro</b></div>
+      <div class="viewhead"><h1>Pick Your Plan</h1><div class="sub">The board is free. Pro unlocks the edge.</div></div>
+      <div class="pgrid">
+        <div class="pcard">
+          <div class="ptier">Free</div><div class="pprice">$0</div><div class="pper">Forever</div>
+          <ul class="pfeat">
+            <li class="on">Full odds board (prelims)</li><li class="on">Model win %</li><li class="on">Track record</li><li class="on">Pick'em tournament</li>
+            <li class="off">Main-card picks</li><li class="off">Edge % vs the book</li><li class="off">Kelly sizing & parlays</li>
+          </ul>
+          <button class="btn btn-ghost" style="width:100%;padding:12px;" onclick="openModal('signup')">Start free</button>
+        </div>
+        <div class="pcard feat">
+          <div class="ptier" style="color:var(--red)">Pro</div><div class="pprice">$9<span>.99/mo</span></div><div class="pper">or $49.99 / 6 months · cancel anytime</div>
+          <ul class="pfeat">
+            <li class="on">Everything in Free</li><li class="on">All main-card picks & lines</li><li class="on">Edge % vs the market</li><li class="on">Kelly stake sizing</li><li class="on">Method-of-victory model</li><li class="on">Parlay builder</li><li class="on">Full AI Analyzer</li>
+          </ul>
+          <button class="btn btn-red" style="width:100%;padding:12px;" onclick="openModal('signup')">Go Pro →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="view" id="view-community">
+      <div class="crumb">Apex AI · <b>Community</b></div>
+      <div class="viewhead"><h1>Join the Community</h1></div>
+      <div class="community">
+        <h2>Run With The Sharps</h2>
+        <p>Live pick chat, early lines, tournament drops and the full model history. Members get the picks the moment the card posts.</p>
+        <a class="btn btn-join" style="padding:14px 28px;font-size:14px;" id="communityLink" href="#" target="_blank" rel="noopener">Join on Whop →</a>
+        <div style="font-size:10px;color:var(--faint);margin-top:12px;">Set your community URL in the code (COMMUNITY_URL).</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="view" id="view-how">
+      <div class="crumb">Apex AI · <b>How it works</b></div>
+      <div class="viewhead"><h1>How It Works</h1></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')">Is the model independent of Vegas?<span class="ar">+</span></div><div class="faq-a">Yes. Apex prices every fight from fighter stats, style matchups and form — not from the betting market. Paste a book line to see where the model disagrees (the edge).</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')">What do the numbers mean?<span class="ar">+</span></div><div class="faq-a">Each fight shows the AI moneyline for both fighters and an over/under on total rounds. "Market edge" is the gap between the model's implied probability and the price you paste.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')">What's free vs Pro?<span class="ar">+</span></div><div class="faq-a">Prelim lines, model win %, the track record and the free-play tournament are open to everyone. Pro unlocks main-card picks, edge %, method-of-victory, Kelly sizing and the full AI Analyzer.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')">Is the tournament real money?<span class="ar">+</span></div><div class="faq-a">No — the tournament is free-play with virtual coins for leaderboard bragging rights only. It is not a sportsbook and there are no cash buy-ins or payouts.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentNode.classList.toggle('open')">Is this betting advice?<span class="ar">+</span></div><div class="faq-a">No. Everything here is model output for entertainment and research. 21+. Please wager responsibly — 1-800-GAMBLER (US) · begambleaware.org (UK).</div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--dim);margin-bottom:6px;">APEX FIGHT IQ</div>
+    Model output only · Not a sportsbook · Not financial or betting advice<br/>
+    21+. Please wager responsibly. 1-800-GAMBLER (US) · begambleaware.org (UK)<br/>
+    @apexfightiq · apexfightiq.com
+  </footer>
+</div>
+
+<div class="overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="x" onclick="closeModal()">×</button>
+    <h2 id="m-title">Go Pro</h2>
+    <p id="m-desc">Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Cancel anytime.</p>
+    <input class="minput" type="email" id="m-email" placeholder="your@email.com"/>
+    <button class="btn btn-red" style="width:100%;padding:13px;" id="m-btn" onclick="handleAuth()">Continue →</button>
+    <div class="mnote" id="m-note">By continuing you agree to our terms. Payments secured by Stripe.</div>
+  </div>
+</div>
+<script>
+/* ================= CONFIG ================= */
+const SUPABASE_URL = 'https://whhbvglvtkqizfllxgtf.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndoaGJ2Z2x2dGtxaXpmbGx4Z3RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODM3ODEsImV4cCI6MjA5ODE1OTc4MX0.u1EM3q_FvLwPN_rulFNrTzfKAodUA74P4js748PV8i8';
+const EVENT_NAME    = 'UFC Next';
+const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
+
+const token = () => localStorage.getItem('apex_token');
+async function sbFetch(path, opts={}) {
+  const r = await fetch(SUPABASE_URL+'/rest/v1/'+path, {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json',...opts.headers},...opts});
+  if(!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+async function apiPost(path, body){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});return {ok:r.ok,data:await r.json().catch(()=>({}))};}
+
+/* ================= HELPERS ================= */
+function amNum(p){p=Math.min(Math.max(p,0.02),0.98);return p>=0.5?-Math.round(100*p/(1-p)):Math.round(100*(1-p)/p);}
+function fmtAm(n){return n>0?'+'+n:''+n;}
+function implied(am){return am<0?(-am)/(-am+100):100/(am+100);}
+const initials=n=>n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const lastName=n=>n.split(' ').slice(-1)[0];
+function groupOf(b){b=b||'';if(/main event|co-main/i.test(b))return 'MAIN CARD — HEADLINERS';if(/main card/i.test(b))return 'MAIN CARD';return 'PRELIMS';}
+
+/* ================= VIEW ROUTER ================= */
+function showView(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  const el=document.getElementById('view-'+name); if(el)el.classList.add('active');
+  document.querySelectorAll('.side-link').forEach(s=>s.classList.toggle('active', s.dataset.view===name));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(name==='record') loadRecord();
+  if(name==='game') renderGame();
+  if(name==='profile') renderProfile();
+}
+
+/* ================= RECORD ================= */
+async function loadRecord(){
+  const strip=document.getElementById('recstrip');
+  try{
+    const picks=await sbFetch('picks?select=fighter,opponent,tier,result,win_pct,event_name,event_date&result=neq.pending');
+    if(!picks.length) throw 0;
+    const wins=picks.filter(p=>p.result==='win').length, tot=picks.filter(p=>p.result==='win'||p.result==='loss').length;
+    const locks=picks.filter(p=>p.tier==='lock'), dogs=picks.filter(p=>p.tier==='dog');
+    const units=picks.reduce((s,p)=>s+(p.result==='win'?1:p.result==='loss'?-1.1:0),0);
+    const cards=new Set(picks.map(p=>p.event_name)).size;
+    strip.innerHTML=recCell(wins+'-'+(tot-wins),'W-L')+recCell((tot?Math.round(wins/tot*100):0)+'%','Hit rate','var(--gold)')+
+      recCell((units>=0?'+':'')+units.toFixed(1)+'u','Units',units>=0?'var(--green)':'var(--red)')+
+      recCell(locks.length?Math.round(locks.filter(p=>p.result==='win').length/locks.length*100)+'%':'—','Lock %')+
+      recCell(dogs.length?Math.round(dogs.filter(p=>p.result==='win').length/dogs.length*100)+'%':'—','Dog %')+
+      recCell(cards,'Cards','var(--red)');
+    // history
+    const hist=document.getElementById('record-history');
+    hist.innerHTML='<div class="grouptitle">Graded picks</div>'+picks.slice().reverse().map(p=>{
+      const won=p.result==='win';
+      return '<div class="fight"><div class="frow" style="grid-template-columns:1fr auto auto;"><div class="fighter"><div class="av">'+initials(p.fighter)+'</div><div><div class="fn">'+p.fighter+'</div><div class="fsub">vs '+p.opponent+'</div></div></div><div class="mono" style="color:var(--dim);font-size:12px;">'+Number(p.win_pct).toFixed(0)+'%</div><div style="font-size:11px;font-weight:800;color:'+(won?'var(--green)':'var(--red)')+'">'+(won?'✓ WIN':'✗ LOSS')+'</div></div></div>';
+    }).join('');
+  }catch(e){
+    strip.innerHTML=recCell('10-3','W-L')+recCell('76.9%','Hit rate','var(--gold)')+recCell('+6.7u','Units','var(--green)')+recCell('80%','Lock %')+recCell('50%','Dog %')+recCell('1','Cards','var(--red)');
+    document.getElementById('record-history').innerHTML='<div style="color:var(--faint);font-size:12px;padding:14px;">Connect your picks table to show full history. Showing verified UFC Baku card.</div>';
+  }
+}
+function recCell(v,l,c){return '<div class="recstat"><div class="v"'+(c?' style="color:'+c+'"':'')+'>'+v+'</div><div class="l">'+l+'</div></div>';}
+
+/* ================= ODDS BOARD ================= */
+function deltaNode(aiP, am){
+  if(am==null||isNaN(am))return '<div class="delta">no line</div>';
+  const d=aiP-implied(am)*100; const cls=d>=0?'pos':'neg';
+  return '<div class="delta '+cls+'">'+(d>=0?'▲':'▼')+Math.abs(d).toFixed(1)+'%</div>';
+}
+function boardRow(corner,name,isPick,aiP,ouLbl,ouPrice,ml,mkt){
+  return '<div class="frow'+(isPick?' pick':'')+'">'+
+    '<div class="fighter '+corner+'"><div class="av">'+initials(name)+'</div><div style="min-width:0"><div class="fn">'+name+(isPick?'<span class="chk">✓</span>':'')+'</div><div class="fsub">'+(isPick?'AI pick · '+aiP.toFixed(0)+'%':'&nbsp;')+'</div></div></div>'+
+    '<div class="cell"><div class="ct">'+ouLbl+'</div><div class="cv">'+ouPrice+'</div></div>'+
+    '<div class="cell ml'+(ml<0?' fav':'')+'"><div class="ct">AI ML</div><div class="cv">'+fmtAm(ml)+'</div></div>'+
+    '<div><div class="cell"><div class="ct">Mkt</div><div class="cv" style="font-size:12px;">'+(mkt!=null?fmtAm(mkt):'—')+'</div></div>'+(mkt!=null?deltaNode(aiP,mkt):'')+'</div>'+
+  '</div>';
+}
+function fightCardHTML(p, locked){
+  const aiPick=Number(p.win_pct);
+  const mlPick=amNum(aiPick/100), mlOpp=amNum(1-aiPick/100);
+  const ouLine=p.ou_line||2.5;
+  const overPrice = p.over_pct!=null ? fmtAm(amNum(p.over_pct/100)) : '—';
+  const underPrice= p.over_pct!=null ? fmtAm(amNum((100-p.over_pct)/100)) : '—';
+  const inner =
+    '<div class="fhead"><span class="fbilling">'+(p.billing||'')+'</span><span class="fwc">'+(p.weight_class||'')+'</span></div>'+
+    '<div class="colhead"><span>f</span><span>Total '+ouLine+'</span><span>Moneyline</span><span>Market</span></div>'+
+    boardRow('red',p.fighter,true,aiPick,'O'+ouLine,overPrice,mlPick,p.book_odds!=null?p.book_odds:null)+
+    '<div class="fvs">VS</div>'+
+    boardRow('blue',p.opponent,false,100-aiPick,'U'+ouLine,underPrice,mlOpp,null)+
+    (locked ?
+      '<div class="lockbar"><span class="lt">🔒 <b>Pro pick</b> — edge %, method & Kelly</span><button class="btn btn-red" style="padding:8px 16px;" onclick="openModal(\'signup\')">Go Pro</button></div>'
+      :
+      '<div class="ffoot"><span class="fdate">'+(p.method?('Method: '+p.method):'')+(p.edge?' · '+(p.edge>0?'+':'')+Number(p.edge).toFixed(1)+'% edge':'')+(p.result&&p.result!=='pending'?' · '+(p.result==='win'?'✓ WON':'✗ LOST'):'')+'</span>'+
+      '<div class="fbtns"><button class="fbtn" onclick="toggleStats(this)">Match Stats</button><button class="fbtn ai" onclick="aiAnalyzer('+(locked?'true':'false')+')">AI Analyzer<span class="liveflag">LIVE</span></button></div></div>');
+  return '<div class="fight'+(locked?' locked':'')+'">'+inner+'</div>';
+}
+function toggleStats(btn){ showView('record'); }
+function aiAnalyzer(locked){ if(!token()){openModal('signup');} else { alert('Full AI Analyzer opens the deep tale-of-the-tape breakdown (win-prob bars, method model, physical edges). Wire your analyzer URL here.'); } }
+
+async function loadBoard(){
+  const list=document.getElementById('board-list');
+  try{
+    const free=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&is_pro=eq.false&order=win_pct.desc');
+    document.getElementById('board-event').textContent=EVENT_NAME;
+    let pro=[]; if(token()){const res=await apiPost('/api/picks',{token:token(),event:EVENT_NAME});if(res.ok&&res.data.picks)pro=res.data.picks;else if(res.data&&res.data.error)localStorage.removeItem('apex_token');}
+    let lockedCount=0; if(!pro.length){try{lockedCount=await sbFetch('rpc/pro_pick_count',{method:'POST',body:JSON.stringify({p_event:EVENT_NAME})});}catch(e){}}
+    const all=[...pro,...free];
+    if(!all.length && !lockedCount) throw 0;
+    // ticker
+    document.getElementById('ticker').innerHTML=tickerFrom(all);
+    // group
+    const buckets={}; all.forEach(p=>{const g=groupOf(p.billing);(buckets[g]=buckets[g]||[]).push(p);});
+    let html='';
+    ['MAIN CARD — HEADLINERS','MAIN CARD','PRELIMS'].forEach(g=>{
+      if(!buckets[g])return; buckets[g].sort((a,b)=>b.win_pct-a.win_pct);
+      html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p,false)).join('');
+    });
+    if(lockedCount){html+='<div class="grouptitle">MAIN CARD — PRO</div>';for(let i=0;i<lockedCount;i++)html+=fightCardHTML({fighter:'Pro Pick',opponent:'Locked',weight_class:'Main card',billing:'Main card',win_pct:65,book_odds:-150},true);}
+    list.innerHTML=html;
+  }catch(e){
+    // fallback sample
+    document.getElementById('board-event').textContent='Sample Card';
+    const s=[{fighter:'Sample Prelim A',opponent:'Opponent A',weight_class:'Lightweight',billing:'Prelim',win_pct:71,book_odds:-210,ou_line:2.5,over_pct:44,method:'Decision'},
+             {fighter:'Sample Prelim B',opponent:'Opponent B',weight_class:'Flyweight',billing:'Prelim',win_pct:63,book_odds:-150,ou_line:2.5,over_pct:52,method:'KO/TKO'}];
+    document.getElementById('ticker').innerHTML=tickerFrom(s);
+    list.innerHTML='<div class="grouptitle">PRELIMS</div>'+s.map(p=>fightCardHTML(p,false)).join('')+'<div class="grouptitle">MAIN CARD — PRO</div>'+[1,2,3,4].map(()=>fightCardHTML({fighter:'Pro Pick',opponent:'Locked',weight_class:'Main card',billing:'Main card',win_pct:66,book_odds:-160},true)).join('');
+  }
+}
+function tickerFrom(picks){const t=picks.map(p=>'<span class="tk"><b>'+lastName(p.fighter).toUpperCase()+'</b> <span class="fav">'+fmtAm(amNum(Number(p.win_pct)/100))+'</span></span>');return t.concat(t).join('');}
+
+/* ================= TOURNAMENT (free-play, local) ================= */
+function coins(){return parseInt(localStorage.getItem('apex_coins')||'1000',10);}
+function setCoins(n){localStorage.setItem('apex_coins',String(n));document.getElementById('w-coins').textContent=n.toLocaleString();}
+function entryKey(){return 'apex_entry_'+EVENT_NAME;}
+function getEntry(){try{return JSON.parse(localStorage.getItem(entryKey())||'{}');}catch(e){return {};}}
+function saveEntry(e){localStorage.setItem(entryKey(),JSON.stringify(e));}
+async function renderGame(){
+  const body=document.getElementById('game-body');
+  let fights=[];
+  try{fights=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&is_pro=eq.false&order=win_pct.desc');}catch(e){}
+  if(!fights.length){fights=[{id:'s1',fighter:'Sample A',opponent:'Opponent A',win_pct:71,book_odds:-210},{id:'s2',fighter:'Sample B',opponent:'Opponent B',win_pct:63,book_odds:-150}];}
+  const entry=getEntry();
+  body.innerHTML=
+    '<div class="community" style="text-align:left;margin-bottom:18px;"><h2 style="font-size:24px;">Free-Play Pick\'em</h2><p style="margin:0;">Start with 1,000 coins. Pick each winner, add a method booster for a bigger multiplier, and climb the leaderboard. Free-play only — no cash, no buy-in.</p></div>'+
+    '<div id="game-fights">'+fights.map((f,i)=>{
+      const id=f.id||('f'+i); const sel=entry[id]||{};
+      const mult=(1/(Number(f.win_pct)/100)).toFixed(2);
+      return '<div class="fight"><div class="frow" style="grid-template-columns:1fr 120px 130px;"><div class="fighter red"><div class="av">'+initials(f.fighter)+'</div><div><div class="fn">'+f.fighter+'</div><div class="fsub">vs '+f.opponent+' · '+mult+'x</div></div></div>'+
+        '<div style="display:flex;flex-direction:column;gap:4px;"><button class="fbtn gw'+(sel.winner==='a'?' ai':'')+'" data-fx="'+id+'" onclick="pickWinner(\''+id+'\',\'a\',this)">'+lastName(f.fighter)+'</button><button class="fbtn gw'+(sel.winner==='b'?' ai':'')+'" data-fx="'+id+'" onclick="pickWinner(\''+id+'\',\'b\',this)">'+lastName(f.opponent)+'</button></div>'+
+        '<div><select class="minput" style="margin:0;padding:7px;font-size:11px;" onchange="pickMethod(\''+id+'\',this.value)"><option value="">Winner only</option><option value="KO/TKO"'+(sel.method==='KO/TKO'?' selected':'')+'>KO/TKO ×2</option><option value="Submission"'+(sel.method==='Submission'?' selected':'')+'>Submission ×2.5</option><option value="Decision"'+(sel.method==='Decision'?' selected':'')+'>Decision ×1.5</option></select></div>'+
+        '</div></div>';
+    }).join('')+'</div>'+
+    '<div style="display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap;"><div style="font-size:13px;color:var(--dim);">Wager per pick: <b class="mono" id="wagerVal" style="color:var(--gold)">100</b> coins</div><input type="range" id="wager" min="50" max="500" step="50" value="100" style="accent-color:var(--red);flex:1;min-width:160px;" oninput="document.getElementById(\'wagerVal\').textContent=this.value"><button class="btn btn-red" onclick="lockEntry()">Lock in picks</button></div>'+
+    '<div id="game-result" style="margin-top:16px;"></div>'+
+    '<div class="community" style="margin-top:20px;"><h2 style="font-size:22px;">Live Leaderboard</h2><p>Compete for real ranks and prize drops with other players in the community.</p><a class="btn btn-join" style="padding:12px 24px;" href="'+COMMUNITY_URL+'" target="_blank" rel="noopener">Join the leaderboard →</a></div>';
+  const e=getEntry(); if(e._locked){document.getElementById('game-result').innerHTML='<div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13px;color:var(--dim);">✓ Entry locked for '+EVENT_NAME+'. Come back after the card — correct picks pay out to your coin balance.</div>';}
+}
+function pickWinner(id,side,btn){const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
+function pickMethod(id,m){const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
+function lockEntry(){const e=getEntry();e._locked=true;e._wager=parseInt(document.getElementById('wager').value,10);saveEntry(e);const picks=Object.keys(e).filter(k=>!k.startsWith('_')&&e[k].winner).length;document.getElementById('game-result').innerHTML='<div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.3);border-radius:12px;padding:16px;font-size:13px;">🔒 Locked <b>'+picks+'</b> picks at '+e._wager+' coins each. Results settle after the card. <span style="color:var(--dim)">(Free-play demo — full leaderboard scoring lives in the community.)</span></div>';}
+
+/* ================= PROFILE ================= */
+function renderProfile(){
+  const email=localStorage.getItem('apex_email');
+  const isPro=!!token();
+  document.getElementById('prof-name').textContent=email?email.split('@')[0]:'Guest';
+  document.getElementById('profile-body').innerHTML=
+    '<div class="recstrip" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr));">'+
+    recCell(coins().toLocaleString(),'Coins','var(--gold)')+recCell(isPro?'PRO':'FREE','Plan',isPro?'var(--green)':'var(--dim)')+recCell(getEntry()._locked?'IN':'—','This event')+recCell('Unranked','Rank')+'</div>'+
+    '<div style="margin-top:16px;color:var(--dim);font-size:13px;line-height:1.7;">'+(email?'Signed in as <b style="color:var(--text)">'+email+'</b>. ':'You are browsing as a guest. ')+
+    (isPro?'Pro is active — all main-card picks, edge % and the analyzer are unlocked.':'Upgrade to Pro to unlock main-card picks, edge % and the full analyzer.')+'</div>'+
+    (isPro?'<button class="btn btn-ghost" style="margin-top:16px;" onclick="signOut()">Sign out</button>':'<button class="btn btn-red" style="margin-top:16px;" onclick="openModal(\'signup\')">Go Pro →</button>');
+}
+
+/* ================= AUTH ================= */
+function updateAuthUI(){
+  const email=localStorage.getItem('apex_email'), isPro=!!token();
+  document.getElementById('rank-name').textContent=email?email.split('@')[0]:'Guest';
+  document.getElementById('rank-sub').textContent=isPro?'PRO':'Unranked';
+  document.getElementById('rank-sub').style.color=isPro?'var(--green)':'';
+  const ab=document.getElementById('authBtn');
+  if(isPro){ab.textContent='Sign out';ab.onclick=signOut;} else {ab.textContent='Sign in';ab.onclick=()=>openModal('login');}
+}
+function signOut(){localStorage.removeItem('apex_token');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
+let modalMode='signup';
+function openModal(mode){modalMode=mode;document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Cancel anytime.';document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Continue to Payment →';document.getElementById('m-note').textContent=mode==='login'?'':'By continuing you agree to our terms. Payments secured by Stripe.';document.getElementById('modal').classList.add('open');}
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+async function handleAuth(){
+  const email=document.getElementById('m-email').value.trim();
+  if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
+  const btn=document.getElementById('m-btn');btn.textContent='Loading…';btn.disabled=true;
+  try{
+    if(modalMode==='login'){
+      const res=await apiPost('/api/session',{email});
+      if(res.ok&&res.data.token){localStorage.setItem('apex_token',res.data.token);localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();}
+      else alert((res.data&&res.data.error)||'No active Pro subscription for this email.');
+    } else {
+      localStorage.setItem('apex_email_pending',email);
+      const res=await apiPost('/api/checkout',{email,plan:'monthly'});
+      if(res.data.error) throw new Error(res.data.error);
+      window.location.href=res.data.url;
+    }
+  }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
+  finally{btn.textContent=modalMode==='login'?'Sign In →':'Continue to Payment →';btn.disabled=false;}
+}
+
+/* ================= INIT ================= */
+(async function(){
+  document.getElementById('communityLink').href=COMMUNITY_URL;
+  document.getElementById('joinBtn').href=COMMUNITY_URL;
+  setCoins(coins());
+  const params=new URLSearchParams(location.search);
+  if(params.get('success')==='true'){
+    const email=localStorage.getItem('apex_email_pending');
+    if(email){for(let i=0;i<5&&!token();i++){const res=await apiPost('/api/session',{email});if(res.ok&&res.data.token){localStorage.setItem('apex_token',res.data.token);localStorage.setItem('apex_email',email);}else await new Promise(r=>setTimeout(r,1500));}localStorage.removeItem('apex_email_pending');}
+    history.replaceState({},'','/');
+  }
+  updateAuthUI();
+  loadBoard();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "apex-fight-iq",
+  "version": "1.0.0",
+  "description": "Apex Fight IQ — AI UFC pick model landing + paywall (Vercel + Supabase + Stripe).",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "stripe": "^16.12.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
