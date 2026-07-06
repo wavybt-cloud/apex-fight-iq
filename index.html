@@ -294,6 +294,7 @@ async function apiPost(path, body){const r=await fetch(path,{method:'POST',heade
 function amNum(p){p=Math.min(Math.max(p,0.02),0.98);return p>=0.5?-Math.round(100*p/(1-p)):Math.round(100*(1-p)/p);}
 function fmtAm(n){return n>0?'+'+n:''+n;}
 function implied(am){return am<0?(-am)/(-am+100):100/(am+100);}
+function dedupe(rows,keyFn){const seen=new Set(),out=[];for(const r of (rows||[])){const k=keyFn(r);if(seen.has(k))continue;seen.add(k);out.push(r);}return out;}
 const initials=n=>n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
 const lastName=n=>n.split(' ').slice(-1)[0];
 function groupOf(b){b=b||'';if(/main event|co-main/i.test(b))return 'MAIN CARD — HEADLINERS';if(/main card/i.test(b))return 'MAIN CARD';return 'PRELIMS';}
@@ -313,22 +314,32 @@ function showView(name){
 async function loadRecord(){
   const strip=document.getElementById('recstrip');
   try{
-    const picks=await sbFetch('picks?select=fighter,opponent,tier,result,win_pct,event_name,event_date&result=neq.pending');
+    let picks=await sbFetch('picks?select=fighter,opponent,tier,method,result,win_pct,event_name,event_date&result=neq.pending');
+    picks=dedupe(picks,p=>p.event_name+'|'+p.fighter+'|'+p.opponent);
     if(!picks.length) throw 0;
     const wins=picks.filter(p=>p.result==='win').length, tot=picks.filter(p=>p.result==='win'||p.result==='loss').length;
     const locks=picks.filter(p=>p.tier==='lock'), dogs=picks.filter(p=>p.tier==='dog');
     const units=picks.reduce((s,p)=>s+(p.result==='win'?1:p.result==='loss'?-1.1:0),0);
+    const roi=tot?units/tot*100:0;
     const cards=new Set(picks.map(p=>p.event_name)).size;
+    // ordered newest-first for streak + history
+    const ord=picks.slice().sort((a,b)=>String(b.event_date||'').localeCompare(String(a.event_date||'')));
+    let streak=0, sign=null;
+    for(const p of ord){ if(p.result!=='win'&&p.result!=='loss')continue; const s=p.result==='win'?1:-1; if(sign===null){sign=s;streak=1;} else if(s===sign){streak++;} else break; }
+    const streakStr=sign===null?'—':(sign>0?'W':'L')+streak;
     strip.innerHTML=recCell(wins+'-'+(tot-wins),'W-L')+recCell((tot?Math.round(wins/tot*100):0)+'%','Hit rate','var(--gold)')+
       recCell((units>=0?'+':'')+units.toFixed(1)+'u','Units',units>=0?'var(--green)':'var(--red)')+
+      recCell((roi>=0?'+':'')+roi.toFixed(1)+'%','ROI',roi>=0?'var(--green)':'var(--red)')+
       recCell(locks.length?Math.round(locks.filter(p=>p.result==='win').length/locks.length*100)+'%':'—','Lock %')+
       recCell(dogs.length?Math.round(dogs.filter(p=>p.result==='win').length/dogs.length*100)+'%':'—','Dog %')+
+      recCell(streakStr,'Streak',sign>0?'var(--green)':sign<0?'var(--red)':'')+
       recCell(cards,'Cards','var(--red)');
-    // history
+    // history (newest-first, with tier badge)
+    const badge={lock:['LOCK','var(--gold)'],dog:['DOG','var(--blue)'],lean:['LEAN','var(--dim)']};
     const hist=document.getElementById('record-history');
-    hist.innerHTML='<div class="grouptitle">Graded picks</div>'+picks.slice().reverse().map(p=>{
-      const won=p.result==='win';
-      return '<div class="fight"><div class="frow" style="grid-template-columns:1fr auto auto;"><div class="fighter"><div class="av">'+initials(p.fighter)+'</div><div><div class="fn">'+p.fighter+'</div><div class="fsub">vs '+p.opponent+'</div></div></div><div class="mono" style="color:var(--dim);font-size:12px;">'+Number(p.win_pct).toFixed(0)+'%</div><div style="font-size:11px;font-weight:800;color:'+(won?'var(--green)':'var(--red)')+'">'+(won?'✓ WIN':'✗ LOSS')+'</div></div></div>';
+    hist.innerHTML='<div class="grouptitle">Graded picks · '+picks.length+'</div>'+ord.map(p=>{
+      const won=p.result==='win'; const bd=badge[p.tier]||badge.lean;
+      return '<div class="fight"><div class="frow" style="grid-template-columns:1fr auto auto auto;"><div class="fighter"><div class="av">'+initials(p.fighter)+'</div><div><div class="fn">'+p.fighter+'</div><div class="fsub">vs '+p.opponent+(p.method?' · '+p.method:'')+'</div></div></div><div style="font-size:8px;font-weight:800;letter-spacing:1px;color:'+bd[1]+'">'+bd[0]+'</div><div class="mono" style="color:var(--dim);font-size:12px;">'+Number(p.win_pct).toFixed(0)+'%</div><div style="font-size:11px;font-weight:800;color:'+(won?'var(--green)':'var(--red)')+'">'+(won?'✓ WIN':'✗ LOSS')+'</div></div></div>';
     }).join('');
   }catch(e){
     strip.innerHTML=recCell('10-3','W-L')+recCell('76.9%','Hit rate','var(--gold)')+recCell('+6.7u','Units','var(--green)')+recCell('80%','Lock %')+recCell('50%','Dog %')+recCell('1','Cards','var(--red)');
@@ -397,7 +408,8 @@ function analyzerModal(id){
 async function loadBoard(){
   const list=document.getElementById('board-list');
   try{
-    const all=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&order=win_pct.desc');
+    let all=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&order=win_pct.desc');
+    all=dedupe(all,p=>p.fighter+'|'+p.opponent);
     document.getElementById('board-event').textContent=EVENT_NAME;
     if(!all.length) throw 0;
     document.getElementById('ticker').innerHTML=tickerFrom(all);
