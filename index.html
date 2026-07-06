@@ -282,7 +282,7 @@ const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 const EVENT_NAME    = 'UFC Next';
 const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
 
-const token = () => localStorage.getItem('apex_token');
+const getPro = () => localStorage.getItem('apex_pro') === 'true';
 async function sbFetch(path, opts={}) {
   const r = await fetch(SUPABASE_URL+'/rest/v1/'+path, {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json',...opts.headers},...opts});
   if(!r.ok) throw new Error(await r.text());
@@ -371,35 +371,28 @@ function fightCardHTML(p, locked){
   return '<div class="fight'+(locked?' locked':'')+'">'+inner+'</div>';
 }
 function toggleStats(btn){ showView('record'); }
-function aiAnalyzer(locked){ if(!token()){openModal('signup');} else { alert('Full AI Analyzer opens the deep tale-of-the-tape breakdown (win-prob bars, method model, physical edges). Wire your analyzer URL here.'); } }
+function aiAnalyzer(locked){ if(!getPro()){openModal('signup');} else { alert('Full AI Analyzer opens the deep tale-of-the-tape breakdown (win-prob bars, method model, physical edges). Wire your analyzer URL here.'); } }
 
 async function loadBoard(){
   const list=document.getElementById('board-list');
   try{
-    const free=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&is_pro=eq.false&order=win_pct.desc');
+    const all=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&order=win_pct.desc');
     document.getElementById('board-event').textContent=EVENT_NAME;
-    let pro=[]; if(token()){const res=await apiPost('/api/picks',{token:token(),event:EVENT_NAME});if(res.ok&&res.data.picks)pro=res.data.picks;else if(res.data&&res.data.error)localStorage.removeItem('apex_token');}
-    let lockedCount=0; if(!pro.length){try{lockedCount=await sbFetch('rpc/pro_pick_count',{method:'POST',body:JSON.stringify({p_event:EVENT_NAME})});}catch(e){}}
-    const all=[...pro,...free];
-    if(!all.length && !lockedCount) throw 0;
-    // ticker
+    if(!all.length) throw 0;
     document.getElementById('ticker').innerHTML=tickerFrom(all);
-    // group
+    const pro=getPro();
     const buckets={}; all.forEach(p=>{const g=groupOf(p.billing);(buckets[g]=buckets[g]||[]).push(p);});
     let html='';
-    ['MAIN CARD — HEADLINERS','MAIN CARD','PRELIMS'].forEach(g=>{
+    ['MAIN CARD \u2014 HEADLINERS','MAIN CARD','PRELIMS'].forEach(g=>{
       if(!buckets[g])return; buckets[g].sort((a,b)=>b.win_pct-a.win_pct);
-      html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p,false)).join('');
+      html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
-    if(lockedCount){html+='<div class="grouptitle">MAIN CARD — PRO</div>';for(let i=0;i<lockedCount;i++)html+=fightCardHTML({fighter:'Pro Pick',opponent:'Locked',weight_class:'Main card',billing:'Main card',win_pct:65,book_odds:-150},true);}
-    list.innerHTML=html;
+    list.innerHTML=html; updateAuthUI();
   }catch(e){
-    // fallback sample
     document.getElementById('board-event').textContent='Sample Card';
-    const s=[{fighter:'Sample Prelim A',opponent:'Opponent A',weight_class:'Lightweight',billing:'Prelim',win_pct:71,book_odds:-210,ou_line:2.5,over_pct:44,method:'Decision'},
-             {fighter:'Sample Prelim B',opponent:'Opponent B',weight_class:'Flyweight',billing:'Prelim',win_pct:63,book_odds:-150,ou_line:2.5,over_pct:52,method:'KO/TKO'}];
-    document.getElementById('ticker').innerHTML=tickerFrom(s);
-    list.innerHTML='<div class="grouptitle">PRELIMS</div>'+s.map(p=>fightCardHTML(p,false)).join('')+'<div class="grouptitle">MAIN CARD — PRO</div>'+[1,2,3,4].map(()=>fightCardHTML({fighter:'Pro Pick',opponent:'Locked',weight_class:'Main card',billing:'Main card',win_pct:66,book_odds:-160},true)).join('');
+    const sm=[{fighter:'Sample Prelim A',opponent:'Opponent A',weight_class:'Lightweight',billing:'Prelim',win_pct:71,book_odds:-210,ou_line:2.5,over_pct:44,method:'Decision'},{fighter:'Sample Prelim B',opponent:'Opponent B',weight_class:'Flyweight',billing:'Prelim',win_pct:63,book_odds:-150,ou_line:2.5,over_pct:52,method:'KO/TKO'}];
+    document.getElementById('ticker').innerHTML=tickerFrom(sm);
+    list.innerHTML='<div class="grouptitle">PRELIMS</div>'+sm.map(p=>fightCardHTML(p,false)).join('');
   }
 }
 function tickerFrom(picks){const t=picks.map(p=>'<span class="tk"><b>'+lastName(p.fighter).toUpperCase()+'</b> <span class="fav">'+fmtAm(amNum(Number(p.win_pct)/100))+'</span></span>');return t.concat(t).join('');}
@@ -438,7 +431,7 @@ function lockEntry(){const e=getEntry();e._locked=true;e._wager=parseInt(documen
 /* ================= PROFILE ================= */
 function renderProfile(){
   const email=localStorage.getItem('apex_email');
-  const isPro=!!token();
+  const isPro=!!getPro();
   document.getElementById('prof-name').textContent=email?email.split('@')[0]:'Guest';
   document.getElementById('profile-body').innerHTML=
     '<div class="recstrip" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr));">'+
@@ -450,47 +443,33 @@ function renderProfile(){
 
 /* ================= AUTH ================= */
 function updateAuthUI(){
-  const email=localStorage.getItem('apex_email'), isPro=!!token();
+  const email=localStorage.getItem('apex_email'), isPro=!!getPro();
   document.getElementById('rank-name').textContent=email?email.split('@')[0]:'Guest';
   document.getElementById('rank-sub').textContent=isPro?'PRO':'Unranked';
   document.getElementById('rank-sub').style.color=isPro?'var(--green)':'';
   const ab=document.getElementById('authBtn');
   if(isPro){ab.textContent='Sign out';ab.onclick=signOut;} else {ab.textContent='Sign in';ab.onclick=()=>openModal('login');}
 }
-function signOut(){localStorage.removeItem('apex_token');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
+function signOut(){localStorage.removeItem('apex_pro');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
 let modalMode='signup';
 function openModal(mode){modalMode=mode;document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Cancel anytime.';document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Continue to Payment →';document.getElementById('m-note').textContent=mode==='login'?'':'By continuing you agree to our terms. Payments secured by Stripe.';document.getElementById('modal').classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
 async function handleAuth(){
   const email=document.getElementById('m-email').value.trim();
   if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
-  const btn=document.getElementById('m-btn');btn.textContent='Loading…';btn.disabled=true;
+  const btn=document.getElementById('m-btn');btn.textContent='Loading\u2026';btn.disabled=true;
   try{
-    if(modalMode==='login'){
-      const res=await apiPost('/api/session',{email});
-      if(res.ok&&res.data.token){localStorage.setItem('apex_token',res.data.token);localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();}
-      else alert((res.data&&res.data.error)||'No active Pro subscription for this email.');
-    } else {
-      localStorage.setItem('apex_email_pending',email);
-      const res=await apiPost('/api/checkout',{email,plan:'monthly'});
-      if(res.data.error) throw new Error(res.data.error);
-      window.location.href=res.data.url;
-    }
+    const pro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
+    if(pro===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();}
+    else{ alert('No active Pro subscription for '+email+'. Ask the admin to add you, then sign in.'); }
   }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
-  finally{btn.textContent=modalMode==='login'?'Sign In →':'Continue to Payment →';btn.disabled=false;}
+  finally{btn.textContent=modalMode==='login'?'Sign In \u2192':'Continue \u2192';btn.disabled=false;}
 }
 
-/* ================= INIT ================= */
 (async function(){
   document.getElementById('communityLink').href=COMMUNITY_URL;
   document.getElementById('joinBtn').href=COMMUNITY_URL;
   setCoins(coins());
-  const params=new URLSearchParams(location.search);
-  if(params.get('success')==='true'){
-    const email=localStorage.getItem('apex_email_pending');
-    if(email){for(let i=0;i<5&&!token();i++){const res=await apiPost('/api/session',{email});if(res.ok&&res.data.token){localStorage.setItem('apex_token',res.data.token);localStorage.setItem('apex_email',email);}else await new Promise(r=>setTimeout(r,1500));}localStorage.removeItem('apex_email_pending');}
-    history.replaceState({},'','/');
-  }
   updateAuthUI();
   loadBoard();
 })();
