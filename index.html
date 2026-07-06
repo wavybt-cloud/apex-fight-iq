@@ -279,7 +279,7 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
 /* ================= CONFIG ================= */
 const SUPABASE_URL = 'https://whhbvglvtkqizfllxgtf.supabase.co';
 const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndoaGJ2Z2x2dGtxaXpmbGx4Z3RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODM3ODEsImV4cCI6MjA5ODE1OTc4MX0.u1EM3q_FvLwPN_rulFNrTzfKAodUA74P4js748PV8i8';
-const EVENT_NAME    = 'UFC Next';
+const EVENT_NAME    = 'UFC 329';
 const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
 
 const getPro = () => localStorage.getItem('apex_pro') === 'true';
@@ -352,6 +352,7 @@ function boardRow(corner,name,isPick,aiP,ouLbl,ouPrice,ml,mkt){
   '</div>';
 }
 function fightCardHTML(p, locked){
+  p._bid=p._bid||('b'+(window._bidc=(window._bidc||0)+1)); (window.BOARD_MAP=window.BOARD_MAP||{})[p._bid]=p;
   const aiPick=Number(p.win_pct);
   const mlPick=amNum(aiPick/100), mlOpp=amNum(1-aiPick/100);
   const ouLine=p.ou_line||2.5;
@@ -367,11 +368,31 @@ function fightCardHTML(p, locked){
       '<div class="lockbar"><span class="lt">🔒 <b>Pro pick</b> — edge %, method & Kelly</span><button class="btn btn-red" style="padding:8px 16px;" onclick="openModal(\'signup\')">Go Pro</button></div>'
       :
       '<div class="ffoot"><span class="fdate">'+(p.method?('Method: '+p.method):'')+(p.edge?' · '+(p.edge>0?'+':'')+Number(p.edge).toFixed(1)+'% edge':'')+(p.result&&p.result!=='pending'?' · '+(p.result==='win'?'✓ WON':'✗ LOST'):'')+'</span>'+
-      '<div class="fbtns"><button class="fbtn" onclick="toggleStats(this)">Match Stats</button><button class="fbtn ai" onclick="aiAnalyzer('+(locked?'true':'false')+')">AI Analyzer<span class="liveflag">LIVE</span></button></div></div>');
+      '<div class="fbtns"><button class="fbtn" onclick="analyzerModal(\''+p._bid+'\')">Tale of the Tape</button><button class="fbtn ai" onclick="analyzerModal(\''+p._bid+'\')">AI Analyzer<span class="liveflag">LIVE</span></button></div></div>');
   return '<div class="fight'+(locked?' locked':'')+'">'+inner+'</div>';
 }
-function toggleStats(btn){ showView('record'); }
-function aiAnalyzer(locked){ if(!getPro()){openModal('signup');} else { alert('Full AI Analyzer opens the deep tale-of-the-tape breakdown (win-prob bars, method model, physical edges). Wire your analyzer URL here.'); } }
+function azBar(name,pct,col){return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><div style="width:120px;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+name+'</div><div style="flex:1;height:8px;background:var(--panel2);border-radius:5px;overflow:hidden;"><div style="height:100%;width:'+pct.toFixed(0)+'%;background:'+col+';"></div></div><div class="mono" style="width:40px;text-align:right;font-size:12px;">'+pct.toFixed(0)+'%</div></div>';}
+function azGrid(rows){return '<div style="display:flex;flex-direction:column;gap:8px;">'+rows.map(function(r){return '<div style="display:flex;justify-content:space-between;font-size:12px;border-bottom:1px solid var(--line2);padding-bottom:6px;"><span style="color:var(--dim);">'+r[0]+'</span><span class="mono" style="color:var(--text);">'+r[1]+'</span></div>';}).join('')+'</div>';}
+function analyzerModal(id){
+  const p=(window.BOARD_MAP||{})[id]; if(!p)return;
+  if(p.is_pro && !getPro()){ openModal('signup'); return; }
+  const wa=Number(p.win_pct), wb=100-wa, mlA=amNum(wa/100), mlB=amNum(wb/100), ouLine=p.ou_line||2.5;
+  const overP=(p.over_pct!=null)?Number(p.over_pct):null;
+  let edgeStr='no market line posted';
+  if(p.book_odds!=null){var mi=implied(p.book_odds)*100, d=wa-mi; edgeStr=(d>=0?'+':'')+d.toFixed(1)+'% vs '+(p.book_odds>0?'+'+p.book_odds:p.book_odds);}
+  let ov=document.getElementById('azOverlay');
+  if(!ov){ov=document.createElement('div');ov.id='azOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
+  ov.innerHTML='<div class="modal" style="max-width:470px;">'
+    +'<button class="x" onclick="document.getElementById(\'azOverlay\').classList.remove(\'open\')">×</button>'
+    +'<div style="font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:4px;">AI Analyzer · '+(p.billing||'')+'</div>'
+    +'<h2 style="margin-bottom:2px;">'+p.fighter+'</h2>'
+    +'<div style="font-size:12px;color:var(--dim);margin-bottom:16px;">vs '+p.opponent+' · '+(p.weight_class||'')+'</div>'
+    +'<div style="margin-bottom:14px;">'+azBar(p.fighter,wa,'var(--red)')+azBar(p.opponent,wb,'var(--blue)')+'</div>'
+    +azGrid([['AI Moneyline',fmtAm(mlA)+' / '+fmtAm(mlB)],['Method lean',p.method||'—'],['Confidence',(p.tier||'').toUpperCase()],['Market edge',edgeStr],['Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—'],['Pace read', overP!=null?(overP>=50?'leans OVER':'leans UNDER'):'—']])
+    +'<div style="font-size:10px;color:var(--faint);margin-top:14px;line-height:1.6;">Model output — win probability, method lean and market edge from the Apex style-conditional engine. Not betting advice.</div>'
+    +'</div>';
+  ov.classList.add('open');
+}
 
 async function loadBoard(){
   const list=document.getElementById('board-list');
@@ -389,8 +410,8 @@ async function loadBoard(){
     });
     list.innerHTML=html; updateAuthUI();
   }catch(e){
-    document.getElementById('board-event').textContent='Sample Card';
-    const sm=[{fighter:'Sample Prelim A',opponent:'Opponent A',weight_class:'Lightweight',billing:'Prelim',win_pct:71,book_odds:-210,ou_line:2.5,over_pct:44,method:'Decision'},{fighter:'Sample Prelim B',opponent:'Opponent B',weight_class:'Flyweight',billing:'Prelim',win_pct:63,book_odds:-150,ou_line:2.5,over_pct:52,method:'KO/TKO'}];
+    document.getElementById('board-event').textContent='UFC 329 (offline sample)';
+    const sm=[{fighter:'Gable Steveson',opponent:'Elisha Ellison',weight_class:'Heavyweight',billing:'Prelims',win_pct:97,book_odds:-3300,ou_line:1.5,over_pct:25,method:'KO/TKO',tier:'lock'},{fighter:'Luke Riley',opponent:'Kai Kamaka III',weight_class:'Featherweight',billing:'Prelims',win_pct:77,book_odds:-300,ou_line:2.5,over_pct:55,method:'Decision',tier:'lean'}];
     document.getElementById('ticker').innerHTML=tickerFrom(sm);
     list.innerHTML='<div class="grouptitle">PRELIMS</div>'+sm.map(p=>fightCardHTML(p,false)).join('');
   }
@@ -407,7 +428,7 @@ async function renderGame(){
   const body=document.getElementById('game-body');
   let fights=[];
   try{fights=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&is_pro=eq.false&order=win_pct.desc');}catch(e){}
-  if(!fights.length){fights=[{id:'s1',fighter:'Sample A',opponent:'Opponent A',win_pct:71,book_odds:-210},{id:'s2',fighter:'Sample B',opponent:'Opponent B',win_pct:63,book_odds:-150}];}
+  if(!fights.length){fights=[{id:'s1',fighter:'Gable Steveson',opponent:'Elisha Ellison',win_pct:97,book_odds:-3300},{id:'s2',fighter:'Adrian Yanez',opponent:'Cody Garbrandt',win_pct:83,book_odds:-450},{id:'s3',fighter:'Luke Riley',opponent:'Kai Kamaka III',win_pct:77,book_odds:-300}];}
   const entry=getEntry();
   body.innerHTML=
     '<div class="community" style="text-align:left;margin-bottom:18px;"><h2 style="font-size:24px;">Free-Play Pick\'em</h2><p style="margin:0;">Start with 1,000 coins. Pick each winner, add a method booster for a bigger multiplier, and climb the leaderboard. Free-play only — no cash, no buy-in.</p></div>'+
@@ -441,7 +462,7 @@ function renderProfile(){
     (isPro?'<button class="btn btn-ghost" style="margin-top:16px;" onclick="signOut()">Sign out</button>':'<button class="btn btn-red" style="margin-top:16px;" onclick="openModal(\'signup\')">Go Pro →</button>');
 }
 
-/* ================= AUTH ================= */
+/* ================= AUTH (soft gate) ================= */
 function updateAuthUI(){
   const email=localStorage.getItem('apex_email'), isPro=!!getPro();
   document.getElementById('rank-name').textContent=email?email.split('@')[0]:'Guest';
@@ -452,23 +473,30 @@ function updateAuthUI(){
 }
 function signOut(){localStorage.removeItem('apex_pro');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
 let modalMode='signup';
-function openModal(mode){modalMode=mode;document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Cancel anytime.';document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Continue to Payment →';document.getElementById('m-note').textContent=mode==='login'?'':'By continuing you agree to our terms. Payments secured by Stripe.';document.getElementById('modal').classList.add('open');}
+function openModal(mode){modalMode=mode;document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Join the community to subscribe.';document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Join / Subscribe →';document.getElementById('m-note').textContent=mode==='login'?'Already subscribed? Enter the email on your account.':'Membership is handled in the community.';document.getElementById('modal').classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
 async function handleAuth(){
   const email=document.getElementById('m-email').value.trim();
-  if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
-  const btn=document.getElementById('m-btn');btn.textContent='Loading\u2026';btn.disabled=true;
-  try{
-    const pro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
-    if(pro===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();}
-    else{ alert('No active Pro subscription for '+email+'. Ask the admin to add you, then sign in.'); }
-  }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
-  finally{btn.textContent=modalMode==='login'?'Sign In \u2192':'Continue \u2192';btn.disabled=false;}
+  const btn=document.getElementById('m-btn');
+  if(modalMode==='login'){
+    if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
+    btn.textContent='Checking…';btn.disabled=true;
+    try{
+      const isPro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
+      if(isPro===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();renderProfile();}
+      else alert('No active Pro subscription found for that email.');
+    }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
+    finally{btn.textContent='Sign In →';btn.disabled=false;}
+  } else {
+    window.open(COMMUNITY_URL,'_blank');
+    closeModal();
+  }
 }
 
-(async function(){
-  document.getElementById('communityLink').href=COMMUNITY_URL;
-  document.getElementById('joinBtn').href=COMMUNITY_URL;
+/* ================= INIT ================= */
+(function(){
+  var cl=document.getElementById('communityLink'); if(cl)cl.href=COMMUNITY_URL;
+  var jb=document.getElementById('joinBtn'); if(jb)jb.href=COMMUNITY_URL;
   setCoins(coins());
   updateAuthUI();
   loadBoard();
