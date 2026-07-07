@@ -270,6 +270,10 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
     <button class="x" onclick="closeModal()">×</button>
     <h2 id="m-title">Go Pro</h2>
     <p id="m-desc">Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Cancel anytime.</p>
+    <div id="m-plans" style="display:none;gap:8px;margin:4px 0 12px;">
+      <button type="button" id="plan-monthly" onclick="pickPlan('monthly')" style="flex:1;padding:10px;border-radius:10px;border:1px solid var(--red);background:rgba(232,25,44,.08);color:var(--text);font-weight:800;cursor:pointer;font-size:12px;">$9.99 / mo</button>
+      <button type="button" id="plan-6month" onclick="pickPlan('6month')" style="flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--dim);font-weight:800;cursor:pointer;font-size:12px;">$49.99 / 6 mo</button>
+    </div>
     <input class="minput" type="email" id="m-email" placeholder="your@email.com"/>
     <button class="btn btn-red" style="width:100%;padding:13px;" id="m-btn" onclick="handleAuth()">Continue →</button>
     <div class="mnote" id="m-note">By continuing you agree to our terms. Payments secured by Stripe.</div>
@@ -513,7 +517,7 @@ function renderProfile(){
     (isPro?'<button class="btn btn-ghost" style="margin-top:16px;" onclick="signOut()">Sign out</button>':'<button class="btn btn-red" style="margin-top:16px;" onclick="openModal(\'signup\')">Go Pro →</button>');
 }
 
-/* ================= AUTH (soft gate) ================= */
+/* ================= AUTH (soft gate + Stripe checkout) ================= */
 function updateAuthUI(){
   const email=localStorage.getItem('apex_email'), isPro=!!getPro();
   document.getElementById('rank-name').textContent=email?email.split('@')[0]:'Guest';
@@ -524,13 +528,29 @@ function updateAuthUI(){
 }
 function signOut(){localStorage.removeItem('apex_pro');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
 let modalMode='signup';
-function openModal(mode){modalMode=mode;document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock main-card picks, edge %, Kelly sizing and the full analyzer. Join the community to subscribe.';document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Join / Subscribe →';document.getElementById('m-note').textContent=mode==='login'?'Already subscribed? Enter the email on your account.':'Membership is handled in the community.';document.getElementById('modal').classList.add('open');}
+function pickPlan(p){
+  window.__plan=p;
+  const a=document.getElementById('plan-monthly'),b=document.getElementById('plan-6month');
+  if(!a||!b)return;
+  const on='1px solid var(--red)',onbg='rgba(232,25,44,.08)',off='1px solid var(--line)';
+  a.style.border=p==='monthly'?on:off; a.style.background=p==='monthly'?onbg:'none'; a.style.color=p==='monthly'?'var(--text)':'var(--dim)';
+  b.style.border=p==='6month'?on:off; b.style.background=p==='6month'?onbg:'none'; b.style.color=p==='6month'?'var(--text)':'var(--dim)';
+}
+function openModal(mode){
+  modalMode=mode; window.__plan=window.__plan||'monthly';
+  document.getElementById('m-title').textContent=mode==='login'?'Sign In':'Go Pro';
+  document.getElementById('m-desc').textContent=mode==='login'?'Enter the email on your Pro subscription.':'Unlock every main-card pick, edge %, Kelly sizing and the full analyzer. Cancel anytime.';
+  document.getElementById('m-btn').textContent=mode==='login'?'Sign In →':'Continue to Payment →';
+  document.getElementById('m-note').textContent=mode==='login'?'Already subscribed? Enter the email on your account.':'Secure checkout by Stripe. Cancel anytime.';
+  const plans=document.getElementById('m-plans'); if(plans){plans.style.display=mode==='login'?'none':'flex'; if(mode!=='login')pickPlan(window.__plan);}
+  document.getElementById('modal').classList.add('open');
+}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
 async function handleAuth(){
   const email=document.getElementById('m-email').value.trim();
   const btn=document.getElementById('m-btn');
+  if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
   if(modalMode==='login'){
-    if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
     btn.textContent='Checking…';btn.disabled=true;
     try{
       const isPro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
@@ -539,16 +559,35 @@ async function handleAuth(){
     }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
     finally{btn.textContent='Sign In →';btn.disabled=false;}
   } else {
-    window.open(COMMUNITY_URL,'_blank');
-    closeModal();
+    btn.textContent='Loading…';btn.disabled=true;
+    try{
+      localStorage.setItem('apex_email_pending',email);
+      const r=await fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,plan:window.__plan||'monthly'})});
+      const d=await r.json().catch(()=>({}));
+      if(d.url){ window.location.href=d.url; return; }
+      throw new Error(d.error||'unavailable');
+    }catch(e){ alert('Checkout isn\'t live yet — please try again shortly.'); console.error(e); btn.textContent='Continue to Payment →'; btn.disabled=false; }
   }
 }
 
 /* ================= INIT ================= */
-(function(){
+(async function(){
   var cl=document.getElementById('communityLink'); if(cl)cl.href=COMMUNITY_URL;
   var jb=document.getElementById('joinBtn'); if(jb)jb.href=COMMUNITY_URL;
   setCoins(coins());
+  const params=new URLSearchParams(location.search);
+  if(params.get('success')==='true'){
+    const email=localStorage.getItem('apex_email_pending');
+    if(email){
+      for(let i=0;i<5 && !getPro();i++){
+        try{ const ok=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})}); if(ok===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);break;} }catch(e){}
+        await new Promise(r=>setTimeout(r,1500));
+      }
+      localStorage.removeItem('apex_email_pending');
+    }
+    history.replaceState({},'','/');
+    alert('✓ Payment received — Pro unlocked. Welcome to Apex Fight IQ.');
+  }
   updateAuthUI();
   loadBoard();
   startCountdown();

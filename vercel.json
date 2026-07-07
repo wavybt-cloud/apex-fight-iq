@@ -3,15 +3,11 @@
   "builds": [
     { "src": "index.html", "use": "@vercel/static" },
     { "src": "checkout.js", "use": "@vercel/node" },
-    { "src": "webhook.js",  "use": "@vercel/node" },
-    { "src": "session.js",  "use": "@vercel/node" },
-    { "src": "picks.js",    "use": "@vercel/node" }
+    { "src": "webhook.js",  "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/checkout", "dest": "/checkout.js" },
     { "src": "/api/webhook",  "dest": "/webhook.js" },
-    { "src": "/api/session",  "dest": "/session.js" },
-    { "src": "/api/picks",    "dest": "/picks.js" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
