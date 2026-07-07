@@ -183,7 +183,7 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
   <main class="main">
     <!-- BOARD -->
     <section class="view active" id="view-board">
-      <div class="crumb">Apex AI · UFC Odds · <b id="board-event">Fight Lines</b></div>
+      <div class="crumb">Apex AI · UFC Odds · <b id="board-event">Fight Lines</b><span id="board-countdown" class="mono" style="float:right;font-size:11px;color:var(--gold);letter-spacing:.5px;"></span></div>
       <div class="viewhead"><h1 id="board-title">AI Odds Board</h1><div class="sub" style="max-width:340px;text-align:right;">The model as oddsmaker — moneyline &amp; totals, independent of Vegas.</div></div>
       <div id="board-list"><div style="padding:40px;text-align:center;color:var(--dim);">Loading fights…</div></div>
     </section>
@@ -281,6 +281,7 @@ const SUPABASE_URL = 'https://whhbvglvtkqizfllxgtf.supabase.co';
 const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndoaGJ2Z2x2dGtxaXpmbGx4Z3RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODM3ODEsImV4cCI6MjA5ODE1OTc4MX0.u1EM3q_FvLwPN_rulFNrTzfKAodUA74P4js748PV8i8';
 const EVENT_NAME    = 'UFC 329';
 const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
+const EVENT_DATE    = '2026-07-11T18:00:00-07:00'; // UFC 329 main card (PT) — used for countdown
 
 const getPro = () => localStorage.getItem('apex_pro') === 'true';
 async function sbFetch(path, opts={}) {
@@ -454,8 +455,46 @@ async function renderGame(){
     }).join('')+'</div>'+
     '<div style="display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap;"><div style="font-size:13px;color:var(--dim);">Wager per pick: <b class="mono" id="wagerVal" style="color:var(--gold)">100</b> coins</div><input type="range" id="wager" min="50" max="500" step="50" value="100" style="accent-color:var(--red);flex:1;min-width:160px;" oninput="document.getElementById(\'wagerVal\').textContent=this.value"><button class="btn btn-red" onclick="lockEntry()">Lock in picks</button></div>'+
     '<div id="game-result" style="margin-top:16px;"></div>'+
-    '<div class="community" style="margin-top:20px;"><h2 style="font-size:22px;">Live Leaderboard</h2><p>Compete for real ranks and prize drops with other players in the community.</p><a class="btn btn-join" style="padding:12px 24px;" href="'+COMMUNITY_URL+'" target="_blank" rel="noopener">Join the leaderboard →</a></div>';
+    '<div class="community" style="margin-top:20px;text-align:left;"><h2 style="font-size:22px;">Live Leaderboard</h2><p style="margin-bottom:12px;">Lock your picks, then put your name on the board to compete with everyone else playing this card.</p><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;"><input id="lbName" class="minput" style="margin:0;max-width:220px;" placeholder="Your display name" value="'+(localStorage.getItem('apex_lb_name')||'')+'"><button class="btn btn-red" onclick="submitEntry()">Submit to leaderboard</button><a class="btn btn-join" href="'+COMMUNITY_URL+'" target="_blank" rel="noopener">Community</a></div><div id="leaderboard" style="margin-top:16px;"></div></div>';
   const e=getEntry(); if(e._locked){document.getElementById('game-result').innerHTML='<div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13px;color:var(--dim);">✓ Entry locked for '+EVENT_NAME+'. Come back after the card — correct picks pay out to your coin balance.</div>';}
+  renderLeaderboard();
+}
+async function submitEntry(){
+  const nameEl=document.getElementById('lbName'); const name=(nameEl.value||'').trim();
+  if(!name){nameEl.style.borderColor='var(--red)';return;}
+  const e=getEntry(); const picks={};
+  Object.keys(e).filter(k=>!k.startsWith('_')).forEach(k=>{picks[k]=e[k];});
+  const cnt=Object.values(picks).filter(p=>p&&p.winner).length;
+  if(!cnt){alert('Pick at least one winner first.');return;}
+  localStorage.setItem('apex_lb_name',name);
+  const btn=nameEl.nextElementSibling; if(btn){btn.textContent='Submitting…';btn.disabled=true;}
+  try{
+    await sbFetch('entries',{method:'POST',headers:{'Prefer':'return=representation'},body:JSON.stringify({event_name:EVENT_NAME,display_name:name,picks,wager:e._wager||100})});
+    document.getElementById('game-result').innerHTML='<div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:14px;font-size:13px;">✓ <b>'+name+'</b> entered with '+cnt+' picks. Scores settle after the card.</div>';
+    renderLeaderboard();
+  }catch(err){alert('Could not submit — please try again.');console.error(err);}
+  finally{ if(btn){btn.textContent='Submit to leaderboard';btn.disabled=false;} }
+}
+async function renderLeaderboard(){
+  const el=document.getElementById('leaderboard'); if(!el)return;
+  let rows=[]; try{rows=await sbFetch('entries?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&order=score.desc,correct.desc,created_at.asc&limit=100');}catch(e){}
+  if(!rows.length){el.innerHTML='<div style="color:var(--faint);font-size:12px;padding:6px 2px;">No entries yet — be the first on the board.</div>';return;}
+  el.innerHTML='<div class="recstrip" style="grid-template-columns:1fr;gap:1px;">'+rows.map((r,i)=>{
+    const picks=(r.picks&&typeof r.picks==='object')?Object.values(r.picks).filter(p=>p&&p.winner).length:0;
+    const medal=i===0?'#f0b942':i===1?'#c0c7d1':i===2?'#b0774a':'var(--gold)';
+    return '<div class="recstat" style="display:flex;justify-content:space-between;align-items:center;text-align:left;padding:11px 14px;"><span style="font-size:13px;"><b class="mono" style="color:'+medal+'">#'+(i+1)+'</b>&nbsp;&nbsp;'+r.display_name+'</span><span class="mono" style="font-size:11px;color:var(--dim)">'+picks+' picks · '+Number(r.score||0).toFixed(0)+' pts</span></div>';
+  }).join('')+'</div>';
+}
+function startCountdown(){
+  const el=document.getElementById('board-countdown'); if(!el)return;
+  const t=new Date(EVENT_DATE).getTime();
+  function tick(){
+    const d=t-Date.now();
+    if(d<=0){el.textContent='🔴 LIVE / COMPLETE';return;}
+    const days=Math.floor(d/864e5), h=Math.floor(d%864e5/36e5), m=Math.floor(d%36e5/6e4);
+    el.textContent='⏱ '+EVENT_NAME+' in '+days+'d '+h+'h '+m+'m';
+  }
+  tick(); clearInterval(window._cd); window._cd=setInterval(tick,30000);
 }
 function pickWinner(id,side,btn){const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
 function pickMethod(id,m){const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
@@ -512,6 +551,7 @@ async function handleAuth(){
   setCoins(coins());
   updateAuthUI();
   loadBoard();
+  startCountdown();
 })();
 </script>
 </body>
