@@ -500,6 +500,37 @@ function startCountdown(){
   }
   tick(); clearInterval(window._cd); window._cd=setInterval(tick,30000);
 }
+/* ================= ADMIN GRADER (hidden — visit /#grade) ================= */
+async function openAdmin(){
+  let secret=localStorage.getItem('apex_grade_secret');
+  if(!secret){ secret=prompt('Admin passphrase to grade picks:'); if(!secret)return; localStorage.setItem('apex_grade_secret',secret); }
+  let ov=document.getElementById('adminOverlay');
+  if(!ov){ov=document.createElement('div');ov.id='adminOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
+  ov.innerHTML='<div class="modal" style="max-width:580px;"><button class="x" onclick="document.getElementById(\'adminOverlay\').classList.remove(\'open\')">×</button><div style="font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);">Admin</div><h2 style="margin-bottom:2px;">Grade '+EVENT_NAME+'</h2><div style="font-size:11px;color:var(--dim);margin-bottom:12px;">Click W or L per fight. Enter the closing moneyline first (optional) to log CLV. Updates the public track record instantly.</div><div id="admin-list">Loading…</div></div>';
+  ov.classList.add('open');
+  renderAdminList();
+}
+async function renderAdminList(){
+  const el=document.getElementById('admin-list'); if(!el)return;
+  let rows=[]; try{rows=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&order=win_pct.desc');}catch(e){}
+  if(!rows.length){el.innerHTML='<div style="color:var(--faint);font-size:12px;">No picks for this event.</div>';return;}
+  el.innerHTML=rows.map(function(p){
+    const graded=p.result&&p.result!=='pending';
+    const rc=p.result==='win'?'var(--green)':p.result==='loss'?'var(--red)':'var(--faint)';
+    return '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line2);padding:8px 0;font-size:13px;"><div style="min-width:0;"><b>'+p.fighter+'</b> <span style="color:var(--dim);font-size:11px;">def. '+p.opponent+'</span> <span class="mono" style="color:'+rc+';font-size:10px;font-weight:800;">'+(graded?p.result.toUpperCase():'')+'</span></div><div style="display:flex;gap:4px;flex:none;"><input id="cl-'+p.id+'" placeholder="close" value="'+(p.close_odds!=null?p.close_odds:'')+'" style="width:50px;padding:5px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:6px;font-size:11px;text-align:center;"><button class="fbtn" style="background:rgba(16,185,129,.15);color:var(--green);padding:6px 10px;" onclick="gradePick('+p.id+',\'win\')">W</button><button class="fbtn" style="background:rgba(232,25,44,.12);color:var(--red);padding:6px 10px;" onclick="gradePick('+p.id+',\'loss\')">L</button><button class="fbtn" style="padding:6px 8px;" onclick="gradePick('+p.id+',\'pending\')">↺</button></div></div>';
+  }).join('');
+}
+async function gradePick(id,result){
+  const secret=localStorage.getItem('apex_grade_secret')||'';
+  const clEl=document.getElementById('cl-'+id); const close=(clEl&&clEl.value!=='')?parseInt(clEl.value,10):null;
+  try{
+    const res=await sbFetch('rpc/grade_pick',{method:'POST',body:JSON.stringify({p_id:id,p_result:result,p_close:close,p_secret:secret})});
+    if(res==='ok'){ renderAdminList(); if(typeof loadRecord==='function')loadRecord(); }
+    else if(res==='denied'){ alert('Wrong passphrase — cleared, try again.'); localStorage.removeItem('apex_grade_secret'); }
+    else alert('Grade failed: '+res);
+  }catch(e){ alert('Error grading pick.'); console.error(e); }
+}
+(function(){ function chk(){ if(location.hash==='#grade') openAdmin(); } window.addEventListener('hashchange',chk); setTimeout(chk,900); })();
 function pickWinner(id,side,btn){const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
 function pickMethod(id,m){const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
 function lockEntry(){const e=getEntry();e._locked=true;e._wager=parseInt(document.getElementById('wager').value,10);saveEntry(e);const picks=Object.keys(e).filter(k=>!k.startsWith('_')&&e[k].winner).length;document.getElementById('game-result').innerHTML='<div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.3);border-radius:12px;padding:16px;font-size:13px;">🔒 Locked <b>'+picks+'</b> picks at '+e._wager+' coins each. Results settle after the card. <span style="color:var(--dim)">(Free-play demo — full leaderboard scoring lives in the community.)</span></div>';}
