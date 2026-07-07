@@ -302,7 +302,7 @@ function implied(am){return am<0?(-am)/(-am+100):100/(am+100);}
 function dedupe(rows,keyFn){const seen=new Set(),out=[];for(const r of (rows||[])){const k=keyFn(r);if(seen.has(k))continue;seen.add(k);out.push(r);}return out;}
 const initials=n=>n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
 const lastName=n=>n.split(' ').slice(-1)[0];
-function groupOf(b){b=b||'';if(/main event|co-main/i.test(b))return 'MAIN CARD — HEADLINERS';if(/main card/i.test(b))return 'MAIN CARD';return 'PRELIMS';}
+function groupOf(b){b=b||'';if(/main event|co-main/i.test(b))return 'MAIN CARD — HEADLINERS';if(/main card/i.test(b))return 'MAIN CARD';if(/early/i.test(b))return 'EARLY PRELIMS';return 'PRELIMS';}
 
 /* ================= VIEW ROUTER ================= */
 function showView(name){
@@ -421,8 +421,8 @@ async function loadBoard(){
     const pro=getPro();
     const buckets={}; all.forEach(p=>{const g=groupOf(p.billing);(buckets[g]=buckets[g]||[]).push(p);});
     let html='';
-    ['MAIN CARD \u2014 HEADLINERS','MAIN CARD','PRELIMS'].forEach(g=>{
-      if(!buckets[g])return; buckets[g].sort((a,b)=>b.win_pct-a.win_pct);
+    ['MAIN CARD \u2014 HEADLINERS','MAIN CARD','PRELIMS','EARLY PRELIMS'].forEach(g=>{
+      if(!buckets[g])return; buckets[g].sort((a,b)=>((a.card_order||99)-(b.card_order||99))||(b.win_pct-a.win_pct));
       html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
     list.innerHTML=html; updateAuthUI();
