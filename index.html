@@ -636,7 +636,11 @@ async function handleAuth(){
     btn.textContent='Checking…';btn.disabled=true;
     try{
       const isPro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
-      if(isPro===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);closeModal();updateAuthUI();loadBoard();renderProfile();}
+      if(isPro===true){
+        localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);
+        try{ const c=await sbFetch('rpc/get_coins',{method:'POST',body:JSON.stringify({p_email:email})}); if(typeof c==='number'&&c>0)setCoins(c); }catch(e){}
+        closeModal();updateAuthUI();loadBoard();renderProfile();
+      }
       else alert('No active Pro subscription found for that email.');
     }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
     finally{btn.textContent='Sign In →';btn.disabled=false;}
