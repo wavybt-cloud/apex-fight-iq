@@ -423,9 +423,20 @@ function analyzerModal(id){
   const p=(window.BOARD_MAP||{})[id]; if(!p)return;
   if(p.is_pro && !getPro()){ openModal('signup'); return; }
   const wa=Number(p.win_pct), wb=100-wa, mlA=amNum(wa/100), mlB=amNum(wb/100), ouLine=p.ou_line||2.5;
-  const overP=(p.over_pct!=null)?Number(p.over_pct):null;
-  let edgeStr='no market line posted';
-  if(p.book_odds!=null){var mi=implied(p.book_odds)*100, d=wa-mi; edgeStr=(d>=0?'+':'')+d.toFixed(1)+'% vs '+(p.book_odds>0?'+'+p.book_odds:p.book_odds);}
+  const overP=(p.over_pct!=null)?Number(p.over_pct):null, pr=wa/100;
+  const bank=Number(localStorage.getItem('apex_bank'))||1000;
+  let edgeStr='no market line posted', evStr='—', kellyStr='—', verdict={t:'NO MARKET LINE',c:'var(--dim)',bg:'rgba(255,255,255,.04)'}, evShort='';
+  if(p.book_odds!=null){
+    const mi=implied(p.book_odds)*100, d=wa-mi; edgeStr=(d>=0?'+':'')+d.toFixed(1)+'% vs '+fmtAm(p.book_odds);
+    const dec=decOdds(p.book_odds), b=dec-1;
+    const ev=(pr*b-(1-pr))*100, f=b>0?((pr*b-(1-pr))/b):0, stake=f>0?bank*f/4:0;
+    evShort=(ev>=0?'+':'')+ev.toFixed(1)+'%';
+    evStr=evShort+'  ($'+ev.toFixed(2)+' per $100)';
+    kellyStr=f>0?('$'+stake.toFixed(2)+'  ·  '+(f*25).toFixed(1)+'% of roll'):'no bet — ¼-Kelly = 0';
+    if(ev>=3){verdict={t:'✅ VALUE BET',c:'var(--green)',bg:'rgba(16,185,129,.10)'};}
+    else if(ev>=0){verdict={t:'◎ THIN EDGE',c:'var(--gold)',bg:'rgba(240,185,66,.10)'};}
+    else {verdict={t:'⛔ NO VALUE · PASS',c:'var(--red)',bg:'rgba(232,25,44,.08)'};}
+  }
   let ov=document.getElementById('azOverlay');
   if(!ov){ov=document.createElement('div');ov.id='azOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
   ov.innerHTML='<div class="modal" style="max-width:470px;">'
@@ -434,8 +445,10 @@ function analyzerModal(id){
     +'<h2 style="margin-bottom:2px;">'+p.fighter+'</h2>'
     +'<div style="font-size:12px;color:var(--dim);margin-bottom:16px;">vs '+p.opponent+' · '+(p.weight_class||'')+'</div>'
     +'<div style="margin-bottom:14px;">'+azBar(p.fighter,wa,'var(--red)')+azBar(p.opponent,wb,'var(--blue)')+'</div>'
-    +azGrid([['AI Moneyline',fmtAm(mlA)+' / '+fmtAm(mlB)],['Method lean',p.method||'—'],['Confidence',(p.tier||'').toUpperCase()],['Market edge',edgeStr],['Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—'],['Pace read', overP!=null?(overP>=50?'leans OVER':'leans UNDER'):'—']])
-    +'<div style="font-size:10px;color:var(--faint);margin-top:14px;line-height:1.6;">Model output — win probability, method lean and market edge from the Apex style-conditional engine. Not betting advice.</div>'
+    +'<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:'+verdict.bg+';border:1px solid '+verdict.c+';border-radius:10px;padding:10px 14px;margin-bottom:14px;"><span style="font-weight:800;font-size:13px;color:'+verdict.c+';">'+verdict.t+'</span><span class="mono" style="font-size:12px;color:var(--dim);">EV '+(evShort||'—')+'</span></div>'
+    +azGrid([['AI Moneyline',fmtAm(mlA)+' / '+fmtAm(mlB)],['Market price',p.book_odds!=null?fmtAm(p.book_odds):'—'],['Market edge',edgeStr],['Expected value',evStr],['Bet size (¼-Kelly)',kellyStr],['Method lean',p.method||'—'],['Confidence',(p.tier||'').toUpperCase()],['Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—']])
+    +'<div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:var(--dim);">Bankroll $<input id="azBank" type="number" min="0" value="'+bank+'" onchange="localStorage.setItem(\'apex_bank\',this.value||1000);analyzerModal(\''+id+'\')" style="width:92px;padding:5px 8px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:6px;font-size:12px;"><span>· stake uses ¼-Kelly</span></div>'
+    +'<div style="font-size:10px;color:var(--faint);margin-top:12px;line-height:1.6;">EV = expected profit per $100 at the current price. ¼-Kelly sizes bets conservatively off your bankroll. Model output, not betting advice — 21+, bet responsibly.</div>'
     +'</div>';
   ov.classList.add('open');
 }
