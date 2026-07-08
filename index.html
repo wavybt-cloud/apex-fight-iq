@@ -468,7 +468,15 @@ async function loadBoard(){
       if(!buckets[g])return; buckets[g].sort((a,b)=>((a.card_order||99)-(b.card_order||99))||(b.win_pct-a.win_pct));
       html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
-    list.innerHTML=html; updateAuthUI();
+    const evOf=function(p){if(p.book_odds==null)return null;const b=decOdds(Number(p.book_odds))-1,pr=Number(p.win_pct)/100;return (pr*b-(1-pr))*100;};
+    const plays=all.filter(p=>!(p.is_pro&&!pro)).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null).sort((a,b)=>b.ev-a.ev).slice(0,3);
+    let topHTML='';
+    if(plays.length){
+      topHTML='<div class="grouptitle">⚡ Top Plays — best value'+(getPro()?'':' (free picks)')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:8px;">'+
+        plays.map(function(x){var ev=x.ev,col=ev>=3?'var(--green)':ev>=0?'var(--gold)':'var(--red)';return '<div onclick="analyzerModal(\''+x.p._bid+'\')" style="cursor:pointer;background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:12px 14px;transition:transform .1s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'"><div style="font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+x.p.fighter+'</div><div style="font-size:11px;color:var(--dim);margin:2px 0 8px;">vs '+lastName(x.p.opponent)+' · '+fmtAm(x.p.book_odds)+'</div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="mono" style="font-size:13px;font-weight:800;color:'+col+';">EV '+(ev>=0?'+':'')+ev.toFixed(1)+'%</span><span style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">tap for size →</span></div></div>';}).join('')+
+      '</div>';
+    }
+    list.innerHTML=topHTML+html; updateAuthUI();
   }catch(e){
     document.getElementById('board-event').textContent='UFC 329 (offline sample)';
     const sm=[{fighter:'Gable Steveson',opponent:'Elisha Ellison',weight_class:'Heavyweight',billing:'Prelims',win_pct:97,book_odds:-3300,ou_line:1.5,over_pct:25,method:'KO/TKO',tier:'lock'},{fighter:'Luke Riley',opponent:'Kai Kamaka III',weight_class:'Featherweight',billing:'Prelims',win_pct:77,book_odds:-300,ou_line:2.5,over_pct:55,method:'Decision',tier:'lean'}];
