@@ -17,6 +17,7 @@
 <meta name="twitter:description" content="AI oddsmaker for the UFC — moneyline, totals & market edge, graded in public. 21+"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Apex Fight IQ","applicationCategory":"SportsApplication","operatingSystem":"Web","url":"https://apex-fight-iq.vercel.app/","description":"AI UFC odds board with moneyline, totals and market edge, plus a publicly graded pick record.","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -53,10 +54,10 @@ a{color:inherit;text-decoration:none;}
 .btn-join{background:linear-gradient(135deg,#1f6feb,#0d47a1);color:#fff;}
 /* ---- ticker ---- */
 .ticker{position:relative;overflow:hidden;background:var(--panel);border-bottom:1px solid var(--line);height:34px;display:flex;align-items:center;}
-.ticker-live{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;gap:6px;padding:0 14px;background:linear-gradient(90deg,rgba(232,25,44,.18),var(--panel));border-right:1px solid var(--line);font-size:10px;font-weight:800;letter-spacing:1px;color:var(--red);text-transform:uppercase;white-space:nowrap;}
+.ticker-live{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;gap:6px;padding:0 14px;background:linear-gradient(90deg,rgba(232,25,44,.18),rgba(232,25,44,0)),var(--panel);border-right:1px solid var(--line);font-size:10px;font-weight:800;letter-spacing:1px;color:var(--red);text-transform:uppercase;white-space:nowrap;}
 .ticker-live i{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-.ticker-track{display:inline-flex;gap:26px;white-space:nowrap;padding-left:130px;animation:tick 46s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;}
+.ticker-track{display:inline-flex;gap:26px;white-space:nowrap;padding-left:130px;animation:tick 46s linear infinite;will-change:transform;font-family:'JetBrains Mono',monospace;font-size:12px;}
 .ticker:hover .ticker-track{animation-play-state:paused;}
 .ticker-track .tk b{color:var(--text);} .ticker-track .tk{color:var(--dim);} .ticker-track .fav{color:var(--gold);}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -172,7 +173,7 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
     <div class="rankchip" id="rankchip"><b id="rank-name">Guest</b><span id="rank-sub">Unranked</span></div>
     <a class="btn btn-join" href="#" id="joinBtn" onclick="showView('community');return false;">Join</a>
     <button class="btn btn-ghost" id="authBtn" onclick="openModal('login')">Sign in</button>
-    <button class="btn btn-red" onclick="openModal('signup')">Go Pro →</button>
+    <button class="btn btn-red" id="proBtn" onclick="openModal('signup')">Go Pro →</button>
   </div>
 </div>
 
@@ -298,9 +299,22 @@ const EVENT_NAME    = 'UFC 329';
 const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
 const EVENT_DATE    = '2026-07-11T18:00:00-07:00'; // UFC 329 main card (PT) — used for countdown
 
-const getPro = () => localStorage.getItem('apex_pro') === 'true';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+window.__isPro = false; window.__email = null; window.__session = null;
+const getPro = () => window.__isPro === true;
+async function refreshSession(){
+  const {data:{session}} = await sb.auth.getSession();
+  window.__session = session || null;
+  window.__email = session ? session.user.email : null;
+  window.__isPro = false;
+  if(session){
+    try{ window.__isPro = (await sbFetch('rpc/is_pro_me',{method:'POST',body:'{}'})) === true; }catch(e){}
+    try{ const c = await sbFetch('rpc/coins_me',{method:'POST',body:'{}'}); if(typeof c==='number'&&c>0)setCoins(c); }catch(e){}
+  }
+}
 async function sbFetch(path, opts={}) {
-  const r = await fetch(SUPABASE_URL+'/rest/v1/'+path, {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json',...opts.headers},...opts});
+  const token = (window.__session && window.__session.access_token) || SUPABASE_KEY;
+  const r = await fetch(SUPABASE_URL+'/rest/v1/'+path, {headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+token,'Content-Type':'application/json',...opts.headers},...opts});
   if(!r.ok) throw new Error(await r.text());
   return r.json();
 }
@@ -470,22 +484,31 @@ async function loadBoard(){
     let all=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&result=eq.pending&order=win_pct.desc');
     all=dedupe(all,p=>p.fighter+'|'+p.opponent);
     document.getElementById('board-event').textContent=EVENT_NAME;
-    if(!all.length) throw 0;
-    document.getElementById('ticker').innerHTML=tickerFrom(all);
     const pro=getPro();
+    document.getElementById('ticker').innerHTML=tickerFrom(all.filter(p=>!(p.is_pro&&!pro)));
+    if(!pro){
+      try{
+        const teasers=await sbFetch('pro_teasers?event_name=eq.'+encodeURIComponent(EVENT_NAME));
+        const have=new Set(all.map(p=>p.fighter+'|'+p.opponent));
+        teasers.forEach(t=>{ if(!have.has(t.fighter+'|'+t.opponent)){ t.is_pro=true; t.result='pending'; t.win_pct=t.win_pct||62; all.push(t); } });
+      }catch(e){}
+    }
+    if(!all.length) throw 0;
     const buckets={}; all.forEach(p=>{const g=groupOf(p.billing);(buckets[g]=buckets[g]||[]).push(p);});
     let html='';
-    ['MAIN CARD \u2014 HEADLINERS','MAIN CARD','PRELIMS','EARLY PRELIMS'].forEach(g=>{
+    ['MAIN CARD — HEADLINERS','MAIN CARD','PRELIMS','EARLY PRELIMS'].forEach(g=>{
       if(!buckets[g])return; buckets[g].sort((a,b)=>((a.card_order||99)-(b.card_order||99))||(b.win_pct-a.win_pct));
       html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
     const evOf=function(p){if(p.book_odds==null)return null;const b=decOdds(Number(p.book_odds))-1,pr=Number(p.win_pct)/100;return (pr*b-(1-pr))*100;};
-    const plays=all.filter(p=>!(p.is_pro&&!pro)).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null).sort((a,b)=>b.ev-a.ev).slice(0,3);
+    const plays=all.filter(p=>!(p.is_pro&&!pro)).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null&&x.ev>=0).sort((a,b)=>b.ev-a.ev).slice(0,3);
     let topHTML='';
     if(plays.length){
       topHTML='<div class="grouptitle">⚡ Top Plays — best value'+(getPro()?'':' (free picks)')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:8px;">'+
-        plays.map(function(x){var ev=x.ev,col=ev>=3?'var(--green)':ev>=0?'var(--gold)':'var(--red)';return '<div onclick="analyzerModal(\''+x.p._bid+'\')" style="cursor:pointer;background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:12px 14px;transition:transform .1s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'"><div style="font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+x.p.fighter+'</div><div style="font-size:11px;color:var(--dim);margin:2px 0 8px;">vs '+lastName(x.p.opponent)+' · '+fmtAm(x.p.book_odds)+'</div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="mono" style="font-size:13px;font-weight:800;color:'+col+';">EV '+(ev>=0?'+':'')+ev.toFixed(1)+'%</span><span style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">tap for size →</span></div></div>';}).join('')+
+        plays.map(function(x){var ev=x.ev,col=ev>=3?'var(--green)':'var(--gold)';return '<div onclick="analyzerModal(\''+x.p._bid+'\')" style="cursor:pointer;background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:12px 14px;transition:transform .1s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'"><div style="font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+x.p.fighter+'</div><div style="font-size:11px;color:var(--dim);margin:2px 0 8px;">vs '+lastName(x.p.opponent)+' · '+fmtAm(x.p.book_odds)+'</div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="mono" style="font-size:13px;font-weight:800;color:'+col+';">EV '+(ev>=0?'+':'')+ev.toFixed(1)+'%</span><span style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">tap for size →</span></div></div>';}).join('')+
       '</div>';
+    } else {
+      topHTML='<div class="grouptitle">⚡ Top Plays — best value</div><div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--dim);margin-bottom:8px;line-height:1.6;">No +EV plays on this card — the model agrees with the market right now. Passing is a position too; check back as lines move.</div>';
     }
     list.innerHTML=topHTML+html; updateAuthUI();
   }catch(e){
@@ -519,11 +542,17 @@ async function renderGame(){
         '<div><select class="minput" style="margin:0;padding:7px;font-size:11px;" onchange="pickMethod(\''+id+'\',this.value)"><option value="">Winner only</option><option value="KO/TKO"'+(sel.method==='KO/TKO'?' selected':'')+'>KO/TKO ×2</option><option value="Submission"'+(sel.method==='Submission'?' selected':'')+'>Submission ×2.5</option><option value="Decision"'+(sel.method==='Decision'?' selected':'')+'>Decision ×1.5</option></select></div>'+
         '</div></div>';
     }).join('')+'</div>'+
-    '<div style="display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap;"><div style="font-size:13px;color:var(--dim);">Wager per pick: <b class="mono" id="wagerVal" style="color:var(--gold)">100</b> coins</div><input type="range" id="wager" min="50" max="500" step="50" value="100" style="accent-color:var(--red);flex:1;min-width:160px;" oninput="document.getElementById(\'wagerVal\').textContent=this.value"><button class="btn btn-red" onclick="lockEntry()">Lock in picks</button></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap;"><div style="font-size:13px;color:var(--dim);">Wager per pick: <b class="mono" id="wagerVal" style="color:var(--gold)">100</b> coins</div><input type="range" id="wager" min="50" max="500" step="50" value="100" style="accent-color:var(--red);flex:1;min-width:160px;" oninput="document.getElementById(\'wagerVal\').textContent=this.value"><button class="btn btn-red" id="lockBtn" onclick="lockEntry()">Lock in picks</button></div>'+
     '<div id="game-result" style="margin-top:16px;"></div>'+
     '<div class="community" style="margin-top:20px;text-align:left;"><h2 style="font-size:22px;">Live Leaderboard</h2><p style="margin-bottom:12px;">Lock your picks, then put your name on the board to compete with everyone else playing this card.</p><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;"><input id="lbName" class="minput" style="margin:0;max-width:220px;" placeholder="Your display name" value="'+(localStorage.getItem('apex_lb_name')||'')+'"><button class="btn btn-red" onclick="submitEntry()">Submit to leaderboard</button><a class="btn btn-join" href="'+COMMUNITY_URL+'" target="_blank" rel="noopener">Community</a></div><div id="leaderboard" style="margin-top:16px;"></div></div>';
-  const e=getEntry(); if(e._locked){document.getElementById('game-result').innerHTML='<div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13px;color:var(--dim);">✓ Entry locked for '+EVENT_NAME+'. Come back after the card — correct picks pay out to your coin balance.</div>';}
+  const e=getEntry(); if(e._locked){document.getElementById('game-result').innerHTML='<div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13px;color:var(--dim);">✓ Entry locked for '+EVENT_NAME+'. Come back after the card — correct picks pay out to your coin balance.</div>';applyLockedUI();}
   renderLeaderboard();
+}
+function applyLockedUI(){
+  document.querySelectorAll('#game-fights .fbtn').forEach(function(b){b.disabled=true;b.style.opacity=.45;b.style.cursor='default';});
+  document.querySelectorAll('#game-fights select').forEach(function(s){s.disabled=true;s.style.opacity=.45;});
+  const w=document.getElementById('wager'); if(w)w.disabled=true;
+  const lb=document.getElementById('lockBtn'); if(lb){lb.disabled=true;lb.textContent='Locked ✓';lb.style.opacity=.6;lb.style.cursor='default';}
 }
 async function submitEntry(){
   const nameEl=document.getElementById('lbName'); const name=(nameEl.value||'').trim();
@@ -564,8 +593,7 @@ function startCountdown(){
 }
 /* ================= ADMIN GRADER (hidden — visit /#grade) ================= */
 async function openAdmin(){
-  let secret=localStorage.getItem('apex_grade_secret');
-  if(!secret){ secret=prompt('Admin passphrase to grade picks:'); if(!secret)return; localStorage.setItem('apex_grade_secret',secret); }
+  if(!window.__email){ alert('Sign in first (magic link) — admin access is tied to your account.'); openModal('login'); return; }
   let ov=document.getElementById('adminOverlay');
   if(!ov){ov=document.createElement('div');ov.id='adminOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
   ov.innerHTML='<div class="modal" style="max-width:580px;"><button class="x" onclick="document.getElementById(\'adminOverlay\').classList.remove(\'open\')">×</button><div style="font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);">Admin</div><h2 style="margin-bottom:2px;">Grade '+EVENT_NAME+'</h2><div style="font-size:11px;color:var(--dim);margin-bottom:12px;">Click W or L per fight. Enter the closing moneyline first (optional) to log CLV. Updates the public track record instantly.</div><div id="admin-list">Loading…</div></div>';
@@ -574,8 +602,8 @@ async function openAdmin(){
 }
 async function renderAdminList(){
   const el=document.getElementById('admin-list'); if(!el)return;
-  let rows=[]; try{rows=await sbFetch('picks?event_name=eq.'+encodeURIComponent(EVENT_NAME)+'&order=win_pct.desc');}catch(e){}
-  if(!rows.length){el.innerHTML='<div style="color:var(--faint);font-size:12px;">No picks for this event.</div>';return;}
+  let rows=[]; try{rows=await sbFetch('rpc/admin_list_picks',{method:'POST',body:JSON.stringify({p_event:EVENT_NAME})});}catch(e){}
+  if(!rows.length){el.innerHTML='<div style="color:var(--faint);font-size:12px;">No picks for this event (or this account isn\'t on the admin list).</div>';return;}
   el.innerHTML=rows.map(function(p){
     const graded=p.result&&p.result!=='pending';
     const rc=p.result==='win'?'var(--green)':p.result==='loss'?'var(--red)':'var(--faint)';
@@ -583,23 +611,22 @@ async function renderAdminList(){
   }).join('');
 }
 async function gradePick(id,result){
-  const secret=localStorage.getItem('apex_grade_secret')||'';
   const clEl=document.getElementById('cl-'+id); const close=(clEl&&clEl.value!=='')?parseInt(clEl.value,10):null;
   try{
-    const res=await sbFetch('rpc/grade_pick',{method:'POST',body:JSON.stringify({p_id:id,p_result:result,p_close:close,p_secret:secret})});
+    const res=await sbFetch('rpc/grade_pick',{method:'POST',body:JSON.stringify({p_id:id,p_result:result,p_close:close})});
     if(res==='ok'){ renderAdminList(); if(typeof loadRecord==='function')loadRecord(); }
-    else if(res==='denied'){ alert('Wrong passphrase — cleared, try again.'); localStorage.removeItem('apex_grade_secret'); }
+    else if(res==='denied'){ alert('This account is not on the admin list.'); }
     else alert('Grade failed: '+res);
   }catch(e){ alert('Error grading pick.'); console.error(e); }
 }
 (function(){ function chk(){ if(location.hash==='#grade') openAdmin(); } window.addEventListener('hashchange',chk); setTimeout(chk,900); })();
-function pickWinner(id,side,btn){const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
-function pickMethod(id,m){const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
-function lockEntry(){const e=getEntry();e._locked=true;e._wager=parseInt(document.getElementById('wager').value,10);saveEntry(e);const picks=Object.keys(e).filter(k=>!k.startsWith('_')&&e[k].winner).length;document.getElementById('game-result').innerHTML='<div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.3);border-radius:12px;padding:16px;font-size:13px;">🔒 Locked <b>'+picks+'</b> picks at '+e._wager+' coins each. Results settle after the card. <span style="color:var(--dim)">(Free-play demo — full leaderboard scoring lives in the community.)</span></div>';}
+function pickWinner(id,side,btn){if(getEntry()._locked)return;const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
+function pickMethod(id,m){if(getEntry()._locked)return;const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
+function lockEntry(){const e=getEntry();if(e._locked)return;e._locked=true;e._wager=parseInt(document.getElementById('wager').value,10);saveEntry(e);const picks=Object.keys(e).filter(k=>!k.startsWith('_')&&e[k].winner).length;document.getElementById('game-result').innerHTML='<div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.3);border-radius:12px;padding:16px;font-size:13px;">🔒 Locked <b>'+picks+'</b> picks at '+e._wager+' coins each. Results settle after the card. <span style="color:var(--dim)">(Free-play demo — full leaderboard scoring lives in the community.)</span></div>';applyLockedUI();}
 
 /* ================= PROFILE ================= */
 function renderProfile(){
-  const email=localStorage.getItem('apex_email');
+  const email=window.__email;
   const isPro=!!getPro();
   document.getElementById('prof-name').textContent=email?email.split('@')[0]:'Guest';
   document.getElementById('profile-body').innerHTML=
@@ -612,14 +639,16 @@ function renderProfile(){
 
 /* ================= AUTH (soft gate + Stripe checkout) ================= */
 function updateAuthUI(){
-  const email=localStorage.getItem('apex_email'), isPro=!!getPro();
+  const email=window.__email, isPro=!!getPro();
   document.getElementById('rank-name').textContent=email?email.split('@')[0]:'Guest';
   document.getElementById('rank-sub').textContent=isPro?'PRO':'Unranked';
   document.getElementById('rank-sub').style.color=isPro?'var(--green)':'';
   const ab=document.getElementById('authBtn');
   if(isPro){ab.textContent='Sign out';ab.onclick=signOut;} else {ab.textContent='Sign in';ab.onclick=()=>openModal('login');}
+  const jb=document.getElementById('joinBtn'); if(jb)jb.style.display=isPro?'none':'';
+  const pb=document.getElementById('proBtn'); if(pb)pb.style.display=isPro?'none':'';
 }
-function signOut(){localStorage.removeItem('apex_pro');localStorage.removeItem('apex_email');updateAuthUI();loadBoard();renderProfile();}
+async function signOut(){try{await sb.auth.signOut();}catch(e){}localStorage.removeItem('apex_pro');localStorage.removeItem('apex_email');await refreshSession();updateAuthUI();loadBoard();renderProfile();}
 let modalMode='signup';
 function pickPlan(p){
   window.__plan=p;
@@ -644,21 +673,16 @@ async function handleAuth(){
   const btn=document.getElementById('m-btn');
   if(!email||!email.includes('@')){document.getElementById('m-email').style.borderColor='var(--red)';return;}
   if(modalMode==='login'){
-    btn.textContent='Checking…';btn.disabled=true;
+    btn.textContent='Sending…';btn.disabled=true;
     try{
-      const isPro=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})});
-      if(isPro===true){
-        localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);
-        try{ const c=await sbFetch('rpc/get_coins',{method:'POST',body:JSON.stringify({p_email:email})}); if(typeof c==='number'&&c>0)setCoins(c); }catch(e){}
-        closeModal();updateAuthUI();loadBoard();renderProfile();
-      }
-      else alert('No active Pro subscription found for that email.');
-    }catch(e){alert('Something went wrong. Please try again.');console.error(e);}
-    finally{btn.textContent='Sign In →';btn.disabled=false;}
+      const {error}=await sb.auth.signInWithOtp({email:email, options:{emailRedirectTo:location.origin}});
+      if(error) throw error;
+      document.getElementById('m-desc').textContent='Magic link sent to '+email+' — open it to sign in. (Check spam if it takes a minute.)';
+      btn.textContent='Link sent ✓';
+    }catch(e){alert('Could not send the sign-in link. Please try again in a minute.');console.error(e);btn.textContent='Sign In →';btn.disabled=false;}
   } else {
     btn.textContent='Loading…';btn.disabled=true;
     try{
-      localStorage.setItem('apex_email_pending',email);
       const r=await fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,plan:window.__plan||'monthly'})});
       const d=await r.json().catch(()=>({}));
       if(d.url){ window.location.href=d.url; return; }
@@ -672,23 +696,19 @@ async function handleAuth(){
   var cl=document.getElementById('communityLink'); if(cl)cl.href=COMMUNITY_URL;
   var jb=document.getElementById('joinBtn'); if(jb)jb.href=COMMUNITY_URL;
   setCoins(coins());
+  await refreshSession();
+  sb.auth.onAuthStateChange(async function(){ await refreshSession(); updateAuthUI(); loadBoard(); });
   const params=new URLSearchParams(location.search);
   if(params.get('success')==='true'){
-    const email=localStorage.getItem('apex_email_pending');
-    if(email){
-      for(let i=0;i<5 && !getPro();i++){
-        try{ const ok=await sbFetch('rpc/check_pro',{method:'POST',body:JSON.stringify({p_email:email})}); if(ok===true){localStorage.setItem('apex_pro','true');localStorage.setItem('apex_email',email);break;} }catch(e){}
-        await new Promise(r=>setTimeout(r,1500));
-      }
-      localStorage.removeItem('apex_email_pending');
-    }
     history.replaceState({},'','/');
-    alert('✓ Payment received — Pro unlocked. Welcome to Apex Fight IQ.');
+    alert('✓ Payment received! Now sign in with the same email — we\'ll send you a magic link that unlocks Pro.');
+    openModal('login');
   }
   updateAuthUI();
   loadBoard();
   startCountdown();
 })();
 </script>
+<!-- Apex Fight IQ v2 — server-gated pro picks -->
 </body>
 </html>
