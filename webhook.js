@@ -40,13 +40,17 @@ module.exports = async (req, res) => {
   try {
     if (event.type === 'checkout.session.completed') {
       const s = event.data.object;
-      await sbWrite('subscribers', 'POST', {
-        email: s.customer_email || (s.metadata && s.metadata.email),
-        stripe_customer_id: s.customer,
-        stripe_subscription_id: s.subscription,
-        tier: 'pro',
-        active: true,
-      });
+      const email = (s.customer_email || (s.metadata && s.metadata.email) || '').toLowerCase().trim();
+      if (email) {
+        // on_conflict=email: update the existing subscriber row instead of duplicating
+        await sbWrite('subscribers?on_conflict=email', 'POST', {
+          email,
+          stripe_customer_id: s.customer,
+          stripe_subscription_id: s.subscription,
+          tier: 'pro',
+          active: true,
+        });
+      }
     }
     if (event.type === 'customer.subscription.deleted') {
       const sub = event.data.object;
