@@ -444,12 +444,31 @@ function fightCardHTML(p, locked){
 }
 function azBar(name,pct,col){return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><div style="width:120px;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+name+'</div><div style="flex:1;height:8px;background:var(--panel2);border-radius:5px;overflow:hidden;"><div style="height:100%;width:'+pct.toFixed(0)+'%;background:'+col+';"></div></div><div class="mono" style="width:40px;text-align:right;font-size:12px;">'+pct.toFixed(0)+'%</div></div>';}
 function azGrid(rows){return '<div style="display:flex;flex-direction:column;gap:8px;">'+rows.map(function(r){return '<div style="display:flex;justify-content:space-between;font-size:12px;border-bottom:1px solid var(--line2);padding-bottom:6px;"><span style="color:var(--dim);">'+r[0]+'</span><span class="mono" style="color:var(--text);">'+r[1]+'</span></div>';}).join('')+'</div>';}
-function analyzerModal(id){
+async function analyzerModal(id){
   const p=(window.BOARD_MAP||{})[id]; if(!p)return;
   if(p.is_pro && !getPro()){ openModal('signup'); return; }
   const wa=Number(p.win_pct), wb=100-wa, mlA=amNum(wa/100), mlB=amNum(wb/100), ouLine=p.ou_line||2.5;
   const overP=(p.over_pct!=null)?Number(p.over_pct):null, pr=wa/100;
   const bank=Number(localStorage.getItem('apex_bank'))||1000;
+  let rA=null, rB=null;
+  try{
+    const rs=await sbFetch('fighter_ratings?fighter=in.('+encodeURIComponent('"'+p.fighter+'","'+p.opponent+'"')+')');
+    rs.forEach(function(x){ if(x.fighter===p.fighter)rA=x; if(x.fighter===p.opponent)rB=x; });
+  }catch(e){}
+  const eloProb=(rA&&rB)?(1/(1+Math.pow(10,((Number(rB.rating)-Number(rA.rating))/400)))):null;
+  const eloRows=getPro()?[['Apex Elo',(rA?Number(rA.rating).toFixed(0)+' ('+rA.wins+'-'+rA.losses+')':'—')+' vs '+(rB?Number(rB.rating).toFixed(0)+' ('+rB.wins+'-'+rB.losses+')':'—')],['Elo win prob',eloProb!=null?((eloProb*100).toFixed(0)+'% '+lastName(p.fighter)):'—']]:[];
+  let methodHTML='';
+  if(getPro()&&rA&&Number(rA.wins)>0){
+    const fr=Math.min(Math.max(Number(rA.finishes)/Math.max(Number(rA.wins),1),0.12),0.9);
+    const lean=(p.method||'').toLowerCase();
+    let ko=fr*0.6, sub=fr*0.4;
+    if(lean.indexOf('ko')>=0){ko=fr*0.72;sub=fr*0.28;}
+    else if(lean.indexOf('sub')>=0){ko=fr*0.28;sub=fr*0.72;}
+    const dec=Math.max(1-ko-sub,0.05);
+    methodHTML='<div style="margin-top:14px;"><div style="font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-bottom:8px;">Method of victory · '+p.fighter+' (est. from '+rA.wins+' career wins)</div>'+azBar('KO/TKO',ko*100,'var(--red)')+azBar('Submission',sub*100,'var(--blue)')+azBar('Decision',dec*100,'var(--gold)')+'</div>';
+  } else if(!getPro()){
+    methodHTML='<div style="margin-top:12px;font-size:11px;color:var(--dim);">🔒 Method-of-victory model + Elo ratings are Pro features.</div>';
+  }
   let edgeStr='no market line posted', evStr='—', kellyStr='—', verdict={t:'NO MARKET LINE',c:'var(--dim)',bg:'rgba(255,255,255,.04)'}, evShort='';
   if(p.book_odds!=null){
     const mi=implied(p.book_odds)*100, d=wa-mi; edgeStr=(d>=0?'+':'')+d.toFixed(1)+'% vs '+fmtAm(p.book_odds);
@@ -471,7 +490,8 @@ function analyzerModal(id){
     +'<div style="font-size:12px;color:var(--dim);margin-bottom:16px;">vs '+p.opponent+' · '+(p.weight_class||'')+'</div>'
     +'<div style="margin-bottom:14px;">'+azBar(p.fighter,wa,'var(--red)')+azBar(p.opponent,wb,'var(--blue)')+'</div>'
     +'<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:'+verdict.bg+';border:1px solid '+verdict.c+';border-radius:10px;padding:10px 14px;margin-bottom:14px;"><span style="font-weight:800;font-size:13px;color:'+verdict.c+';">'+verdict.t+'</span><span class="mono" style="font-size:12px;color:var(--dim);">EV '+(evShort||'—')+'</span></div>'
-    +azGrid([['AI Moneyline',fmtAm(mlA)+' / '+fmtAm(mlB)],['Market price',p.book_odds!=null?fmtAm(p.book_odds):'—'],['Market edge',edgeStr],['Expected value',evStr],['Bet size (¼-Kelly)',kellyStr],['Method lean',p.method||'—'],['Confidence',(p.tier||'').toUpperCase()],['Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—']])
+    +azGrid([['AI Moneyline',fmtAm(mlA)+' / '+fmtAm(mlB)],['Market price',p.book_odds!=null?fmtAm(p.book_odds):'—'],['Market edge',edgeStr],['Expected value',evStr],['Bet size (¼-Kelly)',kellyStr],['Method lean',p.method||'—'],['Confidence',(p.tier||'').toUpperCase()],['Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—']].concat(eloRows))
+    +methodHTML
     +'<div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:var(--dim);">Bankroll $<input id="azBank" type="number" min="0" value="'+bank+'" onchange="localStorage.setItem(\'apex_bank\',this.value||1000);analyzerModal(\''+id+'\')" style="width:92px;padding:5px 8px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:6px;font-size:12px;"><span>· stake uses ¼-Kelly</span></div>'
     +'<div style="font-size:10px;color:var(--faint);margin-top:12px;line-height:1.6;">EV = expected profit per $100 at the current price. ¼-Kelly sizes bets conservatively off your bankroll. Model output, not betting advice — 21+, bet responsibly.</div>'
     +'</div>';
@@ -510,7 +530,14 @@ async function loadBoard(){
     } else {
       topHTML='<div class="grouptitle">⚡ Top Plays — best value</div><div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--dim);margin-bottom:8px;line-height:1.6;">No +EV plays on this card — the model agrees with the market right now. Passing is a position too; check back as lines move.</div>';
     }
-    list.innerHTML=topHTML+html; updateAuthUI();
+    let parlayHTML='';
+    if(pro){
+      const legs=all.filter(function(pk){return pk.book_odds!=null;});
+      if(legs.length>1){
+        parlayHTML='<div class="grouptitle">🎰 Parlay builder — Pro</div><div class="fight" style="padding:14px 18px;"><div id="parlay-legs" style="display:flex;flex-direction:column;gap:6px;">'+legs.map(function(pk){return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;"><input type="checkbox" onchange="parlayCalc()" data-bid="'+pk._bid+'" style="accent-color:var(--red);"> '+pk.fighter+' <span style="color:var(--faint);font-size:11px;">('+Number(pk.win_pct).toFixed(0)+'% · '+fmtAm(pk.book_odds)+')</span></label>';}).join('')+'</div><div id="parlay-out" style="margin-top:12px;font-size:13px;color:var(--dim);">Select 2+ legs to price a parlay.</div></div>';
+      }
+    }
+    list.innerHTML=topHTML+html+parlayHTML; updateAuthUI();
   }catch(e){
     document.getElementById('board-event').textContent='UFC 329 (offline sample)';
     const sm=[{fighter:'Gable Steveson',opponent:'Elisha Ellison',weight_class:'Heavyweight',billing:'Prelims',win_pct:97,book_odds:-3300,ou_line:1.5,over_pct:25,method:'KO/TKO',tier:'lock'},{fighter:'Luke Riley',opponent:'Kai Kamaka III',weight_class:'Featherweight',billing:'Prelims',win_pct:77,book_odds:-300,ou_line:2.5,over_pct:55,method:'Decision',tier:'lean'}];
@@ -519,6 +546,16 @@ async function loadBoard(){
   }
 }
 function tickerFrom(picks){const t=picks.map(p=>'<span class="tk"><b>'+lastName(p.fighter).toUpperCase()+'</b> <span class="fav">'+fmtAm(amNum(Number(p.win_pct)/100))+'</span></span>');return t.concat(t).join('');}
+function parlayCalc(){
+  const out=document.getElementById('parlay-out'); if(!out)return;
+  const sel=[].slice.call(document.querySelectorAll('#parlay-legs input:checked')).map(function(cb){return (window.BOARD_MAP||{})[cb.getAttribute('data-bid')];}).filter(Boolean);
+  if(sel.length<2){ out.innerHTML='Select 2+ legs to price a parlay.'; return; }
+  let prob=1, mult=1;
+  sel.forEach(function(pk){ prob*=Number(pk.win_pct)/100; mult*=decOdds(Number(pk.book_odds)); });
+  const ev=(prob*mult-1)*100;
+  const fairAm=amNum(Math.min(Math.max(prob,0.02),0.98));
+  out.innerHTML='<b>'+sel.length+'-leg parlay:</b> model probability <b class="mono">'+(prob*100).toFixed(1)+'%</b> (fair '+fmtAm(fairAm)+') · book pays <b class="mono">'+mult.toFixed(2)+'x</b> · EV <b class="mono" style="color:'+(ev>=0?'var(--green)':'var(--red)')+'">'+(ev>=0?'+':'')+ev.toFixed(1)+'%</b><div style="font-size:10px;color:var(--faint);margin-top:6px;">Correlated outcomes are not modeled. Model output, not betting advice — 21+.</div>';
+}
 
 /* ================= TOURNAMENT (free-play, local) ================= */
 function coins(){return parseInt(localStorage.getItem('apex_coins')||'1000',10);}
