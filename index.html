@@ -18,6 +18,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Apex Fight IQ","applicationCategory":"SportsApplication","operatingSystem":"Web","url":"https://apex-fight-iq.vercel.app/","description":"AI UFC odds board with moneyline, totals and market edge, plus a publicly graded pick record.","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -198,6 +199,12 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
       <div class="crumb">Apex AI · UFC Odds · <b id="board-event">Fight Lines</b><span id="board-countdown" class="mono" style="float:right;font-size:11px;color:var(--gold);letter-spacing:.5px;"></span></div>
       <div class="viewhead"><h1 id="board-title">AI Odds Board</h1><div class="sub" style="max-width:340px;text-align:right;">The model as oddsmaker — moneyline &amp; totals, independent of Vegas.</div></div>
       <div id="board-list"><div style="padding:40px;text-align:center;color:var(--dim);">Loading fights…</div></div>
+      <div class="community" style="margin-top:26px;text-align:left;">
+        <h2 style="font-size:22px;">Free pick in your inbox, every card</h2>
+        <p style="margin-bottom:12px;">One email per event — the model's best free play plus the full board. No spam, unsubscribe anytime.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><input id="fl-email" class="minput" type="email" style="margin:0;max-width:260px;" placeholder="your@email.com"><button class="btn btn-red" onclick="freeListSignup()">Get free picks</button></div>
+        <div id="fl-msg" style="font-size:11px;color:var(--dim);margin-top:8px;"></div>
+      </div>
     </section>
 
     <!-- RECORD -->
@@ -555,6 +562,18 @@ function parlayCalc(){
   const ev=(prob*mult-1)*100;
   const fairAm=amNum(Math.min(Math.max(prob,0.02),0.98));
   out.innerHTML='<b>'+sel.length+'-leg parlay:</b> model probability <b class="mono">'+(prob*100).toFixed(1)+'%</b> (fair '+fmtAm(fairAm)+') · book pays <b class="mono">'+mult.toFixed(2)+'x</b> · EV <b class="mono" style="color:'+(ev>=0?'var(--green)':'var(--red)')+'">'+(ev>=0?'+':'')+ev.toFixed(1)+'%</b><div style="font-size:10px;color:var(--faint);margin-top:6px;">Correlated outcomes are not modeled. Model output, not betting advice — 21+.</div>';
+}
+async function freeListSignup(){
+  const el=document.getElementById('fl-email'); const msg=document.getElementById('fl-msg');
+  const email=(el.value||'').trim();
+  if(!email||email.indexOf('@')<0){ el.style.borderColor='var(--red)'; return; }
+  try{
+    await sbFetch('free_signups',{method:'POST',headers:{'Prefer':'return=minimal'},body:JSON.stringify({email:email,source:'board'})});
+    msg.textContent='✓ You\'re on the list — first pick lands on fight week.'; el.value='';
+  }catch(e){
+    if(String(e).indexOf('duplicate')>=0||String(e).indexOf('23505')>=0){ msg.textContent='✓ You\'re already on the list.'; }
+    else { msg.textContent='Could not sign you up — please try again.'; console.error(e); }
+  }
 }
 
 /* ================= TOURNAMENT (free-play, local) ================= */
