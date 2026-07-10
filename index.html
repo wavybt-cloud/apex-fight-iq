@@ -185,6 +185,7 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
     <div class="side-link active" data-view="board" onclick="showView('board')"><span class="ic">📊</span> Fights</div>
     <div class="side-link" data-view="record" onclick="showView('record')"><span class="ic">🏆</span> Track Record</div>
     <div class="side-link" data-view="game" onclick="showView('game')"><span class="ic">🎯</span> Tournament</div>
+    <div class="side-link" data-view="markets" onclick="showView('markets')"><span class="ic">📈</span> Markets</div>
     <div class="side-link" data-view="profile" onclick="showView('profile')"><span class="ic">👤</span> Profile</div>
     <div class="side-group">Info</div>
     <div class="side-link" data-view="pricing" onclick="showView('pricing')"><span class="ic">⭐</span> Go Pro</div>
@@ -213,6 +214,13 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
       <div class="crumb">Apex AI · <b>Tournament</b></div>
       <div class="viewhead"><h1>Pick'em Tournament</h1><div class="sub">Free-play · coins only</div></div>
       <div id="game-body"></div>
+    </section>
+
+    <!-- MARKETS -->
+    <section class="view" id="view-markets">
+      <div class="crumb">Apex AI · <b>Markets</b></div>
+      <div class="viewhead"><h1>Fight Markets</h1><div class="sub">Crowd-priced YES/NO markets · free-play coins only</div></div>
+      <div id="markets-body"></div>
     </section>
 
     <!-- PROFILE -->
@@ -306,9 +314,10 @@ async function refreshSession(){
   const {data:{session}} = await sb.auth.getSession();
   window.__session = session || null;
   window.__email = session ? session.user.email : null;
-  window.__isPro = false;
+  window.__isPro = false; window.__isAdmin = false;
   if(session){
     try{ window.__isPro = (await sbFetch('rpc/is_pro_me',{method:'POST',body:'{}'})) === true; }catch(e){}
+    try{ window.__isAdmin = (await sbFetch('rpc/is_admin',{method:'POST',body:'{}'})) === true; }catch(e){}
     try{ const c = await sbFetch('rpc/coins_me',{method:'POST',body:'{}'}); if(typeof c==='number'&&c>0)setCoins(c); }catch(e){}
   }
 }
@@ -337,6 +346,7 @@ function showView(name){
   window.scrollTo({top:0,behavior:'smooth'});
   if(name==='record') loadRecord();
   if(name==='game') renderGame();
+  if(name==='markets') renderMarkets();
   if(name==='profile') renderProfile();
 }
 
@@ -623,6 +633,47 @@ async function gradePick(id,result){
 function pickWinner(id,side,btn){if(getEntry()._locked)return;const e=getEntry();e[id]=e[id]||{};e[id].winner=side;saveEntry(e);document.querySelectorAll('[data-fx="'+id+'"]').forEach(b=>b.classList.remove('ai'));btn.classList.add('ai');}
 function pickMethod(id,m){if(getEntry()._locked)return;const e=getEntry();e[id]=e[id]||{};e[id].method=m||undefined;saveEntry(e);}
 function lockEntry(){const e=getEntry();if(e._locked)return;e._locked=true;e._wager=parseInt(document.getElementById('wager').value,10);saveEntry(e);const picks=Object.keys(e).filter(k=>!k.startsWith('_')&&e[k].winner).length;document.getElementById('game-result').innerHTML='<div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.3);border-radius:12px;padding:16px;font-size:13px;">🔒 Locked <b>'+picks+'</b> picks at '+e._wager+' coins each. Results settle after the card. <span style="color:var(--dim)">(Free-play demo — full leaderboard scoring lives in the community.)</span></div>';applyLockedUI();}
+
+/* ================= MARKETS (play-money prediction market) ================= */
+async function renderMarkets(){
+  const body=document.getElementById('markets-body'); if(!body)return;
+  let mkts=[]; try{ mkts=await sbFetch('markets_live?status=eq.open&order=id.asc'); }catch(e){ body.innerHTML='<div style="color:var(--faint);padding:14px;">Could not load markets.</div>'; return; }
+  if(!mkts.length){ body.innerHTML='<div style="color:var(--faint);padding:14px;">No open markets right now — check back on fight week.</div>'; return; }
+  let bal=null, pos={};
+  if(window.__email){
+    try{ const w=await sbFetch('rpc/market_wallet_me',{method:'POST',body:'{}'}); if(w&&w.ok)bal=Number(w.coins); }catch(e){}
+    try{ (await sbFetch('market_positions?select=market_id,yes_shares,no_shares,spent')).forEach(function(p){pos[p.market_id]=p;}); }catch(e){}
+  }
+  body.innerHTML=
+    '<div class="community" style="text-align:left;margin-bottom:18px;"><h2 style="font-size:24px;">Trade the Card</h2><p style="margin:0;">Buy YES or NO shares on each fight with market coins. Prices move with demand — each winning share pays 100 coins after the card. Free-play only, no cash value.'+(window.__email?(' Balance: <b style="color:var(--gold)">'+(bal==null?'—':Number(bal).toFixed(0))+'</b> coins.'):' Sign in to trade.')+'</p></div>'+
+    mkts.map(function(m){
+      const pc=Math.round(Number(m.price_yes)*100);
+      const p=pos[m.id];
+      return '<div class="fight" style="padding:14px 18px;"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">'+
+        '<div style="min-width:0;"><div style="font-weight:700;font-size:14px;">'+m.question+'</div><div class="fsub" style="margin-top:3px;">'+m.event_name+(p?(' · you hold '+Number(p.yes_shares).toFixed(1)+' YES / '+Number(p.no_shares).toFixed(1)+' NO'):'')+'</div></div>'+
+        '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">'+
+          '<span class="mono" style="font-size:16px;font-weight:800;color:var(--gold);">'+pc+'¢</span>'+
+          '<input id="mq-'+m.id+'" type="number" min="1" max="100" value="5" title="shares" style="width:58px;padding:6px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:6px;font-size:12px;">'+
+          '<button class="fbtn" style="border-color:rgba(16,185,129,.5);color:var(--green);" onclick="marketBuy('+m.id+',\'yes\')">'+(m.yes_label||'YES')+' '+pc+'¢</button>'+
+          '<button class="fbtn" style="border-color:rgba(59,130,246,.5);color:var(--blue);" onclick="marketBuy('+m.id+',\'no\')">'+(m.no_label||'NO')+' '+(100-pc)+'¢</button>'+
+          (window.__isAdmin?('<span style="display:inline-flex;gap:4px;"><button class="fbtn" onclick="marketResolve('+m.id+',\'yes\')">✓Y</button><button class="fbtn" onclick="marketResolve('+m.id+',\'no\')">✓N</button><button class="fbtn" onclick="marketResolve('+m.id+',\'void\')">∅</button></span>'):'')+
+        '</div></div></div>';
+    }).join('')+
+    '<div style="font-size:10px;color:var(--faint);margin-top:12px;line-height:1.6;">Play-money market for entertainment. Coins have no cash value and cannot be bought, sold or withdrawn. Prices are crowd forecasts, not betting odds. 21+, please play responsibly.</div>';
+}
+async function marketBuy(id,side){
+  if(!window.__email){ openModal('login'); return; }
+  const q=Number((document.getElementById('mq-'+id)||{}).value)||5;
+  try{
+    const r=await sbFetch('rpc/market_buy',{method:'POST',body:JSON.stringify({p_market:id,p_side:side,p_shares:q})});
+    if(r&&r.ok){ renderMarkets(); } else { alert((r&&r.error)||'Trade failed'); }
+  }catch(e){ alert('Trade failed — please try again.'); console.error(e); }
+}
+async function marketResolve(id,outcome){
+  if(!confirm('Resolve market #'+id+' as '+outcome.toUpperCase()+'? Payouts are sent immediately.'))return;
+  try{ const r=await sbFetch('rpc/market_resolve',{method:'POST',body:JSON.stringify({p_market:id,p_outcome:outcome})}); alert(r==='ok'?'Resolved — payouts sent.':('Failed: '+r)); renderMarkets(); }
+  catch(e){ alert('Resolve failed.'); console.error(e); }
+}
 
 /* ================= PROFILE ================= */
 function renderProfile(){
