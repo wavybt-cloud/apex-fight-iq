@@ -575,10 +575,10 @@ async function loadBoard(){
     if(pro){
       const legs=all.filter(function(pk){return pk.book_odds!=null;});
       if(legs.length>1){
-        parlayHTML='<div class="grouptitle">🎰 AI Best Parlays — Pro</div>'+bestParlaysHTML(legs)+'<div class="grouptitle" style="margin-top:18px;">🔧 Build Your Own — Pro</div><div class="fight" style="padding:14px 18px;"><div id="parlay-legs" style="display:flex;flex-direction:column;gap:6px;">'+legs.map(function(pk){return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;"><input type="checkbox" onchange="parlayCalc()" data-bid="'+pk._bid+'" style="accent-color:var(--red);"> '+pk.fighter+' <span style="color:var(--faint);font-size:11px;">('+Number(pk.win_pct).toFixed(0)+'% · '+fmtAm(pk.book_odds)+')</span></label>';}).join('')+'</div><div id="parlay-out" style="margin-top:12px;font-size:13px;color:var(--dim);">Select 2+ legs to price a parlay.</div></div>';
+        parlayHTML='<div class="grouptitle">🎰 AI Best Parlays — Pro</div>'+bestParlaysHTML(legs)+'<div class="grouptitle" style="margin-top:18px;">🔧 Build Your Own — Pro</div><div class="fight" style="padding:14px 18px;"><div id="parlay-legs" style="display:flex;flex-direction:column;gap:6px;">'+legs.map(function(pk){return '<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;"><input type="checkbox" onchange="parlayCalc()" data-bid="'+pk._bid+'" style="accent-color:var(--red);"> '+pk.fighter+' <span style="color:var(--faint);font-size:11px;">('+Number(pk.win_pct).toFixed(0)+'% · '+fmtAm(pk.book_odds)+')</span></label>';}).join('')+'</div><div id="parlay-out" style="margin-top:12px;font-size:13px;color:var(--dim);">Select 2+ legs to price a parlay.</div></div><div id="logged-parlays"></div>';
       }
     }
-    list.innerHTML=topHTML+html+parlayHTML; updateAuthUI();
+    list.innerHTML=topHTML+html+parlayHTML; updateAuthUI(); if(pro) renderLoggedParlays();
   }catch(e){
     document.getElementById('board-event').textContent='UFC 329 (offline sample)';
     const sm=[{fighter:'Gable Steveson',opponent:'Elisha Ellison',weight_class:'Heavyweight',billing:'Prelims',win_pct:97,book_odds:-3300,ou_line:1.5,over_pct:25,method:'KO/TKO',tier:'lock'},{fighter:'Luke Riley',opponent:'Kai Kamaka III',weight_class:'Featherweight',billing:'Prelims',win_pct:77,book_odds:-300,ou_line:2.5,over_pct:55,method:'Decision',tier:'lean'}];
@@ -590,7 +590,7 @@ function tickerFrom(picks){const t=picks.map(p=>'<span class="tk"><b>'+lastName(
 function decToAm(d){ return d>=2?('+'+Math.round((d-1)*100)):(''+Math.round(-100/(d-1))); }
 function bestParlaysHTML(legs){
   const L=legs.slice().sort(function(a,b){return Number(b.win_pct)-Number(a.win_pct);}).slice(0,8)
-    .map(function(pk){return {last:lastName(pk.fighter), p:Number(pk.win_pct)/100, dec:decOdds(Number(pk.book_odds))};});
+    .map(function(pk){return {last:lastName(pk.fighter), name:pk.fighter, opp:pk.opponent, p:Number(pk.win_pct)/100, dec:decOdds(Number(pk.book_odds))};});
   if(L.length<2) return '';
   const combos=[];
   function add(idx){ let prob=1,mult=1; idx.forEach(function(i){prob*=L[i].p; mult*=L[i].dec;}); combos.push({idx:idx.slice(),n:idx.length,prob:prob,mult:mult,ev:(prob*mult-1)*100,names:idx.map(function(i){return L[i].last;})}); }
@@ -606,15 +606,41 @@ function bestParlaysHTML(legs){
   push('SAFEST','Highest combined win probability',safe);
   push('BEST VALUE','Top expected value on the card',value);
   push('LONGSHOT','Biggest payout, still model-backed',longshot);
-  return '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:6px;">'+picks.map(function(x){
+  window.PARLAY_MAP={};
+  return '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:6px;">'+picks.map(function(x,pi){
     const c=x.c; const col=c.ev>=5?'var(--green)':c.ev>=0?'var(--gold)':'var(--red)';
-    return '<div style="background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:13px 15px;">'
+    const pid='p'+pi;
+    window.PARLAY_MAP[pid]={event:EVENT_NAME, kind:x.label, prob:Number(c.prob.toFixed(4)), mult:Number(c.mult.toFixed(3)), legs:c.idx.map(function(i){return {fighter:L[i].name, opponent:L[i].opp};})};
+    return '<div style="background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:13px 15px;display:flex;flex-direction:column;">'
       +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:9px;font-weight:800;letter-spacing:1px;color:'+col+';">'+x.label+' · '+c.n+'-LEG</span><span class="mono" style="font-size:15px;font-weight:800;color:var(--gold);">'+decToAm(c.mult)+'</span></div>'
       +'<div style="font-size:13px;font-weight:700;line-height:1.5;">'+c.names.join(' <span style="color:var(--faint)">+</span> ')+'</div>'
       +'<div style="font-size:10px;color:var(--faint);margin:6px 0 8px;">'+x.sub+'</div>'
-      +'<div style="display:flex;justify-content:space-between;font-size:11px;"><span class="mono" style="color:var(--dim);">'+(c.prob*100).toFixed(0)+'% model</span><span class="mono" style="color:'+col+';font-weight:800;">EV '+(c.ev>=0?'+':'')+c.ev.toFixed(1)+'%</span></div>'
+      +'<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:10px;"><span class="mono" style="color:var(--dim);">'+(c.prob*100).toFixed(0)+'% model</span><span class="mono" style="color:'+col+';font-weight:800;">EV '+(c.ev>=0?'+':'')+c.ev.toFixed(1)+'%</span></div>'
+      +'<button class="fbtn" id="logbtn-'+pid+'" style="margin-top:auto;border-color:'+col+';color:var(--text);" onclick="logParlay(\''+pid+'\')">+ Log it</button>'
       +'</div>';
-  }).join('')+'</div><div style="font-size:10px;color:var(--faint);margin-bottom:4px;">Auto-built from the model\'s picks vs the posted lines. Correlated outcomes not modeled. Model output, not betting advice — 21+.</div>';
+  }).join('')+'</div><div style="font-size:10px;color:var(--faint);margin-bottom:4px;">Auto-built from the model\'s picks vs the posted lines. Log any parlay to track it — it grades itself after the card. Not betting advice — 21+.</div>';
+}
+async function logParlay(id){
+  if(!window.__email){ openModal('login'); return; }
+  const p=(window.PARLAY_MAP||{})[id]; if(!p) return;
+  const btn=document.getElementById('logbtn-'+id);
+  if(btn){ btn.textContent='Logging…'; btn.disabled=true; }
+  try{
+    const r=await sbFetch('rpc/log_parlay',{method:'POST',body:JSON.stringify({p_event:p.event,p_legs:p.legs,p_prob:p.prob,p_mult:p.mult,p_kind:p.kind})});
+    if(r&&r.ok){ if(btn){ btn.textContent='✓ Logged'; } renderLoggedParlays(); }
+    else { if(btn){ btn.textContent='+ Log it'; btn.disabled=false; } alert((r&&r.error)||'Could not log'); }
+  }catch(e){ if(btn){ btn.textContent='+ Log it'; btn.disabled=false; } alert('Could not log parlay — try again.'); }
+}
+async function renderLoggedParlays(){
+  const box=document.getElementById('logged-parlays'); if(!box) return;
+  let rows=[]; try{ rows=await sbFetch('logged_parlays?order=created_at.desc&limit=25'); }catch(e){}
+  if(!rows||!rows.length){ box.innerHTML=''; return; }
+  box.innerHTML='<div class="grouptitle" style="margin-top:18px;">📒 Your Logged Parlays</div>'+rows.map(function(r){
+    const col=r.status==='won'?'var(--green)':r.status==='lost'?'var(--red)':'var(--gold)';
+    const badge=r.status==='won'?'✓ WON':r.status==='lost'?'✗ LOST':'PENDING';
+    const names=(r.legs||[]).map(function(l){return lastName(l.fighter);}).join(' + ');
+    return '<div class="fight" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;"><div style="min-width:0;"><div style="font-size:13px;font-weight:700;">'+names+'</div><div class="fsub" style="margin-top:2px;">'+r.kind+' · '+r.n_legs+'-leg · '+decToAm(Number(r.combined_mult))+' · '+Math.round(Number(r.combined_prob)*100)+'% model</div></div><div style="font-weight:800;font-size:11px;color:'+col+';">'+badge+'</div></div>';
+  }).join('');
 }
 function parlayCalc(){
   const out=document.getElementById('parlay-out'); if(!out)return;
