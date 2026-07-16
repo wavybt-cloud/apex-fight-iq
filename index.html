@@ -484,7 +484,8 @@ async function analyzerModal(id){
     evShort=(ev>=0?'+':'')+ev.toFixed(1)+'%';
     evStr=evShort+'  ($'+ev.toFixed(2)+' per $100)';
     kellyStr=f>0?('$'+stake.toFixed(2)+'  ·  '+(f*25).toFixed(1)+'% of roll'):'no bet — ¼-Kelly = 0';
-    if(ev>=3){verdict={t:'✅ VALUE BET',c:'var(--green)',bg:'rgba(16,185,129,.10)'};}
+    if(Math.abs(d)>15){verdict={t:'⚠ OUTSIDE MARKET · MODEL UNCERTAIN',c:'var(--gold)',bg:'rgba(240,185,66,.10)'};evShort='—';evStr='— (model '+d.toFixed(0)+'pt off market)';kellyStr='no bet — model disagrees with the market by too much to trust';}
+    else if(ev>=3){verdict={t:'✅ VALUE BET',c:'var(--green)',bg:'rgba(16,185,129,.10)'};}
     else if(ev>=0){verdict={t:'◎ THIN EDGE',c:'var(--gold)',bg:'rgba(240,185,66,.10)'};}
     else {verdict={t:'⛔ NO VALUE · PASS',c:'var(--red)',bg:'rgba(232,25,44,.08)'};}
   }
@@ -562,7 +563,8 @@ async function loadBoard(){
       html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
     const evOf=function(p){if(p.book_odds==null)return null;const b=decOdds(Number(p.book_odds))-1,pr=Number(p.win_pct)/100;return (pr*b-(1-pr))*100;};
-    const plays=all.filter(p=>!(p.is_pro&&!pro)).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null&&x.ev>=0).sort((a,b)=>b.ev-a.ev).slice(0,3);
+    const consensusOk=function(p){if(p.book_odds==null)return false;return Math.abs(Number(p.win_pct)-implied(p.book_odds)*100)<=15;};
+    const plays=all.filter(p=>!(p.is_pro&&!pro)).filter(consensusOk).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null&&x.ev>=0).sort((a,b)=>b.ev-a.ev).slice(0,3);
     let topHTML='';
     if(plays.length){
       topHTML='<div class="grouptitle">⚡ Top Plays — best value'+(getPro()?'':' (free picks)')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:8px;">'+
