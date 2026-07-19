@@ -591,36 +591,48 @@ async function loadBoard(){
 function tickerFrom(picks){const t=picks.map(p=>'<span class="tk"><b>'+lastName(p.fighter).toUpperCase()+'</b> <span class="fav">'+fmtAm(amNum(Number(p.win_pct)/100))+'</span></span>');return t.concat(t).join('');}
 function decToAm(d){ return d>=2?('+'+Math.round((d-1)*100)):(''+Math.round(-100/(d-1))); }
 function bestParlaysHTML(legs){
-  const L=legs.slice().sort(function(a,b){return Number(b.win_pct)-Number(a.win_pct);}).slice(0,8)
-    .map(function(pk){return {last:lastName(pk.fighter), name:pk.fighter, opp:pk.opponent, p:Number(pk.win_pct)/100, dec:decOdds(Number(pk.book_odds))};});
+  // candidate legs: best side per fight (ML always; totals when totals odds are posted)
+  const pool=[];
+  legs.forEach(function(pk){
+    pool.push({fid:pk._bid, kind:'ml', label:lastName(pk.fighter)+' ML ('+fmtAm(pk.book_odds)+')', p:Number(pk.win_pct)/100, dec:decOdds(Number(pk.book_odds)), fighter:pk.fighter, opponent:pk.opponent});
+    if(pk.over_pct!=null&&pk.ou_line!=null){
+      const overSide=Number(pk.over_pct)>=50;
+      const o=overSide?pk.over_odds:pk.under_odds;
+      if(o!=null){ pool.push({fid:pk._bid, kind:'total', label:(overSide?'Over ':'Under ')+pk.ou_line+' — '+lastName(pk.fighter)+' fight ('+fmtAm(o)+')', p:overSide?Number(pk.over_pct)/100:(1-Number(pk.over_pct)/100), dec:decOdds(Number(o)), fighter:pk.fighter, opponent:pk.opponent}); }
+    }
+  });
+  const L=pool.sort(function(a,b){return b.p-a.p;}).slice(0,12);
   if(L.length<2) return '';
   const combos=[];
-  function add(idx){ let prob=1,mult=1; idx.forEach(function(i){prob*=L[i].p; mult*=L[i].dec;}); combos.push({idx:idx.slice(),n:idx.length,prob:prob,mult:mult,ev:(prob*mult-1)*100,names:idx.map(function(i){return L[i].last;})}); }
-  for(let i=0;i<L.length;i++)for(let j=i+1;j<L.length;j++){ add([i,j]); for(let k=j+1;k<L.length;k++){ add([i,j,k]); } }
+  function add(idx){
+    const fids={};
+    for(let q=0;q<idx.length;q++){ if(fids[L[idx[q]].fid]) return; fids[L[idx[q]].fid]=1; }
+    let prob=1,mult=1; idx.forEach(function(i){prob*=L[i].p;mult*=L[i].dec;});
+    combos.push({idx:idx.slice(),n:idx.length,prob:prob,mult:mult,ev:(prob*mult-1)*100,names:idx.map(function(i){return L[i].label;})});
+  }
+  for(let i=0;i<L.length;i++)for(let j=i+1;j<L.length;j++){ add([i,j]); for(let k=j+1;k<L.length;k++){ add([i,j,k]); for(let l=k+1;l<L.length;l++){ add([i,j,k,l]); } } }
   if(!combos.length) return '';
-  const byEV=combos.slice().sort(function(a,b){return b.ev-a.ev;});
   const safe=combos.filter(function(c){return c.n===2;}).sort(function(a,b){return b.prob-a.prob;})[0];
-  const value=byEV.find(function(c){return c.n===2||c.n===3;});
-  const threeLeg=combos.filter(function(c){return c.n===3;}).sort(function(a,b){return b.mult-a.mult;});
-  const longshot=threeLeg.find(function(c){return c.ev>-8;})||threeLeg[0];
+  const slip=combos.filter(function(c){return c.n>=3&&c.mult>=3.2&&c.mult<=5.5;}).sort(function(a,b){return b.prob-a.prob;})[0];
+  const value=combos.slice().sort(function(a,b){return b.ev-a.ev;}).find(function(c){return c.n<=3;});
   const picks=[]; const seen={};
-  function push(label,sub,c){ if(!c)return; const key=label+c.idx.join('-'); if(seen[key])return; seen[key]=1; picks.push({label:label,sub:sub,c:c}); }
+  function push(label,sub,c){ if(!c)return; const key=c.idx.join('-'); if(seen[key])return; seen[key]=1; picks.push({label:label,sub:sub,c:c}); }
   push('SAFEST','Highest combined win probability',safe);
-  push('BEST VALUE','Top expected value on the card',value);
-  push('LONGSHOT','Biggest payout, still model-backed',longshot);
+  push('THE SLIP','3-4 likely legs, +220 to +450 payout — built like a winning ticket',slip);
+  push('BEST VALUE','Top expected value combination',value);
   window.PARLAY_MAP={};
-  return '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-bottom:6px;">'+picks.map(function(x,pi){
+  return '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-bottom:6px;">'+picks.map(function(x,pi){
     const c=x.c; const col=c.ev>=5?'var(--green)':c.ev>=0?'var(--gold)':'var(--red)';
     const pid='p'+pi;
-    window.PARLAY_MAP[pid]={event:EVENT_NAME, kind:x.label, prob:Number(c.prob.toFixed(4)), mult:Number(c.mult.toFixed(3)), legs:c.idx.map(function(i){return {fighter:L[i].name, opponent:L[i].opp};})};
+    window.PARLAY_MAP[pid]={event:EVENT_NAME, kind:x.label, prob:Number(c.prob.toFixed(4)), mult:Number(c.mult.toFixed(3)), legs:c.idx.map(function(i){return {fighter:L[i].fighter, opponent:L[i].opponent, leg:L[i].label};})};
     return '<div style="background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:13px 15px;display:flex;flex-direction:column;">'
       +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:9px;font-weight:800;letter-spacing:1px;color:'+col+';">'+x.label+' · '+c.n+'-LEG</span><span class="mono" style="font-size:15px;font-weight:800;color:var(--gold);">'+decToAm(c.mult)+'</span></div>'
-      +'<div style="font-size:13px;font-weight:700;line-height:1.5;">'+c.names.join(' <span style="color:var(--faint)">+</span> ')+'</div>'
+      +'<div style="font-size:12px;font-weight:700;line-height:1.7;">'+c.names.join('<br>')+'</div>'
       +'<div style="font-size:10px;color:var(--faint);margin:6px 0 8px;">'+x.sub+'</div>'
       +'<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:10px;"><span class="mono" style="color:var(--dim);">'+(c.prob*100).toFixed(0)+'% model</span><span class="mono" style="color:'+col+';font-weight:800;">EV '+(c.ev>=0?'+':'')+c.ev.toFixed(1)+'%</span></div>'
       +'<button class="fbtn" id="logbtn-'+pid+'" style="margin-top:auto;border-color:'+col+';color:var(--text);" onclick="logParlay(\''+pid+'\')">+ Log it</button>'
       +'</div>';
-  }).join('')+'</div><div style="font-size:10px;color:var(--faint);margin-bottom:4px;">Auto-built from the model\'s picks vs the posted lines. Log any parlay to track it — it grades itself after the card. Not betting advice — 21+.</div>';
+  }).join('')+'</div><div style="font-size:10px;color:var(--faint);margin-bottom:4px;">Mixes moneylines and round totals when totals odds are posted. One leg per fight, max 4 legs. Log any parlay to track it — grades itself after the card. Not betting advice — 21+.</div>';
 }
 async function logParlay(id){
   if(!window.__email){ openModal('login'); return; }
