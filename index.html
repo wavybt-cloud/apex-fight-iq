@@ -294,9 +294,9 @@ footer{border-top:1px solid var(--line);padding:26px;text-align:center;color:var
 /* ================= CONFIG ================= */
 const SUPABASE_URL = 'https://whhbvglvtkqizfllxgtf.supabase.co';
 const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndoaGJ2Z2x2dGtxaXpmbGx4Z3RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI1ODM3ODEsImV4cCI6MjA5ODE1OTc4MX0.u1EM3q_FvLwPN_rulFNrTzfKAodUA74P4js748PV8i8';
-const EVENT_NAME    = 'UFC 329';
+const EVENT_NAME    = 'UFC Abu Dhabi';
 const COMMUNITY_URL = 'https://whop.com/';   // <-- your Whop/Discord invite
-const EVENT_DATE    = '2026-07-11T18:00:00-07:00'; // UFC 329 main card (PT) — used for countdown
+const EVENT_DATE    = '2026-07-25T15:00:00-04:00'; // UFC Abu Dhabi main card (ET) — used for countdown
 
 const getPro = () => localStorage.getItem('apex_pro') === 'true';
 async function sbFetch(path, opts={}) {
@@ -499,7 +499,7 @@ async function loadBoard(){
     }
     list.innerHTML=topHTML+html; updateAuthUI();
   }catch(e){
-    document.getElementById('board-event').textContent='UFC 329 (offline sample)';
+    document.getElementById('board-event').textContent='UFC Abu Dhabi (offline sample)';
     const sm=[{fighter:'Gable Steveson',opponent:'Elisha Ellison',weight_class:'Heavyweight',billing:'Prelims',win_pct:97,book_odds:-3300,ou_line:1.5,over_pct:25,method:'KO/TKO',tier:'lock'},{fighter:'Luke Riley',opponent:'Kai Kamaka III',weight_class:'Featherweight',billing:'Prelims',win_pct:77,book_odds:-300,ou_line:2.5,over_pct:55,method:'Decision',tier:'lean'}];
     document.getElementById('ticker').innerHTML=tickerFrom(sm);
     list.innerHTML='<div class="grouptitle">PRELIMS</div>'+sm.map(p=>fightCardHTML(p,false)).join('');
