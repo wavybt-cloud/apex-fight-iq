@@ -1,18 +1,55 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "robots.txt", "use": "@vercel/static" },
-    { "src": "sitemap.xml", "use": "@vercel/static" },
-    { "src": "checkout.js", "use": "@vercel/node" },
-    { "src": "webhook.js",  "use": "@vercel/node" }
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "robots.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "checkout.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "webhook.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "analyzer.html",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "src": "/api/checkout", "dest": "/checkout.js" },
-    { "src": "/api/webhook",  "dest": "/webhook.js" },
-    { "src": "/robots.txt",   "dest": "/robots.txt" },
-    { "src": "/sitemap.xml",  "dest": "/sitemap.xml" },
-    { "src": "/(.*)", "dest": "/index.html" }
-
+    {
+      "src": "/api/checkout",
+      "dest": "/checkout.js"
+    },
+    {
+      "src": "/api/webhook",
+      "dest": "/webhook.js"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/analyzer",
+      "dest": "/analyzer.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
