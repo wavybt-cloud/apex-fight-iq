@@ -439,22 +439,42 @@ function analyzerModal(id){
   const wa=Number(p.win_pct), wb=100-wa, mlA=amNum(wa/100), mlB=amNum(wb/100), ouLine=p.ou_line||2.5;
   const overP=(p.over_pct!=null)?Number(p.over_pct):null, pr=wa/100;
   const bank=Number(localStorage.getItem('apex_bank'))||1000;
-  let deltaHTML='<span style="color:var(--faint)">no line</span>', evStr='—', kellyStr='—', verdict={t:'NO LINE',c:'var(--dim)'}, mkt='—';
+  const flat=bank*0.02;
+  let deltaHTML='<span style="color:var(--faint)">no line</span>', evStr='—', kellyFullStr='—', kellyStakeStr='—', verdict={t:'NO LINE',c:'var(--dim)'}, mkt='—', miStr='—', mathHTML='';
   if(p.book_odds!=null){
     mkt=fmtAm(p.book_odds);
     const mi=implied(p.book_odds)*100, d=wa-mi, arrow=d>=0?'▲':'▼', dcol=d>=0?'var(--green)':'var(--red)';
+    miStr=mi.toFixed(1)+'%';
     deltaHTML='<span style="color:'+dcol+';font-weight:800;">'+arrow+' '+Math.abs(d).toFixed(1)+'%</span>';
     const dec=decOdds(p.book_odds), b=dec-1, ev=(pr*b-(1-pr))*100, f=b>0?((pr*b-(1-pr))/b):0, stake=f>0?bank*f/4:0;
     evStr=(ev>=0?'+':'')+ev.toFixed(1)+'%<span style="color:var(--faint);font-size:11px;"> / $100</span>';
-    kellyStr=f>0?('$'+stake.toFixed(2)+'<span style="color:var(--faint);font-size:11px;"> · '+(f*25).toFixed(1)+'% roll</span>'):'no bet';
+    kellyFullStr=(f*100>=0?'+':'')+(f*100).toFixed(1)+'%';
+    kellyStakeStr=f>0?('$'+stake.toFixed(2)):'$0 <span style="color:var(--faint);font-size:11px;">(no edge)</span>';
     if(ev>=3){verdict={t:'VALUE',c:'var(--green)'};}
     else if(ev>=0){verdict={t:'LEAN',c:'var(--gold)'};}
     else {verdict={t:'MODEL FADE',c:'#3b82f6'};}
+    mathHTML='<div style="font-size:9px;letter-spacing:1.5px;color:var(--faint);font-weight:800;margin:16px 0 8px;">AI MATH</div>'
+      +'<div class="mono" style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:11.5px;line-height:1.9;color:var(--dim);">'
+      +'p (model) = <b style="color:var(--text)">'+pr.toFixed(3)+'</b> · b (net odds) = <b style="color:var(--text)">'+b.toFixed(3)+'</b><br>'
+      +'EV = p·b − (1−p) = '+pr.toFixed(2)+'×'+b.toFixed(2)+' − '+(1-pr).toFixed(2)+' = <b style="color:'+(ev>=0?'var(--green)':'var(--red)')+'">'+(ev>=0?'+':'')+(ev/100).toFixed(3)+'</b><br>'
+      +'Kelly f* = (p·b − q)/b = <b style="color:var(--text)">'+(f*100).toFixed(1)+'%</b> → ¼-Kelly = <b style="color:var(--text)">'+(f>0?(f*25).toFixed(1):'0')+'%</b> of roll<br>'
+      +'Fair line (AI) = <b style="color:var(--text)">'+fmtAm(mlA)+'</b> vs market <b style="color:var(--text)">'+mkt+'</b> → edge <b style="color:'+dcol+'">'+(d>=0?'+':'')+d.toFixed(1)+' pts</b>'
+      +'</div>';
   }
-  const cell=function(l,v){return '<div style="background:var(--panel);padding:13px 15px;"><div style="font-size:9px;letter-spacing:1.2px;color:var(--faint);font-weight:800;text-transform:uppercase;">'+l+'</div><div class="mono" style="font-size:16px;font-weight:700;color:var(--text);margin-top:5px;">'+v+'</div></div>';};
+  const cell=function(l,v){return '<div style="background:var(--panel);padding:12px 15px;"><div style="font-size:9px;letter-spacing:1.2px;color:var(--faint);font-weight:800;text-transform:uppercase;">'+l+'</div><div class="mono" style="font-size:15px;font-weight:700;color:var(--text);margin-top:5px;">'+v+'</div></div>';};
+  const grid=function(cells){return '<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px;">'+cells.join('')+'</div>';};
+  const sec=function(t){return '<div style="font-size:9px;letter-spacing:1.5px;color:var(--faint);font-weight:800;margin-bottom:8px;">'+t+'</div>';};
+  let ouHTML='';
+  if(overP!=null){
+    const po=overP/100, pu=1-po;
+    ouHTML=sec('TOTAL '+ouLine+' — MODEL ODDS')+grid([
+      cell('Over '+ouLine, overP.toFixed(0)+'% · '+fmtAm(amNum(po))),
+      cell('Under '+ouLine, (100-overP).toFixed(0)+'% · '+fmtAm(amNum(pu)))
+    ]);
+  }
   let ov=document.getElementById('azOverlay');
   if(!ov){ov=document.createElement('div');ov.id='azOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
-  ov.innerHTML='<div class="modal" style="max-width:470px;">'
+  ov.innerHTML='<div class="modal" style="max-width:490px;max-height:88vh;overflow-y:auto;">'
     +'<button class="x" onclick="document.getElementById(\'azOverlay\').classList.remove(\'open\')">×</button>'
     +'<div style="font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:6px;">AI Analyzer · '+(p.billing||'')+'</div>'
     +'<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">'
@@ -462,17 +482,16 @@ function analyzerModal(id){
       +'<span style="flex:none;font-size:11px;font-weight:800;letter-spacing:.5px;color:'+verdict.c+';border:1px solid '+verdict.c+';border-radius:999px;padding:5px 13px;white-space:nowrap;">'+verdict.t+'</span>'
     +'</div>'
     +'<div style="margin:18px 0;">'+azBar(p.fighter,wa,'var(--red)')+azBar(p.opponent,wb,'var(--blue)')+'</div>'
-    +'<div style="font-size:9px;letter-spacing:1.5px;color:var(--faint);font-weight:800;margin-bottom:8px;">AI LINE vs MARKET</div>'
-    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:18px;">'
-      +cell('AI moneyline',fmtAm(mlA))+cell('Market',mkt+'&nbsp;&nbsp;'+deltaHTML)
-    +'</div>'
-    +'<div style="font-size:9px;letter-spacing:1.5px;color:var(--faint);font-weight:800;margin-bottom:8px;">VALUE &amp; SIZING</div>'
-    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px;">'
-      +cell('Expected value',evStr)+cell('Bet size (¼-Kelly)',kellyStr)
-      +cell('Method lean',p.method||'—')+cell('Total '+ouLine, overP!=null?('O '+fmtAm(amNum(overP/100))+' · U '+fmtAm(amNum((100-overP)/100))):'—')
-    +'</div>'
-    +'<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--dim);">Bankroll $<input id="azBank" type="number" min="0" value="'+bank+'" onchange="localStorage.setItem(\'apex_bank\',this.value||1000);analyzerModal(\''+id+'\')" style="width:92px;padding:6px 8px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;font-size:12px;"><span style="color:var(--faint)">stake uses ¼-Kelly</span></div>'
-    +'<div style="font-size:10px;color:var(--faint);margin-top:14px;line-height:1.6;">▲/▼ shows how far the AI’s fair price sits from the market. EV = expected profit per $100 at the current line. Model output, not betting advice — 21+, bet responsibly.</div>'
+    +sec('MODEL vs MARKET')
+    +grid([cell('Model win prob',wa.toFixed(0)+'%'),cell('Market implied',miStr),cell('Fair line (AI)',fmtAm(mlA)+' / '+fmtAm(mlB)),cell('Market line',mkt+'&nbsp;&nbsp;'+deltaHTML)])
+    +sec('VALUE &amp; SIZING')
+    +grid([cell('Expected value',evStr),cell('Kelly (full)',kellyFullStr),cell('¼-Kelly stake',kellyStakeStr),cell('Flat stake (2%)','$'+flat.toFixed(2))])
+    +ouHTML
+    +'<div style="font-size:9px;letter-spacing:1.5px;color:var(--faint);font-weight:800;margin-bottom:8px;">PICK DETAIL</div>'
+    +grid([cell('Method lean',p.method||'—'),cell('Confidence',(p.tier||'').toUpperCase()||'—')])
+    +mathHTML
+    +'<div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--dim);margin-top:14px;">Bankroll $<input id="azBank" type="number" min="0" value="'+bank+'" onchange="localStorage.setItem(\'apex_bank\',this.value||1000);analyzerModal(\''+id+'\')" style="width:92px;padding:6px 8px;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;font-size:12px;"><span style="color:var(--faint)">¼-Kelly when +EV · flat 2% otherwise</span></div>'
+    +'<div style="font-size:10px;color:var(--faint);margin-top:14px;line-height:1.6;">Flat stake is shown even when Kelly says pass — sizing discipline for action bettors. Model output, not betting advice — 21+, bet responsibly.</div>'
     +'</div>';
   ov.classList.add('open');
 }
@@ -493,12 +512,22 @@ async function loadBoard(){
       html+='<div class="grouptitle">'+g+'</div>'+buckets[g].map(p=>fightCardHTML(p, p.is_pro && !pro)).join('');
     });
     const evOf=function(p){if(p.book_odds==null)return null;const b=decOdds(Number(p.book_odds))-1,pr=Number(p.win_pct)/100;return (pr*b-(1-pr))*100;};
-    const plays=all.filter(p=>!(p.is_pro&&!pro)).map(p=>({p:p,ev:evOf(p)})).filter(x=>x.ev!=null).sort((a,b)=>b.ev-a.ev).slice(0,3);
+    const vis=all.filter(p=>!(p.is_pro&&!pro));
+    const withOdds=vis.filter(p=>p.book_odds!=null);
     let topHTML='';
-    if(plays.length){
-      topHTML='<div class="grouptitle">⚡ Top Plays — best value'+(getPro()?'':' (free picks)')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:8px;">'+
-        plays.map(function(x){var ev=x.ev,col=ev>=3?'var(--green)':ev>=0?'var(--gold)':'var(--red)';return '<div onclick="analyzerModal(\''+x.p._bid+'\')" style="cursor:pointer;background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:12px 14px;transition:transform .1s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'"><div style="font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+x.p.fighter+'</div><div style="font-size:11px;color:var(--dim);margin:2px 0 8px;">vs '+lastName(x.p.opponent)+' · '+fmtAm(x.p.book_odds)+'</div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="mono" style="font-size:13px;font-weight:800;color:'+col+';">EV '+(ev>=0?'+':'')+ev.toFixed(1)+'%</span><span style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">tap for size →</span></div></div>';}).join('')+
-      '</div>';
+    if(withOdds.length){
+      const lock=withOdds.slice().sort((a,b)=>b.win_pct-a.win_pct)[0];
+      const value=withOdds.slice().sort((a,b)=>(evOf(b)||-99)-(evOf(a)||-99))[0];
+      const legs=withOdds.slice().sort((a,b)=>b.win_pct-a.win_pct).slice(0,3);
+      const pDec=legs.reduce((m,p)=>m*decOdds(Number(p.book_odds)),1);
+      const pProb=legs.reduce((m,p)=>m*(Number(p.win_pct)/100),1)*100;
+      const bb=function(tag,col,name,sub,big,foot,bid){return '<div '+(bid?('onclick="analyzerModal(\''+bid+'\')" style="cursor:pointer;'):'style="')+'background:var(--panel);border:1px solid '+col+';border-radius:12px;padding:12px 14px;transition:transform .1s;" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'"><div style="font-size:9px;font-weight:800;letter-spacing:1.2px;color:'+col+';text-transform:uppercase;margin-bottom:5px;">'+tag+'</div><div style="font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+name+'</div><div style="font-size:11px;color:var(--dim);margin:2px 0 8px;">'+sub+'</div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="mono" style="font-size:13px;font-weight:800;color:'+col+';">'+big+'</span><span style="font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;">'+foot+'</span></div></div>';};
+      const ve=evOf(value);
+      topHTML='<div class="grouptitle">🏆 Best Bets'+(pro?'':' (free picks)')+'</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:8px;">'
+        + bb('🔒 Lock of the night','var(--gold)',lock.fighter,'vs '+lastName(lock.opponent)+' · '+fmtAm(lock.book_odds), lock.win_pct+'% win','tap for math →',lock._bid)
+        + bb('💎 Value play',(ve>=0?'var(--green)':'var(--gold)'),value.fighter,'vs '+lastName(value.opponent)+' · '+fmtAm(value.book_odds),'EV '+(ve>=0?'+':'')+ve.toFixed(1)+'%','tap for math →',value._bid)
+        + bb('🎯 Longshot parlay','var(--red)',legs.map(p=>lastName(p.fighter)).join(' + '),legs.length+' legs · model '+pProb.toFixed(0)+'% hits','pays '+fmtAm(amNum(1/pDec))+' · $100→$'+(pDec*100).toFixed(0),'stack the locks',null)
+      + '</div>';
     }
     list.innerHTML=topHTML+html; updateAuthUI();
   }catch(e){
