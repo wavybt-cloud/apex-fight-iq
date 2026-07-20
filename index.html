@@ -330,7 +330,7 @@ function showView(name){
 async function loadRecord(){
   const strip=document.getElementById('recstrip');
   try{
-    let picks=await sbFetch('picks?select=fighter,opponent,tier,method,result,win_pct,book_odds,close_odds,event_name,event_date&result=neq.pending');
+    let picks=await sbFetch('picks?select=fighter,opponent,tier,method,result,win_pct,book_odds,close_odds,event_name,event_date,card_order&result=neq.pending');
     picks=dedupe(picks,p=>p.event_name+'|'+p.fighter+'|'+p.opponent);
     if(!picks.length) throw 0;
     const wins=picks.filter(p=>p.result==='win').length, tot=picks.filter(p=>p.result==='win'||p.result==='loss').length;
@@ -339,7 +339,7 @@ async function loadRecord(){
     const roi=tot?units/tot*100:0;
     const cards=new Set(picks.map(p=>p.event_name)).size;
     // ordered newest-first for streak + history
-    const ord=picks.slice().sort((a,b)=>String(b.event_date||'').localeCompare(String(a.event_date||'')));
+    const ord=picks.slice().sort((a,b)=>String(b.event_date||'').localeCompare(String(a.event_date||''))||((a.card_order||99)-(b.card_order||99)));
     let streak=0, sign=null;
     for(const p of ord){ if(p.result!=='win'&&p.result!=='loss')continue; const s=p.result==='win'?1:-1; if(sign===null){sign=s;streak=1;} else if(s===sign){streak++;} else break; }
     const streakStr=sign===null?'—':(sign>0?'W':'L')+streak;
@@ -353,9 +353,12 @@ async function loadRecord(){
     // history (newest-first, with tier badge)
     const badge={lock:['LOCK','var(--gold)'],dog:['DOG','var(--blue)'],lean:['LEAN','var(--dim)']};
     const hist=document.getElementById('record-history');
+    let lastEv=null;
     hist.innerHTML='<div class="grouptitle">Graded picks · '+picks.length+'</div>'+ord.map(p=>{
+      const evHead=(p.event_name!==lastEv)?('<div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:16px 2px 8px;">'+p.event_name+(p.event_date?(' · '+p.event_date):'')+'</div>'):'';
+      lastEv=p.event_name;
       const won=p.result==='win'; const bd=badge[p.tier]||badge.lean;
-      return '<div class="fight"><div class="frow" style="grid-template-columns:1fr auto auto auto;"><div class="fighter"><div class="av">'+initials(p.fighter)+'</div><div><div class="fn">'+p.fighter+'</div><div class="fsub">vs '+p.opponent+(p.method?' · '+p.method:'')+'</div></div></div><div style="font-size:8px;font-weight:800;letter-spacing:1px;color:'+bd[1]+'">'+bd[0]+'</div><div class="mono" style="color:var(--dim);font-size:12px;">'+Number(p.win_pct).toFixed(0)+'%</div><div style="font-size:11px;font-weight:800;color:'+(won?'var(--green)':'var(--red)')+'">'+(won?'✓ WIN':'✗ LOSS')+'</div></div></div>';
+      return evHead+'<div class="fight"><div class="frow" style="grid-template-columns:1fr auto auto auto;"><div class="fighter"><div class="av">'+initials(p.fighter)+'</div><div><div class="fn">'+p.fighter+'</div><div class="fsub">vs '+p.opponent+(p.method?' · '+p.method:'')+'</div></div></div><div style="font-size:8px;font-weight:800;letter-spacing:1px;color:'+bd[1]+'">'+bd[0]+'</div><div class="mono" style="color:var(--dim);font-size:12px;">'+Number(p.win_pct).toFixed(0)+'%</div><div style="font-size:11px;font-weight:800;color:'+(won?'var(--green)':'var(--red)')+'">'+(won?'✓ WIN':'✗ LOSS')+'</div></div></div>';
     }).join('');
     renderProof(picks);
   }catch(e){
