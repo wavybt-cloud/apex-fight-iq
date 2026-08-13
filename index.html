@@ -293,6 +293,146 @@ input[type=range]{accent-color:var(--red);flex:1;min-width:140px;height:22px;}
 
 footer{border-top:1px solid var(--line);padding:26px 16px calc(26px + env(safe-area-inset-bottom));text-align:center;color:var(--faint);font-size:11px;line-height:1.8;grid-column:1/-1;}
 footer .fb{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5px;color:var(--dim);margin-bottom:6px;}
+
+/* ───── FIGHT LAB (merged engine) ───── */
+.btn-gold{background:linear-gradient(135deg,var(--gold),#c9952a);color:#241a02;box-shadow:0 4px 14px rgba(240,185,66,.25);}
+.spin{display:inline-block;width:12px;height:12px;border:2px solid var(--faint);border-top-color:var(--gold);border-radius:50%;animation:spinner .7s linear infinite;vertical-align:-2px;}
+@keyframes spinner{to{transform:rotate(360deg);}}
+.lab-panel{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+.lab-setup{display:grid;grid-template-columns:1fr 74px 1fr;gap:14px;align-items:stretch;padding:18px;}
+@media(max-width:840px){.lab-setup{grid-template-columns:1fr;gap:12px;}.lab-mid{flex-direction:row !important;}}
+.slot{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:14px;position:relative;min-width:0;}
+.slot.red{border-top:2px solid var(--red);}
+.slot.blue{border-top:2px solid var(--blue);}
+.slot-corner{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.slot.red .slot-corner{color:#ff5b6b;}
+.slot.blue .slot-corner{color:#6ea3ff;}
+.search-wrap{position:relative;margin-bottom:10px;}
+.search-input{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:12px 13px;color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .15s;}
+.search-input:focus{border-color:var(--gold);}
+.search-drop{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--panel3);border:1px solid var(--line);border-radius:12px;z-index:60;overflow:hidden;box-shadow:0 20px 48px rgba(0,0,0,.6);display:none;}
+.search-drop.open{display:block;}
+.sd-item{padding:11px 14px;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.sd-item:hover{background:rgba(255,255,255,.05);}
+.sd-item .sd-sub{font-size:10px;color:var(--faint);font-family:'JetBrains Mono',monospace;flex:none;}
+.sd-note{padding:9px 14px;font-size:10px;color:var(--faint);border-top:1px solid var(--line2);}
+.slot-name{font-weight:800;font-size:15px;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.slot-tagline{font-size:10px;color:var(--faint);margin-bottom:10px;min-height:13px;}
+.slot-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;}
+.sf{display:flex;flex-direction:column;gap:3px;}
+.sf label{font-size:8px;letter-spacing:.8px;text-transform:uppercase;color:var(--faint);}
+.sf input{background:var(--panel2);border:1px solid var(--line2);border-radius:8px;padding:8px 7px;color:var(--text);font-size:12px;font-family:'JetBrains Mono',monospace;outline:none;width:100%;}
+.sf input:focus{border-color:var(--gold);}
+.lab-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.lab-vs{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--faint);letter-spacing:2px;}
+.swap-btn{background:var(--panel3);border:1px solid var(--line);color:var(--dim);border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:15px;transition:color .15s,border-color .15s,transform .3s var(--ease);}
+.swap-btn:hover{color:var(--gold);border-color:var(--gold);transform:rotate(180deg);}
+.lab-controls{display:flex;gap:12px;align-items:center;justify-content:center;padding:0 18px 18px;flex-wrap:wrap;}
+.seg{display:inline-flex;background:var(--panel3);border:1px solid var(--line);border-radius:11px;overflow:hidden;}
+.seg button{background:none;border:none;color:var(--dim);padding:10px 15px;font-size:11.5px;font-weight:700;cursor:pointer;}
+.seg button.on{background:rgba(255,255,255,.06);color:var(--gold);}
+.odds-mini{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--faint);}
+.odds-mini input{width:76px;background:var(--panel3);border:1px solid var(--line);border-radius:9px;padding:9px;color:var(--text);font-size:12px;font-family:'JetBrains Mono',monospace;outline:none;}
+.odds-mini input:focus{border-color:var(--gold);}
+#labResult{padding:0 18px 18px;display:none;}
+.bk-mini{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:0 18px 16px;font-size:10px;color:var(--faint);}
+.bk-mini input{width:80px;background:var(--panel3);border:1px solid var(--line);border-radius:8px;padding:8px;color:var(--text);font-size:11px;font-family:'JetBrains Mono',monospace;outline:none;}
+
+/* analysis panel */
+.ana{background:var(--panel2);border:1px solid var(--line2);border-radius:16px;overflow:hidden;}
+.verdict{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px;border-bottom:1px solid var(--line2);flex-wrap:wrap;background:linear-gradient(135deg,rgba(232,25,44,.05),rgba(59,130,246,.05));}
+.verdict-left{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.verdict-tag{font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--faint);}
+.verdict-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;line-height:1;}
+.verdict-method{font-size:12px;color:var(--dim);}
+.verdict-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.v-chip{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:8px 12px;text-align:center;min-width:78px;}
+.v-chip .vc-val{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-weight:800;font-size:14px;line-height:1.1;}
+.v-chip .vc-lab{font-size:8px;letter-spacing:1px;color:var(--faint);text-transform:uppercase;margin-top:3px;}
+.tier-badge{font-size:10px;font-weight:800;padding:4px 11px;border-radius:7px;text-transform:uppercase;letter-spacing:.6px;}
+.tier-lock{background:var(--green-soft);color:var(--green);border:1px solid rgba(16,185,129,.35);}
+.tier-lean{background:var(--gold-soft);color:var(--gold);border:1px solid rgba(240,185,66,.35);}
+.tier-dog{background:var(--blue-soft);color:#6ea3ff;border:1px solid rgba(59,130,246,.35);}
+.tier-pass{background:rgba(255,255,255,.05);color:var(--dim);border:1px solid var(--line);}
+.prob-track{position:relative;height:32px;border-radius:10px;overflow:hidden;background:var(--panel3);display:flex;margin:16px 18px 4px;}
+.prob-a{background:linear-gradient(90deg,#8f0d1c,var(--red));display:flex;align-items:center;padding-left:11px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12.5px;transition:width .6s var(--ease);white-space:nowrap;}
+.prob-b{background:linear-gradient(90deg,var(--blue),#1c4fa8);flex:1;display:flex;align-items:center;justify-content:flex-end;padding-right:11px;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12.5px;white-space:nowrap;}
+.prob-ci{padding:0 18px 2px;font-size:10px;color:var(--faint);text-align:center;}
+.prob-names{display:flex;justify-content:space-between;padding:6px 18px 0;font-size:11px;font-weight:700;gap:10px;}
+.prob-names .pn-a{color:#ff5b6b;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.prob-names .pn-b{color:#6ea3ff;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ana-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line2);margin-top:14px;}
+.ana-cell{padding:16px 18px;border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);min-width:0;}
+.ana-cell:nth-child(2n){border-right:none;}
+.ana-cell.full{grid-column:1/-1;border-right:none;}
+.ana-cell h4{font-size:9.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--faint);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.ana-cell h4::after{content:'';flex:1;height:1px;background:var(--line2);}
+@media(max-width:780px){.ana-grid{grid-template-columns:1fr;}.ana-cell{border-right:none;}}
+.tape{width:100%;border-collapse:collapse;font-size:12px;}
+.tape td{padding:6px 4px;border-bottom:1px solid var(--line2);}
+.tape tr:last-child td{border-bottom:none;}
+.tape .t-a{text-align:left;font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-weight:700;width:32%;}
+.tape .t-b{text-align:right;font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-weight:700;width:32%;}
+.tape .t-lab{text-align:center;color:var(--faint);font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;}
+.tape .adv{color:var(--gold);}
+.factor{display:grid;grid-template-columns:130px 1fr 40px;gap:9px;align-items:center;margin-bottom:8px;font-size:11px;}
+.factor-label{color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.factor-bar{position:relative;height:8px;border-radius:4px;background:var(--panel3);overflow:hidden;}
+.factor-bar::after{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.14);}
+.factor-fill{position:absolute;top:0;bottom:0;border-radius:4px;}
+.factor-fill.a{right:50%;background:linear-gradient(270deg,var(--red),#8f0d1c);}
+.factor-fill.b{left:50%;background:linear-gradient(90deg,var(--blue),#1c4fa8);}
+.factor-val{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-size:10px;text-align:right;color:var(--dim);}
+.radar-wrap{display:flex;justify-content:center;}
+.radar-wrap canvas{max-width:100%;}
+.msplit{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.msplit h5{font-size:11px;font-weight:700;margin-bottom:9px;}
+.msplit h5.red{color:#ff5b6b;} .msplit h5.blue{color:#6ea3ff;}
+@media(max-width:560px){.msplit{grid-template-columns:1fr;}}
+.mrow{display:grid;grid-template-columns:80px 1fr 48px;gap:9px;align-items:center;margin-bottom:7px;font-size:11px;}
+.mrow-label{color:var(--dim);}
+.mrow-track{height:9px;border-radius:5px;background:var(--panel3);overflow:hidden;}
+.mrow-fill{height:100%;border-radius:5px;transition:width .5s;}
+.mrow-val{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-size:10px;text-align:right;}
+.rchart{display:flex;align-items:flex-end;gap:8px;height:108px;padding-top:6px;}
+.rcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;}
+.rbar{width:100%;max-width:52px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--gold),#c9952a);min-height:2px;}
+.rbar.dist{background:linear-gradient(180deg,#3d4155,#262a3a);}
+.rlab{font-size:9px;color:var(--faint);text-transform:uppercase;}
+.rval{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);}
+.props{width:100%;border-collapse:collapse;font-size:11px;}
+.props th{text-align:left;font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:var(--faint);padding:6px 8px;border-bottom:1px solid var(--line);}
+.props td{padding:7px 8px;border-bottom:1px solid var(--line2);font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;}
+.props td:first-child{font-family:'Inter',sans-serif;color:var(--dim);}
+.props tr:last-child td{border-bottom:none;}
+.props .pos{color:var(--green);} .props .neg{color:var(--faint);}
+.bet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:9px;margin-bottom:12px;}
+.bet-box{background:var(--panel3);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;}
+.bet-box .bx-lab{font-size:8px;letter-spacing:1.1px;text-transform:uppercase;color:var(--faint);margin-bottom:4px;}
+.bet-box .bx-val{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-weight:800;font-size:13.5px;}
+.edge-pos{color:var(--green);} .edge-neg{color:#ff6b6b;}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:560px){.paths{grid-template-columns:1fr;}}
+.paths ul{list-style:none;}
+.paths li{font-size:12px;color:var(--dim);line-height:1.6;padding-left:15px;position:relative;margin-bottom:7px;}
+.paths li::before{content:'▸';position:absolute;left:0;font-size:10px;}
+.paths .pa li::before{color:var(--red);} .paths .pb li::before{color:var(--blue);}
+.paths h5{font-size:11px;font-weight:700;margin-bottom:9px;}
+.paths h5.red{color:#ff5b6b;} .paths h5.blue{color:#6ea3ff;}
+.upset-box{margin-top:14px;background:var(--red-soft);border:1px solid rgba(232,25,44,.2);border-radius:11px;padding:12px 15px;font-size:12px;color:var(--dim);line-height:1.6;}
+.upset-box strong{color:#ff6b6b;font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;display:block;margin-bottom:4px;}
+.ana-actions{display:flex;gap:9px;padding:14px 18px;border-top:1px solid var(--line2);flex-wrap:wrap;align-items:center;}
+/* slip */
+.slip-legs{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.slip-leg{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:10px 13px;font-size:12px;}
+.slip-leg .sl-x{background:none;border:none;color:var(--faint);cursor:pointer;font-size:14px;padding:4px 7px;}
+.slip-leg .sl-x:hover{color:var(--red);}
+.slip-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:9px;}
+#shareModal .modal{max-width:560px;}
+#shareCanvas{width:100%;border-radius:12px;border:1px solid var(--line);margin-bottom:14px;}
+.deep-modal{max-width:720px !important;padding:12px !important;background:var(--bg) !important;}
+@media(max-width:640px){.deep-modal{padding:12px 8px calc(14px + env(safe-area-inset-bottom)) !important;}}
+
 </style>
 </head>
 <body>
@@ -320,6 +460,7 @@ footer .fb{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5
   <aside class="sidebar">
     <div class="side-group">UFC Room</div>
     <div class="side-link active" data-view="board" onclick="showView('board')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg> Fights</div>
+    <div class="side-link" data-view="lab" onclick="showView('lab')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L18.5 10.5H12z"/></svg> Fight Lab</div>
     <div class="side-link" data-view="record" onclick="showView('record')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0zM7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/></svg> Track Record</div>
     <div class="side-link" data-view="game" onclick="showView('game')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg> Tournament</div>
     <div class="side-link" data-view="profile" onclick="showView('profile')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg> Profile</div>
@@ -350,6 +491,57 @@ footer .fb{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5
       <div class="crumb"><span>Apex AI · <b>Tournament</b></span></div>
       <div class="viewhead"><h1>Pick'em Tournament</h1><div class="sub">Free-play · coins only</div></div>
       <div id="game-body"></div>
+    </section>
+
+    <!-- FIGHT LAB -->
+    <section class="view" id="view-lab">
+      <div class="crumb"><span>Apex AI · <b>Fight Lab</b> · Quantum Engine v5</span></div>
+      <div class="viewhead"><h1>Matchup Lab</h1><div class="sub">Any two UFC fighters — 17 factors, 10,000 Monte Carlo sims, props &amp; market edge.</div></div>
+      <div class="lab-panel">
+        <div class="lab-setup">
+          <div class="slot red">
+            <div class="slot-corner">Red Corner</div>
+            <div class="search-wrap">
+              <input class="search-input" id="searchA" type="text" placeholder="Search fighter… (e.g. Makhachev)" autocomplete="off"/>
+              <div class="search-drop" id="dropA"></div>
+            </div>
+            <div class="slot-name" id="slotNameA">Custom Fighter</div>
+            <div class="slot-tagline" id="slotTagA">Search the roster or dial stats in by hand</div>
+            <div class="slot-fields" id="fieldsA"></div>
+          </div>
+          <div class="lab-mid">
+            <div class="lab-vs">VS</div>
+            <button class="swap-btn" id="swapBtn" title="Swap corners">⇄</button>
+          </div>
+          <div class="slot blue">
+            <div class="slot-corner">Blue Corner</div>
+            <div class="search-wrap">
+              <input class="search-input" id="searchB" type="text" placeholder="Search fighter… (e.g. Topuria)" autocomplete="off"/>
+              <div class="search-drop" id="dropB"></div>
+            </div>
+            <div class="slot-name" id="slotNameB">Custom Fighter</div>
+            <div class="slot-tagline" id="slotTagB">Search the roster or dial stats in by hand</div>
+            <div class="slot-fields" id="fieldsB"></div>
+          </div>
+        </div>
+        <div class="lab-controls">
+          <div class="seg" id="roundsSeg">
+            <button data-r="3" class="on">3 Rounds</button>
+            <button data-r="5">5 Rounds</button>
+          </div>
+          <div class="odds-mini">Red <input id="oddsA" type="number" placeholder="-150"/></div>
+          <div class="odds-mini">Blue <input id="oddsB" type="number" placeholder="+130"/></div>
+          <button class="btn btn-red" id="analyzeBtn">⚡ Run Full Analysis</button>
+        </div>
+        <div class="bk-mini">Bankroll $<input id="bk-bankroll" type="number" value="1000" min="0"/> Kelly frac <input id="bk-kelly-frac" type="number" value="0.25" step="0.05" min="0" max="1"/> Max bet $<input id="bk-max-bet" type="number" value="100" min="0"/></div>
+        <div id="labResult"></div>
+      </div>
+      <div class="grouptitle" style="margin-top:26px;">Parlay Desk</div>
+      <div class="lab-panel" style="padding:16px 18px;">
+        <p class="slip-empty" id="slipEmpty" style="color:var(--faint);font-size:12px;margin-bottom:12px;">No legs yet — run an analysis (here or from any fight on the board) and hit “+ Parlay”.</p>
+        <div class="slip-legs" id="slipLegs"></div>
+        <div class="slip-sum" id="slipSum"></div>
+      </div>
     </section>
 
     <!-- PROFILE -->
@@ -419,7 +611,7 @@ footer .fb{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5
   <div class="tab-link active" data-view="board" onclick="showView('board')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg>Fights</div>
   <div class="tab-link" data-view="record" onclick="showView('record')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0zM7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/></svg>Record</div>
   <div class="tab-link" data-view="game" onclick="showView('game')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>Play</div>
-  <div class="tab-link" data-view="pricing" onclick="showView('pricing')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 16.9 6.4 20l1.3-6.2L3 9.5l6.3-.7z"/></svg>Pro</div>
+  <div class="tab-link" data-view="lab" onclick="showView('lab')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L18.5 10.5H12z"/></svg>Lab</div>
   <div class="tab-link" data-view="profile" onclick="showView('profile')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>Profile</div>
 </nav>
 
@@ -437,6 +629,15 @@ footer .fb{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5
     <div class="mnote" id="m-note">By continuing you agree to our terms. Payments secured by Stripe.</div>
   </div>
 </div>
+<div class="overlay" id="shareModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="x" onclick="document.getElementById('shareModal').classList.remove('open')">×</button>
+    <h2 style="margin-bottom:12px;">Share Card</h2>
+    <canvas id="shareCanvas" width="1000" height="1000"></canvas>
+    <button class="btn btn-gold" style="width:100%;padding:13px;" onclick="downloadShareCard()">Download PNG</button>
+  </div>
+</div>
+
 <script>
 /* ================= CONFIG ================= */
 const SUPABASE_URL = 'https://whhbvglvtkqizfllxgtf.supabase.co';
@@ -477,6 +678,7 @@ function showView(name){
   document.querySelectorAll('.side-link,.tab-link').forEach(s=>s.classList.toggle('active', s.dataset.view===name));
   window.scrollTo({top:0,behavior:'smooth'});
   if(name==='record') loadRecord();
+  if(name==='lab' && typeof renderSlip==='function') renderSlip();
   if(name==='game') renderGame();
   if(name==='profile') renderProfile();
 }
@@ -588,7 +790,7 @@ function fightCardHTML(p, locked){
       '<div class="lockbar"><span class="lt">🔒 <b>Pro pick</b> — edge %, method &amp; Kelly</span><button class="btn btn-red" style="padding:9px 16px;" onclick="openModal(\'signup\')">Go Pro</button></div>'
       :
       '<div class="ffoot"><span class="fdate">'+(p.result&&p.result!=='pending'?'Graded':'Tap analyzer for EV, Kelly &amp; the math')+'</span>'+
-      '<div class="fbtns"><button class="fbtn" onclick="analyzerModal(\''+p._bid+'\')">Tale of the Tape</button><button class="fbtn ai" onclick="analyzerModal(\''+p._bid+'\')">AI Analyzer<span class="liveflag">LIVE</span></button></div></div>');
+      '<div class="fbtns"><button class="fbtn" onclick="analyzerModal(\''+p._bid+'\')">Quick Math</button><button class="fbtn ai" onclick="deepAnalyzer(\''+p._bid+'\')">Full Fight Lab<span class="liveflag">10K SIMS</span></button></div></div>');
   return '<div class="fight rv'+(locked?' locked':'')+'">'+inner+'</div>';
 }
 function azBar(name,pct,col){return '<div class="az-bar"><div class="nm">'+name+'</div><div class="tr"><div class="fl" style="width:'+pct.toFixed(0)+'%;background:'+col+';"></div></div><div class="mono pc">'+pct.toFixed(0)+'%</div></div>';}
@@ -679,7 +881,7 @@ async function loadBoard(){
       const legs=withOdds.slice().sort((a,b)=>b.win_pct-a.win_pct).slice(0,3);
       const pDec=legs.reduce((m,p)=>m*decOdds(Number(p.book_odds)),1);
       const pProb=legs.reduce((m,p)=>m*(Number(p.win_pct)/100),1)*100;
-      const bb=function(tag,col,name,sub,big,foot,bid){return '<div class="bb rv" style="--bb-col:'+col+';" '+(bid?('onclick="analyzerModal(\''+bid+'\')"'):'')+'><div class="bb-tag">'+tag+'</div><div class="bb-name">'+name+'</div><div class="bb-sub">'+sub+'</div><div class="bb-foot"><span class="bb-big">'+big+'</span><span class="bb-cta">'+foot+'</span></div></div>';};
+      const bb=function(tag,col,name,sub,big,foot,bid){return '<div class="bb rv" style="--bb-col:'+col+';" '+(bid?('onclick="deepAnalyzer(\''+bid+'\')"'):'')+'><div class="bb-tag">'+tag+'</div><div class="bb-name">'+name+'</div><div class="bb-sub">'+sub+'</div><div class="bb-foot"><span class="bb-big">'+big+'</span><span class="bb-cta">'+foot+'</span></div></div>';};
       const ve=evOf(value);
       topHTML='<div class="grouptitle">🏆 Best Bets'+(pro?'':' (free picks)')+'</div><div class="bbrow">'
         + bb('🔒 Lock of the night','var(--gold)',lock.fighter,'vs '+lastName(lock.opponent)+' · '+fmtAm(lock.book_odds), lock.win_pct+'% win','tap for math →',lock._bid)
@@ -894,6 +1096,699 @@ async function handleAuth(){
   loadBoard();
   startCountdown();
 })();
+
+/* ═══════════ FIGHT LAB — QUANTUM ENGINE v5 (merged) ═══════════ */
+const N_SIMS = 10000;
+const clamp = (v,lo,hi) => Math.max(lo, Math.min(hi, v));
+const sigmoid = x => 1/(1+Math.exp(-x));
+const num = (v,d) => (v==null || isNaN(Number(v))) ? d : Number(v);
+const fmtPct = p => (p*100).toFixed(1) + '%';
+const fmtPct0 = p => Math.round(p*100) + '%';
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function gauss(){ let u=0,v=0; while(u===0)u=Math.random(); while(v===0)v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
+function probToAmerican(p){ p=clamp(p,0.01,0.99); return p>=0.5 ? Math.round(-100*p/(1-p)) : Math.round(100*(1-p)/p); }
+function devig(oA,oB){ const ia=implied(oA), ib=implied(oB); if(ia==null||ib==null) return null; return { a: ia/(ia+ib), b: ib/(ia+ib) }; }
+function fmtDollar(n){ return '$' + Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+function edgeScore(valA,valB,scale){ return sigmoid((valA-valB)/scale)*100; }
+function sbQ(path){
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 9000);
+  return fetch(SUPABASE_URL + '/rest/v1/' + path, { headers:{ apikey:SUPABASE_KEY, Authorization:'Bearer ' + SUPABASE_KEY }, signal: ctl.signal })
+    .then(r => r.json()).finally(() => clearTimeout(t));
+}
+function ageFromDob(dob){
+  if(!dob) return 30;
+  return clamp(Math.floor((Date.now() - new Date(dob + 'T00:00:00Z').getTime())/3.15576e10), 18, 50);
+}
+function oppOdds(a){
+  const ia = implied(a);
+  const ib = clamp(1.045 - ia, 0.03, 0.97);
+  const am = ib>=0.5 ? Math.round(-100*ib/(1-ib)) : Math.round(100*(1-ib)/ib);
+  return clamp(am, -2000, 2000);
+}
+function statBlock(name, prof, tott, rat){
+  const s = k => prof ? num(prof[k], null) : null;
+  const st=s('s_striking'), gr=s('s_grappling'), ca=s('s_cardio'), du=s('s_durability'), iq=s('s_iq'), ac=s('s_activity');
+  const fights = prof ? num(prof.fights,0) : 0;
+  return {
+    name: name,
+    strAcc: Math.round(38 + num(st,40)*0.14),
+    strDef: Math.round(44 + num(iq,40)*0.14),
+    slpm: +(2.8 + num(ac,60)*0.025).toFixed(1),
+    tdAcc: Math.round(25 + num(gr,35)*0.3),
+    tdDef: Math.round(40 + num(du,60)*0.3),
+    tdAvg: +(num(gr,35)/30).toFixed(1),
+    subAvg: +(num(gr,35)/60).toFixed(1),
+    avgTime: Math.round(7 + num(ca,50)*0.08),
+    reach: Math.round(num(tott && tott.reach_in, 72)),
+    age: ageFromDob(tott && tott.dob),
+    streak: Math.max(0, num(rat && rat.streak, 0)),
+    research: Math.min(9, 3 + Math.floor(fights/3))
+  };
+}
+
+/* ── engine core ── */
+function classifyStyle(f){
+  if(f.tdAvg>=2.2 && f.subAvg>=0.9) return 'submission_wrestler';
+  if(f.tdAvg>=2.0) return 'wrestler';
+  if(f.subAvg>=1.0) return 'grappler';
+  if(f.slpm>=4.8 && f.tdAvg<1.2) return 'volume_striker';
+  if(f.strAcc>=48 && f.tdAvg<1.2) return 'power_striker';
+  return 'balanced';
+}
+const STYLE_LABELS = {
+  submission_wrestler:'Submission Wrestler', wrestler:'Wrestler', grappler:'Grappler',
+  volume_striker:'Volume Striker', power_striker:'Power Striker', balanced:'Well-Rounded'
+};
+const STYLE_MATRIX = {
+  wrestler:            { volume_striker: 5, power_striker: 4, grappler: 2, submission_wrestler:-1, balanced: 2, wrestler:0 },
+  submission_wrestler: { volume_striker: 5, power_striker: 5, wrestler: 1, grappler: 2, balanced: 3, submission_wrestler:0 },
+  grappler:            { power_striker: 2, volume_striker: 1, wrestler:-2, submission_wrestler:-2, balanced: 1, grappler:0 },
+  volume_striker:      { grappler:-1, balanced: 2, power_striker: 2, wrestler:-5, submission_wrestler:-5, volume_striker:0 },
+  power_striker:       { volume_striker:-2, balanced: 1, grappler:-2, wrestler:-4, submission_wrestler:-5, power_striker:0 },
+  balanced:            { wrestler:-2, submission_wrestler:-3, grappler:-1, volume_striker:-2, power_striker:-1, balanced:0 }
+};
+function agePrime(age){ return clamp(100 - Math.pow(Math.abs(age-28.5),1.7)*2.4, 20, 100); }
+function deriveRatings(f){
+  const style = classifyStyle(f);
+  const power = f.slpm * f.strAcc / 100;
+  const agePen = Math.max(0, f.age-33) * 2.6;
+  return {
+    style: style,
+    output:     clamp(f.slpm/7*100, 4, 100),
+    accuracy:   clamp((f.strAcc-30)/30*100, 4, 100),
+    strDef:     clamp((f.strDef-38)/27*100, 4, 100),
+    power:      clamp(power/2.9*100, 4, 100),
+    wrestling:  clamp(f.tdAvg/4*68 + f.tdAcc/100*32, 4, 100),
+    grapDef:    clamp((f.tdDef-38)/42*100, 4, 100),
+    subThreat:  clamp(f.subAvg/1.6*100, 2, 100),
+    cardio:     clamp(f.avgTime/15*82 + clamp(28-Math.max(0,f.age-30)*2,0,28) - agePen*0.4, 5, 100),
+    durability: clamp(f.strDef*0.9 + f.tdDef*0.35 - agePen, 5, 100),
+    experience: clamp((f.research-3)/6*100, 0, 100),
+    momentum:   clamp(Math.min(f.streak,7)/7*100, 0, 100),
+    prime:      agePrime(f.age)
+  };
+}
+function buildFactors(a, b, ra, rb, rounds){
+  const F = [];
+  const add = (label, edge, w, note) => F.push({ label:label, edge:clamp(edge,2,98), w:w, note:note||'' });
+  const pwrA = a.slpm*a.strAcc/100, pwrB = b.slpm*b.strAcc/100;
+  const ctrlA = a.tdAvg*(a.tdAcc/45)*(1 - b.tdDef/135);
+  const ctrlB = b.tdAvg*(b.tdAcc/45)*(1 - a.tdDef/135);
+  const subA = a.subAvg*(1.25 - b.tdDef/135);
+  const subB = b.subAvg*(1.25 - a.tdDef/135);
+  const RM = { volume_striker:1.25, power_striker:1.2, balanced:1.0, grappler:0.8, wrestler:0.6, submission_wrestler:0.6 };
+  const rDiff = a.reach - b.reach;
+  const effReach = rDiff * (RM[rDiff>=0 ? ra.style : rb.style] || 1);
+  const finA = (pwrA*1.4 + a.subAvg)/Math.max(a.avgTime,4);
+  const finB = (pwrB*1.4 + b.subAvg)/Math.max(b.avgTime,4);
+  const styleEdge = (STYLE_MATRIX[ra.style] && STYLE_MATRIX[ra.style][rb.style]) || 0;
+  add('Striking volume',    edgeScore(a.slpm, b.slpm, 1.4),                       1.0, 'significant strikes landed per minute');
+  add('Striking accuracy',  edgeScore(a.strAcc, b.strAcc, 6),                     0.8, 'strike accuracy %');
+  add('Striking defense',   edgeScore(a.strDef, b.strDef, 6),                     0.9, 'strikes avoided %');
+  add('Knockout power',     edgeScore(pwrA, pwrB, 0.55),                          1.1, 'landed output × accuracy');
+  add('Wrestling offense',  edgeScore(a.tdAvg*a.tdAcc, b.tdAvg*b.tdAcc, 55),      1.0, 'takedowns landed per 15 min');
+  add('Takedown defense',   edgeScore(a.tdDef, b.tdDef, 10),                      0.9, 'takedowns stuffed %');
+  add('Control matchup',    edgeScore(ctrlA, ctrlB, 0.85),                        1.3, 'TD offense vs this opponent’s TD defense');
+  add('Submission threat',  edgeScore(subA, subB, 0.5),                           0.8, 'sub attempts vs grappling exposure');
+  add('Cardio & pace',      edgeScore(ra.cardio, rb.cardio, 13),  rounds===5?1.5:1.0, 'gas tank, weighted up for 5-round fights');
+  add('Durability',         edgeScore(ra.durability, rb.durability, 11),          0.9, 'defense composite less age erosion');
+  add('Reach & range',      edgeScore(effReach, 0, 3.2),                          0.6, 'reach edge, amplified for range strikers');
+  add('Age curve',          edgeScore(ra.prime, rb.prime, 12),                    0.9, 'distance from athletic prime (~28.5)');
+  add('Momentum',           edgeScore(Math.min(a.streak,7), Math.min(b.streak,7), 2.2), 0.7, 'active win streak');
+  add('Experience depth',   edgeScore(a.research, b.research, 2),                 0.6, 'sample size & level of competition');
+  add('Style matchup',      50 + styleEdge*3.2,                                   0.8, STYLE_LABELS[ra.style] + ' vs ' + STYLE_LABELS[rb.style]);
+  add('Sustained output',   edgeScore(a.slpm*Math.min(a.avgTime,15), b.slpm*Math.min(b.avgTime,15), 17), 0.7, 'volume held across full fights');
+  add('Finishing instinct', edgeScore(finA, finB, 0.14),                          0.7, 'how fast they put opponents away');
+  return F;
+}
+function engineProbability(factors){
+  let t = 0;
+  for(const f of factors) t += (f.edge-50) * f.w;
+  return clamp(sigmoid(t*0.0085), 0.04, 0.96);
+}
+function simulateFight(a, b, rounds, pA, ra, rb){
+  const q0 = clamp(0.5 + (pA-0.5)*(0.92 + 0.5*Math.abs(pA-0.5)), 0.06, 0.96);
+  const chinVulnA = clamp(1.15 - ra.durability/105, 0.22, 1.05);
+  const chinVulnB = clamp(1.15 - rb.durability/105, 0.22, 1.05);
+  const koA  = clamp(0.028 + 0.155*(ra.power/100)*(0.45 + chinVulnB), 0.012, 0.34);
+  const koB  = clamp(0.028 + 0.155*(rb.power/100)*(0.45 + chinVulnA), 0.012, 0.34);
+  const subAh = clamp(0.010 + 0.125*(ra.subThreat/100)*(1.18 - rb.grapDef/125), 0.004, 0.26);
+  const subBh = clamp(0.010 + 0.125*(rb.subThreat/100)*(1.18 - ra.grapDef/125), 0.004, 0.26);
+  const cardDrift = (ra.cardio - rb.cardio)/100 * 0.05;
+  const res = { winA:0, methods:{ a:{ko:0,sub:0,dec:0}, b:{ko:0,sub:0,dec:0} }, endRound:new Array(rounds+1).fill(0), distance:0, totalTimes:[] };
+  for(let n=0;n<N_SIMS;n++){
+    const drift = gauss()*0.055;
+    let wonA=0, wonB=0, done=false;
+    for(let r=1;r<=rounds && !done;r++){
+      const pr = clamp(q0 + drift + cardDrift*(r-1), 0.03, 0.97);
+      const aDom = Math.random() < pr;
+      if(aDom) wonA++; else wonB++;
+      const late = 1 + 0.10*(r-1);
+      const hKO_A  = koA  * late * (aDom?1:0.28);
+      const hSub_A = subAh* late * (aDom?1:0.20);
+      const hKO_B  = koB  * late * (aDom?0.28:1);
+      const hSub_B = subBh* late * (aDom?0.20:1);
+      const u = Math.random();
+      let acc = hKO_A;
+      if(u < acc){ res.winA++; res.methods.a.ko++; res.endRound[r]++; res.totalTimes.push((r-1)*5+Math.random()*5); done=true; break; }
+      acc += hSub_A;
+      if(u < acc){ res.winA++; res.methods.a.sub++; res.endRound[r]++; res.totalTimes.push((r-1)*5+Math.random()*5); done=true; break; }
+      acc += hKO_B;
+      if(u < acc){ res.methods.b.ko++; res.endRound[r]++; res.totalTimes.push((r-1)*5+Math.random()*5); done=true; break; }
+      acc += hSub_B;
+      if(u < acc){ res.methods.b.sub++; res.endRound[r]++; res.totalTimes.push((r-1)*5+Math.random()*5); done=true; break; }
+    }
+    if(!done){
+      res.distance++; res.totalTimes.push(rounds*5);
+      let aWins = wonA > wonB;
+      if(Math.abs(wonA-wonB) <= 1 && Math.random() < 0.10) aWins = !aWins;
+      if(aWins){ res.winA++; res.methods.a.dec++; } else { res.methods.b.dec++; }
+    }
+  }
+  const N = N_SIMS;
+  const lines = rounds===5 ? [1.5,2.5,3.5,4.5] : [1.5,2.5];
+  const overUnder = lines.map(L=>{
+    const over = res.totalTimes.filter(t=>t>L*5).length/N;
+    return { line:L, over:over, under:1-over };
+  });
+  return {
+    pA_mc: res.winA/N,
+    methods: { a:{ ko:res.methods.a.ko/N, sub:res.methods.a.sub/N, dec:res.methods.a.dec/N }, b:{ ko:res.methods.b.ko/N, sub:res.methods.b.sub/N, dec:res.methods.b.dec/N } },
+    endRound: res.endRound.map(c=>c/N),
+    distance: res.distance/N,
+    overUnder: overUnder
+  };
+}
+function analyzeBout(bout){
+  const a=bout.a, b=bout.b, rounds=bout.rounds||3;
+  const ra=deriveRatings(a), rb=deriveRatings(b);
+  const factors = buildFactors(a,b,ra,rb,rounds);
+  const pEngine = engineProbability(factors);
+  const pServer = bout.pub ? clamp(bout.pub.a/100, 0.02, 0.98) : null;
+  const pFinal = pServer!=null ? clamp(0.6*pEngine + 0.4*pServer, 0.03, 0.97) : pEngine;
+  const sim = simulateFight(a,b,rounds,pFinal,ra,rb);
+  const aIsPick = pFinal>=0.5;
+  const w = aIsPick ? a : b;
+  const wm = aIsPick ? sim.methods.a : sim.methods.b;
+  let method='Decision', mProb=wm.dec;
+  if(wm.ko>=wm.sub && wm.ko>=wm.dec){ method='KO/TKO'; mProb=wm.ko; }
+  else if(wm.sub>wm.ko && wm.sub>=wm.dec){ method='Submission'; mProb=wm.sub; }
+  let bestR=1, bestRv=0;
+  for(let r=1;r<sim.endRound.length;r++){ if(sim.endRound[r]>bestRv){ bestRv=sim.endRound[r]; bestR=r; } }
+  const fair = bout.odds ? devig(bout.odds.a, bout.odds.b) : null;
+  const pickP = aIsPick ? pFinal : 1-pFinal;
+  const pickMarket = fair ? (aIsPick ? fair.a : fair.b) : null;
+  const pickOdds = bout.odds ? (aIsPick ? bout.odds.a : bout.odds.b) : null;
+  const edge = pickMarket!=null ? pickP - pickMarket : null;
+  const band = 0.03 + 0.075*(1-Math.abs(2*pFinal-1)) + 0.012*(9-Math.min(a.research,b.research));
+  return {
+    bout:bout, a:a, b:b, ra:ra, rb:rb, rounds:rounds, factors:factors,
+    pEngine:pEngine, pServer:pServer, pFinal:pFinal, band:band,
+    sim:sim, winner:w, aIsPick:aIsPick,
+    method:method, methodProb:mProb, likelyRound: method==='Decision' ? null : bestR,
+    fair:fair, pickP:pickP, pickMarket:pickMarket, pickOdds:pickOdds, edge:edge,
+    tier: tierOf(pickP, edge, pickOdds)
+  };
+}
+function tierOf(p, edge, odds){
+  if(edge!=null && edge>0.04 && odds!=null && odds>0) return {label:'Value Dog', cls:'tier-dog'};
+  if(p>=0.72) return {label:'🔒 Lock', cls:'tier-lock'};
+  if(p>=0.58) return {label:'Lean', cls:'tier-lean'};
+  if(edge!=null && edge<=0) return {label:'Pass', cls:'tier-pass'};
+  return {label:'Lean', cls:'tier-lean'};
+}
+
+/* ── analysis renderer ── */
+const RESULTS = {};
+let LAB_UID = 0;
+function boutId(bout){ return bout.a.name + ' vs ' + bout.b.name; }
+function labBank(){
+  return {
+    bankroll: num(document.getElementById('bk-bankroll').value, 1000),
+    kellyFrac: num(document.getElementById('bk-kelly-frac').value, 0.25),
+    maxBet: num(document.getElementById('bk-max-bet').value, 100)
+  };
+}
+function kellyStake(bankroll, p, dec, frac, maxBet){
+  if(dec==null) return 0;
+  const bnet = dec-1, q = 1-p;
+  const full = (bnet*p - q)/bnet;
+  if(full<=0) return 0;
+  return Math.min(bankroll*full*frac, maxBet);
+}
+function buildAnalysisPanel(host, uid){
+  const an = RESULTS[uid];
+  const a=an.a, b=an.b, ra=an.ra, rb=an.rb, sim=an.sim;
+  const wCol = an.aIsPick ? '#ff5b6b' : '#6ea3ff';
+  const pA = an.pFinal;
+  const tapeRow = (lab, va, vb, fmt, hiA) => {
+    const f = fmt || (x=>x);
+    if(hiA===null) return '<tr><td class="t-a">'+f(va)+'</td><td class="t-lab">'+lab+'</td><td class="t-b">'+f(vb)+'</td></tr>';
+    const advA = hiA===undefined ? va>vb : hiA ? va>vb : va<vb;
+    return '<tr><td class="t-a'+(advA?' adv':'')+'">'+f(va)+'</td><td class="t-lab">'+lab+'</td><td class="t-b'+(va===vb?'':(!advA?' adv':''))+'">'+f(vb)+'</td></tr>';
+  };
+  const tape =
+    tapeRow('Style', STYLE_LABELS[ra.style], STYLE_LABELS[rb.style], x=>x, null) +
+    tapeRow('Age', a.age, b.age, x=>x, false) +
+    tapeRow('Reach', a.reach, b.reach, x=>x+'"') +
+    tapeRow('Sig. strikes / min', a.slpm, b.slpm, x=>x.toFixed?x.toFixed(1):x) +
+    tapeRow('Strike accuracy', a.strAcc, b.strAcc, x=>x+'%') +
+    tapeRow('Strike defense', a.strDef, b.strDef, x=>x+'%') +
+    tapeRow('Takedowns / 15m', a.tdAvg, b.tdAvg) +
+    tapeRow('TD defense', a.tdDef, b.tdDef, x=>x+'%') +
+    tapeRow('Subs / 15m', a.subAvg, b.subAvg) +
+    tapeRow('Avg fight time', a.avgTime, b.avgTime, x=>x+'m') +
+    tapeRow('Win streak', a.streak, b.streak);
+  const facs = an.factors.slice().sort((x,y)=>Math.abs(y.edge-50)*y.w - Math.abs(x.edge-50)*x.w);
+  const facHtml = facs.map(f => {
+    const dev = f.edge-50;
+    const wPct = Math.min(Math.abs(dev), 48);
+    const fill = dev>=0 ? '<div class="factor-fill a" style="width:'+wPct+'%"></div>' : '<div class="factor-fill b" style="width:'+wPct+'%"></div>';
+    return '<div class="factor" title="'+esc(f.note)+'"><span class="factor-label">'+f.label+'</span><div class="factor-bar">'+fill+'</div><span class="factor-val" style="color:'+(dev>=0?'#ff5b6b':'#6ea3ff')+'">'+(dev>=0?'+':'')+dev.toFixed(0)+'</span></div>';
+  }).join('');
+  const mrow = (lab, p, col) =>
+    '<div class="mrow"><span class="mrow-label">'+lab+'</span><div class="mrow-track"><div class="mrow-fill" style="width:'+Math.min(p*100*1.6,100)+'%;background:'+col+'"></div></div><span class="mrow-val">'+fmtPct(p)+'</span></div>';
+  const methHtml =
+    '<div class="msplit"><div><h5 class="red">'+esc(lastName(a.name))+' wins by</h5>' +
+      mrow('KO / TKO', sim.methods.a.ko, 'linear-gradient(90deg,#8f0d1c,#e8192c)') +
+      mrow('Submission', sim.methods.a.sub, 'linear-gradient(90deg,#8f0d1c,#ff6b35)') +
+      mrow('Decision', sim.methods.a.dec, 'linear-gradient(90deg,#5a3138,#a34250)') +
+    '</div><div><h5 class="blue">'+esc(lastName(b.name))+' wins by</h5>' +
+      mrow('KO / TKO', sim.methods.b.ko, 'linear-gradient(90deg,#1c4fa8,#3b82f6)') +
+      mrow('Submission', sim.methods.b.sub, 'linear-gradient(90deg,#1c4fa8,#38b6ff)') +
+      mrow('Decision', sim.methods.b.dec, 'linear-gradient(90deg,#2c3752,#4d6398)') +
+    '</div></div>';
+  let rcols = '';
+  for(let r=1; r<sim.endRound.length; r++){
+    const p = sim.endRound[r];
+    rcols += '<div class="rcol"><span class="rval">'+fmtPct0(p)+'</span><div class="rbar" style="height:'+clamp(p*160,2,74)+'px"></div><span class="rlab">R'+r+'</span></div>';
+  }
+  rcols += '<div class="rcol"><span class="rval">'+fmtPct0(sim.distance)+'</span><div class="rbar dist" style="height:'+clamp(sim.distance*160,2,74)+'px"></div><span class="rlab">Dec</span></div>';
+  const propRow = (lab, p) => '<tr><td>'+lab+'</td><td>'+fmtPct(p)+'</td><td class="'+(p>=0.5?'pos':'neg')+'">'+fmtAm(probToAmerican(p))+'</td></tr>';
+  let props =
+    propRow(esc(lastName(a.name))+' by KO/TKO', sim.methods.a.ko) +
+    propRow(esc(lastName(a.name))+' by Submission', sim.methods.a.sub) +
+    propRow(esc(lastName(a.name))+' by Decision', sim.methods.a.dec) +
+    propRow(esc(lastName(b.name))+' by KO/TKO', sim.methods.b.ko) +
+    propRow(esc(lastName(b.name))+' by Submission', sim.methods.b.sub) +
+    propRow(esc(lastName(b.name))+' by Decision', sim.methods.b.dec) +
+    propRow('Fight goes the distance', sim.distance);
+  sim.overUnder.forEach(ou => { props += propRow('Over '+ou.line+' rounds', ou.over) + propRow('Under '+ou.line+' rounds', ou.under); });
+  let market = '<p style="font-size:12px;color:var(--faint)">No market odds attached — add them above to price the edge.</p>';
+  if(an.bout.odds && an.fair){
+    const dec = decOdds(an.pickOdds);
+    const ev100 = 100*(an.pickP*(dec-1)-(1-an.pickP));
+    const bk = labBank();
+    const k = kellyStake(bk.bankroll, an.pickP, dec, bk.kellyFrac, bk.maxBet);
+    market =
+      '<div class="bet-grid">' +
+      '<div class="bet-box"><div class="bx-lab">Book · '+esc(lastName(an.winner.name))+'</div><div class="bx-val">'+fmtAm(an.pickOdds)+'</div></div>' +
+      '<div class="bet-box"><div class="bx-lab">Market (vig-free)</div><div class="bx-val">'+fmtPct(an.pickMarket)+'</div></div>' +
+      '<div class="bet-box"><div class="bx-lab">Model</div><div class="bx-val">'+fmtPct(an.pickP)+'</div></div>' +
+      '<div class="bet-box"><div class="bx-lab">Edge</div><div class="bx-val '+(an.edge>=0?'edge-pos':'edge-neg')+'">'+(an.edge>=0?'+':'')+(an.edge*100).toFixed(1)+'%</div></div>' +
+      '<div class="bet-box"><div class="bx-lab">EV / $100</div><div class="bx-val '+(ev100>=0?'edge-pos':'edge-neg')+'">'+(ev100>=0?'+':'−')+fmtDollar(ev100).slice(1)+'</div></div>' +
+      '<div class="bet-box"><div class="bx-lab">¼-Kelly stake</div><div class="bx-val">'+fmtDollar(k)+'</div></div>' +
+      '</div>' +
+      '<p style="font-size:11px;color:var(--faint);line-height:1.6">' +
+      (an.edge>0.03 ? 'The model prices '+esc(an.winner.name)+' meaningfully above the vig-free market — a genuine value spot.'
+        : an.edge>0 ? 'Thin edge over the market. Playable at flat stakes, not a Kelly play.'
+        : 'The market is ahead of the model here — no bet.') + '</p>';
+  }
+  const paths = buildNarratives(an);
+  const chips =
+    '<div class="v-chip"><div class="vc-val" style="color:'+wCol+'">'+fmtPct(an.pickP)+'</div><div class="vc-lab">Consensus</div></div>' +
+    '<div class="v-chip"><div class="vc-val">'+fmtPct(an.aIsPick?an.pEngine:1-an.pEngine)+'</div><div class="vc-lab">Engine v5</div></div>' +
+    (an.pServer!=null ? '<div class="v-chip"><div class="vc-val">'+fmtPct(an.aIsPick?an.pServer:1-an.pServer)+'</div><div class="vc-lab">Server model</div></div>' : '') +
+    (an.pickMarket!=null ? '<div class="v-chip"><div class="vc-val">'+fmtPct(an.pickMarket)+'</div><div class="vc-lab">Market</div></div>' : '') +
+    '<span class="tier-badge '+an.tier.cls+'">'+an.tier.label+'</span>';
+  host.innerHTML =
+    '<div class="verdict">' +
+      '<div class="verdict-left"><span class="verdict-tag">Engine verdict · '+N_SIMS.toLocaleString()+' simulations</span>' +
+      '<span class="verdict-name" style="color:'+wCol+'">'+esc(an.winner.name)+'</span>' +
+      '<span class="verdict-method">by '+an.method+' ('+fmtPct(an.methodProb)+')'+(an.likelyRound?' · most likely round '+an.likelyRound:'')+'</span></div>' +
+      '<div class="verdict-right">'+chips+'</div>' +
+    '</div>' +
+    '<div class="prob-names"><span class="pn-a">'+esc(a.name)+'</span><span class="pn-b">'+esc(b.name)+'</span></div>' +
+    '<div class="prob-track"><div class="prob-a" style="width:'+(pA*100)+'%">'+fmtPct(pA)+'</div><div class="prob-b">'+fmtPct(1-pA)+'</div></div>' +
+    '<div class="prob-ci">model band ±'+(an.band*100).toFixed(0)+' pts · sim agreement '+fmtPct(an.aIsPick?sim.pA_mc:1-sim.pA_mc)+'</div>' +
+    '<div class="ana-grid">' +
+      '<div class="ana-cell"><h4>Tale of the tape</h4><table class="tape">'+tape+'</table></div>' +
+      '<div class="ana-cell"><h4>Attribute radar</h4><div class="radar-wrap"><canvas id="radar-'+uid+'" width="340" height="300"></canvas></div></div>' +
+      '<div class="ana-cell full"><h4>Factor breakdown — what moves the number</h4>'+facHtml+'</div>' +
+      '<div class="ana-cell"><h4>Method of victory (simulated)</h4>'+methHtml+'</div>' +
+      '<div class="ana-cell"><h4>When it ends</h4><div class="rchart">'+rcols+'</div></div>' +
+      '<div class="ana-cell"><h4>Prop pricing (fair odds)</h4><div style="overflow-x:auto"><table class="props"><tr><th>Prop</th><th>Model %</th><th>Fair odds</th></tr>'+props+'</table></div></div>' +
+      '<div class="ana-cell"><h4>Model vs market</h4>'+market+'</div>' +
+      '<div class="ana-cell full"><h4>Paths to victory</h4>'+paths+'</div>' +
+    '</div>' +
+    '<div class="ana-actions">' +
+      '<button class="btn btn-ghost" onclick="addParlayLeg(\''+uid+'\')">+ Parlay</button>' +
+      '<button class="btn btn-gold" onclick="openShareCard(\''+uid+'\')">Share Card</button>' +
+    '</div>';
+  drawRadar(document.getElementById('radar-'+uid), ra, rb, lastName(a.name), lastName(b.name));
+}
+function drawRadar(canvas, ra, rb, nameA, nameB){
+  if(!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const W = 340, H = 300;
+  canvas.width = W*dpr; canvas.height = H*dpr;
+  canvas.style.width = W+'px'; canvas.style.height = H+'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const axes = [['Output','output'],['Accuracy','accuracy'],['Str Def','strDef'],['Power','power'],['Wrestling','wrestling'],['Grap Def','grapDef'],['Subs','subThreat'],['Cardio','cardio']];
+  const cx=W/2, cy=H/2+6, R=100, n=axes.length;
+  const pt = (i,v) => { const ang = -Math.PI/2 + i*2*Math.PI/n; return [cx + Math.cos(ang)*R*v/100, cy + Math.sin(ang)*R*v/100]; };
+  ctx.strokeStyle='rgba(255,255,255,0.07)'; ctx.lineWidth=1;
+  for(let ring=25; ring<=100; ring+=25){
+    ctx.beginPath();
+    for(let i=0;i<=n;i++){ const p=pt(i%n,ring); i===0?ctx.moveTo(p[0],p[1]):ctx.lineTo(p[0],p[1]); }
+    ctx.stroke();
+  }
+  for(let i=0;i<n;i++){
+    const p=pt(i,100);
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p[0],p[1]); ctx.stroke();
+    const lp=pt(i,124);
+    ctx.fillStyle='rgba(139,144,160,0.9)'; ctx.font='9px Inter, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(axes[i][0], lp[0], lp[1]);
+  }
+  const poly = (r, stroke, fill) => {
+    ctx.beginPath();
+    for(let i=0;i<=n;i++){ const p=pt(i%n, r[axes[i%n][1]]); i===0?ctx.moveTo(p[0],p[1]):ctx.lineTo(p[0],p[1]); }
+    ctx.closePath(); ctx.fillStyle=fill; ctx.fill(); ctx.strokeStyle=stroke; ctx.lineWidth=1.6; ctx.stroke();
+  };
+  poly(ra, '#e8192c', 'rgba(232,25,44,0.14)');
+  poly(rb, '#3b82f6', 'rgba(59,130,246,0.14)');
+  ctx.font='700 10px Inter, sans-serif'; ctx.textAlign='left';
+  ctx.fillStyle='#ff5b6b'; ctx.fillText('● '+nameA, 8, 14);
+  ctx.fillStyle='#6ea3ff'; ctx.fillText('● '+nameB, 8, 28);
+}
+function buildNarratives(an){
+  const a=an.a, b=an.b, ra=an.ra, rb=an.rb, sim=an.sim;
+  const li = arr => arr.map(t=>'<li>'+t+'</li>').join('');
+  const pathsFor = (f, rf, of, ro, meth) => {
+    const out=[];
+    if(rf.power>ro.strDef+8) out.push('Heavy hands vs a hittable target — <strong>'+fmtPct(meth.ko)+'</strong> of sims end in a '+esc(lastName(f.name))+' KO/TKO.');
+    if(rf.wrestling>ro.grapDef+10) out.push('Clear takedown lane: chain-wrestle early, drain the tank, stack control rounds.');
+    if(rf.subThreat>45 && ro.grapDef<55) out.push('Submission threat is live the moment this hits the mat ('+fmtPct(meth.sub)+' of sims).');
+    if(rf.cardio>ro.cardio+12) out.push('Deep-water plan: push pace past round '+(an.rounds>3?3:2)+' where the cardio gap decides exchanges.');
+    if(f.reach>of.reach+2 && (rf.style==='volume_striker'||rf.style==='power_striker')) out.push('A '+(f.reach-of.reach)+'" reach edge to win range exchanges behind the jab.');
+    if(f.streak>=4) out.push('Rides a '+f.streak+'-fight win streak — momentum and confidence are real signal.');
+    if(!out.length) out.push('Needs a grind: win narrow exchanges and bank rounds on the judges\' cards ('+fmtPct(meth.dec)+' of sims).');
+    return out.slice(0,4);
+  };
+  const upsets=[];
+  const dog = an.aIsPick ? b : a, dogR = an.aIsPick ? rb : ra;
+  const favR = an.aIsPick ? ra : rb;
+  if(dogR.power>60) upsets.push('one-punch power never leaves — a single clean counter changes everything');
+  if(favR.durability<50) upsets.push('the favorite\'s durability profile is fading');
+  if(dogR.subThreat>50) upsets.push('a scramble-heavy fight opens submission windows');
+  if(Math.abs(an.pFinal-0.5)<0.1) upsets.push('this is a genuine coin flip — variance is the story');
+  if(an.rounds===5 && dogR.cardio>favR.cardio) upsets.push('championship rounds favor the underdog\'s tank');
+  const upsetHtml = upsets.length ? '<div class="upset-box"><strong>⚠ Upset triggers</strong>'+esc(lastName(dog.name))+' lives if: '+upsets.join('; ')+'.</div>' : '';
+  return '<div class="paths">' +
+    '<div class="pa"><h5 class="red">'+esc(a.name)+'</h5><ul>'+li(pathsFor(a,ra,b,rb,sim.methods.a))+'</ul></div>' +
+    '<div class="pb"><h5 class="blue">'+esc(b.name)+'</h5><ul>'+li(pathsFor(b,rb,a,ra,sim.methods.b))+'</ul></div>' +
+    '</div>' + upsetHtml;
+}
+
+/* ── deep analyzer from the board ── */
+const PROF_CACHE = {};
+async function fighterData(name){
+  if(PROF_CACHE[name]) return PROF_CACHE[name];
+  const enc = encodeURIComponent('eq.'+name);
+  const [p,t,r] = await Promise.all([
+    sbQ('fighter_profiles?select=fighter,fights,s_striking,s_grappling,s_cardio,s_durability,s_iq,s_activity&fighter='+enc+'&limit=1'),
+    sbQ('fighter_tott?select=fighter,reach_in,dob&fighter='+enc+'&limit=1'),
+    sbQ('fighter_ratings?select=fighter,streak&fighter='+enc+'&limit=1')
+  ]);
+  const d = { prof: Array.isArray(p)&&p[0]?p[0]:null, tott: Array.isArray(t)&&t[0]?t[0]:null, rat: Array.isArray(r)&&r[0]?r[0]:null };
+  if(d.prof) PROF_CACHE[name]=d;
+  return d;
+}
+async function deepAnalyzer(bid){
+  const p=(window.BOARD_MAP||{})[bid]; if(!p)return;
+  if(p.is_pro && !getPro()){ openModal('signup'); return; }
+  let ov=document.getElementById('deepOverlay');
+  if(!ov){ov=document.createElement('div');ov.id='deepOverlay';ov.className='overlay';ov.addEventListener('click',function(e){if(e.target===ov)ov.classList.remove('open');});document.body.appendChild(ov);}
+  ov.innerHTML='<div class="modal deep-modal"><button class="x" onclick="document.getElementById(\'deepOverlay\').classList.remove(\'open\')">×</button><div class="sk" style="height:320px;margin:24px 4px 4px;"></div></div>';
+  ov.classList.add('open');
+  try{
+    const [da,db] = await Promise.all([fighterData(p.fighter), fighterData(p.opponent)]);
+    if(!da.prof && !db.prof) throw new Error('no profiles');
+    const bout = {
+      billing: p.billing||'', weightClass: p.weight_class||'',
+      odds: p.book_odds!=null ? {a:Number(p.book_odds), b:oppOdds(Number(p.book_odds))} : null,
+      pub: p.win_pct!=null ? {a:Math.round(Number(p.win_pct)), b:100-Math.round(Number(p.win_pct))} : null,
+      a: statBlock(p.fighter, da.prof, da.tott, da.rat),
+      b: statBlock(p.opponent, db.prof, db.tott, db.rat),
+      rounds: /main event/i.test(p.billing||'') ? 5 : 3
+    };
+    const an = analyzeBout(bout);
+    const uid = 'deep'+(++LAB_UID);
+    RESULTS[uid]=an;
+    ov.innerHTML='<div class="modal deep-modal"><button class="x" onclick="document.getElementById(\'deepOverlay\').classList.remove(\'open\')">×</button><div class="ana" id="deep-ana"></div></div>';
+    buildAnalysisPanel(document.getElementById('deep-ana'), uid);
+  }catch(e){
+    ov.classList.remove('open');
+    analyzerModal(bid); /* quick math sheet fallback */
+  }
+}
+
+/* ── matchup lab ── */
+const CUSTOM_TEMPLATE = { name:'Custom Fighter', strAcc:45, strDef:54, slpm:4.2, tdAcc:40, tdDef:60, tdAvg:1.2, subAvg:0.5, avgTime:10, reach:72, age:29, streak:2, research:5 };
+const LAB = { a: Object.assign({},CUSTOM_TEMPLATE), b: Object.assign({},CUSTOM_TEMPLATE,{name:'Custom Fighter B'}) };
+const LAB_FIELDS = [
+  ['slpm','Str/Min',0.1], ['strAcc','Str Acc %',1], ['strDef','Str Def %',1],
+  ['tdAvg','TD/15m',0.1], ['tdAcc','TD Acc %',1], ['tdDef','TD Def %',1],
+  ['subAvg','Sub/15m',0.1], ['avgTime','Avg Min',1], ['reach','Reach "',1],
+  ['age','Age',1], ['streak','Streak',1], ['research','Level 3-9',1]
+];
+let LAB_ROUNDS = 3;
+function renderLabFields(side){
+  const host = document.getElementById('fields'+side.toUpperCase());
+  const f = LAB[side];
+  host.innerHTML = LAB_FIELDS.map(fd =>
+    '<div class="sf"><label>'+fd[1]+'</label><input type="number" step="'+fd[2]+'" value="'+f[fd[0]]+'" data-side="'+side+'" data-key="'+fd[0]+'"/></div>'
+  ).join('');
+  host.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', e => {
+      const v = parseFloat(e.target.value);
+      if(!isNaN(v)) LAB[e.target.dataset.side][e.target.dataset.key] = v;
+    });
+  });
+  document.getElementById('slotName'+side.toUpperCase()).textContent = f.name;
+  const r = deriveRatings(f);
+  document.getElementById('slotTag'+side.toUpperCase()).textContent =
+    STYLE_LABELS[r.style] + ' · power ' + Math.round(r.power) + ' · cardio ' + Math.round(r.cardio);
+}
+let searchTimer = {};
+function wireSearch(side){
+  const input = document.getElementById('search'+side.toUpperCase());
+  const drop = document.getElementById('drop'+side.toUpperCase());
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    clearTimeout(searchTimer[side]);
+    if(q.length < 2){ drop.classList.remove('open'); return; }
+    searchTimer[side] = setTimeout(async () => {
+      try{
+        drop.innerHTML = '<div class="sd-note">Searching roster… <span class="spin"></span></div>';
+        drop.classList.add('open');
+        const rows = await sbQ('fighter_profiles?select=fighter,fights,s_striking,s_grappling,s_cardio,s_durability,s_iq,s_activity&fighter=ilike.*'+encodeURIComponent(q)+'*&order=fights.desc&limit=8');
+        if(!Array.isArray(rows) || !rows.length){
+          drop.innerHTML = '<div class="sd-note">No match in the database — dial the stats in manually below.</div>';
+          return;
+        }
+        drop.innerHTML = rows.map((r,i) =>
+          '<div class="sd-item" data-i="'+i+'"><span>'+esc(r.fighter)+'</span><span class="sd-sub">'+num(r.fights,0)+' fights</span></div>'
+        ).join('') + '<div class="sd-note">Apex database · UFC history</div>';
+        drop.querySelectorAll('.sd-item').forEach(el => {
+          el.addEventListener('click', () => pickFighter(side, rows[Number(el.dataset.i)]));
+        });
+      }catch(e){
+        drop.innerHTML = '<div class="sd-note">Roster sync unavailable — manual entry still works.</div>';
+      }
+    }, 260);
+  });
+  document.addEventListener('click', e => { if(!input.parentElement.contains(e.target)) drop.classList.remove('open'); });
+}
+async function pickFighter(side, prof){
+  const drop = document.getElementById('drop'+side.toUpperCase());
+  drop.classList.remove('open');
+  document.getElementById('search'+side.toUpperCase()).value = prof.fighter;
+  let tott=null, rat=null;
+  try{
+    const enc = encodeURIComponent('eq.'+prof.fighter);
+    const [t, r] = await Promise.all([
+      sbQ('fighter_tott?select=fighter,reach_in,dob&fighter='+enc+'&limit=1'),
+      sbQ('fighter_ratings?select=fighter,streak&fighter='+enc+'&limit=1')
+    ]);
+    tott = Array.isArray(t)&&t[0] ? t[0] : null;
+    rat = Array.isArray(r)&&r[0] ? r[0] : null;
+  }catch(e){}
+  LAB[side] = statBlock(prof.fighter, prof, tott, rat);
+  renderLabFields(side);
+}
+function runLabAnalysis(){
+  const btn = document.getElementById('analyzeBtn');
+  btn.disabled = true; btn.innerHTML = 'Simulating… <span class="spin"></span>';
+  setTimeout(() => {
+    const nameA = document.getElementById('searchA').value.trim();
+    const nameB = document.getElementById('searchB').value.trim();
+    if(nameA && LAB.a.name.indexOf('Custom')===0) LAB.a.name = nameA;
+    if(nameB && LAB.b.name.indexOf('Custom')===0) LAB.b.name = nameB;
+    const oA = parseFloat(document.getElementById('oddsA').value);
+    const oB = parseFloat(document.getElementById('oddsB').value);
+    const bout = {
+      billing:'Matchup Lab', weightClass:'Custom matchup',
+      odds: (!isNaN(oA) && !isNaN(oB)) ? {a:oA,b:oB} : null,
+      pub:null,
+      a: Object.assign({},LAB.a), b: Object.assign({},LAB.b),
+      rounds: LAB_ROUNDS
+    };
+    const an = analyzeBout(bout);
+    const uid = 'lab' + (++LAB_UID);
+    RESULTS[uid] = an;
+    const host = document.getElementById('labResult');
+    host.style.display = 'block';
+    host.innerHTML = '<div class="ana" id="ana-'+uid+'"></div>';
+    buildAnalysisPanel(document.getElementById('ana-'+uid), uid);
+    btn.disabled = false; btn.innerHTML = '⚡ Run Full Analysis';
+    host.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 30);
+}
+function swapCorners(){
+  const t = LAB.a; LAB.a = LAB.b; LAB.b = t;
+  const sA=document.getElementById('searchA'), sB=document.getElementById('searchB');
+  const tv=sA.value; sA.value=sB.value; sB.value=tv;
+  const oA=document.getElementById('oddsA'), oB=document.getElementById('oddsB');
+  const to=oA.value; oA.value=oB.value; oB.value=to;
+  renderLabFields('a'); renderLabFields('b');
+}
+
+/* ── parlay desk ── */
+const SLIP_KEY = 'apex_lab_slip_v5';
+function loadSlip(){ try{ return JSON.parse(localStorage.getItem(SLIP_KEY)||'[]'); }catch(e){ return []; } }
+function saveSlip(s){ try{ localStorage.setItem(SLIP_KEY, JSON.stringify(s)); }catch(e){} }
+function addParlayLeg(uid){
+  const an = RESULTS[uid];
+  if(!an) return;
+  const slip = loadSlip();
+  const bid = boutId(an.bout);
+  if(!slip.some(l=>l.bout===bid)) slip.push({ bout:bid, name:an.winner.name, p:an.pickP, odds:an.pickOdds });
+  saveSlip(slip); renderSlip();
+  const dov=document.getElementById('deepOverlay'); if(dov) dov.classList.remove('open');
+  showView('lab');
+}
+function removeParlayLeg(i){ const slip=loadSlip(); slip.splice(i,1); saveSlip(slip); renderSlip(); }
+function renderSlip(){
+  const slip = loadSlip();
+  const legsEl = document.getElementById('slipLegs');
+  const sumEl = document.getElementById('slipSum');
+  if(!legsEl) return;
+  document.getElementById('slipEmpty').style.display = slip.length ? 'none' : 'block';
+  legsEl.innerHTML = slip.map((l,i) =>
+    '<div class="slip-leg"><span style="min-width:0;"><strong>'+esc(l.name)+'</strong> <span style="color:var(--faint);font-size:10px;">'+esc(l.bout)+'</span></span>' +
+    '<span class="mono" style="font-size:11px;flex:none;">'+fmtPct(l.p)+(l.odds!=null?' · '+fmtAm(l.odds):'')+'</span>' +
+    '<button class="sl-x" onclick="removeParlayLeg('+i+')">✕</button></div>'
+  ).join('');
+  if(!slip.length){ sumEl.innerHTML=''; return; }
+  const pAll = slip.reduce((acc,l)=>acc*l.p, 1);
+  const allPriced = slip.every(l=>l.odds!=null);
+  const decMarket = allPriced ? slip.reduce((acc,l)=>acc*decOdds(l.odds),1) : null;
+  const fairDec = 1/Math.max(pAll,0.0001);
+  const ev = decMarket!=null ? 100*(pAll*decMarket - 1) : null;
+  const box = (lab,val,col) => '<div class="bet-box"><div class="bx-lab">'+lab+'</div><div class="bx-val"'+(col?' style="color:'+col+'"':'')+'>'+val+'</div></div>';
+  sumEl.innerHTML =
+    box(slip.length+'-leg hits', fmtPct(pAll)) +
+    box('Fair payout', 'x'+fairDec.toFixed(2)) +
+    (decMarket!=null ? box('Book payout', 'x'+decMarket.toFixed(2)) : '') +
+    (ev!=null ? box('EV / $100', (ev>=0?'+':'−')+fmtDollar(ev).slice(1), ev>=0?'var(--green)':'#ff6b6b') : '') +
+    (slip.length>=4 ? box('⚠ Variance', 'Extreme', 'var(--gold)') : '');
+}
+
+/* ── share card ── */
+let shareUid = null;
+function roundRectPath(ctx,x,y,w,h,r){
+  ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.arcTo(x+w,y,x+w,y+r,r);
+  ctx.lineTo(x+w,y+h-r); ctx.arcTo(x+w,y+h,x+w-r,y+h,r); ctx.lineTo(x+r,y+h);
+  ctx.arcTo(x,y+h,x,y+h-r,r); ctx.lineTo(x,y+r); ctx.arcTo(x,y,x+r,y,r); ctx.closePath();
+}
+function openShareCard(uid){
+  const an = RESULTS[uid];
+  if(!an) return;
+  shareUid = uid;
+  const cv = document.getElementById('shareCanvas');
+  const ctx = cv.getContext('2d');
+  const W=1000, H=1000;
+  const g = ctx.createLinearGradient(0,0,W,H);
+  g.addColorStop(0,'#0e0f17'); g.addColorStop(1,'#07080f');
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  const stripe = ctx.createLinearGradient(0,0,W,0);
+  stripe.addColorStop(0,'#e8192c'); stripe.addColorStop(0.5,'#7a0010'); stripe.addColorStop(1,'#3b82f6');
+  ctx.fillStyle=stripe; ctx.fillRect(0,0,W,8);
+  ctx.strokeStyle='rgba(232,25,44,0.08)'; ctx.lineWidth=3;
+  for(let k=0;k<3;k++){
+    const R=320+k*90;
+    ctx.beginPath();
+    for(let i=0;i<8;i++){ const ang=Math.PI/4*i-Math.PI/8; const px=W/2+R*Math.cos(ang), py=H/2+R*Math.sin(ang); i===0?ctx.moveTo(px,py):ctx.lineTo(px,py); }
+    ctx.closePath(); ctx.stroke();
+  }
+  ctx.textAlign='center';
+  ctx.fillStyle='#f0b942'; ctx.font='700 26px Inter, Arial'; ctx.fillText('APEX FIGHT IQ · FIGHT LAB', W/2, 80);
+  ctx.fillStyle='#8b90a0'; ctx.font='20px Inter, Arial'; ctx.fillText(String(an.bout.billing).toUpperCase()+' · '+an.bout.weightClass+' · '+an.rounds+' ROUNDS', W/2, 118);
+  ctx.font='800 54px Inter, Arial';
+  ctx.fillStyle='#ff5b6b'; ctx.fillText(an.a.name.toUpperCase(), W/2, 230);
+  ctx.fillStyle='#4a4f60'; ctx.font='700 30px Inter, Arial'; ctx.fillText('VS', W/2, 285);
+  ctx.fillStyle='#6ea3ff'; ctx.font='800 54px Inter, Arial'; ctx.fillText(an.b.name.toUpperCase(), W/2, 345);
+  roundRectPath(ctx, 140, 420, 720, 300, 24);
+  ctx.fillStyle='rgba(255,255,255,0.04)'; ctx.fill();
+  ctx.strokeStyle='rgba(240,185,66,0.5)'; ctx.lineWidth=2; ctx.stroke();
+  ctx.fillStyle='#8b90a0'; ctx.font='700 20px Inter, Arial'; ctx.fillText('THE PICK', W/2, 470);
+  ctx.fillStyle = an.aIsPick ? '#ff5b6b' : '#6ea3ff';
+  ctx.font='800 64px Inter, Arial'; ctx.fillText(an.winner.name.toUpperCase(), W/2, 545);
+  ctx.fillStyle='#eceef4'; ctx.font='700 36px JetBrains Mono, monospace';
+  ctx.fillText(fmtPct(an.pickP)+' · by '+an.method+(an.likelyRound?' R'+an.likelyRound:''), W/2, 605);
+  ctx.fillStyle='#f0b942'; ctx.font='700 26px Inter, Arial';
+  ctx.fillText(an.tier.label.replace('🔒','LOCK ·'), W/2, 660);
+  if(an.edge!=null){
+    ctx.fillStyle = an.edge>=0 ? '#10b981' : '#8b90a0';
+    ctx.font='24px JetBrains Mono, monospace';
+    ctx.fillText('market edge '+(an.edge>=0?'+':'')+(an.edge*100).toFixed(1)+'%'+(an.pickOdds!=null?' @ '+fmtAm(an.pickOdds):''), W/2, 700);
+  }
+  ctx.fillStyle='#8b90a0'; ctx.font='700 18px Inter, Arial';
+  ctx.fillText(N_SIMS.toLocaleString()+' MONTE CARLO SIMS · FINISH '+fmtPct0(1-an.sim.distance)+' · DISTANCE '+fmtPct0(an.sim.distance), W/2, 790);
+  ctx.fillStyle='#4a4f60'; ctx.font='16px Inter, Arial';
+  ctx.fillText('Statistical model output — not betting advice · apexfightiq', W/2, 950);
+  document.getElementById('shareModal').classList.add('open');
+}
+function downloadShareCard(){
+  const an = RESULTS[shareUid];
+  const a = document.createElement('a');
+  a.download = 'apex-pick-'+(an ? lastName(an.winner.name).toLowerCase() : 'card')+'.png';
+  a.href = document.getElementById('shareCanvas').toDataURL('image/png');
+  a.click();
+}
+
+/* ── lab init ── */
+(function(){
+  function init(){
+    if(!document.getElementById('fieldsA')) return;
+    renderLabFields('a'); renderLabFields('b');
+    wireSearch('a'); wireSearch('b');
+    renderSlip();
+    document.getElementById('analyzeBtn').addEventListener('click', runLabAnalysis);
+    document.getElementById('swapBtn').addEventListener('click', swapCorners);
+    document.getElementById('roundsSeg').querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        LAB_ROUNDS = Number(btn.dataset.r);
+        document.getElementById('roundsSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on', x===btn));
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
 </script>
 </body>
 </html>

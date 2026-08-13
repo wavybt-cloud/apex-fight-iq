@@ -8,33 +8,32 @@ Live at: https://apex-fight-iq.vercel.app and https://apexfightiq-v2.vercel.app
 The deployments do NOT serve the static files directly. Every page request runs
 through `page.js` — a small server layer that:
 
-1. Fetches `index.html` / `analyzer.html` from this GitHub repo (the `main`
-   branch by default; set the `SITE_REF` env var on Vercel to pin a commit).
+1. Fetches `index.html` from this GitHub repo (the `main` branch by default;
+   set the `SITE_REF` env var on Vercel to pin a commit). `/analyzer` is a
+   legacy route that 302-redirects into the app at `/#lab`.
 2. Patches `index.html` on the fly:
    - `EVENT_NAME` / `EVENT_DATE` are set from Supabase (next pending event in
      the `picks` table, skipping names starting with `ARCHIVED` or `DWCS`)
    - the track-record query gets `&event_name=not.ilike.ARCHIVED*&event_name=not.ilike.DWCS*`
      appended so archived drafts and DWCS scouting picks never appear in the
      public record
-3. Rebuilds the analyzer's hardcoded `NEXT_CARD` array from live Supabase data
-   (picks + fighter_profiles + fighter_tott + fighter_ratings).
-4. Serves with a 2-minute CDN cache.
+3. Serves with a 2-minute CDN cache.
 
-So: to change the site's LOOK, edit `index.html` / `analyzer.html` and push to
-`main`. To change EVENTS/PICKS/RECORD, you never touch code — it all flows from
+So: to change the site's LOOK, edit `index.html` and push to `main`. To change EVENTS/PICKS/RECORD, you never touch code — it all flows from
 the Supabase `picks` table.
 
 ## Files
 
-- `index.html`   — landing page: odds board, track record, pick'em game, paywall
-- `analyzer.html` — **Fight Lab v5 (Quantum Engine)**: 17-factor cross-matchup
-  model + 10,000-run Monte Carlo fight simulator. Live card analysis, best-bets
-  strip, Matchup Lab (search the full Supabase roster or build custom fighters),
-  method/round/distance distributions, prop pricing with fair odds, vig-free
-  market edge + EV + fractional-Kelly staking, parlay desk, pick tracking with
-  Platt self-calibration, and PNG share cards. The `NEXT_CARD` constant is
-  rebuilt server-side by `page.js` on every request and also live-syncs
-  client-side straight from Supabase.
+- `index.html`   — THE app (single page): mobile-first odds board, track
+  record, pick'em tournament, paywall, **and the Fight Lab v5 (Quantum
+  Engine)** — a 17-factor cross-matchup model + 10,000-run Monte Carlo fight
+  simulator. Every fight's "Full Fight Lab" button pulls that bout's fighter
+  stats live from Supabase and runs the complete engine (radar, factor
+  breakdown, method/round/distance distributions, prop pricing at fair odds,
+  vig-free market edge + EV + fractional-Kelly staking, PNG share cards); the
+  Lab tab lets you match ANY two roster fighters or custom stat lines, plus a
+  parlay desk. Falls back to the quick math sheet if fighter stats are
+  unavailable.
 - `page.js`      — the dynamic server layer described above (all HTML routes)
 - `checkout.js`  — Vercel function: Stripe Checkout session
   (env: STRIPE_SECRET_KEY, STRIPE_PRICE_MONTHLY, STRIPE_PRICE_6MONTH, SITE_URL)
@@ -65,7 +64,7 @@ Automation: nightly Supabase crons (grade picks, sync results, ratings, pick
 probabilities), weekly Sunday cloud task (grade → ingest → retrain → next card →
 Ky Slider benchmark), weekly PFL sync.
 
-## The Fight Lab v5 engine (analyzer.html)
+## The Fight Lab v5 engine (inside index.html)
 
 Three probability signals per bout, shown side by side and blended into a
 consensus (60% client engine / 40% server model when both exist):
@@ -74,8 +73,7 @@ consensus (60% client engine / 40% server model when both exist):
   defense, KO power, wrestling offense, TD defense, control matchup, submission
   threat, cardio & pace (5-round weighted), durability, reach conditioned on
   style, age curve, momentum, experience, a style rock-paper-scissors matrix,
-  sustained output, finishing instinct) → logistic → Platt-calibrated on the
-  user's own graded picks.
+  sustained output, finishing instinct) → logistic win probability.
 - **Server model (v3)** — `win_pct` from the `picks` table.
 - **Market** — vig-free implied probability from the book odds.
 
@@ -87,6 +85,6 @@ totals — each priced to fair American odds.
 
 ## Anon key note
 
-The Supabase anon key embedded in index.html / analyzer.html / page.js is
+The Supabase anon key embedded in index.html / page.js is
 public by design (row-level security controls access). The service-role key
 lives only in Vercel/Supabase env vars — never commit it.
