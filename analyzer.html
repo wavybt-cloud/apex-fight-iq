@@ -20,9 +20,9 @@
   --green:#1db86a; --green-glow:rgba(29,184,106,0.15);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--ink);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;}
-#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+html{scroll-behavior:smooth;overflow-x:clip;}
+body{background:var(--ink);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;}
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;max-width:100vw;z-index:0;pointer-events:none;}
 .page-wrap{position:relative;z-index:1;}
 .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
 .mono{font-family:'JetBrains Mono',monospace;}
@@ -1651,7 +1651,7 @@ function downloadShareCard(){
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
   let W,H,nodes=[];
-  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+  function resize(){ W=canvas.width=document.documentElement.clientWidth; H=canvas.height=document.documentElement.clientHeight; }
   function init(){
     resize(); nodes=[];
     const N = Math.min(80, Math.floor(W*H/16000));
