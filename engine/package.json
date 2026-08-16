@@ -1,0 +1,14 @@
+{
+  "name": "apex-quant-engine",
+  "version": "0.1.0",
+  "description": "Quantitative decision engine for MMA betting markets — simulation, calibration, CLV, and risk control. Zero dependencies.",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test 'test/*.test.js'",
+    "demo": "node demo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
