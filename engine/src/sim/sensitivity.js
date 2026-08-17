@@ -139,4 +139,44 @@ function fitFinishRate(sample, targetDistanceRate, opts) {
   return { multiplier: mid, achieved, iterations: iter + 1, target: targetDistanceRate };
 }
 
-module.exports = { ADVERSE_SCENARIOS, runSensitivity, fitFinishRate };
+/**
+ * Fit BOTH finish hazards so the simulator reproduces observed KO and
+ * submission base rates, not just the overall finish rate.
+ *
+ * Nominal koRate/subRate are not the realised rates: the KO hazard is scaled by
+ * the share of time spent standing and the submission hazard by grappling
+ * pressure. So the mapping from parameter to outcome is solved numerically
+ * rather than assumed.
+ *
+ * Damped multiplicative fixed point — the objective is smooth and monotone in
+ * each parameter, so this converges in a handful of iterations.
+ *
+ * @param {object} sample {a, b, rounds, iterations, batches, seed}
+ * @param {{ko:number, sub:number}} targets observed marginal rates
+ */
+function fitMethodRates(sample, targets, opts) {
+  const o = Object.assign({ tol: 0.006, maxIter: 25, damping: 0.7 }, opts || {});
+  const baseA = mc.withDefaults(sample.a);
+  const baseB = mc.withDefaults(sample.b);
+  let koScale = 1, subScale = 1;
+  let achieved = null;
+
+  for (let i = 0; i < o.maxIter; i++) {
+    const scale = (f) => Object.assign({}, f, {
+      koRate: f.koRate * koScale,
+      subRate: f.subRate * subScale,
+    });
+    const r = mc.run(Object.assign({}, sample, { a: scale(baseA), b: scale(baseB) }));
+    const ko = r.method.a.ko + r.method.b.ko;
+    const sub = r.method.a.sub + r.method.b.sub;
+    achieved = { ko, sub, distance: r.goesDistance };
+    if (Math.abs(ko - targets.ko) < o.tol && Math.abs(sub - targets.sub) < o.tol) {
+      return { koScale, subScale, achieved, iterations: i + 1, converged: true, targets };
+    }
+    if (ko > 0) koScale *= Math.pow(targets.ko / ko, o.damping);
+    if (sub > 0) subScale *= Math.pow(targets.sub / sub, o.damping);
+  }
+  return { koScale, subScale, achieved, iterations: o.maxIter, converged: false, targets };
+}
+
+module.exports = { ADVERSE_SCENARIOS, runSensitivity, fitFinishRate, fitMethodRates };

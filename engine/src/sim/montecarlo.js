@@ -26,11 +26,22 @@ const TICK_MINUTES = TICK_SECONDS / 60;
  * Canonical simulator parameters for one fighter.
  * All are "per 15 minutes vs. a division-average opponent" or unitless
  * multipliers where 1.0 is division-average.
+ *
+ * FITTED, not guessed. koRate and subRate were solved with
+ * `sensitivity.fitMethodRates` so that two average fighters over three rounds
+ * reproduce the observed UFC marginals:
+ *
+ *   source:   5,807 UFC bouts, 2015-01-01 to 2026-08-15 (ufc_fights)
+ *   observed: KO/TKO 31.7% · submission 17.7% · decision 49.3%
+ *   achieved: KO/TKO 31.5% · submission 18.1% · decision 50.5%
+ *
+ * Re-run the fit whenever the hazard model or TUNING changes — these constants
+ * are only meaningful together with the rest of the model.
  */
 const FIGHTER_DEFAULTS = {
   name: 'Fighter',
-  koRate: 0.45,        // expected KO/TKO finishes per 15 min vs average opposition
-  subRate: 0.20,       // expected submission finishes per 15 min
+  koRate: 0.2603,      // expected KO/TKO finishes per 15 min vs average opposition
+  subRate: 0.1839,     // expected submission finishes per 15 min
   durability: 1.0,     // >1 = harder to finish (divides opponent's KO hazard)
   subDefense: 1.0,     // >1 = harder to submit
   cardio: 1.0,         // >1 = fatigues more slowly

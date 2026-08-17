@@ -11,6 +11,11 @@ module.exports = {
   ev: require('./core/ev'),
 
   quality: require('./data/quality'),
+  schema: require('./data/schema'),
+  audit: require('./data/audit'),
+  adapters: {
+    supabase: require('./data/adapters/supabase'),
+  },
 
   sim: require('./sim/montecarlo'),
   sensitivity: require('./sim/sensitivity'),

@@ -4,6 +4,50 @@ Recorded deliberately. A system whose limitations are only in its author's head
 is one where the next person to touch it will mistake an unfitted constant for a
 validated finding.
 
+## 0. The existing training data carries a label leak
+
+Found by auditing this project's own Supabase database on 2026-08-17. Recorded
+first because it invalidates work that already exists.
+
+| Table | Finding |
+|---|---|
+| `ufc_fights` (5,703 decided bouts, 2015+) | `fighter_a` wins **58.2%** |
+| `fight_predictions` (8,701 rows) | A-side wins **64.8%** |
+
+Scraped fight records conventionally list the winner first, so the A slot is
+correlated with the outcome. Any model trained on "A's features minus B's"
+learns *the slot* rather than the fighters, and its backtest accuracy does not
+survive contact with a live card, where there is no winner to sort by.
+
+Two further measurements on `fight_predictions`:
+
+- **Predictions are nearly constant**: sd = 0.062, mean = 0.520, with 86% of all
+  predictions between 0.40 and 0.60 and exactly one above 0.80 — against a
+  market that routinely prices fights at 0.20/0.80. The model has very little
+  discriminating power.
+- **Reliability is off by ~6 points** in every populated bin (predicted 0.54 →
+  observed 0.60). Expected calibration error ≈ 0.06, which fails this engine's
+  0.03 deployment gate.
+
+**Consequences.** `fight_predictions`, `model_train` and `model_params` cannot
+be used to validate anything as they stand, and the engine's Supabase adapter
+deliberately does not read them. `schema.canonicalSides()` fixes the leak at the
+source by assigning sides from a hash of the two names, which cannot encode the
+result; `audit.auditDataset()` fails a dataset that still exhibits it. Rebuild
+the training set from `ufc_fights` through the canonical assignment and re-fit.
+
+## 0b. Odds history is the real blocker
+
+`picks` holds 126 rows with an opening price and **15** with a closing price.
+That is far too few to measure CLV, which is the fastest honest signal available
+and a hard requirement in the deployment criteria. There is no multi-book
+history and no price timestamps at all.
+
+So the position after connecting the database is: **fight results are plentiful,
+prices are effectively absent.** Fitting can proceed; validation for live
+betting cannot. `audit.oddsCoverage()` reports this and `deployReady` stays
+false.
+
 ## 1. The engine cannot currently issue a pick — by design
 
 No historical fight database and no odds feed are connected. Therefore:
@@ -20,20 +64,27 @@ Anything that removes these gates without first supplying real data and a real
 walk-forward result converts a disciplined system into a random number
 generator with good manners.
 
-## 2. Simulator constants are priors, not findings
+## 2. Simulator finish rates are now fitted; `TUNING` is not
 
-`TUNING` in `sim/montecarlo.js` and the values in `FIGHTER_DEFAULTS` are
-plausible starting points chosen by hand. They have not been fitted to observed
-MMA data. Consequences:
+**Resolved for method rates.** `FIGHTER_DEFAULTS.koRate` and `.subRate` were
+fitted with `sensitivity.fitMethodRates` against 5,807 UFC bouts
+(2015-01-01 → 2026-08-15) from `ufc_fights`:
 
-- **Absolute** method and round probabilities should not be trusted yet. With
-  the shipped defaults, evenly matched three-round fights reach the scorecards
-  about 37% of the time; the real UFC figure is closer to 50%. Use
-  `sensitivity.fitFinishRate()` against a real base rate before trusting method
-  markets.
-- **Relative** comparisons are better behaved: monotonicity in every parameter
-  is tested, so "who is favoured and roughly by how much" is more reliable than
-  "how often this ends in round 2".
+| | observed | simulated |
+|---|---|---|
+| KO/TKO | 31.7% | 31.5% |
+| Submission | 17.7% | 18.1% |
+| Decision | 49.3% | 50.5% |
+
+**Still unfitted:** everything in `TUNING` — `damageCoef`, `fatigueVulnCoef`,
+`cardioTau`, `judgeNoise`, `controlScoreWeight`. These govern *how* the fight
+evolves, and only the aggregate outcome has been anchored. Two different
+fatigue/damage configurations can both reproduce the marginals while disagreeing
+sharply about a specific matchup, so per-fighter parameters and the round
+distribution remain unvalidated.
+
+Note also that the fit was performed on an *average-vs-average* matchup. It
+anchors the population base rate, not the response to parameter differences.
 
 ## 3. The cardio/fight-length interaction is counterintuitive and unresolved
 
@@ -70,6 +121,14 @@ model. `ensemble.pool` exists, is tested, and refuses to pool unvalidated
 components — but with one real model there is no genuine ensemble, and the
 "model disagreement" signal is currently the gap between the simulator and the
 market rather than a spread across independent modelling approaches.
+
+## 5b. Scheduled rounds are not stored
+
+`ufc_fights` records the round a fight *ended* in, not how many were scheduled.
+A five-round fight finishing in round 2 is indistinguishable from a three-round
+one. The adapter infers 5 only when a fight reaches round 4+, and leaves
+`rounds` null otherwise rather than guessing. Until scheduled length is
+available, main-event modelling and any five-round base rate are unreliable.
 
 ## 6. Feature engineering is not built
 

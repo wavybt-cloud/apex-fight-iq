@@ -10,7 +10,7 @@ and therefore has not earned the right to disagree with the market.
 
 ```bash
 node engine/demo.js          # end-to-end walkthrough on a synthetic bout
-npm --prefix engine test     # 74 tests
+npm --prefix engine test     # 98 tests
 ```
 
 ## Documents
@@ -23,18 +23,28 @@ npm --prefix engine test     # 74 tests
 ## Why it currently issues no picks
 
 ```
-no historical data
-  → no walk-forward validation
-    → no calibration record
-      → f_calibration = 0
-        → effective probability collapses onto the market price
-          → EV is negative by exactly the vig
-            → every candidate is vetoed
+no usable price history
+  → no CLV measurement
+    → no walk-forward validation
+      → no calibration record
+        → f_calibration = 0
+          → effective probability collapses onto the market price
+            → EV is negative by exactly the vig
+              → every candidate is vetoed
 ```
 
 That chain is enforced in code and covered by tests. It is the design working,
-not a gap to be patched. Removing the gates without connecting real data and
-completing a walk-forward would produce confident output with nothing behind it.
+not a gap to be patched.
+
+Fight *results* are plentiful — 8,854 UFC bouts in the project's database, and
+the simulator's finish rates are fitted against 5,807 of them. **Prices are the
+blocker**: 15 closing lines exist in total, no multi-book history, no
+timestamps. See `KNOWN_LIMITATIONS.md` §0b.
+
+The same audit found a label leak in the existing training data — the A slot
+wins 58-65% because scraped records list winners first. `schema.canonicalSides()`
+fixes it at the source and `audit.auditDataset()` fails any dataset that still
+shows it. Details in `KNOWN_LIMITATIONS.md` §0.
 
 ## Layout
 
@@ -44,6 +54,9 @@ src/
   core/odds.js        conversions, 4 devig estimators, multi-book consensus
   core/ev.js          EV, variance, and the edge-shrinkage model
   data/quality.js     defect catalogue and the PASS/DEGRADE/BLOCK gate
+  data/schema.js      canonical records, validators, leak-free side assignment
+  data/audit.js       dataset auditing: label leak, degenerate spread, coverage
+  data/adapters/      read-only source adapters (Supabase)
   sim/montecarlo.js   competing-risks fight simulator
   sim/sensitivity.js  adversarial re-runs, base-rate fitter
   models/ensemble.js  log-odds pooling, market-anchored mode, stacking
@@ -99,6 +112,13 @@ positive-EV requirement.
 
 ## What to build next
 
-Phase 2 in `ARCHITECTURE.md`: connect a fight-history source, a fighter-attribute
-source, and timestamped multi-book odds including closing lines. Everything
-downstream is written and tested; it is waiting on data.
+1. **Start recording odds.** Snapshot every market on every upcoming card from
+   2+ books on a schedule, with timestamps, and capture the closing number. This
+   is the only real blocker: nothing can be validated for live betting without
+   it, and the history can only be accumulated going forward — it cannot be
+   backfilled.
+2. **Rebuild the training set** from `ufc_fights` through
+   `schema.canonicalSides()`, then run `audit.auditDataset()` and confirm
+   `fitReady`.
+3. **Fit and walk-forward** the statistical model (Phase 3-4 in
+   `ARCHITECTURE.md`). Steps 2 and 3 can proceed now; step 1 gates deployment.
