@@ -36,17 +36,47 @@ source by assigning sides from a hash of the two names, which cannot encode the
 result; `audit.auditDataset()` fails a dataset that still exhibits it. Rebuild
 the training set from `ufc_fights` through the canonical assignment and re-fit.
 
-## 0b. Odds history is the real blocker
+## 0b. Odds history is the real blocker — recording now started
 
 `picks` holds 126 rows with an opening price and **15** with a closing price.
 That is far too few to measure CLV, which is the fastest honest signal available
-and a hard requirement in the deployment criteria. There is no multi-book
-history and no price timestamps at all.
+and a hard requirement in the deployment criteria.
 
-So the position after connecting the database is: **fight results are plentiful,
-prices are effectively absent.** Fitting can proceed; validation for live
-betting cannot. `audit.oddsCoverage()` reports this and `deployReady` stays
+`odds_snapshots` and the hourly `/api/odds-snapshot` cron now exist to fix this
+going forward. **The history starts accumulating the moment `ODDS_API_KEY` is
+set — not before**, and it can never be backfilled. Until several months of
+cards have been captured, CLV remains unmeasurable and `deployReady` stays
 false.
+
+## 0c. The walk-forward result: real, honest, and not good enough
+
+`node engine/scripts/backtest.js` on 7,428 UFC bouts (2010-2026), 5,223
+out-of-sample predictions across 11 annual folds:
+
+| metric | value |
+|---|---|
+| log loss (Elo + logistic) | 0.6612 |
+| log loss (Elo alone) | 0.6790 |
+| log loss (coin flip) | 0.6931 |
+| Brier | 0.2344 |
+| ECE | 0.0286 (limit 0.03) |
+| accuracy | 61.1% |
+| prediction range | 16%–82%, sd 0.102 |
+
+The leak audit inside the run reports the raw table at **58.9% A-side wins** and
+the canonicalised set at **49.1%** (z = −1.49, OK), so the fix is verified on
+the real data every time the backtest runs.
+
+**Read this result honestly.** Beating a coin flip is a low bar. Sports betting
+markets typically achieve log loss around 0.62–0.65 on MMA moneylines, and
+simply backing the favourite wins about 62–65% of UFC fights — so at 0.661 and
+61.1% this model is **probably no better than the closing line, and quite
+possibly worse.** Nothing here demonstrates an edge. It demonstrates a working,
+leak-free pipeline that produces calibrated probabilities, which is a
+prerequisite for finding an edge, not evidence of one.
+
+The comparison that decides it — model versus devigged closing line on the same
+fights — cannot be run until §0b's odds history exists.
 
 ## 1. The engine cannot currently issue a pick — by design
 

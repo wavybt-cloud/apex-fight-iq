@@ -9,8 +9,13 @@ and 6/6 adverse scenarios survived — because the model has no calibration reco
 and therefore has not earned the right to disagree with the market.
 
 ```bash
-node engine/demo.js          # end-to-end walkthrough on a synthetic bout
-npm --prefix engine test     # 98 tests
+npm --prefix engine test          # 123 tests
+
+# Real walk-forward on 7,428 UFC bouts (needs the two env vars once):
+SUPABASE_URL=... SUPABASE_KEY=... node engine/scripts/fetch-data.js
+node engine/scripts/backtest.js
+
+node engine/demo.js               # end-to-end walkthrough on a synthetic bout
 ```
 
 ## Documents
@@ -56,7 +61,11 @@ src/
   data/quality.js     defect catalogue and the PASS/DEGRADE/BLOCK gate
   data/schema.js      canonical records, validators, leak-free side assignment
   data/audit.js       dataset auditing: label leak, degenerate spread, coverage
-  data/adapters/      read-only source adapters (Supabase)
+  data/adapters/      read-only source adapters (Supabase, The Odds API)
+  features/pipeline.js  as-of features, antisymmetric by construction
+  models/elo.js       chronological ratings
+  models/logistic.js  ridge logistic regression with side-bias detection
+  scripts/           fetch-data.js, backtest.js
   sim/montecarlo.js   competing-risks fight simulator
   sim/sensitivity.js  adversarial re-runs, base-rate fitter
   models/ensemble.js  log-odds pooling, market-anchored mode, stacking
@@ -110,15 +119,24 @@ The commands from the operating spec map onto the API:
 `kellyFraction` and `varianceLambda`. Neither is permitted to bypass the
 positive-EV requirement.
 
+## Current status
+
+Walk-forward on 7,428 real bouts, 5,223 out-of-sample predictions:
+log loss **0.6612** (Elo alone 0.6790, coin flip 0.6931), ECE **0.0286**,
+accuracy **61.1%**, predictions spanning 16%–82%.
+
+Calibrated and leak-free — but backing the favourite wins ~62–65% of UFC fights
+and markets typically price them at log loss 0.62–0.65, so **this model is
+probably not better than the closing line.** That comparison is the one that
+matters and it cannot be run yet. See `KNOWN_LIMITATIONS.md` §0c.
+
 ## What to build next
 
-1. **Start recording odds.** Snapshot every market on every upcoming card from
-   2+ books on a schedule, with timestamps, and capture the closing number. This
-   is the only real blocker: nothing can be validated for live betting without
-   it, and the history can only be accumulated going forward — it cannot be
-   backfilled.
-2. **Rebuild the training set** from `ufc_fights` through
-   `schema.canonicalSides()`, then run `audit.auditDataset()` and confirm
-   `fitReady`.
-3. **Fit and walk-forward** the statistical model (Phase 3-4 in
-   `ARCHITECTURE.md`). Steps 2 and 3 can proceed now; step 1 gates deployment.
+1. **Set `ODDS_API_KEY`** so `/api/odds-snapshot` starts recording. The cron and
+   table are built and tested; they capture nothing until the key exists, and
+   odds history can never be backfilled.
+2. **Wait for coverage** — a few months of cards, then run the model-vs-closing-
+   line comparison. That is the first real evidence either way.
+3. **Improve the model** meanwhile: opponent-adjusted striking/grappling
+   features from per-round data, and the remaining components in
+   `ARCHITECTURE.md` §4.

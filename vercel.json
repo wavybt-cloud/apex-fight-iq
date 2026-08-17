@@ -22,6 +22,10 @@
       "use": "@vercel/node"
     },
     {
+      "src": "odds-snapshot.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "analyzer.html",
       "use": "@vercel/static"
     }
@@ -34,6 +38,10 @@
     {
       "src": "/api/webhook",
       "dest": "/webhook.js"
+    },
+    {
+      "src": "/api/odds-snapshot",
+      "dest": "/odds-snapshot.js"
     },
     {
       "src": "/robots.txt",
@@ -50,6 +58,12 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/odds-snapshot",
+      "schedule": "0 * * * *"
     }
   ]
 }
