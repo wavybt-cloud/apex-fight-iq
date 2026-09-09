@@ -24,6 +24,10 @@
     {
       "src": "analyzer.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "nfl.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -46,6 +50,10 @@
     {
       "src": "/analyzer",
       "dest": "/analyzer.html"
+    },
+    {
+      "src": "/nfl",
+      "dest": "/nfl.html"
     },
     {
       "src": "/(.*)",
