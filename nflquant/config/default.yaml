@@ -1,0 +1,52 @@
+# nflquant default configuration.
+# Every run records the resolved config + git commit in runs/ for reproducibility.
+
+data:
+  cache_dir: data_cache          # relative to nflquant/ root; gitignored
+  games_url: "https://github.com/nflverse/nfldata/raw/master/data/games.csv"
+  games_local: "/home/user/nflverse/nfldata/data/games.csv"   # preferred if present
+  pbp_url_tpl: "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet"
+  injuries_url_tpl: "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_{season}.parquet"
+  pbp_seasons: [2006, 2025]      # inclusive range ingested for EPA features
+  ca_bundle: "/root/.ccr/ca-bundle.crt"   # used if the file exists (agent proxy TLS)
+
+seasons:
+  first_model_season: 2009       # first season predictions are emitted (3yr PBP burn-in)
+  validation: [2019, 2022]       # inclusive; used for ensemble weights + calibration
+  test: [2023, 2025]             # untouched until final evaluation
+
+elo:
+  k: 20.0
+  hfa_points: 48.0               # Elo points, ~1.7 game points
+  preseason_regress: 0.33        # fraction of rating pulled to mean between seasons
+  mov_multiplier: true
+  rest_points_per_day: 6.0       # Elo pts per day of rest differential vs 7
+  qb_change_penalty: 55.0        # Elo pts when listed starter differs from last start
+  points_per_elo: 0.0402         # game points per Elo point (25 Elo ≈ 1 pt)
+
+features:
+  ewma_halflife_games: 6         # exponential decay for team-week EPA features
+  min_prior_games: 4             # early-season: blend with previous-season prior
+  prior_blend_games: 10          # full weight to current season after this many games
+  garbage_time_wp: [0.05, 0.95]  # plays outside this win-prob band = garbage time
+
+gbm:
+  num_leaves: 31
+  learning_rate: 0.03
+  n_estimators: 600
+  min_child_samples: 40
+  feature_fraction: 0.8
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  early_stopping_rounds: 60
+
+simulation:
+  n_sims: 50000
+  drives_mean: 11.2              # per team per game (empirical modern NFL)
+  drives_sd: 1.1
+  param_uncertainty_sd: 0.35     # sd (in points of team strength) resampled per sim
+  seed: 20260909
+
+market:
+  spread_sigma: 13.45            # empirical sd of (result - spread) 1999-2025, checked in tests
+  vig_free: true
