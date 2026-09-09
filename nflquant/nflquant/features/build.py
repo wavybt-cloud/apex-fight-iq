@@ -22,6 +22,10 @@ EWMA_STATS = [
     "off_third_conv", "off_sack_rate", "off_cpoe", "off_turnovers", "off_plays",
     "def_epa", "def_pass_epa", "def_rush_epa", "def_success", "def_explosive",
     "def_sack_rate", "td_rate", "fg_rate", "to_rate", "n_drives",
+    # opponent-adjusted: raw game EPA corrected by the opponent's PREGAME
+    # strength before entering the EWMA (a big day against a stingy defense
+    # counts for more than the same day against a sieve)
+    "adj_off_epa", "adj_def_epa",
 ]
 
 # Approximate home-stadium timezone offset from ET (positive = further west)
@@ -116,7 +120,10 @@ def build_features(
         rows.append(row)
 
         # ---- state update AFTER features are read ----
-        for team, qb in ((gm.home_team, gm.home_qb_name), (gm.away_team, gm.away_qb_name)):
+        for team, opp_side, qb in (
+            (gm.home_team, "away", gm.home_qb_name),
+            (gm.away_team, "home", gm.away_qb_name),
+        ):
             if isinstance(qb, str):
                 last_qb[team] = qb
             s_row = tg_map.get((gm.game_id, team))
@@ -124,8 +131,29 @@ def build_features(
                 continue  # no PBP for this game (pre-coverage era or unplayed)
             st = state.setdefault(team, {"_n": 0, "_n_season": 0, "_season": gm.season})
             st["_season"] = gm.season
+            # opponent adjustment uses the opponent's PREGAME state already
+            # captured in `row`, so it cannot see this game's outcome
+            vals: dict[str, float] = {}
             for s in EWMA_STATS:
-                x = getattr(s_row, s, None)
+                if s in ("adj_off_epa", "adj_def_epa"):
+                    continue
+                v = getattr(s_row, s, None)
+                if v is not None:
+                    vals[s] = v
+            opp_def = row.get(f"{opp_side}_def_epa")
+            opp_off = row.get(f"{opp_side}_off_epa")
+            if vals.get("off_epa") is not None and not np.isnan(vals["off_epa"]):
+                shift = 0.0
+                if opp_def is not None and not pd.isna(opp_def) and league.get("def_epa") is not None:
+                    shift = opp_def - league["def_epa"]
+                vals["adj_off_epa"] = vals["off_epa"] - shift
+            if vals.get("def_epa") is not None and not np.isnan(vals["def_epa"]):
+                shift = 0.0
+                if opp_off is not None and not pd.isna(opp_off) and league.get("off_epa") is not None:
+                    shift = opp_off - league["off_epa"]
+                vals["adj_def_epa"] = vals["def_epa"] - shift
+            for s in EWMA_STATS:
+                x = vals.get(s)
                 if x is None or (isinstance(x, float) and np.isnan(x)):
                     continue
                 cur = st.get(s)
