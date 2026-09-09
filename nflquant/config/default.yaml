@@ -44,8 +44,14 @@ simulation:
   n_sims: 50000
   drives_mean: 11.2              # per team per game (empirical modern NFL)
   drives_sd: 1.1
-  param_uncertainty_sd: 0.35     # sd (in points of team strength) resampled per sim
+  param_sd_pts: 2.4              # per-sim team strength shock (points)
+  drive_var_shrink: 0.72         # drive-count variance shrink (serial correlation proxy)
+  endgame_tie_prob: 0.35         # 1-3 pt finishes pulled to a tie (late FG chase)
+  walkoff_prob: 0.50             # regulation ties resolved by walk-off FG
+  consolation_prob: 0.24         # 9-13 pt finishes compressed by a late score
   seed: 20260909
+  # constants above were calibrated on the 2019-2022 validation window via
+  # nflquant/simulation/diagnostics.py; rerun it before changing any of them
 
 market:
   spread_sigma: 13.45            # empirical sd of (result - spread) 1999-2025, checked in tests
