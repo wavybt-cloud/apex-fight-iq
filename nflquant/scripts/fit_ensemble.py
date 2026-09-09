@@ -24,11 +24,11 @@ from nflquant.models.baselines import LogisticModel, MarketBaseline, RidgeMargin
 from nflquant.models.calibration import pick_calibrator
 from nflquant.models.ensemble import MarginBlender, ProbStacker
 from nflquant.models.gbm import GBMModel
-from backtest_v2 import load_enriched, QB_COLS
+from backtest_v2 import load_enriched, EXTRA_COLS
 
 
 def member_factories(cfg):
-    pure = feature_columns("pure") + ["elo_diff_eff"] + QB_COLS
+    pure = feature_columns("pure") + ["elo_diff_eff"] + EXTRA_COLS
     from backtest_baselines import EloAsModel
     return {
         "elo": lambda: EloAsModel(),

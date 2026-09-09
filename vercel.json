@@ -28,6 +28,10 @@
     {
       "src": "nfl.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "nfl-model.json",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -54,6 +58,10 @@
     {
       "src": "/nfl",
       "dest": "/nfl.html"
+    },
+    {
+      "src": "/nfl-model.json",
+      "dest": "/nfl-model.json"
     },
     {
       "src": "/(.*)",

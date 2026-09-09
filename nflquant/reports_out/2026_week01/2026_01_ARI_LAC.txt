@@ -3,33 +3,33 @@ GAME  Arizona Cardinals @ Los Angeles Chargers   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Los Angeles Chargers: 28.8    Arizona Cardinals: 21.3    (margin +7.5, total 50.0)
+  Los Angeles Chargers: 29.1    Arizona Cardinals: 21.4    (margin +7.7, total 50.5)
 
 WIN PROBABILITY (calibrated ensemble)
-  Los Angeles Chargers: 71.9%    Arizona Cardinals: 28.1%
-  market-aware mode: Los Angeles Chargers 81.0%
+  Los Angeles Chargers: 71.2%    Arizona Cardinals: 28.8%
+  market-aware mode: Los Angeles Chargers 78.3%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Los Angeles Chargers 28 - Arizona Cardinals 20
+  median score:   Los Angeles Chargers 29 - Arizona Cardinals 21
   80% range:      Los Angeles Chargers 17-41, Arizona Cardinals 10-34
-  one-score game: 47%    overtime: 4.4%    blowout(17+): 28%
-  upset (Arizona Cardinals wins): 27%
-  vs spread (Los Angeles Chargers -9.5): cover 42.0%
-  vs total (47.5): over 55.6%
+  one-score game: 46%    overtime: 4.3%    blowout(17+): 29%
+  upset (Arizona Cardinals wins): 26%
+  vs spread (Los Angeles Chargers -9.5): cover 42.6%
+  vs total (47.5): over 57.0%
 
 KEY FACTORS (points toward Los Angeles Chargers)
-  +4.66  Elo rating gap (incl. HFA, rest, QB)
-  -1.82  opponent-adjusted defensive EPA
-  +1.46  pass defense
-  +0.90  QB rating gap
-  +0.78  rushing efficiency
+  +4.67  Elo rating gap (incl. HFA, rest, QB)
+  -1.75  opponent-adjusted defensive EPA
+  +1.44  pass defense
+  +0.89  QB rating gap
+  +0.75  rushing efficiency
 
 MODEL AGREEMENT (home win prob)
   elo          74.7%
-  logit_pure   74.4%
-  ridge_pure   74.8%
-  gbm_pure     71.1%
+  logit_pure   74.2%
+  ridge_pure   74.7%
+  gbm_pure     71.3%
   market       80.0%
-  ensemble     71.9%
+  ensemble     71.2%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

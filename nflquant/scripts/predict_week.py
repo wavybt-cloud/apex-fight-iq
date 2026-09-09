@@ -29,8 +29,11 @@ from nflquant.reports.game_report import (confidence_grade, format_game_report,
                                           key_drivers)
 from nflquant.simulation.possession import simulate_game, summarize_sims
 
+from nflquant.injuries.model import injury_features
+
 log = get_logger("predict")
 QB_COLS = ["d_qb_points", "home_qb_n_eff", "away_qb_n_eff"]
+INJ_COLS = ["d_inj", "home_inj", "away_inj"]
 
 
 def fresh_features(cfg) -> pd.DataFrame:
@@ -57,7 +60,9 @@ def fresh_features(cfg) -> pd.DataFrame:
                   **{k: v for k, v in cfg["elo"].items()})
     feats = feats.merge(elo, on="game_id", how="left")
     qb = run_qb_model(games, pbp)
-    return feats.merge(qb, on="game_id", how="left")
+    feats = feats.merge(qb, on="game_id", how="left")
+    inj = injury_features(cfg, games)
+    return feats.merge(inj, on="game_id", how="left")
 
 
 def main():
@@ -88,7 +93,7 @@ def main():
 
     # ---- train members on everything completed ----
     train = feats[feats.result.notna()]
-    pure = feature_columns("pure") + ["elo_diff_eff"] + QB_COLS
+    pure = feature_columns("pure") + ["elo_diff_eff"] + QB_COLS + INJ_COLS
     members = {
         "elo": None,  # sequential; read from columns
         "logit_pure": LogisticModel(pure, "logit_pure").fit(train),
@@ -175,7 +180,29 @@ def main():
         [{k: v for k, v in g.items() if k != "drivers"} |
          {"drivers": [[d, round(v, 3)] for d, v in g["drivers"]]} for g in games_out],
         indent=2, default=str))
-    log.info("reports written to %s", out_dir)
+
+    # ---- bridge file for the /nfl web page ----
+    # nflverse uses LA for the Rams; the page (ESPN) uses LAR
+    to_page = {"LA": "LAR"}
+    bridge = {
+        "generated": pd.Timestamp.now().isoformat(),
+        "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
+        "season": season, "week": week,
+        "games": [{
+            "away": to_page.get(g["away"], g["away"]),
+            "home": to_page.get(g["home"], g["home"]),
+            "gameday": g["gameday"],
+            "p_home": round(g["p_home"], 4),
+            "margin": round(g["margin"], 2),
+            "total": round(g["total"], 2),
+            "p_home_cover": round(g["sim"].get("p_home_cover"), 4) if "p_home_cover" in g["sim"] else None,
+            "p_over": round(g["sim"].get("p_over"), 4) if "p_over" in g["sim"] else None,
+            "confidence": g["confidence"][0],
+        } for g in games_out],
+    }
+    bridge_path = PACKAGE_ROOT.parent / "nfl-model.json"
+    bridge_path.write_text(json.dumps(bridge, indent=1))
+    log.info("reports written to %s; page bridge -> %s", out_dir, bridge_path)
 
 
 if __name__ == "__main__":

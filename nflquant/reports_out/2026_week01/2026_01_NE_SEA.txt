@@ -3,33 +3,33 @@ GAME  New England Patriots @ Seattle Seahawks   (2026-09-09, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Seattle Seahawks: 25.1    New England Patriots: 20.9    (margin +4.1, total 46.0)
+  Seattle Seahawks: 25.0    New England Patriots: 21.2    (margin +3.8, total 46.3)
 
 WIN PROBABILITY (calibrated ensemble)
-  Seattle Seahawks: 60.4%    New England Patriots: 39.6%
-  market-aware mode: Seattle Seahawks 58.2%
+  Seattle Seahawks: 59.4%    New England Patriots: 40.6%
+  market-aware mode: Seattle Seahawks 60.0%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Seattle Seahawks 24 - New England Patriots 20
+  median score:   Seattle Seahawks 24 - New England Patriots 21
   80% range:      Seattle Seahawks 13-37, New England Patriots 10-33
-  one-score game: 53%    overtime: 5.2%    blowout(17+): 22%
-  upset (New England Patriots wins): 36%
-  vs spread (Seattle Seahawks -3.0): cover 56.2%
-  vs total (44.5): over 52.4%
+  one-score game: 53%    overtime: 5.1%    blowout(17+): 22%
+  upset (New England Patriots wins): 38%
+  vs spread (Seattle Seahawks -3.0): cover 55.2%
+  vs total (44.5): over 53.0%
 
 KEY FACTORS (points toward Seattle Seahawks)
+  -3.20  away_inj
   +2.54  Elo rating gap (incl. HFA, rest, QB)
-  -1.38  offensive EPA/play
-  -1.27  opponent-adjusted defensive EPA
-  +0.77  drive FG rate
-  +0.64  passing efficiency
+  +2.38  home_inj
+  -1.35  offensive EPA/play
+  -1.22  opponent-adjusted defensive EPA
 
 MODEL AGREEMENT (home win prob)
   elo          67.2%
-  logit_pure   65.7%
-  ridge_pure   61.1%
-  gbm_pure     65.7%
+  logit_pure   65.1%
+  ridge_pure   60.4%
+  gbm_pure     64.4%
   market       60.4%
-  ensemble     60.4%
+  ensemble     59.4%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

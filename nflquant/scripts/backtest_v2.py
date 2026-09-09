@@ -14,8 +14,11 @@ from nflquant.models.baselines import LogisticModel, MarketBaseline, RidgeMargin
 from nflquant.models.gbm import GBMModel
 from nflquant.models.elo import run_elo
 from nflquant.models.qb import run_qb_model
+from nflquant.injuries.model import injury_features
 
 QB_COLS = ["d_qb_points", "home_qb_n_eff", "away_qb_n_eff"]
+INJ_COLS = ["d_inj", "home_inj", "away_inj"]
+EXTRA_COLS = QB_COLS + INJ_COLS
 
 
 def load_enriched(cfg) -> pd.DataFrame:
@@ -34,6 +37,8 @@ def load_enriched(cfg) -> pd.DataFrame:
     pbp = load_pbp(cfg)
     qb = run_qb_model(games, pbp)
     feats = feats.merge(qb, on="game_id", how="left")
+    inj = injury_features(cfg, games)
+    feats = feats.merge(inj, on="game_id", how="left")
     feats.to_parquet(cache, index=False)
     return feats
 
@@ -43,8 +48,8 @@ def main():
     feats = load_enriched(cfg)
     dev_seasons = list(range(2012, cfg["seasons"]["validation"][0]))
 
-    pure = feature_columns("pure") + ["elo_diff_eff"] + QB_COLS
-    market = feature_columns("market") + ["elo_diff_eff"] + QB_COLS
+    pure = feature_columns("pure") + ["elo_diff_eff"] + EXTRA_COLS
+    market = feature_columns("market") + ["elo_diff_eff"] + EXTRA_COLS
 
     factories = {
         "market": lambda: MarketBaseline(),

@@ -21,7 +21,7 @@ from nflquant.evaluation.metrics import (ats_record, calibration_table,
                                          margin_errors, summarize)
 from nflquant.features.build import EWMA_STATS, feature_columns
 from nflquant.models.baselines import RidgeMarginModel
-from backtest_v2 import load_enriched, QB_COLS
+from backtest_v2 import load_enriched, EXTRA_COLS, INJ_COLS, QB_COLS
 from fit_ensemble import frame_of, gather_oos, member_factories
 
 
@@ -114,16 +114,17 @@ def main():
 
     # ---------- ablation study (ridge margin, test window) ----------
     groups = {
-        "full": feature_columns("pure") + ["elo_diff_eff"] + QB_COLS,
+        "full": feature_columns("pure") + ["elo_diff_eff"] + EXTRA_COLS,
         "no_epa": [c for c in feature_columns("pure") if not any(
             k in c for k in ["epa", "success", "explosive", "third", "sack", "cpoe",
                              "td_rate", "fg_rate", "to_rate", "n_drives", "turnovers", "plays"]
-        )] + ["elo_diff_eff"] + QB_COLS,
-        "no_elo": feature_columns("pure") + QB_COLS,
-        "no_qb": feature_columns("pure") + ["elo_diff_eff"],
+        )] + ["elo_diff_eff"] + EXTRA_COLS,
+        "no_elo": feature_columns("pure") + EXTRA_COLS,
+        "no_qb": feature_columns("pure") + ["elo_diff_eff"] + INJ_COLS,
+        "no_injuries": feature_columns("pure") + ["elo_diff_eff"] + QB_COLS,
         "no_context": [c for c in feature_columns("pure") if c not in (
             "rest_diff", "div_game", "temp", "wind", "tz_travel", "dome",
-            "surface_grass", "neutral")] + ["elo_diff_eff"] + QB_COLS,
+            "surface_grass", "neutral")] + ["elo_diff_eff"] + EXTRA_COLS,
     }
     ab_rows = []
     for gname, cols in groups.items():

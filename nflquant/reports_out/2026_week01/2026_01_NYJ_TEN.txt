@@ -3,33 +3,33 @@ GAME  New York Jets @ Tennessee Titans   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Tennessee Titans: 24.2    New York Jets: 21.6    (margin +2.6, total 45.8)
+  Tennessee Titans: 24.1    New York Jets: 21.6    (margin +2.5, total 45.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  Tennessee Titans: 54.0%    New York Jets: 46.0%
-  market-aware mode: Tennessee Titans 49.4%
+  Tennessee Titans: 53.3%    New York Jets: 46.7%
+  market-aware mode: Tennessee Titans 51.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Tennessee Titans 24 - New York Jets 21
   80% range:      Tennessee Titans 13-37, New York Jets 10-34
-  one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
-  upset (New York Jets wins): 41%
-  vs spread (Tennessee Titans -1.5): cover 57.1%
-  vs total (38.5): over 70.0%
+  one-score game: 54%    overtime: 5.4%    blowout(17+): 22%
+  upset (New York Jets wins): 42%
+  vs spread (Tennessee Titans -1.5): cover 56.4%
+  vs total (38.5): over 69.3%
 
 KEY FACTORS (points toward Tennessee Titans)
-  -1.66  QB rating gap
+  -1.64  QB rating gap
   +1.41  Elo rating gap (incl. HFA, rest, QB)
-  -1.20  offensive EPA/play
-  +1.04  passing efficiency
-  -0.68  drive turnover rate
+  -1.18  offensive EPA/play
+  +1.01  passing efficiency
+  -0.70  drive turnover rate
 
 MODEL AGREEMENT (home win prob)
   elo          62.7%
-  logit_pure   58.6%
-  ridge_pure   56.9%
-  gbm_pure     58.5%
+  logit_pure   57.9%
+  ridge_pure   56.3%
+  gbm_pure     58.8%
   market       52.6%
-  ensemble     54.0%
+  ensemble     53.3%
 
 CONFIDENCE: VERY LOW   (models disagree by 10%; early season: ratings lean on priors; QB situation unsettled)

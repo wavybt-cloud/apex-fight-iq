@@ -600,6 +600,27 @@ function crossesKeyNumber(a,b){
 }
 
 /* ============================================================
+   QUANT ENGINE BRIDGE (/nfl-model.json)
+   Published by nflquant's predict_week.py: calibrated ensemble
+   probabilities + 50k-sim margins/totals. When a slate game matches,
+   the engine's numbers REPLACE the in-page heuristic model — the
+   engine is chronologically backtested and calibrated; this page's
+   built-in model is a prior-based fallback (and the preseason engine,
+   which the quant platform does not cover).
+   ============================================================ */
+let ENGINE=null;
+async function loadEngine(){
+  try{
+    const res=await fetch("/nfl-model.json",{cache:"no-store"});
+    if(res.ok){ ENGINE=await res.json(); if(slateGames.length) renderSlate(); }
+  }catch(e){ /* page works fully without the engine feed */ }
+}
+function engineFor(g){
+  if(!ENGINE||!ENGINE.games||g.seasonType===1) return null;  // engine: REG+POST only
+  return ENGINE.games.find(e=>e.away===g.away&&e.home===g.home)||null;
+}
+
+/* ============================================================
    LIVE SLATE (ESPN public scoreboard; CORS-open)
    ============================================================ */
 const SB_URL="https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
@@ -713,6 +734,13 @@ function evaluateGame(g){
   const mkt=marketFor(g);
   const out={pred,mkt,bets:[]};
   if(!pred) return out;
+  const eng=engineFor(g);
+  if(eng){
+    pred.margin=eng.margin; pred.total=eng.total;
+    pred.pHome=eng.p_home; pred.pAway=1-eng.p_home;
+    pred.ptsHome=(eng.total+eng.margin)/2; pred.ptsAway=(eng.total-eng.margin)/2;
+    pred.engine=true; pred.engineConf=eng.confidence;
+  }
   const cfg=cfgFor(g.seasonType);
   const edgeCap=g.seasonType===1?MODEL.maxPreseasonEdgeP:1;
 
@@ -807,9 +835,12 @@ function renderGameCard(id){
   const qbOpts=s=>['starter','questionable','backup','third'].map(o=>'<option value="'+o+'"'+(s===o?' selected':'')+'>'+o.charAt(0).toUpperCase()+o.slice(1)+'</option>').join("");
   const isPre=g.seasonType===1;
 
+  const engBadge=pred.engine
+    ?'<span class="tier-badge tier-lean" title="Calibrated quant-engine prediction (nflquant ensemble + 50k sims); confidence '+esc(pred.engineConf||"")+'">⚛ ENGINE'+(pred.engineConf?' · '+esc(pred.engineConf):'')+'</span>'
+    :'';
   host.innerHTML=
   '<div class="game-card'+(bestBet?" has-edge":"")+'">'
-  +'<div class="gc-head"><span class="gc-meta">'+timeStr+(g.week?' · WK '+g.week:'')+(g.neutral?' · NEUTRAL':'')+(pred.divisional?' · DIV':'')+'</span><span class="gc-status '+stCls+'">'+esc(stTxt)+'</span></div>'
+  +'<div class="gc-head"><span class="gc-meta">'+timeStr+(g.week?' · WK '+g.week:'')+(g.neutral?' · NEUTRAL':'')+(pred.divisional?' · DIV':'')+'</span><span style="display:flex;gap:8px;align-items:center">'+engBadge+'<span class="gc-status '+stCls+'">'+esc(stTxt)+'</span></span></div>'
   +'<div class="gc-body">'
     +'<div class="gc-team">'+teamLogoHtml(g.away)
       +'<div class="gc-team-name">'+A.city+' '+A.name+'</div><div class="gc-team-tag">Away · '+DIV_OF[g.away]+'</div>'
@@ -1174,6 +1205,7 @@ initLab();
 renderRecord();
 renderTune();
 renderRatingsTable();
+loadEngine();
 loadSlate();
 </script>
 </body>

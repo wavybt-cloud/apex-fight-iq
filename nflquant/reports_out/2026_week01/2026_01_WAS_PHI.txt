@@ -3,33 +3,33 @@ GAME  Washington Commanders @ Philadelphia Eagles   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Philadelphia Eagles: 25.9    Washington Commanders: 18.8    (margin +7.1, total 44.6)
+  Philadelphia Eagles: 25.7    Washington Commanders: 19.1    (margin +6.6, total 44.8)
 
 WIN PROBABILITY (calibrated ensemble)
-  Philadelphia Eagles: 73.2%    Washington Commanders: 26.8%
-  market-aware mode: Philadelphia Eagles 66.9%
+  Philadelphia Eagles: 71.5%    Washington Commanders: 28.5%
+  market-aware mode: Philadelphia Eagles 66.8%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Philadelphia Eagles 26 - Washington Commanders 18
+  median score:   Philadelphia Eagles 25 - Washington Commanders 19
   80% range:      Philadelphia Eagles 14-38, Washington Commanders 7-31
-  one-score game: 48%    overtime: 4.6%    blowout(17+): 27%
-  upset (Washington Commanders wins): 27%
-  vs spread (Philadelphia Eagles -5.5): cover 55.0%
-  vs total (44.5): over 48.2%
+  one-score game: 50%    overtime: 4.8%    blowout(17+): 26%
+  upset (Washington Commanders wins): 29%
+  vs spread (Philadelphia Eagles -5.5): cover 53.4%
+  vs total (44.5): over 48.6%
 
 KEY FACTORS (points toward Philadelphia Eagles)
-  +5.09  Elo rating gap (incl. HFA, rest, QB)
-  -2.15  opponent-adjusted defensive EPA
-  +1.37  pass defense
-  +0.78  run defense
-  -0.47  divisional familiarity
+  +5.10  Elo rating gap (incl. HFA, rest, QB)
+  -2.06  opponent-adjusted defensive EPA
+  +1.35  pass defense
+  +0.76  run defense
+  -0.46  divisional familiarity
 
 MODEL AGREEMENT (home win prob)
   elo          76.1%
-  logit_pure   70.8%
-  ridge_pure   68.9%
-  gbm_pure     77.7%
+  logit_pure   70.3%
+  ridge_pure   68.4%
+  gbm_pure     77.2%
   market       65.7%
-  ensemble     73.2%
+  ensemble     71.5%
 
-CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

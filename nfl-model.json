@@ -1,0 +1,184 @@
+{
+ "generated": "2026-09-09T23:41:37.492310",
+ "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
+ "season": 2026,
+ "week": 1,
+ "games": [
+  {
+   "away": "NE",
+   "home": "SEA",
+   "gameday": "2026-09-09",
+   "p_home": 0.5944,
+   "margin": 3.93,
+   "total": 45.83,
+   "p_home_cover": 0.5516,
+   "p_over": 0.5297,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "SF",
+   "home": "LAR",
+   "gameday": "2026-09-10",
+   "p_home": 0.4918,
+   "margin": 1.47,
+   "total": 47.11,
+   "p_home_cover": 0.444,
+   "p_over": 0.4551,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "ARI",
+   "home": "LAC",
+   "gameday": "2026-09-13",
+   "p_home": 0.712,
+   "margin": 7.91,
+   "total": 50.25,
+   "p_home_cover": 0.4259,
+   "p_over": 0.5705,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "ATL",
+   "home": "PIT",
+   "gameday": "2026-09-13",
+   "p_home": 0.6,
+   "margin": 4.41,
+   "total": 46.82,
+   "p_home_cover": 0.5265,
+   "p_over": 0.6457,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "BAL",
+   "home": "IND",
+   "gameday": "2026-09-13",
+   "p_home": 0.3413,
+   "margin": -3.04,
+   "total": 45.62,
+   "p_home_cover": 0.5159,
+   "p_over": 0.4414,
+   "confidence": "LOW"
+  },
+  {
+   "away": "BUF",
+   "home": "HOU",
+   "gameday": "2026-09-13",
+   "p_home": 0.4783,
+   "margin": 1.09,
+   "total": 47.46,
+   "p_home_cover": 0.556,
+   "p_over": 0.5799,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "CHI",
+   "home": "CAR",
+   "gameday": "2026-09-13",
+   "p_home": 0.3847,
+   "margin": -2.06,
+   "total": 45.49,
+   "p_home_cover": 0.5028,
+   "p_over": 0.4759,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "CLE",
+   "home": "JAX",
+   "gameday": "2026-09-13",
+   "p_home": 0.7645,
+   "margin": 8.51,
+   "total": 46.41,
+   "p_home_cover": 0.4609,
+   "p_over": 0.6753,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "DAL",
+   "home": "NYG",
+   "gameday": "2026-09-13",
+   "p_home": 0.4514,
+   "margin": 0.1,
+   "total": 43.89,
+   "p_home_cover": 0.5741,
+   "p_over": 0.3622,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "GB",
+   "home": "MIN",
+   "gameday": "2026-09-13",
+   "p_home": 0.4597,
+   "margin": 1.19,
+   "total": 46.99,
+   "p_home_cover": 0.5194,
+   "p_over": 0.5254,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "MIA",
+   "home": "LV",
+   "gameday": "2026-09-13",
+   "p_home": 0.3836,
+   "margin": -1.09,
+   "total": 45.72,
+   "p_home_cover": 0.3962,
+   "p_over": 0.6572,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "NO",
+   "home": "DET",
+   "gameday": "2026-09-13",
+   "p_home": 0.6918,
+   "margin": 7.31,
+   "total": 48.37,
+   "p_home_cover": 0.4807,
+   "p_over": 0.4664,
+   "confidence": "LOW"
+  },
+  {
+   "away": "NYJ",
+   "home": "TEN",
+   "gameday": "2026-09-13",
+   "p_home": 0.5331,
+   "margin": 2.52,
+   "total": 45.16,
+   "p_home_cover": 0.5637,
+   "p_over": 0.6934,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "TB",
+   "home": "CIN",
+   "gameday": "2026-09-13",
+   "p_home": 0.536,
+   "margin": 2.97,
+   "total": 47.92,
+   "p_home_cover": 0.4902,
+   "p_over": 0.4307,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "WAS",
+   "home": "PHI",
+   "gameday": "2026-09-13",
+   "p_home": 0.7147,
+   "margin": 6.8,
+   "total": 44.32,
+   "p_home_cover": 0.5341,
+   "p_over": 0.4859,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "DEN",
+   "home": "KC",
+   "gameday": "2026-09-14",
+   "p_home": 0.3829,
+   "margin": -0.69,
+   "total": 44.0,
+   "p_home_cover": 0.4061,
+   "p_over": 0.5154,
+   "confidence": "VERY LOW"
+  }
+ ]
+}

@@ -23,37 +23,42 @@ window was untouched until the final evaluation.
 |----------------------|-------|----------|----------|--------------|
 | home-team baseline*  | .244  | .681     | 58%      | 11.1         |
 | Elo (adjusted)       | .2207 | .6315    | 64.9%    | 10.24        |
-| ridge (pure)         | .2190 | .6270    | 64.3%    | 10.17        |
-| **ensemble (pure, calibrated)** | **.2189** | **.6270** | 65.7% | 10.17 |
-| ensemble (market-aware) | .2107 | .6089  | 67.8%    | 9.82         |
+| ridge (pure)         | .2182 | .6252    | 64.5%    | 10.11        |
+| GBM (pure)           | .2181 | .6257    | 65.0%    | 10.08        |
+| **ensemble (pure, calibrated)** | **.2179** | **.6246** | 65.3% | 10.11 |
+| ensemble (market-aware) | .2108 | .6089  | 67.7%    | 9.81         |
 | closing market       | .2102 | .6077    | 68.2%    | 9.79         |
 
 *home baseline from the development window; test values comparable.
 
-Totals: model+market blend MAE 10.11 vs market 10.12 — a statistical tie.
+Totals: model+market blend MAE 10.11 vs market 10.12; the market-aware margin
+blend beats the market on RMSE (12.70 vs 12.72) — statistical ties.
 
-**Against the spread**: betting model-vs-closing-line edges at −110 produced
-**negative ROI at every edge threshold** (−1.6% to −11.8%). This platform does
-not beat closing lines, and no honest public-data backtest of this scope does.
-Its value is calibrated probabilities, realistic distributions, and a
-research harness that measures rather than asserts.
+**Against the spread**: betting model-vs-closing-line edges at −110 lost money
+at low thresholds (−9.5% ROI at every-edge). At edge ≥3.5 pts the win rate is
+52.8% (+0.8% ROI) — but on only 142 bets, well inside noise. This platform
+does not demonstrably beat closing lines, and no honest public-data backtest
+of this scope does. Its value is calibrated probabilities, realistic
+distributions, and a research harness that measures rather than asserts.
 
-Calibration (pure ensemble, test window): predicted-vs-actual within ~2pp in
-most bins across 0.50–0.86; largest deviation ~7pp in a 172-game bin.
+Calibration (pure ensemble, test window): predicted-vs-actual within ~4pp in
+most bins across 0.50–0.86.
 
 ### Ablations (ridge, test window)
 
 | variant     | Brier  | Δ vs full |
 |-------------|--------|-----------|
-| full        | .2190  | —         |
-| no EPA      | .2200  | +.0010    |
-| no Elo      | .2203  | +.0013    |
-| no QB model | .2202  | +.0012    |
-| no context (rest/travel/weather) | .2185 | −.0005 |
+| full        | .2182  | —         |
+| no EPA      | .2189  | +.0007    |
+| no Elo      | .2195  | +.0013    |
+| no QB model | .2191  | +.0009    |
+| no injuries | .2190  | +.0008    |
+| no context (rest/travel/weather) | .2177 | −.0005 |
 
-EPA, Elo, and the QB model each carry real weight. The context group adds
-nothing out-of-sample on this window — kept for report explanations, flagged
-as a candidate for removal per the "keep what works" rule.
+EPA, Elo, the QB model and the injury model each carry real, comparable
+weight. The context group adds nothing out-of-sample on this window — kept
+for report explanations, flagged as a candidate for removal per the "keep
+what works" rule.
 
 ---
 
@@ -155,14 +160,27 @@ python3 scripts/predict_week.py --season 2026 --week 3 --sims 250000
 
 Every run writes a record to `runs/` with config hash, git commit and metrics.
 
+## Web bridge
+
+`predict_week.py` writes `../nfl-model.json`, served at `/nfl-model.json` on
+the site. The `/nfl` analyzer page fetches it and, for any matching
+regular-season/playoff slate game, replaces its built-in heuristic model with
+the engine's calibrated probability, margin and total (marked with an
+⚛ ENGINE badge + confidence grade). Preseason games always use the page's
+own preseason engine — the quant platform has no preseason data to train on.
+
 ## Honest limitations
 
 - **Preseason**: nflverse carries no preseason games or PBP, so no trained
   preseason model is possible from this data. Preseason handling (rating
   compression, depth/motivation priors) lives in the site's `/nfl` analyzer
   page; this engine covers regular season + playoffs.
-- **Injuries beyond QB** are an integration layer, not a fitted model.
+- **Injuries**: position-weighted expected-absence burden from official
+  weekly reports (Out/Doubtful/Questionable x position weights). It is
+  ablation-verified (+.0008 Brier) but game-level: no snap counts,
+  replacement quality, or lineup scenarios yet.
 - **Market data** is closing lines only (no openers/line movement), so CLV is
-  measured against close, and "market-aware" means close-aware.
-- The pure model trails the market by ~0.009 Brier. That gap is the honest
+  measured against close, and "market-aware" means close-aware. Acquiring
+  opening lines is the highest-value data upgrade available.
+- The pure model trails the market by ~0.008 Brier. That gap is the honest
   size of the market's information advantage at this feature set.
