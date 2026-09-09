@@ -1,0 +1,35 @@
+================================================================
+GAME  Chicago Bears @ Carolina Panthers   (2026-09-13, week 1)
+================================================================
+
+MODEL PROJECTION
+  Carolina Panthers: 21.8    Chicago Bears: 23.8    (margin -1.9, total 45.6)
+
+WIN PROBABILITY (calibrated ensemble)
+  Carolina Panthers: 37.8%    Chicago Bears: 62.2%
+  market-aware mode: Carolina Panthers 36.0%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Carolina Panthers 21 - Chicago Bears 24
+  80% range:      Carolina Panthers 10-34, Chicago Bears 13-35
+  one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
+  upset (Carolina Panthers wins): 44%
+  vs spread (Carolina Panthers +3.0): cover 50.4%
+  vs total (46.5): over 46.3%
+
+KEY FACTORS (points toward Carolina Panthers)
+  +3.25  offensive EPA/play
+  -3.14  Elo rating gap (incl. HFA, rest, QB)
+  -1.81  QB rating gap
+  -1.44  passing efficiency
+  -1.03  rushing efficiency
+
+MODEL AGREEMENT (home win prob)
+  elo          43.4%
+  logit_pure   44.5%
+  ridge_pure   42.1%
+  gbm_pure     46.3%
+  market       40.7%
+  ensemble     37.8%
+
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

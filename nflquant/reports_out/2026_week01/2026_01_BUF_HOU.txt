@@ -1,0 +1,35 @@
+================================================================
+GAME  Buffalo Bills @ Houston Texans   (2026-09-13, week 1)
+================================================================
+
+MODEL PROJECTION
+  Houston Texans: 24.3    Buffalo Bills: 23.2    (margin +1.2, total 47.5)
+
+WIN PROBABILITY (calibrated ensemble)
+  Houston Texans: 48.9%    Buffalo Bills: 51.1%
+  market-aware mode: Houston Texans 44.3%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Houston Texans 24 - Buffalo Bills 23
+  80% range:      Houston Texans 13-36, Buffalo Bills 11-35
+  one-score game: 54%    overtime: 5.0%    blowout(17+): 20%
+  upset (Buffalo Bills wins): 46%
+  vs spread (Houston Texans +1.5): cover 56.3%
+  vs total (44.5): over 56.9%
+
+KEY FACTORS (points toward Houston Texans)
+  +4.75  offensive EPA/play
+  -2.36  rushing efficiency
+  -2.03  QB rating gap
+  -1.47  passing efficiency
+  -1.29  opponent-adjusted defensive EPA
+
+MODEL AGREEMENT (home win prob)
+  elo          56.9%
+  logit_pure   56.2%
+  ridge_pure   52.6%
+  gbm_pure     55.7%
+  market       48.3%
+  ensemble     48.9%
+
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

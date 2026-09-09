@@ -1,0 +1,35 @@
+================================================================
+GAME  New Orleans Saints @ Detroit Lions   (2026-09-13, week 1)
+================================================================
+
+MODEL PROJECTION
+  Detroit Lions: 27.6    New Orleans Saints: 20.7    (margin +6.9, total 48.3)
+
+WIN PROBABILITY (calibrated ensemble)
+  Detroit Lions: 68.4%    New Orleans Saints: 31.6%
+  market-aware mode: Detroit Lions 71.6%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Detroit Lions 27 - New Orleans Saints 20
+  80% range:      Detroit Lions 16-40, New Orleans Saints 10-33
+  one-score game: 48%    overtime: 4.6%    blowout(17+): 27%
+  upset (New Orleans Saints wins): 28%
+  vs spread (Detroit Lions -7.0): cover 46.9%
+  vs total (49.5): over 45.1%
+
+KEY FACTORS (points toward Detroit Lions)
+  +3.70  Elo rating gap (incl. HFA, rest, QB)
+  -3.12  offensive EPA/play
+  +3.08  QB rating gap
+  +1.65  passing efficiency
+  +0.64  opponent-adjusted offensive EPA
+
+MODEL AGREEMENT (home win prob)
+  elo          71.4%
+  logit_pure   74.0%
+  ridge_pure   72.6%
+  gbm_pure     69.4%
+  market       72.6%
+  ensemble     68.4%
+
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

@@ -49,6 +49,7 @@ def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame) -> pd.DataFrame:
         qg_by_game.setdefault(r.game_id, []).append(r)
 
     state: dict[str, dict] = {}      # qb_id -> {"ewma": x, "n_eff": n}
+    last_starter: dict[str, str] = {}  # team -> last listed starter id
     league_mean = 0.03               # updated as evidence accumulates
     rows = []
 
@@ -64,6 +65,11 @@ def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame) -> pd.DataFrame:
     for gm in g.itertuples(index=False):
         h_id = getattr(gm, "home_qb_id", None)
         a_id = getattr(gm, "away_qb_id", None)
+        # upcoming games may not list a starter yet: assume QB continuity
+        if not isinstance(h_id, str):
+            h_id = last_starter.get(gm.home_team)
+        if not isinstance(a_id, str):
+            a_id = last_starter.get(gm.away_team)
         h_r, h_n = rating_of(h_id)
         a_r, a_n = rating_of(a_id)
         d = h_r - a_r
@@ -74,6 +80,10 @@ def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame) -> pd.DataFrame:
             "d_qb_rating": d,
             "d_qb_points": d * DROPBACKS_PER_GAME * POINTS_PER_EPA,
         })
+        if isinstance(getattr(gm, "home_qb_id", None), str):
+            last_starter[gm.home_team] = gm.home_qb_id
+        if isinstance(getattr(gm, "away_qb_id", None), str):
+            last_starter[gm.away_team] = gm.away_qb_id
         # update with this game's actual passing (all passers, not just starters)
         for r in qg_by_game.get(gm.game_id, []):
             st = state.setdefault(r.qb_id, {"ewma": 0.0, "n_eff": 0.0})
