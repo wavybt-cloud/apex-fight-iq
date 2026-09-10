@@ -194,14 +194,27 @@ def build_features(
     return out
 
 
+CONTEXT_COLS = ["rest_diff", "div_game", "dome", "surface_grass",
+                "temp", "wind", "tz_travel", "neutral"]
+
+
 def feature_columns(mode: str = "pure") -> list[str]:
-    """Model input columns. 'pure' has no market info; 'market' adds the lines."""
+    """Model input columns.
+
+    'pure'   - no market info
+    'tuned'  - pure minus the context group (rest/travel/weather/surface):
+               the 2023-25 ablation showed it contributes nothing out of
+               sample, and the 2026 tuning pass confirmed dropping it
+    'market' - pure plus the closing lines
+    """
     cols = [f"d_{s}" for s in EWMA_STATS]
+    cols += CONTEXT_COLS
     cols += [
-        "rest_diff", "div_game", "playoff", "neutral", "dome", "surface_grass",
-        "temp", "wind", "tz_travel", "week",
+        "playoff", "week",
         "home_qb_change", "away_qb_change", "home_n_season", "away_n_season",
     ]
+    if mode == "tuned":
+        cols = [c for c in cols if c not in CONTEXT_COLS]
     if mode == "market":
         cols += ["spread_line", "total_line"]
     return cols

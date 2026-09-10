@@ -28,7 +28,7 @@ from backtest_v2 import load_enriched, EXTRA_COLS
 
 
 def member_factories(cfg):
-    pure = feature_columns("pure") + ["elo_diff_eff"] + EXTRA_COLS
+    pure = feature_columns("tuned") + ["elo_diff_eff"] + EXTRA_COLS
     from backtest_baselines import EloAsModel
     return {
         "elo": lambda: EloAsModel(),

@@ -54,12 +54,14 @@ def fresh_features(cfg) -> pd.DataFrame:
     feats = build_features(
         games, pbp,
         ewma_halflife=cfg["features"]["ewma_halflife_games"],
+        halflife_def=cfg["features"].get("halflife_def"),
+        halflife_to=cfg["features"].get("halflife_to"),
         gt_band=tuple(cfg["features"]["garbage_time_wp"]),
     )
     elo = run_elo(games, qb_change_flags=feats[["game_id", "home_qb_change", "away_qb_change"]],
                   **{k: v for k, v in cfg["elo"].items()})
     feats = feats.merge(elo, on="game_id", how="left")
-    qb = run_qb_model(games, pbp)
+    qb = run_qb_model(games, pbp, **cfg.get("qb", {}))
     feats = feats.merge(qb, on="game_id", how="left")
     inj = injury_features(cfg, games)
     return feats.merge(inj, on="game_id", how="left")
@@ -93,7 +95,7 @@ def main():
 
     # ---- train members on everything completed ----
     train = feats[feats.result.notna()]
-    pure = feature_columns("pure") + ["elo_diff_eff"] + QB_COLS + INJ_COLS
+    pure = feature_columns("tuned") + ["elo_diff_eff"] + QB_COLS + INJ_COLS
     members = {
         "elo": None,  # sequential; read from columns
         "logit_pure": LogisticModel(pure, "logit_pure").fit(train),

@@ -6,30 +6,30 @@ MODEL PROJECTION
   Philadelphia Eagles: 25.7    Washington Commanders: 19.1    (margin +6.6, total 44.8)
 
 WIN PROBABILITY (calibrated ensemble)
-  Philadelphia Eagles: 71.5%    Washington Commanders: 28.5%
-  market-aware mode: Philadelphia Eagles 66.8%
+  Philadelphia Eagles: 73.4%    Washington Commanders: 26.6%
+  market-aware mode: Philadelphia Eagles 69.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Philadelphia Eagles 25 - Washington Commanders 19
   80% range:      Philadelphia Eagles 14-38, Washington Commanders 7-31
-  one-score game: 50%    overtime: 4.8%    blowout(17+): 26%
+  one-score game: 49%    overtime: 4.7%    blowout(17+): 26%
   upset (Washington Commanders wins): 29%
-  vs spread (Philadelphia Eagles -5.5): cover 53.4%
-  vs total (44.5): over 48.6%
+  vs spread (Philadelphia Eagles -5.5): cover 53.5%
+  vs total (44.5): over 48.7%
 
 KEY FACTORS (points toward Philadelphia Eagles)
-  +5.10  Elo rating gap (incl. HFA, rest, QB)
-  -2.06  opponent-adjusted defensive EPA
+  +4.66  Elo rating gap (incl. HFA, rest, QB)
+  -1.85  opponent-adjusted defensive EPA
   +1.35  pass defense
-  +0.76  run defense
-  -0.46  divisional familiarity
+  +0.58  run defense
+  +0.49  defensive success rate
 
 MODEL AGREEMENT (home win prob)
-  elo          76.1%
-  logit_pure   70.3%
-  ridge_pure   68.4%
-  gbm_pure     77.2%
+  elo          76.3%
+  logit_pure   72.3%
+  ridge_pure   70.7%
+  gbm_pure     74.8%
   market       65.7%
-  ensemble     71.5%
+  ensemble     73.4%
 
 CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

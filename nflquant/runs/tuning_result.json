@@ -1,0 +1,22 @@
+{
+  "elo": {
+    "k": 21.227,
+    "rest_points_per_day": 2.993,
+    "qb_change_penalty": 36.539,
+    "preseason_regress": 0.467,
+    "hfa_points": 60.436,
+    "mode": "static"
+  },
+  "halflives": {
+    "off": 4,
+    "def": 14,
+    "to": 40
+  },
+  "qb": {
+    "prior_strength": 100,
+    "game_decay": 0.95,
+    "cpoe_weight": 0.0
+  },
+  "season_halflife": null,
+  "cols": "pure minus context + elo + qb + inj"
+}

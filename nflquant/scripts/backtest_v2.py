@@ -35,7 +35,7 @@ def load_enriched(cfg) -> pd.DataFrame:
     )
     feats = feats.merge(elo, on="game_id", how="left")
     pbp = load_pbp(cfg)
-    qb = run_qb_model(games, pbp)
+    qb = run_qb_model(games, pbp, **cfg.get("qb", {}))
     feats = feats.merge(qb, on="game_id", how="left")
     inj = injury_features(cfg, games)
     feats = feats.merge(inj, on="game_id", how="left")
@@ -48,7 +48,7 @@ def main():
     feats = load_enriched(cfg)
     dev_seasons = list(range(2012, cfg["seasons"]["validation"][0]))
 
-    pure = feature_columns("pure") + ["elo_diff_eff"] + EXTRA_COLS
+    pure = feature_columns("tuned") + ["elo_diff_eff"] + EXTRA_COLS
     market = feature_columns("market") + ["elo_diff_eff"] + EXTRA_COLS
 
     factories = {

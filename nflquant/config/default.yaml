@@ -17,18 +17,29 @@ seasons:
 
 elo:
   k: 20.0
-  hfa_points: 48.0               # Elo points, ~1.7 game points
+  hfa_points: 48.0               # Elo points, ~1.9 game points (init for dynamic mode)
   preseason_regress: 0.33        # fraction of rating pulled to mean between seasons
   mov_multiplier: true
   rest_points_per_day: 6.0       # Elo pts per day of rest differential vs 7
   qb_change_penalty: 55.0        # Elo pts when listed starter differs from last start
   points_per_elo: 0.0402         # game points per Elo point (25 Elo ≈ 1 pt)
+  dynamic_hfa_halflife: 200      # games; walk-forward HFA (dev-neutral, val -.0015 brier)
+  # 2026 tuning note: an Optuna sweep of k/rest/qb/regress/static-HFA improved
+  # the dev window but DEGRADED validation (HFA regime change) - rejected.
+  # Dynamic HFA adopted instead. See runs/tuning_result.json.
 
 features:
-  ewma_halflife_games: 6         # exponential decay for team-week EPA features
+  ewma_halflife_games: 4         # offense/pace halflife (2026 tuning: 6 -> 4)
+  halflife_def: 14               # defense is noisier - slower halflife
+  halflife_to: 40                # turnovers are mostly luck - shrink hard
   min_prior_games: 4             # early-season: blend with previous-season prior
   prior_blend_games: 10          # full weight to current season after this many games
   garbage_time_wp: [0.05, 0.95]  # plays outside this win-prob band = garbage time
+
+qb:
+  prior_strength: 100            # dropbacks of prior weight (2026 tuning: 200 -> 100)
+  game_decay: 0.95               # per-game evidence decay (0.97 -> 0.95)
+  cpoe_weight: 0.0               # CPOE blend rejected by tuning - no dev gain
 
 gbm:
   num_leaves: 31

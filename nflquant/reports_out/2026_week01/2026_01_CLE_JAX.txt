@@ -3,33 +3,33 @@ GAME  Cleveland Browns @ Jacksonville Jaguars   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Jacksonville Jaguars: 27.5    Cleveland Browns: 19.2    (margin +8.3, total 46.7)
+  Jacksonville Jaguars: 28.0    Cleveland Browns: 19.7    (margin +8.3, total 47.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  Jacksonville Jaguars: 76.4%    Cleveland Browns: 23.6%
-  market-aware mode: Jacksonville Jaguars 79.2%
+  Jacksonville Jaguars: 79.4%    Cleveland Browns: 20.6%
+  market-aware mode: Jacksonville Jaguars 81.3%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Jacksonville Jaguars 27 - Cleveland Browns 19
-  80% range:      Jacksonville Jaguars 16-40, Cleveland Browns 7-31
-  one-score game: 46%    overtime: 4.4%    blowout(17+): 30%
+  median score:   Jacksonville Jaguars 27 - Cleveland Browns 20
+  80% range:      Jacksonville Jaguars 17-41, Cleveland Browns 9-31
+  one-score game: 46%    overtime: 4.1%    blowout(17+): 30%
   upset (Cleveland Browns wins): 24%
-  vs spread (Jacksonville Jaguars -8.5): cover 46.1%
-  vs total (40.5): over 67.5%
+  vs spread (Jacksonville Jaguars -8.5): cover 46.2%
+  vs total (40.5): over 70.1%
 
 KEY FACTORS (points toward Jacksonville Jaguars)
-  -6.94  offensive EPA/play
-  +6.49  Elo rating gap (incl. HFA, rest, QB)
-  +3.49  passing efficiency
-  +1.38  offensive success rate
-  +1.10  opponent-adjusted offensive EPA
+  -6.36  offensive EPA/play
+  +5.97  Elo rating gap (incl. HFA, rest, QB)
+  +3.08  passing efficiency
+  +1.98  offensive success rate
+  +1.26  QB rating gap
 
 MODEL AGREEMENT (home win prob)
-  elo          80.2%
-  logit_pure   79.1%
-  ridge_pure   75.1%
-  gbm_pure     74.2%
+  elo          80.3%
+  logit_pure   79.8%
+  ridge_pure   76.7%
+  gbm_pure     73.3%
   market       79.1%
-  ensemble     76.4%
+  ensemble     79.4%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

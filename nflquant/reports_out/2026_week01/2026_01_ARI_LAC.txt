@@ -3,33 +3,33 @@ GAME  Arizona Cardinals @ Los Angeles Chargers   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Los Angeles Chargers: 29.1    Arizona Cardinals: 21.4    (margin +7.7, total 50.5)
+  Los Angeles Chargers: 27.5    Arizona Cardinals: 20.6    (margin +7.0, total 48.1)
 
 WIN PROBABILITY (calibrated ensemble)
-  Los Angeles Chargers: 71.2%    Arizona Cardinals: 28.8%
-  market-aware mode: Los Angeles Chargers 78.3%
+  Los Angeles Chargers: 72.0%    Arizona Cardinals: 28.0%
+  market-aware mode: Los Angeles Chargers 80.5%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Los Angeles Chargers 29 - Arizona Cardinals 21
-  80% range:      Los Angeles Chargers 17-41, Arizona Cardinals 10-34
-  one-score game: 46%    overtime: 4.3%    blowout(17+): 29%
-  upset (Arizona Cardinals wins): 26%
-  vs spread (Los Angeles Chargers -9.5): cover 42.6%
-  vs total (47.5): over 57.0%
+  median score:   Los Angeles Chargers 27 - Arizona Cardinals 20
+  80% range:      Los Angeles Chargers 16-40, Arizona Cardinals 10-32
+  one-score game: 48%    overtime: 4.5%    blowout(17+): 27%
+  upset (Arizona Cardinals wins): 28%
+  vs spread (Los Angeles Chargers -9.5): cover 40.1%
+  vs total (47.5): over 49.5%
 
 KEY FACTORS (points toward Los Angeles Chargers)
-  +4.67  Elo rating gap (incl. HFA, rest, QB)
-  -1.75  opponent-adjusted defensive EPA
-  +1.44  pass defense
-  +0.89  QB rating gap
-  +0.75  rushing efficiency
+  +4.29  Elo rating gap (incl. HFA, rest, QB)
+  -1.13  opponent-adjusted defensive EPA
+  +1.11  pass defense
+  +1.02  offensive EPA/play
+  -0.61  passing efficiency
 
 MODEL AGREEMENT (home win prob)
-  elo          74.7%
-  logit_pure   74.2%
-  ridge_pure   74.7%
-  gbm_pure     71.3%
+  elo          75.1%
+  logit_pure   72.3%
+  ridge_pure   72.9%
+  gbm_pure     69.4%
   market       80.0%
-  ensemble     71.2%
+  ensemble     72.0%
 
-CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

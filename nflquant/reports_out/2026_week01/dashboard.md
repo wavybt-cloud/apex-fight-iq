@@ -1,50 +1,50 @@
 # NFL week 1, 2026 - model dashboard
 
 ## Most confident winner
-- CLE @ JAX: JAX 76%
-- WAS @ PHI: PHI 71%
-- ARI @ LAC: LAC 71%
+- CLE @ JAX: JAX 79%
+- WAS @ PHI: PHI 73%
+- ARI @ LAC: LAC 72%
 
 ## Largest projected margin
 - CLE @ JAX: +8.5 (home)
-- ARI @ LAC: +7.9 (home)
-- NO @ DET: +7.3 (home)
+- ARI @ LAC: +7.1 (home)
+- WAS @ PHI: +6.8 (home)
 
 ## Largest model disagreement
-- MIA @ LV: 18% spread across members
+- DAL @ NYG: 21% spread across members
+- MIA @ LV: 19% spread across members
 - DEN @ KC: 17% spread across members
-- DAL @ NYG: 17% spread across members
 
 ## Lowest uncertainty
-- BAL @ IND: 2% member spread, confidence LOW
-- NO @ DET: 3% member spread, confidence LOW
-- GB @ MIN: 5% member spread, confidence VERY LOW
+- GB @ MIN: 3% member spread, confidence LOW
+- BAL @ IND: 5% member spread, confidence VERY LOW
+- TB @ CIN: 6% member spread, confidence VERY LOW
 
 ## Most likely one-score game
-- DEN @ KC: 56%
+- DEN @ KC: 55%
 - DAL @ NYG: 55%
-- GB @ MIN: 55%
+- BUF @ HOU: 55%
 
 ## Highest projected total
-- ARI @ LAC: 50.2
-- NO @ DET: 48.4
-- TB @ CIN: 47.9
+- TB @ CIN: 48.2
+- ARI @ LAC: 47.7
+- CLE @ JAX: 47.4
 
 ## Lowest projected total
-- DAL @ NYG: 43.9
-- DEN @ KC: 44.0
-- WAS @ PHI: 44.3
+- WAS @ PHI: 44.4
+- NYJ @ TEN: 44.7
+- MIA @ LV: 45.0
 
 ## Biggest upset chance
-- DAL @ NYG: 49%
-- DEN @ KC: 47%
-- BUF @ HOU: 47%
+- DEN @ KC: 49%
+- DAL @ NYG: 48%
+- BUF @ HOU: 48%
 
 ## Largest model-vs-market gaps (information, not a bet slip)
-- MIA @ LV: model -1.1 vs line +3.0 (4.1 pts toward MIA); cover 40% home
-- DEN @ KC: model -0.7 vs line +3.0 (3.7 pts toward DEN); cover 41% home
-- DAL @ NYG: model +0.1 vs line -3.0 (3.1 pts toward NYG); cover 57% home
-- BUF @ HOU: model +1.1 vs line -1.5 (2.6 pts toward HOU); cover 56% home
-- SF @ LA: model +1.5 vs line +3.5 (2.0 pts toward SF); cover 44% home
+- MIA @ LV: model -1.6 vs line +3.0 (4.6 pts toward MIA); cover 38% home
+- DEN @ KC: model -0.3 vs line +3.0 (3.3 pts toward DEN); cover 42% home
+- ARI @ LAC: model +7.1 vs line +9.5 (2.4 pts toward ARI); cover 40% home
+- DAL @ NYG: model -0.6 vs line -3.0 (2.4 pts toward NYG); cover 55% home
+- BUF @ HOU: model +0.8 vs line -1.5 (2.3 pts toward HOU); cover 55% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*
