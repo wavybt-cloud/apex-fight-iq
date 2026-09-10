@@ -42,22 +42,44 @@ DOME_ROOFS = {"dome", "closed"}
 
 def build_features(
     games: pd.DataFrame,
-    pbp: pd.DataFrame,
+    pbp: pd.DataFrame | None,
     ewma_halflife: float = 6.0,
     season_regress: float = 0.35,
     gt_band: tuple[float, float] = (0.05, 0.95),
+    halflife_def: float | None = None,
+    halflife_to: float | None = None,
+    tg: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """Return one row per game with pregame features for both teams.
 
     Only games whose season has PBP coverage get EPA features; earlier games
     get NaN (models trained on the EPA feature set filter those out).
+
+    Halflives can differ by stat family: offense signal is more stable than
+    defense, and turnovers are mostly noise (deserving a much longer halflife,
+    i.e. heavier shrinkage toward a team's long-run rate). halflife_def and
+    halflife_to default to the base ewma_halflife.
+
+    tg: precomputed team_game_stats(pbp) - pass it when sweeping halflives so
+    the PBP aggregation isn't recomputed per trial.
     """
-    tg = team_game_stats(pbp, gt_band=gt_band)
+    if tg is None:
+        tg = team_game_stats(pbp, gt_band=gt_band)
     tg_map: dict[tuple[str, str], pd.Series] = {
         (r.game_id, r.team): r for r in tg.itertuples(index=False)
     }
 
-    alpha = 1.0 - 0.5 ** (1.0 / ewma_halflife)
+    TO_STATS = {"off_turnovers", "to_rate"}
+    def _alpha(hl):
+        return 1.0 - 0.5 ** (1.0 / hl)
+    alpha_of = {}
+    for s in EWMA_STATS:
+        if s in TO_STATS:
+            alpha_of[s] = _alpha(halflife_to or ewma_halflife)
+        elif s.startswith("def_") or s == "adj_def_epa":
+            alpha_of[s] = _alpha(halflife_def or ewma_halflife)
+        else:
+            alpha_of[s] = _alpha(ewma_halflife)
     state: dict[str, dict] = {}          # team -> {stat: ewma, "_n": games, "_season": last}
     league: dict[str, float] = {}        # trailing league mean per stat (EWMA, slow)
     last_qb: dict[str, str] = {}         # team -> last starting QB name
@@ -157,7 +179,8 @@ def build_features(
                 if x is None or (isinstance(x, float) and np.isnan(x)):
                     continue
                 cur = st.get(s)
-                st[s] = x if cur is None else alpha * x + (1 - alpha) * cur
+                a = alpha_of[s]
+                st[s] = x if cur is None else a * x + (1 - a) * cur
                 lg = league.get(s)
                 league[s] = x if lg is None else 0.002 * x + 0.998 * lg
             st["_n"] += 1

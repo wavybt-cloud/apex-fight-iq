@@ -61,18 +61,29 @@ class MarketBaseline:
         )
 
 
+def _season_weights(t: pd.DataFrame, halflife: float | None) -> np.ndarray | None:
+    """Exponential decay by season age: recent football counts more."""
+    if not halflife:
+        return None
+    age = t["season"].max() - t["season"]
+    return np.power(0.5, age / halflife).values
+
+
 class LogisticModel:
     """L2 logistic regression on the feature set (pure or market mode)."""
-    def __init__(self, cols: list[str], name: str = "logit", C: float = 0.3):
+    def __init__(self, cols: list[str], name: str = "logit", C: float = 0.3,
+                 season_halflife: float | None = None):
         self.cols, self.name, self.C = cols, name, C
+        self.season_halflife = season_halflife
 
     def fit(self, train: pd.DataFrame):
         t = train[train.home_win.isin([0.0, 1.0])]
+        w = _season_weights(t, self.season_halflife)
         self.pipe_ = Pipeline([
             ("imp", SimpleImputer(strategy="median")),
             ("sc", StandardScaler()),
             ("lr", LogisticRegression(C=self.C, max_iter=2000)),
-        ]).fit(t[self.cols], t.home_win.astype(int))
+        ]).fit(t[self.cols], t.home_win.astype(int), lr__sample_weight=w)
         return self
 
     def predict(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -83,24 +94,28 @@ class LogisticModel:
 class RidgeMarginModel:
     """Ridge regression on margin; win prob via Normal(margin, resid sigma).
     Also fits a total model on the same features plus pace/efficiency levels."""
-    def __init__(self, cols: list[str], name: str = "ridge", alpha: float = 10.0):
+    def __init__(self, cols: list[str], name: str = "ridge", alpha: float = 10.0,
+                 season_halflife: float | None = None):
         self.cols, self.name, self.alpha = cols, name, alpha
+        self.season_halflife = season_halflife
 
     def fit(self, train: pd.DataFrame):
         t = train[train.result.notna()]
+        w = _season_weights(t, self.season_halflife)
         self.pipe_ = Pipeline([
             ("imp", SimpleImputer(strategy="median")),
             ("sc", StandardScaler()),
             ("rg", Ridge(alpha=self.alpha)),
-        ]).fit(t[self.cols], t.result)
+        ]).fit(t[self.cols], t.result, rg__sample_weight=w)
         resid = t.result - self.pipe_.predict(t[self.cols])
         self.sigma_ = float(max(resid.std(), 9.0))
         tt = t[t.total.notna()]
+        wt = _season_weights(tt, self.season_halflife)
         self.total_pipe_ = Pipeline([
             ("imp", SimpleImputer(strategy="median")),
             ("sc", StandardScaler()),
             ("rg", Ridge(alpha=self.alpha)),
-        ]).fit(tt[self.cols], tt.total)
+        ]).fit(tt[self.cols], tt.total, rg__sample_weight=wt)
         return self
 
     def predict(self, df: pd.DataFrame) -> pd.DataFrame:

@@ -24,11 +24,18 @@ def run_elo(
     qb_change_penalty: float = 55.0,
     points_per_elo: float = 0.0402,
     qb_change_flags: pd.DataFrame | None = None,
+    dynamic_hfa_halflife: float | None = None,
 ) -> pd.DataFrame:
     """Return per-game pregame Elo columns aligned with `games` order.
 
     qb_change_flags: optional frame with game_id, home_qb_change, away_qb_change
     (from the feature builder). Without it the QB adjustment is skipped.
+
+    dynamic_hfa_halflife: when set (in games), home-field advantage is not the
+    static hfa_points but a walk-forward EWMA of the residual home edge
+    (actual margin minus the rating-implied margin). This lets HFA drift with
+    the league - it has roughly halved since the 2000s, and a static value
+    bakes in a pro-home bias.
     """
     qb = {}
     if qb_change_flags is not None:
@@ -39,6 +46,8 @@ def run_elo(
     ratings: dict[str, float] = {}
     last_season: dict[str, int] = {}
     rows = []
+    hfa_pts_live = hfa_points * points_per_elo   # running HFA estimate in points
+    hfa_lam = 0.5 ** (1.0 / dynamic_hfa_halflife) if dynamic_hfa_halflife else None
 
     g = games.sort_values(["gameday", "game_id"]).reset_index(drop=True)
     for gm in g.itertuples(index=False):
@@ -50,7 +59,8 @@ def run_elo(
 
         rh, ra = ratings[gm.home_team], ratings[gm.away_team]
         neutral = getattr(gm, "location", "Home") == "Neutral"
-        adj = 0.0 if neutral else hfa_points
+        hfa_now = (hfa_pts_live / points_per_elo) if hfa_lam else hfa_points
+        adj = 0.0 if neutral else hfa_now
         hr = 7 if pd.isna(gm.home_rest) else gm.home_rest
         ar = 7 if pd.isna(gm.away_rest) else gm.away_rest
         adj += rest_points_per_day * float(np.clip(hr - ar, -7, 7))
@@ -71,6 +81,10 @@ def run_elo(
 
         if pd.isna(gm.result):
             continue  # unplayed: prediction emitted, no update
+        if hfa_lam and not neutral:
+            # residual home edge: what home teams earn beyond their ratings
+            no_hfa_margin = (diff - hfa_now) * points_per_elo
+            hfa_pts_live = hfa_lam * hfa_pts_live + (1 - hfa_lam) * (gm.result - no_hfa_margin)
         s_home = 1.0 if gm.result > 0 else (0.0 if gm.result < 0 else 0.5)
         mult = 1.0
         if mov_multiplier:

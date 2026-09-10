@@ -118,7 +118,12 @@ def main():
     y_val = ref.loc[vp.index, "home_win"].values
     decided = np.isin(y_val, [0.0, 1.0])
     cal_pure, rep_pure = pick_calibrator(stack_pure.predict(vp)[decided], y_val[decided])
-    cal_mkt, rep_mkt = pick_calibrator(stack_mkt.predict(vp)[decided], y_val[decided])
+    # market mode: identity by principle. The de-vigged market is already
+    # calibrated; a correction fitted on ~1k validation games is noise (and
+    # the market's dominant stacker weight passes its calibration through).
+    from nflquant.models.calibration import IdentityCalibrator
+    cal_mkt = IdentityCalibrator().fit(None, None)
+    rep_mkt = {"none": "by principle"}
     print("\ncalibration (pure):", rep_pure, "->", cal_pure.name)
     print("calibration (mkt): ", rep_mkt, "->", cal_mkt.name)
 

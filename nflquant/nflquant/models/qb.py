@@ -26,39 +26,58 @@ POINTS_PER_EPA = 1.0          # EPA is already in points
 
 
 def qb_game_stats(pbp: pd.DataFrame) -> pd.DataFrame:
-    """Per (game_id, passer_id): dropbacks and EPA/dropback."""
+    """Per (game_id, passer_id): dropbacks, EPA/dropback, CPOE.
+
+    qb_dropback includes scrambles, so scramble value is already inside
+    EPA/dropback; only designed QB runs are missed.
+    """
     db = pbp[(pbp["qb_dropback"] == 1) & pbp["epa"].notna() & pbp["passer_player_id"].notna()]
     g = db.groupby(["game_id", "passer_player_id"])
     out = pd.DataFrame({
         "dropbacks": g["epa"].size(),
         "epa_db": g["epa"].mean(),
+        "cpoe": g["cpoe"].mean() if "cpoe" in db.columns else np.nan,
         "name": g["passer_player_name"].first(),
     }).reset_index().rename(columns={"passer_player_id": "qb_id"})
     return out
 
 
-def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame) -> pd.DataFrame:
+def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame,
+                 prior_strength: float = PRIOR_STRENGTH,
+                 game_decay: float = GAME_DECAY,
+                 debut_penalty: float = DEBUT_PENALTY,
+                 cpoe_weight: float = 0.0,
+                 qg: pd.DataFrame | None = None) -> pd.DataFrame:
     """Per-game pregame QB ratings for the listed starters.
 
     Returns columns: game_id, home_qb_rating, away_qb_rating, home_qb_n_eff,
     away_qb_n_eff, d_qb_rating (home-away, EPA/dropback), d_qb_points.
+
+    cpoe_weight blends completion-percentage-over-expected (in EPA/dropback
+    units per CPOE point) into the rating - CPOE stabilizes in far fewer
+    dropbacks than EPA, helping small-sample QBs. qg: precomputed
+    qb_game_stats(pbp) for sweeps.
     """
-    qg = qb_game_stats(pbp)
+    if qg is None:
+        qg = qb_game_stats(pbp)
     qg_by_game: dict[str, list] = {}
     for r in qg.itertuples(index=False):
         qg_by_game.setdefault(r.game_id, []).append(r)
 
-    state: dict[str, dict] = {}      # qb_id -> {"ewma": x, "n_eff": n}
+    state: dict[str, dict] = {}      # qb_id -> {"ewma": x, "cpoe": x, "n_eff": n}
     last_starter: dict[str, str] = {}  # team -> last listed starter id
     league_mean = 0.03               # updated as evidence accumulates
     rows = []
 
     def rating_of(qb_id) -> tuple[float, float]:
         st = state.get(qb_id)
-        prior = league_mean - DEBUT_PENALTY
+        prior = league_mean - debut_penalty
         if st is None or st["n_eff"] <= 0:
             return prior, 0.0
-        shrunk = (st["n_eff"] * st["ewma"] + PRIOR_STRENGTH * prior) / (st["n_eff"] + PRIOR_STRENGTH)
+        shrunk = (st["n_eff"] * st["ewma"] + prior_strength * prior) / (st["n_eff"] + prior_strength)
+        if cpoe_weight and st.get("cpoe") is not None:
+            cp_shrunk = st["n_eff"] * st["cpoe"] / (st["n_eff"] + prior_strength)
+            shrunk += cpoe_weight * cp_shrunk
         return shrunk, st["n_eff"]
 
     g = games.sort_values(["gameday", "game_id"]).reset_index(drop=True)
@@ -86,12 +105,12 @@ def run_qb_model(games: pd.DataFrame, pbp: pd.DataFrame) -> pd.DataFrame:
             last_starter[gm.away_team] = gm.away_qb_id
         # update with this game's actual passing (all passers, not just starters)
         for r in qg_by_game.get(gm.game_id, []):
-            st = state.setdefault(r.qb_id, {"ewma": 0.0, "n_eff": 0.0})
-            n_new = st["n_eff"] * GAME_DECAY + r.dropbacks
-            st["ewma"] = (
-                (st["ewma"] * st["n_eff"] * GAME_DECAY + r.epa_db * r.dropbacks) / n_new
-                if n_new > 0 else 0.0
-            )
+            st = state.setdefault(r.qb_id, {"ewma": 0.0, "cpoe": 0.0, "n_eff": 0.0})
+            n_new = st["n_eff"] * game_decay + r.dropbacks
+            if n_new > 0:
+                st["ewma"] = (st["ewma"] * st["n_eff"] * game_decay + r.epa_db * r.dropbacks) / n_new
+                cp = r.cpoe if r.cpoe is not None and not (isinstance(r.cpoe, float) and np.isnan(r.cpoe)) else st["cpoe"]
+                st["cpoe"] = (st["cpoe"] * st["n_eff"] * game_decay + cp * r.dropbacks) / n_new
             st["n_eff"] = n_new
             league_mean = 0.999 * league_mean + 0.001 * r.epa_db
     return pd.DataFrame(rows)

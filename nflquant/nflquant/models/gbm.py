@@ -27,14 +27,22 @@ class GBMModel:
     """Joint wrapper: classifier for win, regressors for margin and total."""
 
     def __init__(self, cols: list[str], name: str = "gbm", params: dict | None = None,
-                 early_stopping_rounds: int = 60):
+                 early_stopping_rounds: int = 60, season_halflife: float | None = None):
         self.cols, self.name = cols, name
         self.params = {**DEFAULT_PARAMS, **(params or {})}
         self.esr = early_stopping_rounds
+        self.season_halflife = season_halflife
+
+    def _weights(self, t: pd.DataFrame):
+        if not self.season_halflife:
+            return None
+        age = t["season"].max() - t["season"]
+        return np.power(0.5, age / self.season_halflife).values
 
     def _fit_one(self, model, tr, ev, target):
         model.fit(
             tr[self.cols], tr[target],
+            sample_weight=self._weights(tr),
             eval_X=ev[self.cols], eval_y=ev[target],
             callbacks=[early_stopping(self.esr, verbose=False), log_evaluation(0)],
         )
