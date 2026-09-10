@@ -207,6 +207,25 @@ def main():
     path = PACKAGE_ROOT / "reports_out/2026_week01/props.json"
     path.write_text(json.dumps(out, indent=1))
     print("\nwrote", path)
+
+    # ---- attach props to the site bridge (/nfl-model.json) ----
+    bridge_path = PACKAGE_ROOT.parent / "nfl-model.json"
+    if bridge_path.exists():
+        to_page = {"LA": "LAR"}
+        bridge = json.loads(bridge_path.read_text())
+        by_teams = {}
+        for gg in out_games:
+            key = to_page.get(gg["away"], gg["away"]) + "@" + to_page.get(gg["home"], gg["home"])
+            by_teams[key] = {"home": gg["teams"][0], "away": gg["teams"][1]}
+        attached = 0
+        for bg in bridge.get("games", []):
+            key = bg["away"] + "@" + bg["home"]
+            if key in by_teams:
+                bg["props"] = by_teams[key]
+                attached += 1
+        bridge["props_platt"] = out["platt"]
+        bridge_path.write_text(json.dumps(bridge, indent=1))
+        print(f"bridge updated with props for {attached} games -> {bridge_path}")
     # quick eyeball of two games
     for gg in out_games:
         if gg["away"] in ("MIA", "BAL"):
