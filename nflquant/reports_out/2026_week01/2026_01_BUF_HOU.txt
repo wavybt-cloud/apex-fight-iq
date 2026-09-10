@@ -9,13 +9,13 @@ WIN PROBABILITY (calibrated ensemble)
   Houston Texans: 52.4%    Buffalo Bills: 47.6%
   market-aware mode: Houston Texans 50.1%
 
-SIMULATION (50,000 possession-level sims)
+SIMULATION (20,000 possession-level sims)
   median score:   Houston Texans 23 - Buffalo Bills 23
-  80% range:      Houston Texans 13-35, Buffalo Bills 11-35
-  one-score game: 55%    overtime: 5.0%    blowout(17+): 20%
+  80% range:      Houston Texans 13-35, Buffalo Bills 12-35
+  one-score game: 55%    overtime: 5.0%    blowout(17+): 19%
   upset (Buffalo Bills wins): 48%
-  vs spread (Houston Texans +1.5): cover 55.2%
-  vs total (44.5): over 54.9%
+  vs spread (Houston Texans +1.5): cover 55.1%
+  vs total (44.5): over 55.3%
 
 KEY FACTORS (points toward Houston Texans)
   +4.38  offensive EPA/play

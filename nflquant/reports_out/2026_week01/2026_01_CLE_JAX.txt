@@ -3,19 +3,19 @@ GAME  Cleveland Browns @ Jacksonville Jaguars   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Jacksonville Jaguars: 28.0    Cleveland Browns: 19.7    (margin +8.3, total 47.7)
+  Jacksonville Jaguars: 28.1    Cleveland Browns: 19.8    (margin +8.2, total 47.9)
 
 WIN PROBABILITY (calibrated ensemble)
   Jacksonville Jaguars: 79.4%    Cleveland Browns: 20.6%
   market-aware mode: Jacksonville Jaguars 80.9%
 
-SIMULATION (50,000 possession-level sims)
+SIMULATION (20,000 possession-level sims)
   median score:   Jacksonville Jaguars 27 - Cleveland Browns 20
   80% range:      Jacksonville Jaguars 17-41, Cleveland Browns 9-31
-  one-score game: 46%    overtime: 4.2%    blowout(17+): 30%
-  upset (Cleveland Browns wins): 24%
-  vs spread (Jacksonville Jaguars -8.5): cover 45.9%
-  vs total (39.5): over 73.4%
+  one-score game: 46%    overtime: 4.1%    blowout(17+): 30%
+  upset (Cleveland Browns wins): 25%
+  vs spread (Jacksonville Jaguars -8.5): cover 46.0%
+  vs total (39.5): over 73.7%
 
 KEY FACTORS (points toward Jacksonville Jaguars)
   -6.36  offensive EPA/play

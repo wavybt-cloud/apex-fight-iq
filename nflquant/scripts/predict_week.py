@@ -203,6 +203,21 @@ def main():
         } for g in games_out],
     }
     bridge_path = PACKAGE_ROOT.parent / "nfl-model.json"
+    # carry forward props attached by props_week.py so a game-engine refresh
+    # doesn't strip the site's props panel between desk shifts
+    if bridge_path.exists():
+        try:
+            old = json.loads(bridge_path.read_text())
+            old_props = {bg["away"] + "@" + bg["home"]: bg.get("props")
+                         for bg in old.get("games", []) if bg.get("props")}
+            for bg in bridge["games"]:
+                key = bg["away"] + "@" + bg["home"]
+                if key in old_props:
+                    bg["props"] = old_props[key]
+            if old.get("props_platt"):
+                bridge["props_platt"] = old["props_platt"]
+        except Exception as e:
+            log.warning("could not carry forward props: %s", e)
     bridge_path.write_text(json.dumps(bridge, indent=1))
     log.info("reports written to %s; page bridge -> %s", out_dir, bridge_path)
 

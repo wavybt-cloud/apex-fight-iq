@@ -22,8 +22,8 @@
 
 ## Most likely one-score game
 - DEN @ KC: 55%
+- MIA @ LV: 55%
 - DAL @ NYG: 55%
-- GB @ MIN: 55%
 
 ## Highest projected total
 - TB @ CIN: 48.2
