@@ -3,19 +3,19 @@ GAME  San Francisco 49ers @ Los Angeles Rams   (2026-09-10, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Los Angeles Rams: 24.7    San Francisco 49ers: 22.2    (margin +2.5, total 46.9)
+  Los Angeles Rams: 24.6    San Francisco 49ers: 22.2    (margin +2.4, total 46.9)
 
 WIN PROBABILITY (calibrated ensemble)
   Los Angeles Rams: 54.9%    San Francisco 49ers: 45.1%
   market-aware mode: Los Angeles Rams 63.1%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Los Angeles Rams 24 - San Francisco 49ers 21
+  median score:   Los Angeles Rams 24 - San Francisco 49ers 22
   80% range:      Los Angeles Rams 13-37, San Francisco 49ers 10-34
-  one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
-  upset (San Francisco 49ers wins): 41%
+  one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
+  upset (San Francisco 49ers wins): 42%
   vs spread (Los Angeles Rams -3.5): cover 47.1%
-  vs total (48.5): over 43.1%
+  vs total (48.5): over 43.3%
 
 KEY FACTORS (points toward Los Angeles Rams)
   +4.58  home_inj

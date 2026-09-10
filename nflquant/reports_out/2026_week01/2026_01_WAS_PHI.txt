@@ -12,10 +12,10 @@ WIN PROBABILITY (calibrated ensemble)
 SIMULATION (50,000 possession-level sims)
   median score:   Philadelphia Eagles 25 - Washington Commanders 19
   80% range:      Philadelphia Eagles 14-38, Washington Commanders 7-31
-  one-score game: 49%    overtime: 4.7%    blowout(17+): 26%
+  one-score game: 50%    overtime: 4.8%    blowout(17+): 26%
   upset (Washington Commanders wins): 29%
-  vs spread (Philadelphia Eagles -5.5): cover 53.5%
-  vs total (44.5): over 48.7%
+  vs spread (Philadelphia Eagles -5.5): cover 53.4%
+  vs total (44.5): over 48.9%
 
 KEY FACTORS (points toward Philadelphia Eagles)
   +4.66  Elo rating gap (incl. HFA, rest, QB)

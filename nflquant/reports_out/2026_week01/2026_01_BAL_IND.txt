@@ -11,11 +11,11 @@ WIN PROBABILITY (calibrated ensemble)
 
 SIMULATION (50,000 possession-level sims)
   median score:   Indianapolis Colts 21 - Baltimore Ravens 24
-  80% range:      Indianapolis Colts 10-34, Baltimore Ravens 14-37
+  80% range:      Indianapolis Colts 10-34, Baltimore Ravens 13-37
   one-score game: 53%    overtime: 5.2%    blowout(17+): 22%
   upset (Indianapolis Colts wins): 39%
   vs spread (Indianapolis Colts +3.5): cover 50.1%
-  vs total (47.5): over 47.0%
+  vs total (47.5): over 46.7%
 
 KEY FACTORS (points toward Indianapolis Colts)
   -4.37  Elo rating gap (incl. HFA, rest, QB)
