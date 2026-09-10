@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10T03:44:08.411309",
+ "generated": "2026-09-10T15:22:12.473344",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 1,
@@ -11,8 +11,8 @@
    "p_home": 0.5491,
    "margin": 2.48,
    "total": 46.37,
-   "p_home_cover": 0.471,
-   "p_over": 0.4308,
+   "p_home_cover": 0.4709,
+   "p_over": 0.433,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -162,8 +162,8 @@
    "p_home": 0.7204,
    "margin": 7.09,
    "total": 47.65,
-   "p_home_cover": 0.4015,
-   "p_over": 0.4954,
+   "p_home_cover": 0.4001,
+   "p_over": 0.4947,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -323,8 +323,8 @@
    "p_home": 0.6134,
    "margin": 3.41,
    "total": 47.37,
-   "p_home_cover": 0.4982,
-   "p_over": 0.6601,
+   "p_home_cover": 0.4998,
+   "p_over": 0.6592,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -484,8 +484,8 @@
    "p_home": 0.3606,
    "margin": -3.43,
    "total": 46.44,
-   "p_home_cover": 0.5014,
-   "p_over": 0.4701,
+   "p_home_cover": 0.5006,
+   "p_over": 0.4672,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -635,8 +635,8 @@
    "p_home": 0.524,
    "margin": 0.79,
    "total": 46.35,
-   "p_home_cover": 0.5485,
-   "p_over": 0.5499,
+   "p_home_cover": 0.5525,
+   "p_over": 0.5494,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -786,8 +786,8 @@
    "p_home": 0.4193,
    "margin": -2.31,
    "total": 45.85,
-   "p_home_cover": 0.4968,
-   "p_over": 0.4846,
+   "p_home_cover": 0.4985,
+   "p_over": 0.4855,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -947,8 +947,8 @@
    "p_home": 0.794,
    "margin": 8.48,
    "total": 47.43,
-   "p_home_cover": 0.4621,
-   "p_over": 0.7013,
+   "p_home_cover": 0.4591,
+   "p_over": 0.704,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1098,8 +1098,8 @@
    "p_home": 0.4605,
    "margin": -0.62,
    "total": 45.43,
-   "p_home_cover": 0.551,
-   "p_over": 0.4023,
+   "p_home_cover": 0.5506,
+   "p_over": 0.4039,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1128,7 +1128,7 @@
       {
        "name": "Malik Nabers",
        "pos": "WR",
-       "p": 0.2808,
+       "p": 0.2807,
        "odds": "+256"
       },
       {
@@ -1249,8 +1249,8 @@
    "p_home": 0.4987,
    "margin": 1.16,
    "total": 46.62,
-   "p_home_cover": 0.5209,
-   "p_over": 0.5125,
+   "p_home_cover": 0.5191,
+   "p_over": 0.5118,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1389,8 +1389,8 @@
    "p_home": 0.4013,
    "margin": -1.59,
    "total": 45.04,
-   "p_home_cover": 0.3777,
-   "p_over": 0.6469,
+   "p_home_cover": 0.3793,
+   "p_over": 0.6466,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1484,7 +1484,7 @@
        "name": "Jalen Tolbert",
        "pos": "WR",
        "p": 0.221,
-       "odds": "+352"
+       "odds": "+353"
       },
       {
        "name": "Malik Willis",
@@ -1531,11 +1531,11 @@
    "away": "NO",
    "home": "DET",
    "gameday": "2026-09-13",
-   "p_home": 0.691,
+   "p_home": 0.6911,
    "margin": 6.46,
    "total": 46.43,
-   "p_home_cover": 0.4535,
-   "p_over": 0.4084,
+   "p_home_cover": 0.4511,
+   "p_over": 0.3803,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1570,7 +1570,7 @@
       {
        "name": "Joshua Dobbs",
        "pos": "QB",
-       "p": 0.2437,
+       "p": 0.2438,
        "odds": "+310"
       },
       {
@@ -1683,10 +1683,10 @@
    "home": "TEN",
    "gameday": "2026-09-13",
    "p_home": 0.5283,
-   "margin": 1.8,
+   "margin": 1.79,
    "total": 44.72,
-   "p_home_cover": 0.538,
-   "p_over": 0.6824,
+   "p_home_cover": 0.5396,
+   "p_over": 0.6841,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1836,8 +1836,8 @@
    "p_home": 0.5624,
    "margin": 2.68,
    "total": 48.2,
-   "p_home_cover": 0.4822,
-   "p_over": 0.4414,
+   "p_home_cover": 0.4831,
+   "p_over": 0.4387,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1987,8 +1987,8 @@
    "p_home": 0.7343,
    "margin": 6.8,
    "total": 44.43,
-   "p_home_cover": 0.5351,
-   "p_over": 0.4865,
+   "p_home_cover": 0.5336,
+   "p_over": 0.4891,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2091,7 +2091,7 @@
       {
        "name": "Rachaad White",
        "pos": "RB",
-       "p": 0.2125,
+       "p": 0.2124,
        "odds": "+371"
       },
       {
@@ -2146,10 +2146,10 @@
    "home": "KC",
    "gameday": "2026-09-14",
    "p_home": 0.4212,
-   "margin": -0.28,
+   "margin": -0.27,
    "total": 46.85,
-   "p_home_cover": 0.4193,
-   "p_over": 0.6034,
+   "p_home_cover": 0.457,
+   "p_over": 0.6022,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2160,7 +2160,7 @@
       {
        "name": "Rashee Rice",
        "pos": "WR",
-       "p": 0.4117,
+       "p": 0.4118,
        "odds": "+143"
       },
       {
