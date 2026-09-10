@@ -13,7 +13,147 @@
    "total": 46.37,
    "p_home_cover": 0.4709,
    "p_over": 0.433,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "LA",
+     "exp_pts": 24.4,
+     "exp_off_tds": 2.53,
+     "td": [
+      {
+       "name": "Kyren Williams",
+       "pos": "RB",
+       "p": 0.4137,
+       "odds": "+142"
+      },
+      {
+       "name": "Davante Adams",
+       "pos": "WR",
+       "p": 0.3599,
+       "odds": "+178"
+      },
+      {
+       "name": "Puka Nacua",
+       "pos": "WR",
+       "p": 0.3426,
+       "odds": "+192"
+      },
+      {
+       "name": "Colby Parkinson",
+       "pos": "TE",
+       "p": 0.2646,
+       "odds": "+278"
+      },
+      {
+       "name": "Blake Corum",
+       "pos": "RB",
+       "p": 0.2136,
+       "odds": "+368"
+      },
+      {
+       "name": "Tyler Higbee",
+       "pos": "TE",
+       "p": 0.1906,
+       "odds": "+425"
+      }
+     ],
+     "qb": {
+      "name": "Matthew Stafford",
+      "mean": 275.9,
+      "line": 276.0,
+      "sd": 74.8,
+      "dist": "normal",
+      "n": 39.8,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Kyren Williams",
+       "mean": 75.3,
+       "line": 69.0,
+       "k": 3.957,
+       "theta": 19.03,
+       "dist": "gamma",
+       "car": 15.9,
+       "n": 38.0
+      },
+      {
+       "name": "Blake Corum",
+       "mean": 37.3,
+       "line": 33.0,
+       "k": 2.908,
+       "theta": 12.839,
+       "dist": "gamma",
+       "car": 7.4,
+       "n": 27.8
+      }
+     ]
+    },
+    "away": {
+     "team": "SF",
+     "exp_pts": 21.9,
+     "exp_off_tds": 2.36,
+     "td": [
+      {
+       "name": "Christian McCaffrey",
+       "pos": "RB",
+       "p": 0.4554,
+       "odds": "+120"
+      },
+      {
+       "name": "Mike Evans",
+       "pos": "WR",
+       "p": 0.3654,
+       "odds": "+174"
+      },
+      {
+       "name": "George Kittle",
+       "pos": "TE",
+       "p": 0.2899,
+       "odds": "+245"
+      },
+      {
+       "name": "Deebo Samuel Sr.",
+       "pos": "WR",
+       "p": 0.2509,
+       "odds": "+299"
+      },
+      {
+       "name": "Brock Purdy",
+       "pos": "QB",
+       "p": 0.2011,
+       "odds": "+397"
+      },
+      {
+       "name": "Jake Tonges",
+       "pos": "TE",
+       "p": 0.1935,
+       "odds": "+417"
+      }
+     ],
+     "qb": {
+      "name": "Brock Purdy",
+      "mean": 233.5,
+      "line": 233.5,
+      "sd": 72.6,
+      "dist": "normal",
+      "n": 31.9,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Christian McCaffrey",
+       "mean": 69.5,
+       "line": 63.5,
+       "k": 3.851,
+       "theta": 18.045,
+       "dist": "gamma",
+       "car": 17.3,
+       "n": 30.7
+      }
+     ]
+    }
+   }
   },
   {
    "away": "ARI",
@@ -24,7 +164,157 @@
    "total": 47.65,
    "p_home_cover": 0.4001,
    "p_over": 0.4947,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "LAC",
+     "exp_pts": 27.4,
+     "exp_off_tds": 3.35,
+     "td": [
+      {
+       "name": "David Njoku",
+       "pos": "TE",
+       "p": 0.445,
+       "odds": "+125"
+      },
+      {
+       "name": "Ladd McConkey",
+       "pos": "WR",
+       "p": 0.4176,
+       "odds": "+139"
+      },
+      {
+       "name": "Quentin Johnston",
+       "pos": "WR",
+       "p": 0.4125,
+       "odds": "+142"
+      },
+      {
+       "name": "Kimani Vidal",
+       "pos": "RB",
+       "p": 0.3937,
+       "odds": "+154"
+      },
+      {
+       "name": "Omarion Hampton",
+       "pos": "RB",
+       "p": 0.3446,
+       "odds": "+190"
+      },
+      {
+       "name": "Justin Herbert",
+       "pos": "QB",
+       "p": 0.2308,
+       "odds": "+333"
+      }
+     ],
+     "qb": {
+      "name": "Justin Herbert",
+      "mean": 282.5,
+      "line": 282.5,
+      "sd": 75.1,
+      "dist": "normal",
+      "n": 35.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Omarion Hampton",
+       "mean": 59.3,
+       "line": 54.0,
+       "k": 3.629,
+       "theta": 16.335,
+       "dist": "gamma",
+       "car": 13.6,
+       "n": 8.5
+      },
+      {
+       "name": "Kimani Vidal",
+       "mean": 39.9,
+       "line": 35.5,
+       "k": 3.018,
+       "theta": 13.232,
+       "dist": "gamma",
+       "car": 8.9,
+       "n": 18.4
+      }
+     ]
+    },
+    "away": {
+     "team": "ARI",
+     "exp_pts": 20.3,
+     "exp_off_tds": 2.17,
+     "td": [
+      {
+       "name": "Trey McBride",
+       "pos": "TE",
+       "p": 0.3354,
+       "odds": "+198"
+      },
+      {
+       "name": "Michael Wilson",
+       "pos": "WR",
+       "p": 0.3007,
+       "odds": "+233"
+      },
+      {
+       "name": "Tyler Allgeier",
+       "pos": "RB",
+       "p": 0.2963,
+       "odds": "+238"
+      },
+      {
+       "name": "Marvin Harrison Jr.",
+       "pos": "WR",
+       "p": 0.2456,
+       "odds": "+307"
+      },
+      {
+       "name": "Bam Knight",
+       "pos": "RB",
+       "p": 0.2446,
+       "odds": "+309"
+      },
+      {
+       "name": "Kendrick Bourne",
+       "pos": "WR",
+       "p": 0.1903,
+       "odds": "+426"
+      }
+     ],
+     "qb": {
+      "name": "Jacoby Brissett",
+      "mean": 177.6,
+      "line": 177.5,
+      "sd": 69.9,
+      "dist": "normal",
+      "n": 18.2,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Tyler Allgeier",
+       "mean": 31.1,
+       "line": 27.0,
+       "k": 2.603,
+       "theta": 11.941,
+       "dist": "gamma",
+       "car": 8.7,
+       "n": 37.2
+      },
+      {
+       "name": "Bam Knight",
+       "mean": 16.9,
+       "line": 13.5,
+       "k": 1.611,
+       "theta": 10.471,
+       "dist": "gamma",
+       "car": 5.2,
+       "n": 11.4
+      }
+     ]
+    }
+   }
   },
   {
    "away": "ATL",
@@ -35,7 +325,157 @@
    "total": 47.37,
    "p_home_cover": 0.4998,
    "p_over": 0.6592,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "PIT",
+     "exp_pts": 25.4,
+     "exp_off_tds": 3.3,
+     "td": [
+      {
+       "name": "DK Metcalf",
+       "pos": "WR",
+       "p": 0.3864,
+       "odds": "+159"
+      },
+      {
+       "name": "Jaylen Warren",
+       "pos": "RB",
+       "p": 0.3755,
+       "odds": "+166"
+      },
+      {
+       "name": "Rico Dowdle",
+       "pos": "RB",
+       "p": 0.3523,
+       "odds": "+184"
+      },
+      {
+       "name": "Pat Freiermuth",
+       "pos": "TE",
+       "p": 0.3153,
+       "odds": "+217"
+      },
+      {
+       "name": "Michael Pittman",
+       "pos": "WR",
+       "p": 0.2924,
+       "odds": "+242"
+      },
+      {
+       "name": "Darnell Washington",
+       "pos": "TE",
+       "p": 0.1427,
+       "odds": "+601"
+      }
+     ],
+     "qb": {
+      "name": "Aaron Rodgers",
+      "mean": 202.4,
+      "line": 202.5,
+      "sd": 71.1,
+      "dist": "normal",
+      "n": 27.3,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Rico Dowdle",
+       "mean": 62.8,
+       "line": 57.5,
+       "k": 3.711,
+       "theta": 16.921,
+       "dist": "gamma",
+       "car": 12.9,
+       "n": 37.3
+      },
+      {
+       "name": "Jaylen Warren",
+       "mean": 58.7,
+       "line": 53.5,
+       "k": 3.614,
+       "theta": 16.236,
+       "dist": "gamma",
+       "car": 11.2,
+       "n": 37.1
+      }
+     ]
+    },
+    "away": {
+     "team": "ATL",
+     "exp_pts": 22.0,
+     "exp_off_tds": 2.29,
+     "td": [
+      {
+       "name": "Bijan Robinson",
+       "pos": "RB",
+       "p": 0.4359,
+       "odds": "+129"
+      },
+      {
+       "name": "Drake London",
+       "pos": "WR",
+       "p": 0.3398,
+       "odds": "+194"
+      },
+      {
+       "name": "Kyle Pitts",
+       "pos": "TE",
+       "p": 0.2555,
+       "odds": "+291"
+      },
+      {
+       "name": "Olamide Zaccheaus",
+       "pos": "WR",
+       "p": 0.2134,
+       "odds": "+369"
+      },
+      {
+       "name": "Brian Robinson",
+       "pos": "RB",
+       "p": 0.2078,
+       "odds": "+381"
+      },
+      {
+       "name": "Jahan Dotson",
+       "pos": "WR",
+       "p": 0.1201,
+       "odds": "+732"
+      }
+     ],
+     "qb": {
+      "name": "Tua Tagovailoa",
+      "mean": 220.1,
+      "line": 220.0,
+      "sd": 72.0,
+      "dist": "normal",
+      "n": 30.9,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Bijan Robinson",
+       "mean": 84.1,
+       "line": 77.5,
+       "k": 4.097,
+       "theta": 20.534,
+       "dist": "gamma",
+       "car": 17.1,
+       "n": 37.2
+      },
+      {
+       "name": "Brian Robinson",
+       "mean": 27.1,
+       "line": 23.5,
+       "k": 2.374,
+       "theta": 11.421,
+       "dist": "gamma",
+       "car": 7.0,
+       "n": 37.6
+      }
+     ]
+    }
+   }
   },
   {
    "away": "BAL",
@@ -46,7 +486,147 @@
    "total": 46.44,
    "p_home_cover": 0.5006,
    "p_over": 0.4672,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "IND",
+     "exp_pts": 21.5,
+     "exp_off_tds": 2.07,
+     "td": [
+      {
+       "name": "Jonathan Taylor",
+       "pos": "RB",
+       "p": 0.4123,
+       "odds": "+143"
+      },
+      {
+       "name": "Anthony Richardson",
+       "pos": "QB",
+       "p": 0.2853,
+       "odds": "+251"
+      },
+      {
+       "name": "Alec Pierce",
+       "pos": "WR",
+       "p": 0.2714,
+       "odds": "+269"
+      },
+      {
+       "name": "Keenan Allen",
+       "pos": "WR",
+       "p": 0.2121,
+       "odds": "+372"
+      },
+      {
+       "name": "DJ Giddens",
+       "pos": "RB",
+       "p": 0.2059,
+       "odds": "+386"
+      },
+      {
+       "name": "Josh Downs",
+       "pos": "WR",
+       "p": 0.1899,
+       "odds": "+427"
+      }
+     ],
+     "qb": {
+      "name": "Daniel Jones",
+      "mean": 189.3,
+      "line": 189.5,
+      "sd": 70.5,
+      "dist": "normal",
+      "n": 22.0,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Jonathan Taylor",
+       "mean": 76.1,
+       "line": 70.0,
+       "k": 3.97,
+       "theta": 19.158,
+       "dist": "gamma",
+       "car": 19.0,
+       "n": 30.7
+      },
+      {
+       "name": "DJ Giddens",
+       "mean": 30.3,
+       "line": 26.5,
+       "k": 2.56,
+       "theta": 11.833,
+       "dist": "gamma",
+       "car": 10.0,
+       "n": 4.2
+      }
+     ]
+    },
+    "away": {
+     "team": "BAL",
+     "exp_pts": 24.9,
+     "exp_off_tds": 2.9,
+     "td": [
+      {
+       "name": "Derrick Henry",
+       "pos": "RB",
+       "p": 0.4956,
+       "odds": "+102"
+      },
+      {
+       "name": "Zay Flowers",
+       "pos": "WR",
+       "p": 0.3001,
+       "odds": "+233"
+      },
+      {
+       "name": "Justice Hill",
+       "pos": "RB",
+       "p": 0.2986,
+       "odds": "+235"
+      },
+      {
+       "name": "Mark Andrews",
+       "pos": "TE",
+       "p": 0.2908,
+       "odds": "+244"
+      },
+      {
+       "name": "Rashod Bateman",
+       "pos": "WR",
+       "p": 0.2492,
+       "odds": "+301"
+      },
+      {
+       "name": "Lamar Jackson",
+       "pos": "QB",
+       "p": 0.1695,
+       "odds": "+490"
+      }
+     ],
+     "qb": {
+      "name": "Lamar Jackson",
+      "mean": 219.9,
+      "line": 220.0,
+      "sd": 72.0,
+      "dist": "normal",
+      "n": 35.8,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Derrick Henry",
+       "mean": 106.2,
+       "line": 98.0,
+       "k": 4.363,
+       "theta": 24.337,
+       "dist": "gamma",
+       "car": 18.9,
+       "n": 38.6
+      }
+     ]
+    }
+   }
   },
   {
    "away": "BUF",
@@ -57,7 +637,147 @@
    "total": 46.35,
    "p_home_cover": 0.5525,
    "p_over": 0.5494,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "HOU",
+     "exp_pts": 23.6,
+     "exp_off_tds": 2.37,
+     "td": [
+      {
+       "name": "Nico Collins",
+       "pos": "WR",
+       "p": 0.357,
+       "odds": "+180"
+      },
+      {
+       "name": "David Montgomery",
+       "pos": "RB",
+       "p": 0.2966,
+       "odds": "+237"
+      },
+      {
+       "name": "Woody Marks",
+       "pos": "RB",
+       "p": 0.2659,
+       "odds": "+276"
+      },
+      {
+       "name": "Kayshon Boutte",
+       "pos": "WR",
+       "p": 0.2397,
+       "odds": "+317"
+      },
+      {
+       "name": "Dalton Schultz",
+       "pos": "TE",
+       "p": 0.2085,
+       "odds": "+380"
+      },
+      {
+       "name": "Xavier Hutchinson",
+       "pos": "WR",
+       "p": 0.1518,
+       "odds": "+559"
+      }
+     ],
+     "qb": {
+      "name": "C.J. Stroud",
+      "mean": 201.1,
+      "line": 201.0,
+      "sd": 71.0,
+      "dist": "normal",
+      "n": 37.8,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Woody Marks",
+       "mean": 39.5,
+       "line": 35.0,
+       "k": 2.999,
+       "theta": 13.159,
+       "dist": "gamma",
+       "car": 10.7,
+       "n": 15.3
+      },
+      {
+       "name": "David Montgomery",
+       "mean": 47.6,
+       "line": 43.0,
+       "k": 3.297,
+       "theta": 14.423,
+       "dist": "gamma",
+       "car": 10.3,
+       "n": 35.7
+      }
+     ]
+    },
+    "away": {
+     "team": "BUF",
+     "exp_pts": 22.8,
+     "exp_off_tds": 2.39,
+     "td": [
+      {
+       "name": "James Cook",
+       "pos": "RB",
+       "p": 0.3472,
+       "odds": "+188"
+      },
+      {
+       "name": "DJ Moore",
+       "pos": "WR",
+       "p": 0.3244,
+       "odds": "+208"
+      },
+      {
+       "name": "Josh Allen",
+       "pos": "QB",
+       "p": 0.3208,
+       "odds": "+212"
+      },
+      {
+       "name": "Ty Johnson",
+       "pos": "RB",
+       "p": 0.2312,
+       "odds": "+333"
+      },
+      {
+       "name": "Dalton Kincaid",
+       "pos": "TE",
+       "p": 0.222,
+       "odds": "+351"
+      },
+      {
+       "name": "Keon Coleman",
+       "pos": "WR",
+       "p": 0.2063,
+       "odds": "+385"
+      }
+     ],
+     "qb": {
+      "name": "Josh Allen",
+      "mean": 186.0,
+      "line": 186.0,
+      "sd": 70.3,
+      "dist": "normal",
+      "n": 40.7,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "James Cook",
+       "mean": 73.6,
+       "line": 67.5,
+       "k": 3.928,
+       "theta": 18.742,
+       "dist": "gamma",
+       "car": 17.0,
+       "n": 41.5
+      }
+     ]
+    }
+   }
   },
   {
    "away": "CHI",
@@ -68,7 +788,157 @@
    "total": 45.85,
    "p_home_cover": 0.4985,
    "p_over": 0.4855,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "CAR",
+     "exp_pts": 21.8,
+     "exp_off_tds": 2.63,
+     "td": [
+      {
+       "name": "Chuba Hubbard",
+       "pos": "RB",
+       "p": 0.3709,
+       "odds": "+170"
+      },
+      {
+       "name": "Tetairoa McMillan",
+       "pos": "WR",
+       "p": 0.2732,
+       "odds": "+266"
+      },
+      {
+       "name": "Jalen Coker",
+       "pos": "WR",
+       "p": 0.2671,
+       "odds": "+274"
+      },
+      {
+       "name": "Darren Waller",
+       "pos": "TE",
+       "p": 0.2638,
+       "odds": "+279"
+      },
+      {
+       "name": "Bryce Young",
+       "pos": "QB",
+       "p": 0.2421,
+       "odds": "+313"
+      },
+      {
+       "name": "Xavier Legette",
+       "pos": "WR",
+       "p": 0.2011,
+       "odds": "+397"
+      }
+     ],
+     "qb": {
+      "name": "Bryce Young",
+      "mean": 199.4,
+      "line": 199.5,
+      "sd": 71.0,
+      "dist": "normal",
+      "n": 34.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Chuba Hubbard",
+       "mean": 46.5,
+       "line": 42.0,
+       "k": 3.262,
+       "theta": 14.258,
+       "dist": "gamma",
+       "car": 11.0,
+       "n": 34.9
+      },
+      {
+       "name": "AJ Dillon",
+       "mean": 25.3,
+       "line": 21.5,
+       "k": 2.256,
+       "theta": 11.198,
+       "dist": "gamma",
+       "car": 8.7,
+       "n": 14.3
+      }
+     ]
+    },
+    "away": {
+     "team": "CHI",
+     "exp_pts": 24.1,
+     "exp_off_tds": 2.76,
+     "td": [
+      {
+       "name": "D'Andre Swift",
+       "pos": "RB",
+       "p": 0.3752,
+       "odds": "+167"
+      },
+      {
+       "name": "Roschon Johnson",
+       "pos": "RB",
+       "p": 0.2738,
+       "odds": "+265"
+      },
+      {
+       "name": "Rome Odunze",
+       "pos": "WR",
+       "p": 0.2425,
+       "odds": "+312"
+      },
+      {
+       "name": "Kyle Monangai",
+       "pos": "RB",
+       "p": 0.2411,
+       "odds": "+315"
+      },
+      {
+       "name": "Colston Loveland",
+       "pos": "TE",
+       "p": 0.2385,
+       "odds": "+319"
+      },
+      {
+       "name": "Cole Kmet",
+       "pos": "TE",
+       "p": 0.2094,
+       "odds": "+378"
+      }
+     ],
+     "qb": {
+      "name": "Caleb Williams",
+      "mean": 247.0,
+      "line": 247.0,
+      "sd": 73.3,
+      "dist": "normal",
+      "n": 28.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "D'Andre Swift",
+       "mean": 71.1,
+       "line": 65.0,
+       "k": 3.882,
+       "theta": 18.315,
+       "dist": "gamma",
+       "car": 13.9,
+       "n": 38.0
+      },
+      {
+       "name": "Kyle Monangai",
+       "mean": 37.1,
+       "line": 33.0,
+       "k": 2.898,
+       "theta": 12.806,
+       "dist": "gamma",
+       "car": 7.7,
+       "n": 16.1
+      }
+     ]
+    }
+   }
   },
   {
    "away": "CLE",
@@ -79,7 +949,147 @@
    "total": 47.43,
    "p_home_cover": 0.4591,
    "p_over": 0.7341,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "JAX",
+     "exp_pts": 28.0,
+     "exp_off_tds": 3.39,
+     "td": [
+      {
+       "name": "Chris Rodriguez Jr.",
+       "pos": "RB",
+       "p": 0.3746,
+       "odds": "+167"
+      },
+      {
+       "name": "Brian Thomas Jr.",
+       "pos": "WR",
+       "p": 0.343,
+       "odds": "+192"
+      },
+      {
+       "name": "Trevor Lawrence",
+       "pos": "QB",
+       "p": 0.3374,
+       "odds": "+196"
+      },
+      {
+       "name": "Bhayshul Tuten",
+       "pos": "RB",
+       "p": 0.3193,
+       "odds": "+213"
+      },
+      {
+       "name": "Parker Washington",
+       "pos": "WR",
+       "p": 0.3124,
+       "odds": "+220"
+      },
+      {
+       "name": "Jakobi Meyers",
+       "pos": "WR",
+       "p": 0.2888,
+       "odds": "+246"
+      }
+     ],
+     "qb": {
+      "name": "Trevor Lawrence",
+      "mean": 211.1,
+      "line": 211.0,
+      "sd": 71.5,
+      "dist": "normal",
+      "n": 32.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Chris Rodriguez Jr.",
+       "mean": 36.0,
+       "line": 32.0,
+       "k": 2.849,
+       "theta": 12.644,
+       "dist": "gamma",
+       "car": 7.6,
+       "n": 20.8
+      }
+     ]
+    },
+    "away": {
+     "team": "CLE",
+     "exp_pts": 19.5,
+     "exp_off_tds": 2.28,
+     "td": [
+      {
+       "name": "Raheim Sanders",
+       "pos": "RB",
+       "p": 0.3982,
+       "odds": "+151"
+      },
+      {
+       "name": "Harold Fannin Jr.",
+       "pos": "TE",
+       "p": 0.3132,
+       "odds": "+219"
+      },
+      {
+       "name": "Deshaun Watson",
+       "pos": "QB",
+       "p": 0.3119,
+       "odds": "+221"
+      },
+      {
+       "name": "Quinshon Judkins",
+       "pos": "RB",
+       "p": 0.3014,
+       "odds": "+232"
+      },
+      {
+       "name": "Jerry Jeudy",
+       "pos": "WR",
+       "p": 0.2103,
+       "odds": "+375"
+      },
+      {
+       "name": "Dylan Sampson",
+       "pos": "RB",
+       "p": 0.2024,
+       "odds": "+394"
+      }
+     ],
+     "qb": {
+      "name": "Deshaun Watson",
+      "mean": 170.1,
+      "line": 170.0,
+      "sd": 69.5,
+      "dist": "normal",
+      "n": 8.7,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Quinshon Judkins",
+       "mean": 59.4,
+       "line": 54.0,
+       "k": 3.631,
+       "theta": 16.349,
+       "dist": "gamma",
+       "car": 13.7,
+       "n": 11.9
+      },
+      {
+       "name": "Dylan Sampson",
+       "mean": 19.8,
+       "line": 16.5,
+       "k": 1.859,
+       "theta": 10.653,
+       "dist": "gamma",
+       "car": 7.3,
+       "n": 12.8
+      }
+     ]
+    }
+   }
   },
   {
    "away": "DAL",
@@ -90,7 +1100,147 @@
    "total": 45.43,
    "p_home_cover": 0.5506,
    "p_over": 0.4039,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "NYG",
+     "exp_pts": 22.4,
+     "exp_off_tds": 2.4,
+     "td": [
+      {
+       "name": "Cam Skattebo",
+       "pos": "RB",
+       "p": 0.308,
+       "odds": "+225"
+      },
+      {
+       "name": "Devin Singletary",
+       "pos": "RB",
+       "p": 0.292,
+       "odds": "+243"
+      },
+      {
+       "name": "Najee Harris",
+       "pos": "RB",
+       "p": 0.2853,
+       "odds": "+251"
+      },
+      {
+       "name": "Malik Nabers",
+       "pos": "WR",
+       "p": 0.2807,
+       "odds": "+256"
+      },
+      {
+       "name": "Tyrone Tracy Jr.",
+       "pos": "RB",
+       "p": 0.2763,
+       "odds": "+262"
+      },
+      {
+       "name": "Jaxson Dart",
+       "pos": "QB",
+       "p": 0.2617,
+       "odds": "+282"
+      }
+     ],
+     "qb": {
+      "name": "Jameis Winston",
+      "mean": 176.4,
+      "line": 176.5,
+      "sd": 69.8,
+      "dist": "normal",
+      "n": 14.2,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Najee Harris",
+       "mean": 51.5,
+       "line": 46.5,
+       "k": 3.421,
+       "theta": 15.064,
+       "dist": "gamma",
+       "car": 12.0,
+       "n": 26.6
+      },
+      {
+       "name": "Tyrone Tracy Jr.",
+       "mean": 52.1,
+       "line": 47.0,
+       "k": 3.438,
+       "theta": 15.16,
+       "dist": "gamma",
+       "car": 11.5,
+       "n": 25.0
+      }
+     ]
+    },
+    "away": {
+     "team": "DAL",
+     "exp_pts": 23.0,
+     "exp_off_tds": 2.36,
+     "td": [
+      {
+       "name": "Javonte Williams",
+       "pos": "RB",
+       "p": 0.3553,
+       "odds": "+181"
+      },
+      {
+       "name": "George Pickens",
+       "pos": "WR",
+       "p": 0.2774,
+       "odds": "+260"
+      },
+      {
+       "name": "Jake Ferguson",
+       "pos": "TE",
+       "p": 0.248,
+       "odds": "+303"
+      },
+      {
+       "name": "CeeDee Lamb",
+       "pos": "WR",
+       "p": 0.2462,
+       "odds": "+306"
+      },
+      {
+       "name": "Malik Davis",
+       "pos": "RB",
+       "p": 0.2143,
+       "odds": "+367"
+      },
+      {
+       "name": "Ryan Flournoy",
+       "pos": "WR",
+       "p": 0.2004,
+       "odds": "+399"
+      }
+     ],
+     "qb": {
+      "name": "Dak Prescott",
+      "mean": 259.8,
+      "line": 260.0,
+      "sd": 74.0,
+      "dist": "normal",
+      "n": 31.3,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Javonte Williams",
+       "mean": 66.3,
+       "line": 60.5,
+       "k": 3.788,
+       "theta": 17.516,
+       "dist": "gamma",
+       "car": 13.4,
+       "n": 36.4
+      }
+     ]
+    }
+   }
   },
   {
    "away": "GB",
@@ -101,7 +1251,136 @@
    "total": 46.62,
    "p_home_cover": 0.5191,
    "p_over": 0.5118,
-   "confidence": "LOW"
+   "confidence": "LOW",
+   "props": {
+    "home": {
+     "team": "MIN",
+     "exp_pts": 23.9,
+     "exp_off_tds": 2.75,
+     "td": [
+      {
+       "name": "Jordan Addison",
+       "pos": "WR",
+       "p": 0.3571,
+       "odds": "+180"
+      },
+      {
+       "name": "Aaron Jones",
+       "pos": "RB",
+       "p": 0.357,
+       "odds": "+180"
+      },
+      {
+       "name": "J.J. McCarthy",
+       "pos": "QB",
+       "p": 0.3505,
+       "odds": "+185"
+      },
+      {
+       "name": "Carson Wentz",
+       "pos": "QB",
+       "p": 0.3284,
+       "odds": "+205"
+      },
+      {
+       "name": "Jauan Jennings",
+       "pos": "WR",
+       "p": 0.3231,
+       "odds": "+209"
+      },
+      {
+       "name": "Jordan Mason",
+       "pos": "RB",
+       "p": 0.2965,
+       "odds": "+237"
+      }
+     ],
+     "qb": {
+      "name": "Kyler Murray",
+      "mean": 253.9,
+      "line": 254.0,
+      "sd": 73.7,
+      "dist": "normal",
+      "n": 21.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Aaron Jones",
+       "mean": 57.2,
+       "line": 52.0,
+       "k": 3.576,
+       "theta": 15.986,
+       "dist": "gamma",
+       "car": 12.8,
+       "n": 31.2
+      },
+      {
+       "name": "Jordan Mason",
+       "mean": 44.8,
+       "line": 40.5,
+       "k": 3.205,
+       "theta": 13.993,
+       "dist": "gamma",
+       "car": 8.6,
+       "n": 32.1
+      }
+     ]
+    },
+    "away": {
+     "team": "GB",
+     "exp_pts": 22.7,
+     "exp_off_tds": 2.64,
+     "td": [
+      {
+       "name": "Christian Watson",
+       "pos": "WR",
+       "p": 0.3335,
+       "odds": "+200"
+      },
+      {
+       "name": "Tucker Kraft",
+       "pos": "TE",
+       "p": 0.318,
+       "odds": "+214"
+      },
+      {
+       "name": "Jayden Reed",
+       "pos": "WR",
+       "p": 0.267,
+       "odds": "+275"
+      },
+      {
+       "name": "Jonnu Smith",
+       "pos": "TE",
+       "p": 0.2402,
+       "odds": "+316"
+      },
+      {
+       "name": "Matthew Golden",
+       "pos": "WR",
+       "p": 0.1629,
+       "odds": "+514"
+      },
+      {
+       "name": "Tyrod Taylor",
+       "pos": "QB",
+       "p": 0.135,
+       "odds": "+641"
+      }
+     ],
+     "qb": {
+      "name": "Jordan Love",
+      "mean": 196.6,
+      "line": 196.5,
+      "sd": 70.8,
+      "dist": "normal",
+      "n": 36.8,
+      "note": "projected (no starter listed)"
+     },
+     "rb": []
+    }
+   }
   },
   {
    "away": "MIA",
@@ -112,7 +1391,141 @@
    "total": 45.04,
    "p_home_cover": 0.3793,
    "p_over": 0.6466,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "LV",
+     "exp_pts": 21.7,
+     "exp_off_tds": 2.73,
+     "td": [
+      {
+       "name": "Ashton Jeanty",
+       "pos": "RB",
+       "p": 0.5135,
+       "odds": "-106"
+      },
+      {
+       "name": "Brock Bowers",
+       "pos": "TE",
+       "p": 0.421,
+       "odds": "+138"
+      },
+      {
+       "name": "Tre Tucker",
+       "pos": "WR",
+       "p": 0.2813,
+       "odds": "+256"
+      },
+      {
+       "name": "Jalen Nailor",
+       "pos": "WR",
+       "p": 0.2653,
+       "odds": "+277"
+      },
+      {
+       "name": "Michael Mayer",
+       "pos": "TE",
+       "p": 0.1516,
+       "odds": "+560"
+      }
+     ],
+     "qb": {
+      "name": "Kirk Cousins",
+      "mean": 265.4,
+      "line": 265.5,
+      "sd": 74.2,
+      "dist": "normal",
+      "n": 23.5,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Ashton Jeanty",
+       "mean": 56.8,
+       "line": 51.5,
+       "k": 3.568,
+       "theta": 15.933,
+       "dist": "gamma",
+       "car": 16.9,
+       "n": 14.4
+      }
+     ]
+    },
+    "away": {
+     "team": "MIA",
+     "exp_pts": 23.3,
+     "exp_off_tds": 2.86,
+     "td": [
+      {
+       "name": "De'Von Achane",
+       "pos": "RB",
+       "p": 0.4651,
+       "odds": "+115"
+      },
+      {
+       "name": "Ollie Gordon II",
+       "pos": "RB",
+       "p": 0.2505,
+       "odds": "+299"
+      },
+      {
+       "name": "Malik Washington",
+       "pos": "WR",
+       "p": 0.2462,
+       "odds": "+306"
+      },
+      {
+       "name": "Jaylen Wright",
+       "pos": "RB",
+       "p": 0.2212,
+       "odds": "+352"
+      },
+      {
+       "name": "Jalen Tolbert",
+       "pos": "WR",
+       "p": 0.221,
+       "odds": "+353"
+      },
+      {
+       "name": "Malik Willis",
+       "pos": "QB",
+       "p": 0.1725,
+       "odds": "+480"
+      }
+     ],
+     "qb": {
+      "name": "Brady Cook",
+      "mean": 172.0,
+      "line": 172.0,
+      "sd": 69.6,
+      "dist": "normal",
+      "n": 4.2,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "De'Von Achane",
+       "mean": 80.7,
+       "line": 74.0,
+       "k": 4.046,
+       "theta": 19.954,
+       "dist": "gamma",
+       "car": 13.5,
+       "n": 33.3
+      },
+      {
+       "name": "Jaylen Wright",
+       "mean": 22.9,
+       "line": 19.5,
+       "k": 2.093,
+       "theta": 10.937,
+       "dist": "gamma",
+       "car": 6.4,
+       "n": 17.0
+      }
+     ]
+    }
+   }
   },
   {
    "away": "NO",
@@ -123,7 +1536,147 @@
    "total": 46.43,
    "p_home_cover": 0.4511,
    "p_over": 0.3803,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "DET",
+     "exp_pts": 26.4,
+     "exp_off_tds": 3.1,
+     "td": [
+      {
+       "name": "Jahmyr Gibbs",
+       "pos": "RB",
+       "p": 0.507,
+       "odds": "-103"
+      },
+      {
+       "name": "Amon-Ra St. Brown",
+       "pos": "WR",
+       "p": 0.3543,
+       "odds": "+182"
+      },
+      {
+       "name": "Jameson Williams",
+       "pos": "WR",
+       "p": 0.2995,
+       "odds": "+234"
+      },
+      {
+       "name": "Sam LaPorta",
+       "pos": "TE",
+       "p": 0.2972,
+       "odds": "+237"
+      },
+      {
+       "name": "Joshua Dobbs",
+       "pos": "QB",
+       "p": 0.2438,
+       "odds": "+310"
+      },
+      {
+       "name": "Tyler Conklin",
+       "pos": "TE",
+       "p": 0.2113,
+       "odds": "+373"
+      }
+     ],
+     "qb": {
+      "name": "Jared Goff",
+      "mean": 287.3,
+      "line": 287.5,
+      "sd": 75.3,
+      "dist": "normal",
+      "n": 39.7,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Jahmyr Gibbs",
+       "mean": 76.9,
+       "line": 70.5,
+       "k": 3.984,
+       "theta": 19.302,
+       "dist": "gamma",
+       "car": 14.2,
+       "n": 38.5
+      }
+     ]
+    },
+    "away": {
+     "team": "NO",
+     "exp_pts": 20.0,
+     "exp_off_tds": 2.06,
+     "td": [
+      {
+       "name": "Chris Olave",
+       "pos": "WR",
+       "p": 0.3528,
+       "odds": "+183"
+      },
+      {
+       "name": "Travis Etienne",
+       "pos": "RB",
+       "p": 0.3352,
+       "odds": "+198"
+      },
+      {
+       "name": "Alvin Kamara",
+       "pos": "RB",
+       "p": 0.233,
+       "odds": "+329"
+      },
+      {
+       "name": "Audric Estim\u00e9",
+       "pos": "RB",
+       "p": 0.2145,
+       "odds": "+366"
+      },
+      {
+       "name": "Devaughn Vele",
+       "pos": "WR",
+       "p": 0.2042,
+       "odds": "+390"
+      },
+      {
+       "name": "Kendre Miller",
+       "pos": "RB",
+       "p": 0.1963,
+       "odds": "+410"
+      }
+     ],
+     "qb": {
+      "name": "Spencer Rattler",
+      "mean": 187.6,
+      "line": 187.5,
+      "sd": 70.4,
+      "dist": "normal",
+      "n": 12.7,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Travis Etienne",
+       "mean": 56.9,
+       "line": 51.5,
+       "k": 3.568,
+       "theta": 15.934,
+       "dist": "gamma",
+       "car": 14.1,
+       "n": 36.6
+      },
+      {
+       "name": "Alvin Kamara",
+       "mean": 49.5,
+       "line": 44.5,
+       "k": 3.359,
+       "theta": 14.734,
+       "dist": "gamma",
+       "car": 12.9,
+       "n": 27.4
+      }
+     ]
+    }
+   }
   },
   {
    "away": "NYJ",
@@ -134,7 +1687,147 @@
    "total": 44.72,
    "p_home_cover": 0.5396,
    "p_over": 0.6841,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "TEN",
+     "exp_pts": 23.3,
+     "exp_off_tds": 3.04,
+     "td": [
+      {
+       "name": "Tony Pollard",
+       "pos": "RB",
+       "p": 0.406,
+       "odds": "+146"
+      },
+      {
+       "name": "Tyjae Spears",
+       "pos": "RB",
+       "p": 0.3295,
+       "odds": "+203"
+      },
+      {
+       "name": "Calvin Ridley",
+       "pos": "WR",
+       "p": 0.3157,
+       "odds": "+217"
+      },
+      {
+       "name": "Chimere Dike",
+       "pos": "WR",
+       "p": 0.2774,
+       "odds": "+260"
+      },
+      {
+       "name": "Elic Ayomanor",
+       "pos": "WR",
+       "p": 0.2645,
+       "odds": "+278"
+      },
+      {
+       "name": "Wan'Dale Robinson",
+       "pos": "WR",
+       "p": 0.2561,
+       "odds": "+290"
+      }
+     ],
+     "qb": {
+      "name": "Cam Ward",
+      "mean": 205.1,
+      "line": 205.0,
+      "sd": 71.2,
+      "dist": "normal",
+      "n": 14.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Tony Pollard",
+       "mean": 77.2,
+       "line": 71.0,
+       "k": 3.989,
+       "theta": 19.349,
+       "dist": "gamma",
+       "car": 14.9,
+       "n": 37.1
+      },
+      {
+       "name": "Tyjae Spears",
+       "mean": 27.6,
+       "line": 24.0,
+       "k": 2.406,
+       "theta": 11.487,
+       "dist": "gamma",
+       "car": 6.0,
+       "n": 30.2
+      }
+     ]
+    },
+    "away": {
+     "team": "NYJ",
+     "exp_pts": 21.5,
+     "exp_off_tds": 2.73,
+     "td": [
+      {
+       "name": "Garrett Wilson",
+       "pos": "WR",
+       "p": 0.4271,
+       "odds": "+134"
+      },
+      {
+       "name": "Breece Hall",
+       "pos": "RB",
+       "p": 0.4087,
+       "odds": "+145"
+      },
+      {
+       "name": "Braelon Allen",
+       "pos": "RB",
+       "p": 0.2458,
+       "odds": "+307"
+      },
+      {
+       "name": "Isaiah Davis",
+       "pos": "RB",
+       "p": 0.2145,
+       "odds": "+366"
+      },
+      {
+       "name": "Adonai Mitchell",
+       "pos": "WR",
+       "p": 0.1997,
+       "odds": "+401"
+      },
+      {
+       "name": "Mason Taylor",
+       "pos": "TE",
+       "p": 0.1619,
+       "odds": "+518"
+      }
+     ],
+     "qb": {
+      "name": "Geno Smith",
+      "mean": 264.3,
+      "line": 264.5,
+      "sd": 74.2,
+      "dist": "normal",
+      "n": 34.2,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Breece Hall",
+       "mean": 76.9,
+       "line": 70.5,
+       "k": 3.984,
+       "theta": 19.293,
+       "dist": "gamma",
+       "car": 14.5,
+       "n": 35.6
+      }
+     ]
+    }
+   }
   },
   {
    "away": "TB",
@@ -145,7 +1838,147 @@
    "total": 48.2,
    "p_home_cover": 0.4831,
    "p_over": 0.4387,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "CIN",
+     "exp_pts": 25.4,
+     "exp_off_tds": 3.1,
+     "td": [
+      {
+       "name": "Chase Brown",
+       "pos": "RB",
+       "p": 0.4365,
+       "odds": "+129"
+      },
+      {
+       "name": "Tee Higgins",
+       "pos": "WR",
+       "p": 0.4263,
+       "odds": "+135"
+      },
+      {
+       "name": "Ja'Marr Chase",
+       "pos": "WR",
+       "p": 0.391,
+       "odds": "+156"
+      },
+      {
+       "name": "Samaje Perine",
+       "pos": "RB",
+       "p": 0.2264,
+       "odds": "+342"
+      },
+      {
+       "name": "Andrei Iosivas",
+       "pos": "WR",
+       "p": 0.2131,
+       "odds": "+369"
+      },
+      {
+       "name": "Mike Gesicki",
+       "pos": "TE",
+       "p": 0.1893,
+       "odds": "+428"
+      }
+     ],
+     "qb": {
+      "name": "Joe Burrow",
+      "mean": 264.4,
+      "line": 264.5,
+      "sd": 74.2,
+      "dist": "normal",
+      "n": 25.2,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Chase Brown",
+       "mean": 58.8,
+       "line": 53.5,
+       "k": 3.618,
+       "theta": 16.26,
+       "dist": "gamma",
+       "car": 13.2,
+       "n": 33.4
+      }
+     ]
+    },
+    "away": {
+     "team": "TB",
+     "exp_pts": 22.8,
+     "exp_off_tds": 2.59,
+     "td": [
+      {
+       "name": "Emeka Egbuka",
+       "pos": "WR",
+       "p": 0.4069,
+       "odds": "+146"
+      },
+      {
+       "name": "Jalen McMillan",
+       "pos": "WR",
+       "p": 0.3535,
+       "odds": "+183"
+      },
+      {
+       "name": "Sean Tucker",
+       "pos": "RB",
+       "p": 0.3121,
+       "odds": "+220"
+      },
+      {
+       "name": "Kenny Gainwell",
+       "pos": "RB",
+       "p": 0.3088,
+       "odds": "+224"
+      },
+      {
+       "name": "Bucky Irving",
+       "pos": "RB",
+       "p": 0.3077,
+       "odds": "+225"
+      },
+      {
+       "name": "Chris Godwin Jr.",
+       "pos": "WR",
+       "p": 0.2699,
+       "odds": "+270"
+      }
+     ],
+     "qb": {
+      "name": "Baker Mayfield",
+      "mean": 249.3,
+      "line": 249.5,
+      "sd": 73.4,
+      "dist": "normal",
+      "n": 39.1,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Bucky Irving",
+       "mean": 68.7,
+       "line": 63.0,
+       "k": 3.835,
+       "theta": 17.91,
+       "dist": "gamma",
+       "car": 14.8,
+       "n": 21.5
+      },
+      {
+       "name": "Kenny Gainwell",
+       "mean": 29.6,
+       "line": 26.0,
+       "k": 2.519,
+       "theta": 11.736,
+       "dist": "gamma",
+       "car": 6.2,
+       "n": 40.9
+      }
+     ]
+    }
+   }
   },
   {
    "away": "WAS",
@@ -156,7 +1989,157 @@
    "total": 44.43,
    "p_home_cover": 0.5336,
    "p_over": 0.4891,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "PHI",
+     "exp_pts": 25.6,
+     "exp_off_tds": 3.36,
+     "td": [
+      {
+       "name": "Saquon Barkley",
+       "pos": "RB",
+       "p": 0.445,
+       "odds": "+125"
+      },
+      {
+       "name": "Dallas Goedert",
+       "pos": "TE",
+       "p": 0.4418,
+       "odds": "+126"
+      },
+      {
+       "name": "Jalen Hurts",
+       "pos": "QB",
+       "p": 0.3937,
+       "odds": "+154"
+      },
+      {
+       "name": "DeVonta Smith",
+       "pos": "WR",
+       "p": 0.2993,
+       "odds": "+234"
+      },
+      {
+       "name": "Tank Bigsby",
+       "pos": "RB",
+       "p": 0.2986,
+       "odds": "+235"
+      },
+      {
+       "name": "Marquise Brown",
+       "pos": "WR",
+       "p": 0.2853,
+       "odds": "+251"
+      }
+     ],
+     "qb": {
+      "name": "Andy Dalton",
+      "mean": 284.6,
+      "line": 284.5,
+      "sd": 75.2,
+      "dist": "normal",
+      "n": 9.0,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Saquon Barkley",
+       "mean": 104.3,
+       "line": 96.5,
+       "k": 4.344,
+       "theta": 24.014,
+       "dist": "gamma",
+       "car": 19.3,
+       "n": 37.5
+      },
+      {
+       "name": "Tank Bigsby",
+       "mean": 34.8,
+       "line": 30.5,
+       "k": 2.789,
+       "theta": 12.459,
+       "dist": "gamma",
+       "car": 6.3,
+       "n": 33.1
+      }
+     ]
+    },
+    "away": {
+     "team": "WAS",
+     "exp_pts": 18.8,
+     "exp_off_tds": 1.89,
+     "td": [
+      {
+       "name": "Jacory Croskey-Merritt",
+       "pos": "RB",
+       "p": 0.3226,
+       "odds": "+210"
+      },
+      {
+       "name": "Terry McLaurin",
+       "pos": "WR",
+       "p": 0.2822,
+       "odds": "+254"
+      },
+      {
+       "name": "Jayden Daniels",
+       "pos": "QB",
+       "p": 0.2766,
+       "odds": "+262"
+      },
+      {
+       "name": "Rachaad White",
+       "pos": "RB",
+       "p": 0.2124,
+       "odds": "+371"
+      },
+      {
+       "name": "Stefon Diggs",
+       "pos": "WR",
+       "p": 0.212,
+       "odds": "+372"
+      },
+      {
+       "name": "Chig Okonkwo",
+       "pos": "TE",
+       "p": 0.176,
+       "odds": "+468"
+      }
+     ],
+     "qb": {
+      "name": "Jayden Daniels",
+      "mean": 161.0,
+      "line": 161.0,
+      "sd": 69.0,
+      "dist": "normal",
+      "n": 20.4,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Jacory Croskey-Merritt",
+       "mean": 52.1,
+       "line": 47.0,
+       "k": 3.437,
+       "theta": 15.155,
+       "dist": "gamma",
+       "car": 10.3,
+       "n": 14.4
+      },
+      {
+       "name": "Rachaad White",
+       "mean": 32.2,
+       "line": 28.5,
+       "k": 2.663,
+       "theta": 12.097,
+       "dist": "gamma",
+       "car": 8.4,
+       "n": 37.7
+      }
+     ]
+    }
+   }
   },
   {
    "away": "DEN",
@@ -167,7 +2150,151 @@
    "total": 46.85,
    "p_home_cover": 0.457,
    "p_over": 0.6022,
-   "confidence": "VERY LOW"
+   "confidence": "VERY LOW",
+   "props": {
+    "home": {
+     "team": "KC",
+     "exp_pts": 23.3,
+     "exp_off_tds": 2.72,
+     "td": [
+      {
+       "name": "Rashee Rice",
+       "pos": "WR",
+       "p": 0.4118,
+       "odds": "+143"
+      },
+      {
+       "name": "Kenneth Walker III",
+       "pos": "RB",
+       "p": 0.3735,
+       "odds": "+168"
+      },
+      {
+       "name": "Xavier Worthy",
+       "pos": "WR",
+       "p": 0.3512,
+       "odds": "+185"
+      },
+      {
+       "name": "Justin Fields",
+       "pos": "QB",
+       "p": 0.3475,
+       "odds": "+188"
+      },
+      {
+       "name": "Travis Kelce",
+       "pos": "TE",
+       "p": 0.2781,
+       "odds": "+260"
+      },
+      {
+       "name": "Patrick Mahomes",
+       "pos": "QB",
+       "p": 0.2664,
+       "odds": "+275"
+      }
+     ],
+     "qb": {
+      "name": "Patrick Mahomes",
+      "mean": 241.9,
+      "line": 242.0,
+      "sd": 73.1,
+      "dist": "normal",
+      "n": 37.9,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "Kenneth Walker III",
+       "mean": 72.5,
+       "line": 66.5,
+       "k": 3.908,
+       "theta": 18.561,
+       "dist": "gamma",
+       "car": 14.8,
+       "n": 34.2
+      }
+     ]
+    },
+    "away": {
+     "team": "DEN",
+     "exp_pts": 23.6,
+     "exp_off_tds": 2.72,
+     "td": [
+      {
+       "name": "J.K. Dobbins",
+       "pos": "RB",
+       "p": 0.3828,
+       "odds": "+161"
+      },
+      {
+       "name": "RJ Harvey",
+       "pos": "RB",
+       "p": 0.3524,
+       "odds": "+184"
+      },
+      {
+       "name": "Courtland Sutton",
+       "pos": "WR",
+       "p": 0.3486,
+       "odds": "+187"
+      },
+      {
+       "name": "Jaylen Waddle",
+       "pos": "WR",
+       "p": 0.2676,
+       "odds": "+274"
+      },
+      {
+       "name": "Bo Nix",
+       "pos": "QB",
+       "p": 0.2636,
+       "odds": "+279"
+      },
+      {
+       "name": "Lil'Jordan Humphrey",
+       "pos": "WR",
+       "p": 0.2595,
+       "odds": "+285"
+      }
+     ],
+     "qb": {
+      "name": "Bo Nix",
+      "mean": 234.9,
+      "line": 235.0,
+      "sd": 72.7,
+      "dist": "normal",
+      "n": 28.3,
+      "note": "projected (no starter listed)"
+     },
+     "rb": [
+      {
+       "name": "J.K. Dobbins",
+       "mean": 62.7,
+       "line": 57.0,
+       "k": 3.709,
+       "theta": 16.908,
+       "dist": "gamma",
+       "car": 13.7,
+       "n": 19.2
+      },
+      {
+       "name": "RJ Harvey",
+       "mean": 43.7,
+       "line": 39.0,
+       "k": 3.162,
+       "theta": 13.809,
+       "dist": "gamma",
+       "car": 8.7,
+       "n": 16.1
+      }
+     ]
+    }
+   }
   }
+ ],
+ "props_platt": [
+  0.7504,
+  -0.2837
  ]
 }
