@@ -3,33 +3,33 @@ GAME  Green Bay Packers @ Minnesota Vikings   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Minnesota Vikings: 24.1    Green Bay Packers: 23.0    (margin +1.1, total 47.2)
+  Minnesota Vikings: 24.1    Green Bay Packers: 22.9    (margin +1.2, total 47.0)
 
 WIN PROBABILITY (calibrated ensemble)
-  Minnesota Vikings: 49.9%    Green Bay Packers: 50.1%
-  market-aware mode: Minnesota Vikings 52.5%
+  Minnesota Vikings: 50.5%    Green Bay Packers: 49.5%
+  market-aware mode: Minnesota Vikings 52.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Minnesota Vikings 24 - Green Bay Packers 23
-  80% range:      Minnesota Vikings 13-36, Green Bay Packers 11-35
-  one-score game: 55%    overtime: 5.1%    blowout(17+): 20%
-  upset (Green Bay Packers wins): 47%
-  vs spread (Minnesota Vikings -1.5): cover 51.9%
-  vs total (46.5): over 51.2%
+  80% range:      Minnesota Vikings 13-36, Green Bay Packers 10-35
+  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  upset (Green Bay Packers wins): 46%
+  vs spread (Minnesota Vikings -1.5): cover 52.6%
+  vs total (46.5): over 50.9%
 
 KEY FACTORS (points toward Minnesota Vikings)
-  +3.87  offensive EPA/play
+  +3.92  offensive EPA/play
   -2.09  passing efficiency
   -1.95  QB rating gap
-  -1.22  opponent-adjusted defensive EPA
-  +1.06  pass defense
+  -1.23  opponent-adjusted defensive EPA
+  +1.05  pass defense
 
 MODEL AGREEMENT (home win prob)
   elo          54.2%
-  logit_pure   52.4%
-  ridge_pure   53.9%
-  gbm_pure     54.9%
+  logit_pure   52.3%
+  ridge_pure   53.8%
+  gbm_pure     57.2%
   market       52.6%
-  ensemble     49.9%
+  ensemble     50.5%
 
-CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
