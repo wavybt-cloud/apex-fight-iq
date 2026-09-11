@@ -3,19 +3,19 @@ GAME  Miami Dolphins @ Las Vegas Raiders   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Las Vegas Raiders: 22.0    Miami Dolphins: 23.6    (margin -1.6, total 45.6)
+  Las Vegas Raiders: 22.0    Miami Dolphins: 23.7    (margin -1.7, total 45.7)
 
 WIN PROBABILITY (calibrated ensemble)
   Las Vegas Raiders: 40.1%    Miami Dolphins: 59.9%
-  market-aware mode: Las Vegas Raiders 56.3%
+  market-aware mode: Las Vegas Raiders 56.6%
 
-SIMULATION (20,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Las Vegas Raiders 21 - Miami Dolphins 24
   80% range:      Las Vegas Raiders 10-34, Miami Dolphins 13-35
-  one-score game: 55%    overtime: 5.2%    blowout(17+): 21%
+  one-score game: 55%    overtime: 5.2%    blowout(17+): 20%
   upset (Las Vegas Raiders wins): 44%
-  vs spread (Las Vegas Raiders -3.0): cover 38.0%
-  vs total (40.5): over 64.3%
+  vs spread (Las Vegas Raiders -3.0): cover 37.9%
+  vs total (40.5): over 64.7%
 
 KEY FACTORS (points toward Las Vegas Raiders)
   +4.29  offensive EPA/play
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   41.0%
   ridge_pure   44.9%
   gbm_pure     47.5%
-  market       60.0%
+  market       60.4%
   ensemble     40.1%
 
 CONFIDENCE: VERY LOW   (models disagree by 19%; early season: ratings lean on priors; QB situation unsettled)

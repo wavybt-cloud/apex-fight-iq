@@ -3,19 +3,19 @@ GAME  Arizona Cardinals @ Los Angeles Chargers   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Los Angeles Chargers: 27.6    Arizona Cardinals: 20.6    (margin +7.0, total 48.2)
+  Los Angeles Chargers: 27.5    Arizona Cardinals: 20.6    (margin +6.9, total 48.1)
 
 WIN PROBABILITY (calibrated ensemble)
   Los Angeles Chargers: 72.0%    Arizona Cardinals: 28.0%
   market-aware mode: Los Angeles Chargers 80.5%
 
-SIMULATION (20,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Los Angeles Chargers 27 - Arizona Cardinals 20
   80% range:      Los Angeles Chargers 16-40, Arizona Cardinals 10-32
-  one-score game: 48%    overtime: 4.3%    blowout(17+): 27%
+  one-score game: 48%    overtime: 4.4%    blowout(17+): 26%
   upset (Arizona Cardinals wins): 28%
-  vs spread (Los Angeles Chargers -9.5): cover 40.4%
-  vs total (47.5): over 50.1%
+  vs spread (Los Angeles Chargers -9.5): cover 40.0%
+  vs total (47.5): over 49.5%
 
 KEY FACTORS (points toward Los Angeles Chargers)
   +4.29  Elo rating gap (incl. HFA, rest, QB)

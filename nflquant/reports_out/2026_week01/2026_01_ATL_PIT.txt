@@ -3,19 +3,19 @@ GAME  Atlanta Falcons @ Pittsburgh Steelers   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Pittsburgh Steelers: 25.5    Atlanta Falcons: 22.3    (margin +3.2, total 47.9)
+  Pittsburgh Steelers: 25.6    Atlanta Falcons: 22.2    (margin +3.3, total 47.8)
 
 WIN PROBABILITY (calibrated ensemble)
   Pittsburgh Steelers: 61.3%    Atlanta Falcons: 38.7%
-  market-aware mode: Pittsburgh Steelers 64.7%
+  market-aware mode: Pittsburgh Steelers 68.6%
 
-SIMULATION (20,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Pittsburgh Steelers 25 - Atlanta Falcons 22
   80% range:      Pittsburgh Steelers 14-37, Atlanta Falcons 10-34
-  one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
+  one-score game: 53%    overtime: 5.2%    blowout(17+): 21%
   upset (Atlanta Falcons wins): 39%
-  vs spread (Pittsburgh Steelers -3.5): cover 49.6%
-  vs total (42.5): over 66.0%
+  vs spread (Pittsburgh Steelers -5.5): cover 43.2%
+  vs total (41.5): over 67.5%
 
 KEY FACTORS (points toward Pittsburgh Steelers)
   +2.66  Elo rating gap (incl. HFA, rest, QB)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   60.7%
   ridge_pure   61.3%
   gbm_pure     67.6%
-  market       62.2%
+  market       66.9%
   ensemble     61.3%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

@@ -3,19 +3,19 @@ GAME  Baltimore Ravens @ Indianapolis Colts   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Indianapolis Colts: 21.9    Baltimore Ravens: 25.2    (margin -3.3, total 47.1)
+  Indianapolis Colts: 21.8    Baltimore Ravens: 25.2    (margin -3.4, total 47.0)
 
 WIN PROBABILITY (calibrated ensemble)
   Indianapolis Colts: 36.1%    Baltimore Ravens: 63.9%
   market-aware mode: Indianapolis Colts 37.6%
 
-SIMULATION (20,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Indianapolis Colts 21 - Baltimore Ravens 24
   80% range:      Indianapolis Colts 10-34, Baltimore Ravens 13-37
   one-score game: 53%    overtime: 5.2%    blowout(17+): 22%
   upset (Indianapolis Colts wins): 39%
-  vs spread (Indianapolis Colts +3.5): cover 50.6%
-  vs total (47.5): over 46.8%
+  vs spread (Indianapolis Colts +3.5): cover 50.1%
+  vs total (47.5): over 46.7%
 
 KEY FACTORS (points toward Indianapolis Colts)
   -4.37  Elo rating gap (incl. HFA, rest, QB)

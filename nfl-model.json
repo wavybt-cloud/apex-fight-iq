@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10T20:07:36.146497",
+ "generated": "2026-09-11T00:26:33.143647",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 1,
@@ -11,8 +11,8 @@
    "p_home": 0.5491,
    "margin": 2.48,
    "total": 46.37,
-   "p_home_cover": 0.4757,
-   "p_over": 0.4353,
+   "p_home_cover": 0.4709,
+   "p_over": 0.4652,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -162,8 +162,8 @@
    "p_home": 0.7204,
    "margin": 7.09,
    "total": 47.65,
-   "p_home_cover": 0.4037,
-   "p_over": 0.501,
+   "p_home_cover": 0.4001,
+   "p_over": 0.4947,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -323,8 +323,8 @@
    "p_home": 0.6134,
    "margin": 3.41,
    "total": 47.37,
-   "p_home_cover": 0.4956,
-   "p_over": 0.6603,
+   "p_home_cover": 0.4315,
+   "p_over": 0.6749,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -484,8 +484,8 @@
    "p_home": 0.3606,
    "margin": -3.43,
    "total": 46.44,
-   "p_home_cover": 0.506,
-   "p_over": 0.4684,
+   "p_home_cover": 0.5006,
+   "p_over": 0.4672,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -635,8 +635,8 @@
    "p_home": 0.524,
    "margin": 0.79,
    "total": 46.35,
-   "p_home_cover": 0.551,
-   "p_over": 0.5526,
+   "p_home_cover": 0.5525,
+   "p_over": 0.5494,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -786,8 +786,8 @@
    "p_home": 0.4193,
    "margin": -2.31,
    "total": 45.85,
-   "p_home_cover": 0.4966,
-   "p_over": 0.4825,
+   "p_home_cover": 0.4985,
+   "p_over": 0.4855,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -947,8 +947,8 @@
    "p_home": 0.794,
    "margin": 8.48,
    "total": 47.43,
-   "p_home_cover": 0.4595,
-   "p_over": 0.7371,
+   "p_home_cover": 0.4591,
+   "p_over": 0.7341,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1098,8 +1098,8 @@
    "p_home": 0.4605,
    "margin": -0.62,
    "total": 45.43,
-   "p_home_cover": 0.5526,
-   "p_over": 0.4077,
+   "p_home_cover": 0.5506,
+   "p_over": 0.4039,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1249,8 +1249,8 @@
    "p_home": 0.4987,
    "margin": 1.16,
    "total": 46.62,
-   "p_home_cover": 0.5253,
-   "p_over": 0.5123,
+   "p_home_cover": 0.5191,
+   "p_over": 0.5118,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1389,8 +1389,8 @@
    "p_home": 0.4013,
    "margin": -1.59,
    "total": 45.04,
-   "p_home_cover": 0.3803,
-   "p_over": 0.6425,
+   "p_home_cover": 0.3793,
+   "p_over": 0.6466,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1534,8 +1534,8 @@
    "p_home": 0.6911,
    "margin": 6.46,
    "total": 46.43,
-   "p_home_cover": 0.4557,
-   "p_over": 0.379,
+   "p_home_cover": 0.4511,
+   "p_over": 0.3803,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1685,8 +1685,8 @@
    "p_home": 0.5283,
    "margin": 1.79,
    "total": 44.72,
-   "p_home_cover": 0.5403,
-   "p_over": 0.6846,
+   "p_home_cover": 0.5396,
+   "p_over": 0.6841,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1836,8 +1836,8 @@
    "p_home": 0.5624,
    "margin": 2.68,
    "total": 48.2,
-   "p_home_cover": 0.4829,
-   "p_over": 0.4484,
+   "p_home_cover": 0.4831,
+   "p_over": 0.4387,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1987,8 +1987,8 @@
    "p_home": 0.7343,
    "margin": 6.8,
    "total": 44.43,
-   "p_home_cover": 0.5313,
-   "p_over": 0.4879,
+   "p_home_cover": 0.5112,
+   "p_over": 0.4891,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2148,8 +2148,8 @@
    "p_home": 0.4212,
    "margin": -0.27,
    "total": 46.85,
-   "p_home_cover": 0.4638,
-   "p_over": 0.606,
+   "p_home_cover": 0.457,
+   "p_over": 0.6022,
    "confidence": "VERY LOW",
    "props": {
     "home": {
