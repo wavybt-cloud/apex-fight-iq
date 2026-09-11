@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Pittsburgh Steelers: 60.8%    Atlanta Falcons: 39.2%
-  market-aware mode: Pittsburgh Steelers 68.5%
+  market-aware mode: Pittsburgh Steelers 68.1%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Pittsburgh Steelers 25 - Atlanta Falcons 21
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   60.7%
   ridge_pure   61.3%
   gbm_pure     66.1%
-  market       66.9%
+  market       66.4%
   ensemble     60.8%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
