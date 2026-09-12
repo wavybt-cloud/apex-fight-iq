@@ -3,19 +3,19 @@ GAME  Denver Broncos @ Kansas City Chiefs   (2026-09-14, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Kansas City Chiefs: 23.6    Denver Broncos: 24.0    (margin -0.4, total 47.5)
+  Kansas City Chiefs: 23.5    Denver Broncos: 24.0    (margin -0.5, total 47.5)
 
 WIN PROBABILITY (calibrated ensemble)
   Kansas City Chiefs: 42.2%    Denver Broncos: 57.8%
   market-aware mode: Kansas City Chiefs 53.4%
 
-SIMULATION (100,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Kansas City Chiefs 23 - Denver Broncos 24
   80% range:      Kansas City Chiefs 13-35, Denver Broncos 13-35
-  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
-  upset (Kansas City Chiefs wins): 49%
-  vs spread (Kansas City Chiefs -2.5): cover 45.5%
-  vs total (43.5): over 60.9%
+  one-score game: 55%    overtime: 5.4%    blowout(17+): 19%
+  upset (Kansas City Chiefs wins): 48%
+  vs spread (Kansas City Chiefs -2.5): cover 44.9%
+  vs total (43.5): over 60.7%
 
 KEY FACTORS (points toward Kansas City Chiefs)
   -3.72  Elo rating gap (incl. HFA, rest, QB)

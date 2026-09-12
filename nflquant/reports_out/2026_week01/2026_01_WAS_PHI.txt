@@ -3,18 +3,18 @@ GAME  Washington Commanders @ Philadelphia Eagles   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Philadelphia Eagles: 26.1    Washington Commanders: 19.5    (margin +6.6, total 45.5)
+  Philadelphia Eagles: 26.1    Washington Commanders: 19.5    (margin +6.6, total 45.6)
 
 WIN PROBABILITY (calibrated ensemble)
   Philadelphia Eagles: 72.7%    Washington Commanders: 27.3%
   market-aware mode: Philadelphia Eagles 71.8%
 
-SIMULATION (100,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Philadelphia Eagles 26 - Washington Commanders 20
-  80% range:      Philadelphia Eagles 14-38, Washington Commanders 8-31
-  one-score game: 49%    overtime: 4.8%    blowout(17+): 26%
+  80% range:      Philadelphia Eagles 14-38, Washington Commanders 9-31
+  one-score game: 49%    overtime: 4.7%    blowout(17+): 26%
   upset (Washington Commanders wins): 29%
-  vs spread (Philadelphia Eagles -6.0): cover 51.3%
+  vs spread (Philadelphia Eagles -6.0): cover 51.5%
   vs total (44.5): over 50.8%
 
 KEY FACTORS (points toward Philadelphia Eagles)

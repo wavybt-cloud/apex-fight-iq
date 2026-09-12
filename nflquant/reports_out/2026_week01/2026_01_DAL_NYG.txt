@@ -3,19 +3,19 @@ GAME  Dallas Cowboys @ New York Giants   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  New York Giants: 22.7    Dallas Cowboys: 23.3    (margin -0.6, total 46.0)
+  New York Giants: 22.7    Dallas Cowboys: 23.3    (margin -0.5, total 46.0)
 
 WIN PROBABILITY (calibrated ensemble)
   New York Giants: 45.6%    Dallas Cowboys: 54.4%
   market-aware mode: New York Giants 42.7%
 
-SIMULATION (100,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   New York Giants 23 - Dallas Cowboys 23
-  80% range:      New York Giants 10-34, Dallas Cowboys 13-35
-  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  80% range:      New York Giants 10-34, Dallas Cowboys 13-34
+  one-score game: 55%    overtime: 5.5%    blowout(17+): 20%
   upset (New York Giants wins): 48%
-  vs spread (New York Giants +3.0): cover 55.1%
-  vs total (48.5): over 40.5%
+  vs spread (New York Giants +3.0): cover 55.2%
+  vs total (48.5): over 40.6%
 
 KEY FACTORS (points toward New York Giants)
   -1.90  QB rating gap

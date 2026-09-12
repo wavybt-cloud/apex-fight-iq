@@ -3,19 +3,19 @@ GAME  Tampa Bay Buccaneers @ Cincinnati Bengals   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Cincinnati Bengals: 25.7    Tampa Bay Buccaneers: 22.7    (margin +3.0, total 48.4)
+  Cincinnati Bengals: 25.6    Tampa Bay Buccaneers: 22.7    (margin +3.0, total 48.3)
 
 WIN PROBABILITY (calibrated ensemble)
   Cincinnati Bengals: 56.9%    Tampa Bay Buccaneers: 43.1%
   market-aware mode: Cincinnati Bengals 64.4%
 
-SIMULATION (100,000 possession-level sims)
+SIMULATION (50,000 possession-level sims)
   median score:   Cincinnati Bengals 25 - Tampa Bay Buccaneers 23
-  80% range:      Cincinnati Bengals 14-38, Tampa Bay Buccaneers 11-34
-  one-score game: 53%    overtime: 5.1%    blowout(17+): 22%
+  80% range:      Cincinnati Bengals 14-38, Tampa Bay Buccaneers 10-34
+  one-score game: 53%    overtime: 5.2%    blowout(17+): 22%
   upset (Tampa Bay Buccaneers wins): 40%
   vs spread (Cincinnati Bengals -3.5): cover 49.1%
-  vs total (50.5): over 43.2%
+  vs total (50.5): over 43.0%
 
 KEY FACTORS (points toward Cincinnati Bengals)
   -0.95  offensive EPA/play
