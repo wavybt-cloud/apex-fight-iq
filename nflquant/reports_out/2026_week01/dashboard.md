@@ -18,7 +18,7 @@
 ## Lowest uncertainty
 - BAL @ IND: 4% member spread, confidence LOW
 - GB @ MIN: 5% member spread, confidence VERY LOW
-- ATL @ PIT: 5% member spread, confidence VERY LOW
+- ATL @ PIT: 6% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - DEN @ KC: 55%

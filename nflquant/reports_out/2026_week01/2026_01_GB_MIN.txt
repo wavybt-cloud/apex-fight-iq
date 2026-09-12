@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Minnesota Vikings: 50.5%    Green Bay Packers: 49.5%
-  market-aware mode: Minnesota Vikings 53.3%
+  market-aware mode: Minnesota Vikings 54.2%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Minnesota Vikings 24 - Green Bay Packers 23
   80% range:      Minnesota Vikings 13-36, Green Bay Packers 10-35
   one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
   upset (Green Bay Packers wins): 46%
-  vs spread (Minnesota Vikings -1.5): cover 52.6%
+  vs spread (Minnesota Vikings -2.5): cover 50.8%
   vs total (46.5): over 50.9%
 
 KEY FACTORS (points toward Minnesota Vikings)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   52.3%
   ridge_pure   53.8%
   gbm_pure     57.2%
-  market       53.2%
+  market       54.3%
   ensemble     50.5%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
