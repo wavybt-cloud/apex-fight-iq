@@ -243,7 +243,9 @@ def main():
                 for r in t["td"][:4]:
                     print(f"  TD  {r['name']:<22} {r['p']:.0%}  {r['odds']}")
                 if t["qb"]:
-                    print(f"  QB  {t['qb']['name']:<22} {t['qb']['line']} pass yds (±{t['qb']['sd']})")
+                    q = t["qb"]
+                    print(f"  QB  {q['name']:<22} " + (f"{q['line']} pass yds (±{q['sd']})"
+                          if q.get("line") is not None else q.get("note", "no line")))
                 for r in t["rb"]:
                     print(f"  RB  {r['name']:<22} {r['line']} rush yds")
 
