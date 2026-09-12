@@ -112,6 +112,9 @@ def main():
     st = build_state(ps)   # everything through 2025 (and any 2026 weeks present)
     preds = json.load(open(PACKAGE_ROOT / "reports_out/2026_week01/predictions.json"))
     feats = pd.read_parquet(cache_dir(cfg) / "features_enriched.parquet").set_index("game_id")
+    # listed starters live in the games spine, NOT the feature frame
+    games_csv = pd.read_csv(cache_dir(cfg) / "games.csv").set_index("game_id")
+    qb_names = games_csv[["away_qb_name", "home_qb_name"]].to_dict("index")
     lg_dp = feats[feats.season == 2025]["home_def_pass_epa"].mean()
     lg_dr = feats[feats.season == 2025]["home_def_rush_epa"].mean()
 
@@ -154,14 +157,20 @@ def main():
             # starter with no meaningful NFL sample (2026 rookie, career
             # backup) is reported honestly as no-line rather than silently
             # replaced by a teammate's number
-            qb_name = frow.get(f"{side}_qb_name")
+            qb_name = qb_names.get(g["game_id"], {}).get(f"{side}_qb_name")
+            if not isinstance(qb_name, str) or qb_name != qb_name:  # NaN guard
+                qb_name = None
             qb_row = None
             qbs = [(pid, s) for pid, s, pos in cands if pos == "QB"]
             listed = None
             if isinstance(qb_name, str):
-                for pid, s in qbs:
-                    if isinstance(s["name"], str) and s["name"].split()[-1] == qb_name.split()[-1]:
-                        listed = (pid, s); break
+                # exact full-name match first; last-name fallback prefers the
+                # higher-volume QB (guards against Kyle Allen / Josh Allen)
+                matches = [q for q in qbs if isinstance(q[1]["name"], str)
+                           and q[1]["name"].split()[-1] == qb_name.split()[-1]]
+                exact = [q for q in matches if q[1]["name"] == qb_name]
+                pool = exact or sorted(matches, key=lambda q: -(q[1]["att"] or 0))
+                listed = pool[0] if pool else None
             pick, tag = None, ""
             if listed and (listed[1]["att"] or 0) >= 10 and listed[1]["n"] >= 3:
                 pick, tag = listed, "listed starter"

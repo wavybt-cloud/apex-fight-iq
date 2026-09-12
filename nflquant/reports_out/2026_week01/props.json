@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-11T20:06",
+ "generated": "2026-09-12T02:29",
  "spreads": {
   "pass": [
    60.5778535016557,
@@ -70,7 +70,7 @@
       "sd": 75.2,
       "dist": "normal",
       "n": 35.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -144,7 +144,7 @@
       "sd": 69.8,
       "dist": "normal",
       "n": 18.2,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -179,44 +179,44 @@
    "teams": [
     {
      "team": "PIT",
-     "exp_pts": 25.4,
-     "exp_off_tds": 3.3,
+     "exp_pts": 26.1,
+     "exp_off_tds": 3.39,
      "td": [
       {
        "name": "DK Metcalf",
        "pos": "WR",
-       "p": 0.3866,
-       "odds": "+159"
+       "p": 0.3928,
+       "odds": "+155"
       },
       {
        "name": "Jaylen Warren",
        "pos": "RB",
-       "p": 0.3757,
-       "odds": "+166"
+       "p": 0.3818,
+       "odds": "+162"
       },
       {
        "name": "Rico Dowdle",
        "pos": "RB",
-       "p": 0.3525,
-       "odds": "+184"
+       "p": 0.3583,
+       "odds": "+179"
       },
       {
        "name": "Pat Freiermuth",
        "pos": "TE",
-       "p": 0.3155,
-       "odds": "+217"
+       "p": 0.3207,
+       "odds": "+212"
       },
       {
        "name": "Michael Pittman",
        "pos": "WR",
-       "p": 0.2926,
-       "odds": "+242"
+       "p": 0.2975,
+       "odds": "+236"
       },
       {
        "name": "Darnell Washington",
        "pos": "TE",
-       "p": 0.1428,
-       "odds": "+600"
+       "p": 0.1454,
+       "odds": "+588"
       }
      ],
      "qb": {
@@ -226,7 +226,7 @@
       "sd": 71.1,
       "dist": "normal",
       "n": 27.3,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -253,72 +253,72 @@
     },
     {
      "team": "ATL",
-     "exp_pts": 21.8,
-     "exp_off_tds": 2.25,
+     "exp_pts": 20.5,
+     "exp_off_tds": 1.99,
      "td": [
       {
        "name": "Bijan Robinson",
        "pos": "RB",
-       "p": 0.432,
-       "odds": "+131"
+       "p": 0.4011,
+       "odds": "+149"
       },
       {
        "name": "Drake London",
        "pos": "WR",
-       "p": 0.3367,
-       "odds": "+197"
+       "p": 0.3115,
+       "odds": "+221"
       },
       {
        "name": "Kyle Pitts",
        "pos": "TE",
-       "p": 0.253,
-       "odds": "+295"
+       "p": 0.2334,
+       "odds": "+329"
       },
       {
        "name": "Olamide Zaccheaus",
        "pos": "WR",
-       "p": 0.2113,
-       "odds": "+373"
+       "p": 0.1945,
+       "odds": "+414"
       },
       {
        "name": "Brian Robinson",
        "pos": "RB",
-       "p": 0.2051,
-       "odds": "+388"
+       "p": 0.1888,
+       "odds": "+430"
       },
       {
        "name": "Jahan Dotson",
        "pos": "WR",
-       "p": 0.1189,
-       "odds": "+741"
+       "p": 0.109,
+       "odds": "+817"
       }
      ],
      "qb": {
-      "name": "Tua Tagovailoa",
-      "mean": 219.1,
-      "line": 219.0,
-      "sd": 71.9,
+      "name": "Cooper Rush",
+      "mean": 88.2,
+      "line": 88.0,
+      "sd": 65.2,
       "dist": "normal",
-      "n": 30.9,
-      "note": "projected (no starter listed)"
+      "n": 16.4,
+      "note": "listed starter"
      },
      "rb": [
       {
        "name": "Bijan Robinson",
-       "mean": 83.8,
-       "line": 77.0,
-       "k": 4.097,
-       "theta": 20.458,
+       "mean": 81.2,
+       "line": 74.5,
+       "k": 4.058,
+       "theta": 20.019,
        "dist": "gamma",
        "car": 17.1,
        "n": 37.2
       },
       {
        "name": "Brian Robinson",
-       "mean": 27.0,
-       "line": 23.5,
-       "k": 2.378,
-       "theta": 11.359,
+       "mean": 26.2,
+       "line": 22.5,
+       "k": 2.326,
+       "theta": 11.257,
        "dist": "gamma",
        "car": 7.0,
        "n": 37.6
@@ -382,7 +382,7 @@
       "sd": 70.4,
       "dist": "normal",
       "n": 22.0,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -456,7 +456,7 @@
       "sd": 72.0,
       "dist": "normal",
       "n": 35.8,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -528,7 +528,7 @@
       "sd": 71.1,
       "dist": "normal",
       "n": 37.8,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -602,7 +602,7 @@
       "sd": 70.3,
       "dist": "normal",
       "n": 40.7,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -674,7 +674,7 @@
       "sd": 71.0,
       "dist": "normal",
       "n": 34.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -748,7 +748,7 @@
       "sd": 73.4,
       "dist": "normal",
       "n": 28.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -830,7 +830,7 @@
       "sd": 71.5,
       "dist": "normal",
       "n": 32.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -894,7 +894,7 @@
       "sd": 69.4,
       "dist": "normal",
       "n": 8.7,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -970,13 +970,13 @@
       }
      ],
      "qb": {
-      "name": "Jameis Winston",
-      "mean": 176.5,
-      "line": 176.5,
-      "sd": 69.7,
+      "name": "Jaxson Dart",
+      "mean": 119.7,
+      "line": 119.5,
+      "sd": 66.8,
       "dist": "normal",
-      "n": 14.2,
-      "note": "projected (no starter listed)"
+      "n": 11.9,
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1050,7 +1050,7 @@
       "sd": 74.1,
       "dist": "normal",
       "n": 31.3,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1122,7 +1122,7 @@
       "sd": 73.8,
       "dist": "normal",
       "n": 21.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1196,7 +1196,7 @@
       "sd": 70.7,
       "dist": "normal",
       "n": 36.8,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": []
     }
@@ -1251,7 +1251,7 @@
       "sd": 74.3,
       "dist": "normal",
       "n": 23.5,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1309,13 +1309,9 @@
       }
      ],
      "qb": {
-      "name": "Brady Cook",
-      "mean": 172.8,
-      "line": 173.0,
-      "sd": 69.5,
-      "dist": "normal",
-      "n": 4.2,
-      "note": "projected (no starter listed)"
+      "name": "Malik Willis",
+      "line": null,
+      "note": "listed starter, insufficient NFL sample"
      },
      "rb": [
       {
@@ -1397,7 +1393,7 @@
       "sd": 75.5,
       "dist": "normal",
       "n": 39.7,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1455,13 +1451,13 @@
       }
      ],
      "qb": {
-      "name": "Spencer Rattler",
-      "mean": 187.3,
-      "line": 187.5,
-      "sd": 70.3,
+      "name": "Tyler Shough",
+      "mean": 117.0,
+      "line": 117.0,
+      "sd": 66.6,
       "dist": "normal",
-      "n": 12.7,
-      "note": "projected (no starter listed)"
+      "n": 9.3,
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1543,7 +1539,7 @@
       "sd": 71.2,
       "dist": "normal",
       "n": 14.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1617,7 +1613,7 @@
       "sd": 74.3,
       "dist": "normal",
       "n": 34.2,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1689,7 +1685,7 @@
       "sd": 74.3,
       "dist": "normal",
       "n": 25.2,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1753,7 +1749,7 @@
       "sd": 73.4,
       "dist": "normal",
       "n": 39.1,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1829,13 +1825,13 @@
       }
      ],
      "qb": {
-      "name": "Andy Dalton",
-      "mean": 286.6,
-      "line": 286.5,
-      "sd": 75.4,
+      "name": "Jalen Hurts",
+      "mean": 242.4,
+      "line": 242.5,
+      "sd": 73.1,
       "dist": "normal",
-      "n": 9.0,
-      "note": "projected (no starter listed)"
+      "n": 39.2,
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1909,7 +1905,7 @@
       "sd": 69.0,
       "dist": "normal",
       "n": 20.4,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -1991,7 +1987,7 @@
       "sd": 73.1,
       "dist": "normal",
       "n": 37.9,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
@@ -2055,7 +2051,7 @@
       "sd": 72.8,
       "dist": "normal",
       "n": 28.3,
-      "note": "projected (no starter listed)"
+      "note": "listed starter"
      },
      "rb": [
       {
