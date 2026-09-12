@@ -3,18 +3,18 @@ GAME  Green Bay Packers @ Minnesota Vikings   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Minnesota Vikings: 24.1    Green Bay Packers: 22.9    (margin +1.2, total 47.0)
+  Minnesota Vikings: 24.1    Green Bay Packers: 23.0    (margin +1.1, total 47.1)
 
 WIN PROBABILITY (calibrated ensemble)
   Minnesota Vikings: 50.5%    Green Bay Packers: 49.5%
   market-aware mode: Minnesota Vikings 53.3%
 
-SIMULATION (50,000 possession-level sims)
+SIMULATION (100,000 possession-level sims)
   median score:   Minnesota Vikings 24 - Green Bay Packers 23
-  80% range:      Minnesota Vikings 13-36, Green Bay Packers 10-35
-  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  80% range:      Minnesota Vikings 13-35, Green Bay Packers 11-35
+  one-score game: 55%    overtime: 5.1%    blowout(17+): 20%
   upset (Green Bay Packers wins): 46%
-  vs spread (Minnesota Vikings -1.5): cover 52.6%
+  vs spread (Minnesota Vikings -1.5): cover 52.4%
   vs total (46.5): over 50.9%
 
 KEY FACTORS (points toward Minnesota Vikings)

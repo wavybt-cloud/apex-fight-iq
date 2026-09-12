@@ -22,7 +22,7 @@
 
 ## Most likely one-score game
 - DEN @ KC: 55%
-- BUF @ HOU: 55%
+- DAL @ NYG: 55%
 - GB @ MIN: 55%
 
 ## Highest projected total
@@ -36,9 +36,9 @@
 - MIA @ LV: 45.3
 
 ## Biggest upset chance
+- DEN @ KC: 49%
 - BUF @ HOU: 48%
 - DAL @ NYG: 48%
-- DEN @ KC: 48%
 
 ## Largest model-vs-market gaps (information, not a bet slip)
 - MIA @ LV: model -1.7 vs line +3.0 (4.7 pts toward MIA); cover 38% home

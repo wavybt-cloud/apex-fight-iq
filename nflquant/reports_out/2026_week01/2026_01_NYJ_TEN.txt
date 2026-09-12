@@ -9,13 +9,13 @@ WIN PROBABILITY (calibrated ensemble)
   Tennessee Titans: 53.6%    New York Jets: 46.4%
   market-aware mode: Tennessee Titans 54.6%
 
-SIMULATION (50,000 possession-level sims)
+SIMULATION (100,000 possession-level sims)
   median score:   Tennessee Titans 24 - New York Jets 21
   80% range:      Tennessee Titans 13-35, New York Jets 10-34
-  one-score game: 54%    overtime: 5.3%    blowout(17+): 20%
+  one-score game: 55%    overtime: 5.2%    blowout(17+): 20%
   upset (New York Jets wins): 44%
-  vs spread (Tennessee Titans -1.5): cover 53.7%
-  vs total (38.5): over 69.6%
+  vs spread (Tennessee Titans -1.5): cover 53.9%
+  vs total (38.5): over 69.7%
 
 KEY FACTORS (points toward Tennessee Titans)
   -1.62  offensive EPA/play
