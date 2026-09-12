@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-11T16:25:39.804502",
+ "generated": "2026-09-12T00:25:26.603985",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 1,
@@ -169,11 +169,11 @@
    "away": "ATL",
    "home": "PIT",
    "gameday": "2026-09-13",
-   "p_home": 0.6084,
-   "margin": 3.6,
-   "total": 47.23,
-   "p_home_cover": 0.4407,
-   "p_over": 0.6682,
+   "p_home": 0.6641,
+   "margin": 5.59,
+   "total": 46.59,
+   "p_home_cover": 0.4779,
+   "p_over": 0.6497,
    "confidence": "VERY LOW",
    "props": {
     "home": {
