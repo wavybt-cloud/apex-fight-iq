@@ -1,4 +1,5 @@
-data_cache/
+data_cache/*
+!data_cache/ensemble_bundle.joblib
 
 __pycache__/
 *.pyc

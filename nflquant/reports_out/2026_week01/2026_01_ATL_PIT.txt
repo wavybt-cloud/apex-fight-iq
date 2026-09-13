@@ -3,33 +3,33 @@ GAME  Atlanta Falcons @ Pittsburgh Steelers   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Pittsburgh Steelers: 26.3    Atlanta Falcons: 20.8    (margin +5.5, total 47.0)
+  Pittsburgh Steelers: 27.1    Atlanta Falcons: 19.3    (margin +7.7, total 46.4)
 
 WIN PROBABILITY (calibrated ensemble)
-  Pittsburgh Steelers: 66.4%    Atlanta Falcons: 33.6%
-  market-aware mode: Pittsburgh Steelers 70.8%
+  Pittsburgh Steelers: 72.9%    Atlanta Falcons: 27.1%
+  market-aware mode: Pittsburgh Steelers 70.1%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Pittsburgh Steelers 26 - Atlanta Falcons 20
-  80% range:      Pittsburgh Steelers 14-38, Atlanta Falcons 10-32
-  one-score game: 51%    overtime: 4.7%    blowout(17+): 24%
-  upset (Atlanta Falcons wins): 32%
-  vs spread (Pittsburgh Steelers -6.0): cover 47.8%
-  vs total (41.5): over 65.0%
+  median score:   Pittsburgh Steelers 27 - Atlanta Falcons 20
+  80% range:      Pittsburgh Steelers 16-39, Atlanta Falcons 8-31
+  one-score game: 47%    overtime: 4.4%    blowout(17+): 28%
+  upset (Atlanta Falcons wins): 26%
+  vs spread (Pittsburgh Steelers -6.0): cover 54.7%
+  vs total (40.5): over 66.5%
 
 KEY FACTORS (points toward Pittsburgh Steelers)
+  -14.74  d_inj
+  +12.13  away_inj
+  +5.59  home_inj
   +2.66  Elo rating gap (incl. HFA, rest, QB)
   +1.51  QB rating gap
-  +1.10  offensive EPA/play
-  -0.88  passing efficiency
-  +0.52  rushing efficiency
 
 MODEL AGREEMENT (home win prob)
   elo          69.2%
-  logit_pure   68.6%
-  ridge_pure   68.7%
-  gbm_pure     64.4%
-  market       70.0%
-  ensemble     66.4%
+  logit_pure   77.0%
+  ridge_pure   76.2%
+  gbm_pure     62.2%
+  market       69.6%
+  ensemble     72.9%
 
-CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)

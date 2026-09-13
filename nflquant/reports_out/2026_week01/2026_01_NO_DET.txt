@@ -3,33 +3,33 @@ GAME  New Orleans Saints @ Detroit Lions   (2026-09-13, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Detroit Lions: 26.7    New Orleans Saints: 20.3    (margin +6.4, total 47.0)
+  Detroit Lions: 26.1    New Orleans Saints: 19.6    (margin +6.4, total 45.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  Detroit Lions: 69.8%    New Orleans Saints: 30.2%
-  market-aware mode: Detroit Lions 74.8%
+  Detroit Lions: 69.6%    New Orleans Saints: 30.4%
+  market-aware mode: Detroit Lions 74.7%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Detroit Lions 27 - New Orleans Saints 20
-  80% range:      Detroit Lions 16-38, New Orleans Saints 10-32
-  one-score game: 50%    overtime: 4.7%    blowout(17+): 26%
+  median score:   Detroit Lions 26 - New Orleans Saints 20
+  80% range:      Detroit Lions 14-38, New Orleans Saints 9-31
+  one-score game: 49%    overtime: 4.7%    blowout(17+): 26%
   upset (New Orleans Saints wins): 29%
-  vs spread (Detroit Lions -7.0): cover 45.6%
-  vs total (49.5): over 41.5%
+  vs spread (Detroit Lions -7.0): cover 45.7%
+  vs total (49.5): over 37.5%
 
 KEY FACTORS (points toward Detroit Lions)
+  +4.06  home_inj
   +3.41  Elo rating gap (incl. HFA, rest, QB)
   +2.58  QB rating gap
   -2.03  offensive EPA/play
-  +1.11  passing efficiency
-  -0.41  opponent-adjusted defensive EPA
+  -1.97  away_inj
 
 MODEL AGREEMENT (home win prob)
   elo          72.0%
-  logit_pure   73.1%
-  ridge_pure   71.7%
-  gbm_pure     63.1%
+  logit_pure   73.7%
+  ridge_pure   72.1%
+  gbm_pure     61.0%
   market       74.1%
-  ensemble     69.8%
+  ensemble     69.6%
 
-CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 13%; early season: ratings lean on priors; QB situation unsettled)
