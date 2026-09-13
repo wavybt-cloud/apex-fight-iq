@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 46%    overtime: 4.2%    blowout(17+): 29%
   upset (Cleveland Browns wins): 25%
   vs spread (Jacksonville Jaguars -8.5): cover 45.5%
-  vs total (39.5): over 73.1%
+  vs total (40.5): over 70.0%
 
 KEY FACTORS (points toward Jacksonville Jaguars)
   -6.44  offensive EPA/play
