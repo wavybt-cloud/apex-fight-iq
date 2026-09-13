@@ -1,0 +1,116 @@
+# Gameday consensus — 2026-09-13
+desks: ML @ 2026-09-13T08:25:47 · props @ 2026-09-13T12:06:01 · bankroll $1000
+
+## Approved game plays
+- **MIA ML +142** (MIA@LV) — model 62.5%, EV +51.2%, stake **$25** · confidence VERY LOW, member spread 21%
+- **Over 39.5** (CLE@JAX) — model 73.1%, EV +39.5%, stake **$12** · confidence VERY LOW, member spread 9%
+- **Over 38.5** (NYJ@TEN) — model 69.2%, EV +32.1%, stake **$12** · confidence VERY LOW, member spread 11%
+- **Over 40.5** (ATL@PIT) — model 66.5%, EV +27.0%, stake **$12** · confidence VERY LOW, member spread 15%
+- **Over 40.5** (MIA@LV) — model 63.5%, EV +21.3%, stake **$12** · confidence VERY LOW, member spread 21%
+- **MIA +3.0** (MIA@LV) — model 63.2%, EV +20.6%, stake **$25** · confidence VERY LOW, member spread 21%
+- **Under 49.5** (NO@DET) — model 62.5%, EV +19.2%, stake **$12** · confidence VERY LOW, member spread 13%
+- **ARI +9.5** (ARI@LAC) — model 59.6%, EV +13.7%, stake **$19** · confidence VERY LOW, member spread 11%
+- **TB ML +170** (TB@CIN) — model 40.8%, EV +10.1%, stake **$7** · confidence VERY LOW, member spread 11%
+
+## Conditional prop plays (bet ONLY at trigger or better)
+- David Njoku (LAC) anytime TD — fair +127 (44%); trigger **+152 or longer**
+- Ladd McConkey (LAC) anytime TD — fair +142 (41%); trigger **+167 or longer**
+- Quentin Johnston (LAC) anytime TD — fair +145 (41%); trigger **+170 or longer**
+- Kimani Vidal (LAC) anytime TD — fair +157 (39%); trigger **+182 or longer**
+- Omarion Hampton (LAC) anytime TD — fair +194 (34%); trigger **+219 or longer**
+- Trey McBride (ARI) anytime TD — fair +213 (32%); trigger **+238 or longer**
+- Michael Wilson (ARI) anytime TD — fair +250 (29%); trigger **+275 or longer**
+- Tyler Allgeier (ARI) anytime TD — fair +255 (28%); trigger **+280 or longer**
+- DK Metcalf (PIT) anytime TD — fair +150 (40%); trigger **+175 or longer**
+- Jaylen Warren (PIT) anytime TD — fair +157 (39%); trigger **+182 or longer**
+- Rico Dowdle (PIT) anytime TD — fair +174 (37%); trigger **+199 or longer**
+- Pat Freiermuth (PIT) anytime TD — fair +206 (33%); trigger **+231 or longer**
+- Michael Pittman (PIT) anytime TD — fair +230 (30%); trigger **+255 or longer**
+- Bijan Robinson (ATL) anytime TD — fair +172 (37%); trigger **+197 or longer**
+- Drake London (ATL) anytime TD — fair +252 (28%); trigger **+277 or longer**
+- Jonathan Taylor (IND) anytime TD — fair +149 (40%); trigger **+174 or longer**
+- Anthony Richardson (IND) anytime TD — fair +260 (28%); trigger **+285 or longer**
+- Alec Pierce (IND) anytime TD — fair +279 (26%); trigger **+304 or longer**
+- Derrick Henry (BAL) anytime TD — fair +106 (48%); trigger **+131 or longer**
+- Zay Flowers (BAL) anytime TD — fair +241 (29%); trigger **+266 or longer**
+- Justice Hill (BAL) anytime TD — fair +243 (29%); trigger **+268 or longer**
+- Mark Andrews (BAL) anytime TD — fair +252 (28%); trigger **+277 or longer**
+- Nico Collins (HOU) anytime TD — fair +179 (36%); trigger **+204 or longer**
+- David Montgomery (HOU) anytime TD — fair +236 (30%); trigger **+261 or longer**
+- Woody Marks (HOU) anytime TD — fair +275 (27%); trigger **+300 or longer**
+- James Cook (BUF) anytime TD — fair +183 (35%); trigger **+208 or longer**
+- DJ Moore (BUF) anytime TD — fair +202 (33%); trigger **+227 or longer**
+- Josh Allen (BUF) anytime TD — fair +206 (33%); trigger **+231 or longer**
+- Chuba Hubbard (CAR) anytime TD — fair +169 (37%); trigger **+194 or longer**
+- Tetairoa McMillan (CAR) anytime TD — fair +265 (27%); trigger **+290 or longer**
+- Jalen Coker (CAR) anytime TD — fair +274 (27%); trigger **+299 or longer**
+- Darren Waller (CAR) anytime TD — fair +278 (26%); trigger **+303 or longer**
+- D'Andre Swift (CHI) anytime TD — fair +168 (37%); trigger **+193 or longer**
+- Roschon Johnson (CHI) anytime TD — fair +267 (27%); trigger **+292 or longer**
+- Chris Rodriguez Jr. (JAX) anytime TD — fair +169 (37%); trigger **+194 or longer**
+- Brian Thomas Jr. (JAX) anytime TD — fair +194 (34%); trigger **+219 or longer**
+- Trevor Lawrence (JAX) anytime TD — fair +199 (33%); trigger **+224 or longer**
+- Bhayshul Tuten (JAX) anytime TD — fair +216 (32%); trigger **+241 or longer**
+- Parker Washington (JAX) anytime TD — fair +223 (31%); trigger **+248 or longer**
+- Jakobi Meyers (JAX) anytime TD — fair +249 (29%); trigger **+274 or longer**
+- Raheim Sanders (CLE) anytime TD — fair +150 (40%); trigger **+175 or longer**
+- Harold Fannin Jr. (CLE) anytime TD — fair +217 (32%); trigger **+242 or longer**
+- Deshaun Watson (CLE) anytime TD — fair +219 (31%); trigger **+244 or longer**
+- Quinshon Judkins (CLE) anytime TD — fair +230 (30%); trigger **+255 or longer**
+- Cam Skattebo (NYG) anytime TD — fair +226 (31%); trigger **+251 or longer**
+- Devin Singletary (NYG) anytime TD — fair +244 (29%); trigger **+269 or longer**
+- Najee Harris (NYG) anytime TD — fair +252 (28%); trigger **+277 or longer**
+- Malik Nabers (NYG) anytime TD — fair +258 (28%); trigger **+283 or longer**
+- Tyrone Tracy Jr. (NYG) anytime TD — fair +264 (27%); trigger **+289 or longer**
+- Jaxson Dart (NYG) anytime TD — fair +284 (26%); trigger **+309 or longer**
+- Javonte Williams (DAL) anytime TD — fair +180 (36%); trigger **+205 or longer**
+- George Pickens (DAL) anytime TD — fair +259 (28%); trigger **+284 or longer**
+- Jordan Addison (MIN) anytime TD — fair +185 (35%); trigger **+210 or longer**
+- Aaron Jones (MIN) anytime TD — fair +185 (35%); trigger **+210 or longer**
+- J.J. McCarthy (MIN) anytime TD — fair +190 (34%); trigger **+215 or longer**
+- Carson Wentz (MIN) anytime TD — fair +210 (32%); trigger **+235 or longer**
+- Jauan Jennings (MIN) anytime TD — fair +216 (32%); trigger **+241 or longer**
+- Jordan Mason (MIN) anytime TD — fair +244 (29%); trigger **+269 or longer**
+- Christian Watson (GB) anytime TD — fair +209 (32%); trigger **+234 or longer**
+- Tucker Kraft (GB) anytime TD — fair +224 (31%); trigger **+249 or longer**
+- Jayden Reed (GB) anytime TD — fair +286 (26%); trigger **+311 or longer**
+- Ashton Jeanty (LV) anytime TD — fair -103 (51%); trigger **-78 or longer**
+- Brock Bowers (LV) anytime TD — fair +140 (42%); trigger **+165 or longer**
+- Tre Tucker (LV) anytime TD — fair +260 (28%); trigger **+285 or longer**
+- Jalen Nailor (LV) anytime TD — fair +282 (26%); trigger **+307 or longer**
+- De'Von Achane (MIA) anytime TD — fair +114 (47%); trigger **+139 or longer**
+- Ollie Gordon II (MIA) anytime TD — fair +297 (25%); trigger **+322 or longer**
+- Jahmyr Gibbs (DET) anytime TD — fair +102 (50%); trigger **+127 or longer**
+- Amon-Ra St. Brown (DET) anytime TD — fair +190 (35%); trigger **+215 or longer**
+- Jameson Williams (DET) anytime TD — fair +243 (29%); trigger **+268 or longer**
+- Sam LaPorta (DET) anytime TD — fair +245 (29%); trigger **+270 or longer**
+- Chris Olave (NO) anytime TD — fair +196 (34%); trigger **+221 or longer**
+- Travis Etienne (NO) anytime TD — fair +212 (32%); trigger **+237 or longer**
+- Tony Pollard (TEN) anytime TD — fair +144 (41%); trigger **+169 or longer**
+- Tyjae Spears (TEN) anytime TD — fair +200 (33%); trigger **+225 or longer**
+- Calvin Ridley (TEN) anytime TD — fair +214 (32%); trigger **+239 or longer**
+- Chimere Dike (TEN) anytime TD — fair +257 (28%); trigger **+282 or longer**
+- Elic Ayomanor (TEN) anytime TD — fair +274 (27%); trigger **+299 or longer**
+- Wan'Dale Robinson (TEN) anytime TD — fair +286 (26%); trigger **+311 or longer**
+- Garrett Wilson (NYJ) anytime TD — fair +135 (43%); trigger **+160 or longer**
+- Breece Hall (NYJ) anytime TD — fair +146 (41%); trigger **+171 or longer**
+- Chase Brown (CIN) anytime TD — fair +132 (43%); trigger **+157 or longer**
+- Tee Higgins (CIN) anytime TD — fair +138 (42%); trigger **+163 or longer**
+- Ja'Marr Chase (CIN) anytime TD — fair +159 (39%); trigger **+184 or longer**
+- Emeka Egbuka (TB) anytime TD — fair +158 (39%); trigger **+183 or longer**
+- Jalen McMillan (TB) anytime TD — fair +197 (34%); trigger **+222 or longer**
+- Sean Tucker (TB) anytime TD — fair +237 (30%); trigger **+262 or longer**
+- Kenny Gainwell (TB) anytime TD — fair +240 (29%); trigger **+265 or longer**
+- Bucky Irving (TB) anytime TD — fair +242 (29%); trigger **+267 or longer**
+- Chris Godwin Jr. (TB) anytime TD — fair +290 (26%); trigger **+315 or longer**
+- Saquon Barkley (PHI) anytime TD — fair +126 (44%); trigger **+151 or longer**
+- Dallas Goedert (PHI) anytime TD — fair +127 (44%); trigger **+152 or longer**
+- Jalen Hurts (PHI) anytime TD — fair +155 (39%); trigger **+180 or longer**
+- DeVonta Smith (PHI) anytime TD — fair +236 (30%); trigger **+261 or longer**
+- Tank Bigsby (PHI) anytime TD — fair +236 (30%); trigger **+261 or longer**
+- Marquise Brown (PHI) anytime TD — fair +252 (28%); trigger **+277 or longer**
+- Jacory Croskey-Merritt (WAS) anytime TD — fair +207 (33%); trigger **+231 or longer**
+- Terry McLaurin (WAS) anytime TD — fair +250 (29%); trigger **+275 or longer**
+- Jayden Daniels (WAS) anytime TD — fair +257 (28%); trigger **+283 or longer**
+
+*Rules A1–A5/P1–P2 in scripts/consensus.py. Fair prices are no-vig; the trigger gap is the entire edge. The engine's backtest says game edges vs closing lines are ~breakeven — stakes are sized so variance can't hurt you while CLV data accumulates.*
