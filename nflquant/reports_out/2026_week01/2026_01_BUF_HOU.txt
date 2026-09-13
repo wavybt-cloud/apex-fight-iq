@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Houston Texans: 50.7%    Buffalo Bills: 49.3%
-  market-aware mode: Houston Texans 50.2%
+  market-aware mode: Houston Texans 51.3%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Houston Texans 23 - Buffalo Bills 24
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   54.0%
   ridge_pure   51.2%
   gbm_pure     56.4%
-  market       48.3%
+  market       49.6%
   ensemble     50.7%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

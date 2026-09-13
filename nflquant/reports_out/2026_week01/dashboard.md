@@ -18,7 +18,7 @@
 ## Lowest uncertainty
 - GB @ MIN: 3% member spread, confidence LOW
 - BAL @ IND: 5% member spread, confidence VERY LOW
-- WAS @ PHI: 8% member spread, confidence VERY LOW
+- BUF @ HOU: 8% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - GB @ MIN: 55%

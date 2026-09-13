@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Detroit Lions: 69.6%    New Orleans Saints: 30.4%
-  market-aware mode: Detroit Lions 74.7%
+  market-aware mode: Detroit Lions 74.1%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Detroit Lions 26 - New Orleans Saints 20
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   73.7%
   ridge_pure   72.1%
   gbm_pure     61.0%
-  market       74.1%
+  market       73.4%
   ensemble     69.6%
 
 CONFIDENCE: VERY LOW   (models disagree by 13%; early season: ratings lean on priors; QB situation unsettled)
