@@ -6,7 +6,7 @@
     "gameday": "2026-09-14",
     "week": 1,
     "p_home": 0.39250491424227635,
-    "p_home_mkt": 0.5110040644695368,
+    "p_home_mkt": 0.5033204749362223,
     "margin": -1.243799072791763,
     "total": 46.19593834475854,
     "spread_line": 2.5,
@@ -61,12 +61,12 @@
       "logit_pure": 0.42069951453211163,
       "ridge_pure": 0.46429684190497855,
       "gbm_pure": 0.40930818719946016,
-      "market": 0.551441114716549
+      "market": 0.5427435387673957
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 14%",
+        "models disagree by 13%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]

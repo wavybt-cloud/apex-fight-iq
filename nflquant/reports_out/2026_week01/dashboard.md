@@ -7,10 +7,10 @@
 - DEN @ KC: -1.2 (home)
 
 ## Largest model disagreement
-- DEN @ KC: 14% spread across members
+- DEN @ KC: 13% spread across members
 
 ## Lowest uncertainty
-- DEN @ KC: 14% member spread, confidence VERY LOW
+- DEN @ KC: 13% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - DEN @ KC: 55%
