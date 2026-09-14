@@ -1,169 +1,18 @@
 {
- "generated": "2026-09-14T00:27:25.330271",
+ "generated": "2026-09-14T08:25:21.457557",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 1,
  "games": [
   {
-   "away": "DAL",
-   "home": "NYG",
-   "gameday": "2026-09-13",
-   "p_home": 0.4308,
-   "margin": -1.26,
-   "total": 45.0,
-   "p_home_cover": 0.5302,
-   "p_over": 0.4185,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "NYG",
-     "exp_pts": 21.9,
-     "exp_off_tds": 2.29,
-     "td": [
-      {
-       "name": "Cam Skattebo",
-       "pos": "RB",
-       "p": 0.2988,
-       "odds": "+235"
-      },
-      {
-       "name": "Devin Singletary",
-       "pos": "RB",
-       "p": 0.2831,
-       "odds": "+253"
-      },
-      {
-       "name": "Najee Harris",
-       "pos": "RB",
-       "p": 0.2766,
-       "odds": "+262"
-      },
-      {
-       "name": "Malik Nabers",
-       "pos": "WR",
-       "p": 0.2722,
-       "odds": "+267"
-      },
-      {
-       "name": "Tyrone Tracy Jr.",
-       "pos": "RB",
-       "p": 0.2679,
-       "odds": "+273"
-      },
-      {
-       "name": "Jaxson Dart",
-       "pos": "QB",
-       "p": 0.2537,
-       "odds": "+294"
-      }
-     ],
-     "qb": {
-      "name": "Jaxson Dart",
-      "mean": 117.9,
-      "line": 118.0,
-      "sd": 66.7,
-      "dist": "normal",
-      "n": 11.9,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Najee Harris",
-       "mean": 50.9,
-       "line": 46.0,
-       "k": 3.413,
-       "theta": 14.917,
-       "dist": "gamma",
-       "car": 12.0,
-       "n": 26.6
-      },
-      {
-       "name": "Tyrone Tracy Jr.",
-       "mean": 51.5,
-       "line": 46.5,
-       "k": 3.431,
-       "theta": 15.012,
-       "dist": "gamma",
-       "car": 11.5,
-       "n": 25.0
-      }
-     ]
-    },
-    "away": {
-     "team": "DAL",
-     "exp_pts": 23.1,
-     "exp_off_tds": 2.38,
-     "td": [
-      {
-       "name": "Javonte Williams",
-       "pos": "RB",
-       "p": 0.3574,
-       "odds": "+180"
-      },
-      {
-       "name": "George Pickens",
-       "pos": "WR",
-       "p": 0.2791,
-       "odds": "+258"
-      },
-      {
-       "name": "Jake Ferguson",
-       "pos": "TE",
-       "p": 0.2495,
-       "odds": "+301"
-      },
-      {
-       "name": "CeeDee Lamb",
-       "pos": "WR",
-       "p": 0.2477,
-       "odds": "+304"
-      },
-      {
-       "name": "Malik Davis",
-       "pos": "RB",
-       "p": 0.2156,
-       "odds": "+364"
-      },
-      {
-       "name": "Ryan Flournoy",
-       "pos": "WR",
-       "p": 0.2016,
-       "odds": "+396"
-      }
-     ],
-     "qb": {
-      "name": "Dak Prescott",
-      "mean": 260.5,
-      "line": 260.5,
-      "sd": 74.1,
-      "dist": "normal",
-      "n": 31.3,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Javonte Williams",
-       "mean": 66.5,
-       "line": 61.0,
-       "k": 3.8,
-       "theta": 17.5,
-       "dist": "gamma",
-       "car": 13.4,
-       "n": 36.4
-      }
-     ]
-    }
-   }
-  },
-  {
    "away": "DEN",
    "home": "KC",
    "gameday": "2026-09-14",
-   "p_home": 0.3932,
-   "margin": -1.21,
-   "total": 46.66,
-   "p_home_cover": 0.4309,
-   "p_over": 0.5966,
+   "p_home": 0.3925,
+   "margin": -1.24,
+   "total": 46.2,
+   "p_home_cover": 0.4255,
+   "p_over": 0.5816,
    "confidence": "VERY LOW",
    "props": {
     "home": {
