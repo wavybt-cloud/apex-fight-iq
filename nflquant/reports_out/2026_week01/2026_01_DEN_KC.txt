@@ -3,33 +3,33 @@ GAME  Denver Broncos @ Kansas City Chiefs   (2026-09-14, week 1)
 ================================================================
 
 MODEL PROJECTION
-  Kansas City Chiefs: 22.9    Denver Broncos: 24.1    (margin -1.2, total 47.0)
+  Kansas City Chiefs: 23.0    Denver Broncos: 24.2    (margin -1.1, total 47.2)
 
 WIN PROBABILITY (calibrated ensemble)
-  Kansas City Chiefs: 39.4%    Denver Broncos: 60.6%
-  market-aware mode: Kansas City Chiefs 51.2%
+  Kansas City Chiefs: 39.3%    Denver Broncos: 60.7%
+  market-aware mode: Kansas City Chiefs 51.1%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Kansas City Chiefs 23 - Denver Broncos 24
-  80% range:      Kansas City Chiefs 12-34, Denver Broncos 13-35
-  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  80% range:      Kansas City Chiefs 13-34, Denver Broncos 13-36
+  one-score game: 55%    overtime: 5.5%    blowout(17+): 19%
   upset (Kansas City Chiefs wins): 46%
-  vs spread (Kansas City Chiefs -2.5): cover 42.8%
-  vs total (43.5): over 59.2%
+  vs spread (Kansas City Chiefs -2.5): cover 43.1%
+  vs total (43.5): over 59.7%
 
 KEY FACTORS (points toward Kansas City Chiefs)
-  -6.60  away_inj
-  -3.72  Elo rating gap (incl. HFA, rest, QB)
-  +2.86  d_inj
-  +2.83  home_inj
-  +1.86  offensive EPA/play
+  -6.55  away_inj
+  -3.83  Elo rating gap (incl. HFA, rest, QB)
+  +2.85  d_inj
+  +2.81  home_inj
+  +1.83  offensive EPA/play
 
 MODEL AGREEMENT (home win prob)
-  elo          41.8%
+  elo          41.3%
   logit_pure   41.9%
-  ridge_pure   46.5%
-  gbm_pure     41.7%
+  ridge_pure   46.3%
+  gbm_pure     41.6%
   market       55.1%
-  ensemble     39.4%
+  ensemble     39.3%
 
-CONFIDENCE: VERY LOW   (models disagree by 13%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 14%; early season: ratings lean on priors; QB situation unsettled)
