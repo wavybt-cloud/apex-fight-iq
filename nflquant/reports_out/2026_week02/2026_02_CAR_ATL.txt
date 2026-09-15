@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Atlanta Falcons: 60.5%    Carolina Panthers: 39.5%
-  market-aware mode: Atlanta Falcons 48.3%
+  market-aware mode: Atlanta Falcons 45.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Atlanta Falcons 26 - Carolina Panthers 21
   80% range:      Atlanta Falcons 14-38, Carolina Panthers 10-34
   one-score game: 52%    overtime: 4.9%    blowout(17+): 23%
   upset (Carolina Panthers wins): 36%
-  vs spread (Atlanta Falcons +1.5): cover 66.5%
+  vs spread (Atlanta Falcons +2.5): cover 67.6%
   vs total (43.5): over 59.7%
 
 KEY FACTORS (points toward Atlanta Falcons)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   62.9%
   ridge_pure   64.6%
   gbm_pure     63.2%
-  market       46.8%
+  market       43.7%
   ensemble     60.5%
 
-CONFIDENCE: VERY LOW   (models disagree by 18%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 21%; early season: ratings lean on priors; QB situation unsettled)
