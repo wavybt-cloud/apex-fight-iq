@@ -110,7 +110,15 @@ def main():
     # ---------- live props ----------
     roster = load_roster(cfg, 2026)
     st = build_state(ps)   # everything through 2025 (and any 2026 weeks present)
-    preds = json.load(open(PACKAGE_ROOT / "reports_out/2026_week01/predictions.json"))
+    # always price the LATEST week the game engine produced - a hardcoded
+    # week silently serves stale props once the slate rolls over
+    pred_paths = sorted((PACKAGE_ROOT / "reports_out").glob("*_week*/predictions.json"))
+    if not pred_paths:
+        raise SystemExit("no predictions.json found - run predict_week.py first")
+    pred_path = pred_paths[-1]
+    week_dir = pred_path.parent
+    print("pricing props for", week_dir.name)
+    preds = json.load(open(pred_path))
     feats = pd.read_parquet(cache_dir(cfg) / "features_enriched.parquet").set_index("game_id")
     # listed starters live in the games spine, NOT the feature frame
     games_csv = pd.read_csv(cache_dir(cfg) / "games.csv").set_index("game_id")
@@ -213,7 +221,7 @@ def main():
            "games": out_games,
            "note": "Fair lines/odds, no vig. TD = rush+rec TDs (QB rushing counts). "
                    "Rookies without NFL games get no prop. Week-1 form = 2025 EWMA."}
-    path = PACKAGE_ROOT / "reports_out/2026_week01/props.json"
+    path = week_dir / "props.json"
     path.write_text(json.dumps(out, indent=1))
     print("\nwrote", path)
 
