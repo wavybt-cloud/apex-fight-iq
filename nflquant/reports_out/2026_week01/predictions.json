@@ -10,7 +10,7 @@
     "margin": -1.243799072791763,
     "total": 46.19593834475854,
     "spread_line": 2.5,
-    "total_line": 43.5,
+    "total_line": 42.5,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.45425,
@@ -52,7 +52,7 @@
       "key_mass_7": 0.10202,
       "p_home_cover": 0.42548,
       "p_spread_push": 0.0,
-      "p_over": 0.5816,
+      "p_over": 0.62694,
       "p_total_push": 0.0,
       "p_upset": 0.45425
     },

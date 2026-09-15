@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 55%    overtime: 5.2%    blowout(17+): 20%
   upset (Kansas City Chiefs wins): 45%
   vs spread (Kansas City Chiefs -2.5): cover 42.5%
-  vs total (43.5): over 58.2%
+  vs total (42.5): over 62.7%
 
 KEY FACTORS (points toward Kansas City Chiefs)
   -6.55  away_inj
