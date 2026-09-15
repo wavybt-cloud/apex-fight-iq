@@ -1,0 +1,35 @@
+================================================================
+GAME  Minnesota Vikings @ Chicago Bears   (2026-09-20, week 2)
+================================================================
+
+MODEL PROJECTION
+  Chicago Bears: 23.3    Minnesota Vikings: 23.4    (margin -0.2, total 46.7)
+
+WIN PROBABILITY (calibrated ensemble)
+  Chicago Bears: 47.7%    Minnesota Vikings: 52.3%
+  market-aware mode: Chicago Bears 65.9%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Chicago Bears 23 - Minnesota Vikings 23
+  80% range:      Chicago Bears 13-35, Minnesota Vikings 13-35
+  one-score game: 55%    overtime: 5.2%    blowout(17+): 20%
+  upset (Chicago Bears wins): 49%
+  vs spread (Chicago Bears -5.5): cover 32.0%
+  vs total (49.5): over 40.5%
+
+KEY FACTORS (points toward Chicago Bears)
+  -3.43  offensive EPA/play
+  +1.84  passing efficiency
+  -1.29  Elo rating gap (incl. HFA, rest, QB)
+  +1.01  opponent-adjusted defensive EPA
+  -0.88  pass defense
+
+MODEL AGREEMENT (home win prob)
+  elo          52.6%
+  logit_pure   51.3%
+  ridge_pure   49.5%
+  gbm_pure     53.2%
+  market       67.5%
+  ensemble     47.7%
+
+CONFIDENCE: VERY LOW   (models disagree by 18%; early season: ratings lean on priors; QB situation unsettled)

@@ -21,3 +21,4 @@
 {"ts": "2026-09-14T00:28:04", "day": "2026-09-13", "source": "user", "bet": "Geno Smith 1+ INT (1u)", "result": "loss", "note": "0 INT"}
 {"ts": "2026-09-14T00:28:04", "day": "2026-09-13", "source": "user", "bet": "Omarion Hampton ATTD (2u)", "result": "win", "note": "1 rushing TD (43 rush yds)"}
 {"ts": "2026-09-14T00:28:04", "day": "2026-09-13", "source": "user", "bet": "Cowboys ML (2u)", "result": "loss", "note": "DAL 20-28 NYG"}
+{"ts": "2026-09-15T08:25:31", "day": "2026-09-14", "source": "consensus", "bet": "DEN ML +114", "stake": 25, "result": "loss", "pl": -25, "note": "DEN 10-31 KC"}

@@ -1,0 +1,35 @@
+================================================================
+GAME  Detroit Lions @ Buffalo Bills   (2026-09-17, week 2)
+================================================================
+
+MODEL PROJECTION
+  Buffalo Bills: 27.0    Detroit Lions: 22.8    (margin +4.2, total 49.8)
+
+WIN PROBABILITY (calibrated ensemble)
+  Buffalo Bills: 62.6%    Detroit Lions: 37.4%
+  market-aware mode: Buffalo Bills 66.1%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Buffalo Bills 27 - Detroit Lions 23
+  80% range:      Buffalo Bills 15-39, Detroit Lions 10-34
+  one-score game: 52%    overtime: 4.8%    blowout(17+): 23%
+  upset (Detroit Lions wins): 36%
+  vs spread (Buffalo Bills -4.5): cover 47.9%
+  vs total (53.5): over 38.4%
+
+KEY FACTORS (points toward Buffalo Bills)
+  +2.23  Elo rating gap (incl. HFA, rest, QB)
+  +1.94  rushing efficiency
+  -1.87  offensive EPA/play
+  +0.60  offensive success rate
+  -0.45  QB rating gap
+
+MODEL AGREEMENT (home win prob)
+  elo          67.6%
+  logit_pure   64.1%
+  ridge_pure   63.8%
+  gbm_pure     64.8%
+  market       64.5%
+  ensemble     62.6%
+
+CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)

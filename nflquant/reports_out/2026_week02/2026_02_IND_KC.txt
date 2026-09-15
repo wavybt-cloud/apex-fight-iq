@@ -1,0 +1,35 @@
+================================================================
+GAME  Indianapolis Colts @ Kansas City Chiefs   (2026-09-20, week 2)
+================================================================
+
+MODEL PROJECTION
+  Kansas City Chiefs: 26.9    Indianapolis Colts: 21.8    (margin +5.1, total 48.6)
+
+WIN PROBABILITY (calibrated ensemble)
+  Kansas City Chiefs: 64.9%    Indianapolis Colts: 35.1%
+  market-aware mode: Kansas City Chiefs 72.4%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Kansas City Chiefs 27 - Indianapolis Colts 21
+  80% range:      Kansas City Chiefs 16-38, Indianapolis Colts 10-34
+  one-score game: 51%    overtime: 4.7%    blowout(17+): 23%
+  upset (Indianapolis Colts wins): 33%
+  vs spread (Kansas City Chiefs -6.5): cover 43.6%
+  vs total (47.5): over 51.5%
+
+KEY FACTORS (points toward Kansas City Chiefs)
+  +2.28  offensive EPA/play
+  +2.13  Elo rating gap (incl. HFA, rest, QB)
+  +1.42  QB rating gap
+  -1.21  passing efficiency
+  -0.45  opponent-adjusted defensive EPA
+
+MODEL AGREEMENT (home win prob)
+  elo          67.2%
+  logit_pure   68.3%
+  ridge_pure   68.4%
+  gbm_pure     61.0%
+  market       72.6%
+  ensemble     64.9%
+
+CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)

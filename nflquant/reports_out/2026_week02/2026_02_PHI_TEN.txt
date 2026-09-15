@@ -1,0 +1,35 @@
+================================================================
+GAME  Philadelphia Eagles @ Tennessee Titans   (2026-09-20, week 2)
+================================================================
+
+MODEL PROJECTION
+  Tennessee Titans: 18.8    Philadelphia Eagles: 27.1    (margin -8.2, total 45.9)
+
+WIN PROBABILITY (calibrated ensemble)
+  Tennessee Titans: 25.2%    Philadelphia Eagles: 74.8%
+  market-aware mode: Tennessee Titans 25.1%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Tennessee Titans 18 - Philadelphia Eagles 27
+  80% range:      Tennessee Titans 7-31, Philadelphia Eagles 16-39
+  one-score game: 46%    overtime: 4.5%    blowout(17+): 29%
+  upset (Tennessee Titans wins): 24%
+  vs spread (Tennessee Titans +7.0): cover 48.8%
+  vs total (39.5): over 68.3%
+
+KEY FACTORS (points toward Tennessee Titans)
+  -8.14  Elo rating gap (incl. HFA, rest, QB)
+  -2.84  QB rating gap
+  +2.67  offensive EPA/play
+  +2.11  opponent-adjusted defensive EPA
+  -1.55  pass defense
+
+MODEL AGREEMENT (home win prob)
+  elo          24.5%
+  logit_pure   22.1%
+  ridge_pure   23.3%
+  gbm_pure     29.9%
+  market       27.8%
+  ensemble     25.2%
+
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

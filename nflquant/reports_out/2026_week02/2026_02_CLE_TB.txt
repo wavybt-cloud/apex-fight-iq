@@ -1,0 +1,35 @@
+================================================================
+GAME  Cleveland Browns @ Tampa Bay Buccaneers   (2026-09-20, week 2)
+================================================================
+
+MODEL PROJECTION
+  Tampa Bay Buccaneers: 26.5    Cleveland Browns: 21.9    (margin +4.6, total 48.4)
+
+WIN PROBABILITY (calibrated ensemble)
+  Tampa Bay Buccaneers: 63.9%    Cleveland Browns: 36.1%
+  market-aware mode: Tampa Bay Buccaneers 74.7%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Tampa Bay Buccaneers 27 - Cleveland Browns 21
+  80% range:      Tampa Bay Buccaneers 16-38, Cleveland Browns 10-34
+  one-score game: 52%    overtime: 4.9%    blowout(17+): 23%
+  upset (Cleveland Browns wins): 35%
+  vs spread (Tampa Bay Buccaneers -8.5): cover 34.7%
+  vs total (40.5): over 72.1%
+
+KEY FACTORS (points toward Tampa Bay Buccaneers)
+  -3.99  offensive EPA/play
+  +1.89  passing efficiency
+  +1.40  offensive success rate
+  +1.35  QB rating gap
+  +1.21  Elo rating gap (incl. HFA, rest, QB)
+
+MODEL AGREEMENT (home win prob)
+  elo          63.4%
+  logit_pure   67.4%
+  ridge_pure   65.3%
+  gbm_pure     64.0%
+  market       75.1%
+  ensemble     63.9%
+
+CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)
