@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 51%    overtime: 4.7%    blowout(17+): 23%
   upset (Indianapolis Colts wins): 33%
   vs spread (Kansas City Chiefs -6.5): cover 43.6%
-  vs total (47.5): over 51.5%
+  vs total (46.5): over 55.9%
 
 KEY FACTORS (points toward Kansas City Chiefs)
   +2.28  offensive EPA/play

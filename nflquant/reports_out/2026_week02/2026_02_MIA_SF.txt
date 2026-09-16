@@ -14,7 +14,7 @@ SIMULATION (50,000 possession-level sims)
   80% range:      San Francisco 49ers 16-38, Miami Dolphins 7-31
   one-score game: 46%    overtime: 4.4%    blowout(17+): 29%
   upset (Miami Dolphins wins): 25%
-  vs spread (San Francisco 49ers -12.5): cover 36.3%
+  vs spread (San Francisco 49ers -13.5): cover 33.8%
   vs total (45.5): over 47.4%
 
 KEY FACTORS (points toward San Francisco 49ers)

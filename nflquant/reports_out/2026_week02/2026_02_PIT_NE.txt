@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   New England Patriots: 64.0%    Pittsburgh Steelers: 36.0%
-  market-aware mode: New England Patriots 67.9%
+  market-aware mode: New England Patriots 66.9%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New England Patriots 25 - Pittsburgh Steelers 20
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   65.4%
   ridge_pure   66.5%
   gbm_pure     64.6%
-  market       66.9%
+  market       65.7%
   ensemble     64.0%
 
 CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)
