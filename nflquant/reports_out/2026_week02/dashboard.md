@@ -11,9 +11,9 @@
 - MIA @ SF: +8.2 (home)
 
 ## Largest model disagreement
-- CAR @ ATL: 21% spread across members
-- MIN @ CHI: 18% spread across members
-- CLE @ TB: 14% spread across members
+- CAR @ ATL: 20% spread across members
+- MIN @ CHI: 17% spread across members
+- CLE @ TB: 13% spread across members
 
 ## Lowest uncertainty
 - PIT @ NE: 4% member spread, confidence LOW

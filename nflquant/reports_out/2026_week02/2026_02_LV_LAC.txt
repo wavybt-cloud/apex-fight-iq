@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Los Angeles Chargers: 65.3%    Las Vegas Raiders: 34.7%
-  market-aware mode: Los Angeles Chargers 73.3%
+  market-aware mode: Los Angeles Chargers 72.9%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Los Angeles Chargers 27 - Las Vegas Raiders 21
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   66.7%
   ridge_pure   66.1%
   gbm_pure     65.8%
-  market       72.2%
+  market       71.8%
   ensemble     65.3%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

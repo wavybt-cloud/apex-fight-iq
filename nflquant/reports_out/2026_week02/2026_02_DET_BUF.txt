@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Buffalo Bills: 62.6%    Detroit Lions: 37.4%
-  market-aware mode: Buffalo Bills 67.7%
+  market-aware mode: Buffalo Bills 67.1%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Buffalo Bills 27 - Detroit Lions 23
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 52%    overtime: 4.8%    blowout(17+): 23%
   upset (Detroit Lions wins): 36%
   vs spread (Buffalo Bills -4.5): cover 47.9%
-  vs total (53.5): over 38.4%
+  vs total (54.5): over 35.5%
 
 KEY FACTORS (points toward Buffalo Bills)
   +2.23  Elo rating gap (incl. HFA, rest, QB)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   64.1%
   ridge_pure   63.8%
   gbm_pure     64.8%
-  market       66.4%
+  market       65.7%
   ensemble     62.6%
 
 CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)
