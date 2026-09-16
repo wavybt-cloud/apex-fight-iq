@@ -14,7 +14,7 @@ SIMULATION (50,000 possession-level sims)
   80% range:      New England Patriots 14-38, Pittsburgh Steelers 10-32
   one-score game: 52%    overtime: 5.0%    blowout(17+): 24%
   upset (Pittsburgh Steelers wins): 33%
-  vs spread (New England Patriots -4.5): cover 50.7%
+  vs spread (New England Patriots -5.5): cover 48.4%
   vs total (41.5): over 62.3%
 
 KEY FACTORS (points toward New England Patriots)

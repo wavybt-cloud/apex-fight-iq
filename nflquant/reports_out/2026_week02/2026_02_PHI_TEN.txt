@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Tennessee Titans: 25.2%    Philadelphia Eagles: 74.8%
-  market-aware mode: Tennessee Titans 24.8%
+  market-aware mode: Tennessee Titans 24.1%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Tennessee Titans 18 - Philadelphia Eagles 27
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   22.1%
   ridge_pure   23.3%
   gbm_pure     29.9%
-  market       27.4%
+  market       26.6%
   ensemble     25.2%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
