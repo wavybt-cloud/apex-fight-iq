@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 52%    overtime: 5.0%    blowout(17+): 23%
   upset (Arizona Cardinals wins): 35%
   vs spread (Arizona Cardinals +3.5): cover 47.1%
-  vs total (40.5): over 70.2%
+  vs total (41.5): over 67.0%
 
 KEY FACTORS (points toward Arizona Cardinals)
   -7.17  Elo rating gap (incl. HFA, rest, QB)

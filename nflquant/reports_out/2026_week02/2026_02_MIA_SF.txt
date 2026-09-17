@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   San Francisco 49ers: 78.8%    Miami Dolphins: 21.2%
-  market-aware mode: San Francisco 49ers 87.7%
+  market-aware mode: San Francisco 49ers 87.3%
 
 SIMULATION (50,000 possession-level sims)
   median score:   San Francisco 49ers 27 - Miami Dolphins 17
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   76.5%
   ridge_pure   74.5%
   gbm_pure     79.1%
-  market       86.8%
+  market       86.3%
   ensemble     78.8%
 
 CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)
