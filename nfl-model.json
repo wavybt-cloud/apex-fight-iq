@@ -1,159 +1,18 @@
 {
- "generated": "2026-09-18T00:26:00.294709",
+ "generated": "2026-09-18T08:26:17.130171",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 2,
  "games": [
   {
-   "away": "DET",
-   "home": "BUF",
-   "gameday": "2026-09-17",
-   "p_home": 0.6262,
-   "margin": 4.19,
-   "total": 49.39,
-   "p_home_cover": 0.4539,
-   "p_over": 0.355,
-   "confidence": "LOW",
-   "props": {
-    "home": {
-     "team": "BUF",
-     "exp_pts": 26.8,
-     "exp_off_tds": 3.3,
-     "td": [
-      {
-       "name": "James Cook",
-       "pos": "RB",
-       "p": 0.4053,
-       "odds": "+147"
-      },
-      {
-       "name": "Josh Allen",
-       "pos": "QB",
-       "p": 0.3918,
-       "odds": "+155"
-      },
-      {
-       "name": "DJ Moore",
-       "pos": "WR",
-       "p": 0.3482,
-       "odds": "+187"
-      },
-      {
-       "name": "Ty Johnson",
-       "pos": "RB",
-       "p": 0.2835,
-       "odds": "+253"
-      },
-      {
-       "name": "Dalton Kincaid",
-       "pos": "TE",
-       "p": 0.2624,
-       "odds": "+281"
-      },
-      {
-       "name": "Keon Coleman",
-       "pos": "WR",
-       "p": 0.2456,
-       "odds": "+307"
-      }
-     ],
-     "qb": {
-      "name": "Josh Allen",
-      "mean": 234.8,
-      "line": 235.0,
-      "sd": 72.9,
-      "dist": "normal",
-      "n": 41.7,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "James Cook",
-       "mean": 89.5,
-       "line": 82.5,
-       "k": 4.186,
-       "theta": 21.37,
-       "dist": "gamma",
-       "car": 16.7,
-       "n": 42.5
-      }
-     ]
-    },
-    "away": {
-     "team": "DET",
-     "exp_pts": 22.6,
-     "exp_off_tds": 2.27,
-     "td": [
-      {
-       "name": "Jahmyr Gibbs",
-       "pos": "RB",
-       "p": 0.4325,
-       "odds": "+131"
-      },
-      {
-       "name": "Amon-Ra St. Brown",
-       "pos": "WR",
-       "p": 0.3151,
-       "odds": "+217"
-      },
-      {
-       "name": "Jameson Williams",
-       "pos": "WR",
-       "p": 0.2341,
-       "odds": "+327"
-      },
-      {
-       "name": "Sam LaPorta",
-       "pos": "TE",
-       "p": 0.2321,
-       "odds": "+331"
-      },
-      {
-       "name": "Joshua Dobbs",
-       "pos": "QB",
-       "p": 0.1982,
-       "odds": "+404"
-      },
-      {
-       "name": "Tyler Conklin",
-       "pos": "TE",
-       "p": 0.1713,
-       "odds": "+484"
-      }
-     ],
-     "qb": {
-      "name": "Jared Goff",
-      "mean": 228.9,
-      "line": 229.0,
-      "sd": 72.6,
-      "dist": "normal",
-      "n": 40.7,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Jahmyr Gibbs",
-       "mean": 75.6,
-       "line": 69.5,
-       "k": 3.978,
-       "theta": 18.999,
-       "dist": "gamma",
-       "car": 15.2,
-       "n": 39.5
-      }
-     ]
-    }
-   }
-  },
-  {
    "away": "CAR",
    "home": "ATL",
    "gameday": "2026-09-20",
-   "p_home": 0.6048,
+   "p_home": 0.6103,
    "margin": 4.56,
-   "total": 46.54,
-   "p_home_cover": 0.6762,
-   "p_over": 0.5966,
+   "total": 46.27,
+   "p_home_cover": 0.6733,
+   "p_over": 0.5855,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -310,11 +169,11 @@
    "away": "CIN",
    "home": "HOU",
    "gameday": "2026-09-20",
-   "p_home": 0.6189,
-   "margin": 3.29,
-   "total": 47.33,
-   "p_home_cover": 0.5681,
-   "p_over": 0.5304,
+   "p_home": 0.6094,
+   "margin": 3.16,
+   "total": 47.52,
+   "p_home_cover": 0.5654,
+   "p_over": 0.5396,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -461,11 +320,11 @@
    "away": "CLE",
    "home": "TB",
    "gameday": "2026-09-20",
-   "p_home": 0.6392,
-   "margin": 4.78,
-   "total": 47.82,
-   "p_home_cover": 0.3472,
-   "p_over": 0.6902,
+   "p_home": 0.6532,
+   "margin": 4.93,
+   "total": 48.29,
+   "p_home_cover": 0.3554,
+   "p_over": 0.697,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -622,11 +481,11 @@
    "away": "GB",
    "home": "NYJ",
    "gameday": "2026-09-20",
-   "p_home": 0.37,
-   "margin": -3.44,
-   "total": 47.51,
-   "p_home_cover": 0.5001,
-   "p_over": 0.5821,
+   "p_home": 0.3678,
+   "margin": -3.46,
+   "total": 47.3,
+   "p_home_cover": 0.4976,
+   "p_over": 0.5785,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -752,11 +611,11 @@
    "away": "IND",
    "home": "KC",
    "gameday": "2026-09-20",
-   "p_home": 0.6486,
-   "margin": 5.25,
-   "total": 48.26,
-   "p_home_cover": 0.4362,
-   "p_over": 0.5592,
+   "p_home": 0.6558,
+   "margin": 5.46,
+   "total": 48.29,
+   "p_home_cover": 0.4403,
+   "p_over": 0.5602,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -903,11 +762,11 @@
    "away": "JAX",
    "home": "DEN",
    "gameday": "2026-09-20",
-   "p_home": 0.5154,
-   "margin": 1.6,
-   "total": 47.8,
-   "p_home_cover": 0.5181,
-   "p_over": 0.5659,
+   "p_home": 0.5158,
+   "margin": 1.87,
+   "total": 47.48,
+   "p_home_cover": 0.5304,
+   "p_over": 0.5575,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1064,11 +923,11 @@
    "away": "LV",
    "home": "LAC",
    "gameday": "2026-09-20",
-   "p_home": 0.653,
-   "margin": 4.87,
-   "total": 47.98,
-   "p_home_cover": 0.4286,
-   "p_over": 0.6323,
+   "p_home": 0.6459,
+   "margin": 4.85,
+   "total": 47.77,
+   "p_home_cover": 0.4294,
+   "p_over": 0.6283,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1209,11 +1068,11 @@
    "away": "MIA",
    "home": "SF",
    "gameday": "2026-09-20",
-   "p_home": 0.7885,
-   "margin": 8.15,
-   "total": 44.91,
-   "p_home_cover": 0.3379,
-   "p_over": 0.5023,
+   "p_home": 0.7904,
+   "margin": 8.24,
+   "total": 45.38,
+   "p_home_cover": 0.3366,
+   "p_over": 0.5155,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1356,11 +1215,11 @@
    "away": "MIN",
    "home": "CHI",
    "gameday": "2026-09-20",
-   "p_home": 0.4771,
-   "margin": -0.16,
-   "total": 46.1,
-   "p_home_cover": 0.342,
-   "p_over": 0.4292,
+   "p_home": 0.4824,
+   "margin": -0.03,
+   "total": 46.31,
+   "p_home_cover": 0.3515,
+   "p_over": 0.4319,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1517,11 +1376,11 @@
    "away": "NO",
    "home": "BAL",
    "gameday": "2026-09-20",
-   "p_home": 0.7364,
-   "margin": 7.71,
-   "total": 44.77,
-   "p_home_cover": 0.458,
-   "p_over": 0.4487,
+   "p_home": 0.7346,
+   "margin": 7.67,
+   "total": 44.5,
+   "p_home_cover": 0.4544,
+   "p_over": 0.445,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1668,11 +1527,11 @@
    "away": "PHI",
    "home": "TEN",
    "gameday": "2026-09-20",
-   "p_home": 0.2521,
+   "p_home": 0.2542,
    "margin": -8.39,
-   "total": 45.44,
-   "p_home_cover": 0.4882,
-   "p_over": 0.6831,
+   "total": 45.07,
+   "p_home_cover": 0.4906,
+   "p_over": 0.6738,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1829,11 +1688,11 @@
    "away": "PIT",
    "home": "NE",
    "gameday": "2026-09-20",
-   "p_home": 0.6405,
-   "margin": 5.1,
-   "total": 45.66,
-   "p_home_cover": 0.4837,
-   "p_over": 0.6227,
+   "p_home": 0.6505,
+   "margin": 5.31,
+   "total": 45.52,
+   "p_home_cover": 0.4881,
+   "p_over": 0.6151,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1980,11 +1839,11 @@
    "away": "SEA",
    "home": "ARI",
    "gameday": "2026-09-20",
-   "p_home": 0.3204,
-   "margin": -4.52,
-   "total": 47.27,
-   "p_home_cover": 0.4713,
-   "p_over": 0.67,
+   "p_home": 0.3177,
+   "margin": -4.73,
+   "total": 46.82,
+   "p_home_cover": 0.4651,
+   "p_over": 0.6941,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2131,11 +1990,11 @@
    "away": "WAS",
    "home": "DAL",
    "gameday": "2026-09-20",
-   "p_home": 0.5531,
-   "margin": 2.32,
-   "total": 48.08,
-   "p_home_cover": 0.4625,
-   "p_over": 0.4337,
+   "p_home": 0.5447,
+   "margin": 2.13,
+   "total": 48.09,
+   "p_home_cover": 0.4558,
+   "p_over": 0.4336,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2282,11 +2141,11 @@
    "away": "NYG",
    "home": "LAR",
    "gameday": "2026-09-21",
-   "p_home": 0.7894,
-   "margin": 8.4,
-   "total": 46.68,
-   "p_home_cover": 0.5105,
-   "p_over": 0.4331,
+   "p_home": 0.7868,
+   "margin": 8.11,
+   "total": 46.95,
+   "p_home_cover": 0.5044,
+   "p_over": 0.4464,
    "confidence": "LOW",
    "props": {
     "home": {

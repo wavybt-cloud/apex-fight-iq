@@ -3,33 +3,33 @@ GAME  Carolina Panthers @ Atlanta Falcons   (2026-09-20, week 2)
 ================================================================
 
 MODEL PROJECTION
-  Atlanta Falcons: 25.8    Carolina Panthers: 21.3    (margin +4.5, total 47.1)
+  Atlanta Falcons: 25.6    Carolina Panthers: 21.2    (margin +4.4, total 46.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  Atlanta Falcons: 60.5%    Carolina Panthers: 39.5%
-  market-aware mode: Atlanta Falcons 44.8%
+  Atlanta Falcons: 61.0%    Carolina Panthers: 39.0%
+  market-aware mode: Atlanta Falcons 43.0%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Atlanta Falcons 26 - Carolina Panthers 21
-  80% range:      Atlanta Falcons 14-38, Carolina Panthers 10-34
+  median score:   Atlanta Falcons 25 - Carolina Panthers 21
+  80% range:      Atlanta Falcons 13-37, Carolina Panthers 10-33
   one-score game: 52%    overtime: 4.9%    blowout(17+): 23%
   upset (Carolina Panthers wins): 36%
-  vs spread (Atlanta Falcons +2.5): cover 67.6%
-  vs total (43.5): over 59.7%
+  vs spread (Atlanta Falcons +2.5): cover 67.3%
+  vs total (43.5): over 58.5%
 
 KEY FACTORS (points toward Atlanta Falcons)
   +2.05  QB rating gap
   -1.42  offensive EPA/play
-  -0.75  opponent-adjusted defensive EPA
+  -0.76  opponent-adjusted defensive EPA
   +0.75  passing efficiency
   +0.62  pass defense
 
 MODEL AGREEMENT (home win prob)
-  elo          57.9%
-  logit_pure   62.9%
+  elo          58.0%
+  logit_pure   63.1%
   ridge_pure   64.6%
-  gbm_pure     63.2%
-  market       42.8%
-  ensemble     60.5%
+  gbm_pure     64.6%
+  market       40.7%
+  ensemble     61.0%
 
-CONFIDENCE: VERY LOW   (models disagree by 22%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 24%; early season: ratings lean on priors; QB situation unsettled)

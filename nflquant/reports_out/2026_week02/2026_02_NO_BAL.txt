@@ -3,33 +3,33 @@ GAME  New Orleans Saints @ Baltimore Ravens   (2026-09-20, week 2)
 ================================================================
 
 MODEL PROJECTION
-  Baltimore Ravens: 26.4    New Orleans Saints: 18.8    (margin +7.6, total 45.2)
+  Baltimore Ravens: 26.2    New Orleans Saints: 18.8    (margin +7.4, total 45.0)
 
 WIN PROBABILITY (calibrated ensemble)
-  Baltimore Ravens: 73.6%    New Orleans Saints: 26.4%
+  Baltimore Ravens: 73.5%    New Orleans Saints: 26.5%
   market-aware mode: Baltimore Ravens 77.5%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Baltimore Ravens 27 - New Orleans Saints 18
+  median score:   Baltimore Ravens 26 - New Orleans Saints 18
   80% range:      Baltimore Ravens 14-38, New Orleans Saints 7-31
-  one-score game: 48%    overtime: 4.6%    blowout(17+): 28%
+  one-score game: 48%    overtime: 4.5%    blowout(17+): 28%
   upset (New Orleans Saints wins): 26%
-  vs spread (Baltimore Ravens -7.5): cover 45.8%
-  vs total (46.5): over 44.9%
+  vs spread (Baltimore Ravens -7.5): cover 45.4%
+  vs total (46.5): over 44.5%
 
 KEY FACTORS (points toward Baltimore Ravens)
-  +4.16  Elo rating gap (incl. HFA, rest, QB)
-  -3.01  offensive EPA/play
+  +4.17  Elo rating gap (incl. HFA, rest, QB)
+  -3.02  offensive EPA/play
   +1.97  rushing efficiency
   +1.75  QB rating gap
   +0.74  passing efficiency
 
 MODEL AGREEMENT (home win prob)
-  elo          74.6%
+  elo          74.7%
   logit_pure   75.0%
-  ridge_pure   74.4%
-  gbm_pure     68.3%
+  ridge_pure   74.5%
+  gbm_pure     67.7%
   market       76.6%
-  ensemble     73.6%
+  ensemble     73.5%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
