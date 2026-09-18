@@ -11,14 +11,14 @@
 - MIA @ SF: +8.2 (home)
 
 ## Largest model disagreement
-- CAR @ ATL: 23% spread across members
+- CAR @ ATL: 22% spread across members
 - CLE @ TB: 15% spread across members
 - MIN @ CHI: 14% spread across members
 
 ## Lowest uncertainty
 - JAX @ DEN: 3% member spread, confidence LOW
-- PIT @ NE: 4% member spread, confidence LOW
 - NYG @ LA: 4% member spread, confidence LOW
+- PIT @ NE: 4% member spread, confidence LOW
 
 ## Most likely one-score game
 - MIN @ CHI: 55%
@@ -45,6 +45,6 @@
 - MIA @ SF: model +8.2 vs line +13.5 (5.3 pts toward MIA); cover 34% home
 - MIN @ CHI: model -0.2 vs line +4.5 (4.7 pts toward MIN); cover 34% home
 - CLE @ TB: model +4.8 vs line +8.5 (3.7 pts toward CLE); cover 35% home
-- WAS @ DAL: model +2.3 vs line +4.5 (2.2 pts toward WAS); cover 42% home
+- LV @ LAC: model +4.9 vs line +6.5 (1.6 pts toward LV); cover 43% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*

@@ -14,7 +14,7 @@ SIMULATION (50,000 possession-level sims)
   80% range:      Dallas Cowboys 13-37, Washington Commanders 12-35
   one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
   upset (Washington Commanders wins): 43%
-  vs spread (Dallas Cowboys -4.5): cover 42.4%
+  vs spread (Dallas Cowboys -3.5): cover 46.2%
   vs total (50.5): over 43.4%
 
 KEY FACTORS (points toward Dallas Cowboys)
