@@ -13,7 +13,7 @@
 ## Largest model disagreement
 - CAR @ ATL: 24% spread across members
 - CLE @ TB: 15% spread across members
-- MIN @ CHI: 14% spread across members
+- MIN @ CHI: 15% spread across members
 
 ## Lowest uncertainty
 - JAX @ DEN: 3% member spread, confidence LOW
@@ -42,8 +42,8 @@
 
 ## Largest model-vs-market gaps (information, not a bet slip)
 - CAR @ ATL: model +4.6 vs line -2.5 (7.1 pts toward ATL); cover 67% home
-- MIA @ SF: model +8.2 vs line +13.5 (5.3 pts toward MIA); cover 34% home
 - MIN @ CHI: model -0.0 vs line +4.5 (4.5 pts toward MIN); cover 35% home
+- MIA @ SF: model +8.2 vs line +12.5 (4.3 pts toward MIA); cover 36% home
 - CLE @ TB: model +4.9 vs line +8.5 (3.6 pts toward CLE); cover 36% home
 - LV @ LAC: model +4.8 vs line +6.5 (1.7 pts toward LV); cover 43% home
 

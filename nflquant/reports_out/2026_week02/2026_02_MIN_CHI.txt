@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Chicago Bears: 48.2%    Minnesota Vikings: 51.8%
-  market-aware mode: Chicago Bears 62.7%
+  market-aware mode: Chicago Bears 63.4%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Chicago Bears 23 - Minnesota Vikings 23
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 55%    overtime: 5.2%    blowout(17+): 20%
   upset (Minnesota Vikings wins): 50%
   vs spread (Chicago Bears -4.5): cover 35.1%
-  vs total (48.5): over 43.2%
+  vs total (47.5): over 45.9%
 
 KEY FACTORS (points toward Chicago Bears)
   -3.43  offensive EPA/play
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   51.4%
   ridge_pure   49.5%
   gbm_pure     55.0%
-  market       63.7%
+  market       64.5%
   ensemble     48.2%
 
-CONFIDENCE: VERY LOW   (models disagree by 14%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)
