@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18T20:06",
+ "generated": "2026-09-19T04:05",
  "spreads": {
   "pass": [
    62.6111886376725,
@@ -1190,51 +1190,51 @@
    "teams": [
     {
      "team": "CHI",
-     "exp_pts": 23.1,
-     "exp_off_tds": 2.54,
+     "exp_pts": 24.2,
+     "exp_off_tds": 2.79,
      "td": [
       {
        "name": "D'Andre Swift",
        "pos": "RB",
-       "p": 0.3846,
-       "odds": "+160"
+       "p": 0.4066,
+       "odds": "+146"
       },
       {
        "name": "Roschon Johnson",
        "pos": "RB",
-       "p": 0.2379,
-       "odds": "+320"
+       "p": 0.2526,
+       "odds": "+296"
       },
       {
        "name": "Kyle Monangai",
        "pos": "RB",
-       "p": 0.2374,
-       "odds": "+321"
+       "p": 0.2521,
+       "odds": "+297"
       },
       {
        "name": "Cole Kmet",
        "pos": "TE",
-       "p": 0.21,
-       "odds": "+376"
+       "p": 0.2232,
+       "odds": "+348"
       },
       {
        "name": "Rome Odunze",
        "pos": "WR",
-       "p": 0.2088,
-       "odds": "+379"
+       "p": 0.2219,
+       "odds": "+351"
       },
       {
        "name": "Colston Loveland",
        "pos": "TE",
-       "p": 0.2068,
-       "odds": "+384"
+       "p": 0.2198,
+       "odds": "+355"
       }
      ],
      "qb": {
       "name": "Caleb Williams",
-      "mean": 195.4,
-      "line": 195.5,
-      "sd": 71.2,
+      "mean": 200.9,
+      "line": 201.0,
+      "sd": 71.4,
       "dist": "normal",
       "n": 29.4,
       "note": "listed starter"
@@ -1242,20 +1242,20 @@
      "rb": [
       {
        "name": "D'Andre Swift",
-       "mean": 64.1,
-       "line": 58.5,
-       "k": 3.755,
-       "theta": 17.057,
+       "mean": 67.5,
+       "line": 61.5,
+       "k": 3.828,
+       "theta": 17.637,
        "dist": "gamma",
        "car": 14.1,
        "n": 39.0
       },
       {
        "name": "Kyle Monangai",
-       "mean": 35.7,
-       "line": 31.5,
-       "k": 2.851,
-       "theta": 12.525,
+       "mean": 37.6,
+       "line": 33.5,
+       "k": 2.937,
+       "theta": 12.811,
        "dist": "gamma",
        "car": 7.8,
        "n": 17.1
@@ -1264,72 +1264,72 @@
     },
     {
      "team": "MIN",
-     "exp_pts": 23.2,
-     "exp_off_tds": 2.59,
+     "exp_pts": 21.7,
+     "exp_off_tds": 2.26,
      "td": [
       {
        "name": "Aaron Jones",
        "pos": "RB",
-       "p": 0.3449,
-       "odds": "+190"
+       "p": 0.3171,
+       "odds": "+215"
       },
       {
        "name": "J.J. McCarthy",
        "pos": "QB",
-       "p": 0.3374,
-       "odds": "+196"
+       "p": 0.3101,
+       "odds": "+223"
       },
       {
        "name": "Jauan Jennings",
        "pos": "WR",
-       "p": 0.3357,
-       "odds": "+198"
+       "p": 0.3085,
+       "odds": "+224"
       },
       {
        "name": "Jordan Addison",
        "pos": "WR",
-       "p": 0.3147,
-       "odds": "+218"
+       "p": 0.289,
+       "odds": "+246"
       },
       {
        "name": "Carson Wentz",
        "pos": "QB",
-       "p": 0.3002,
-       "odds": "+233"
+       "p": 0.2755,
+       "odds": "+263"
       },
       {
        "name": "Jordan Mason",
        "pos": "RB",
-       "p": 0.2956,
-       "odds": "+238"
+       "p": 0.2713,
+       "odds": "+269"
       }
      ],
      "qb": {
-      "name": "Kyler Murray",
-      "mean": 225.2,
-      "line": 225.0,
-      "sd": 72.5,
+      "name": "Carson Wentz",
+      "mean": 179.0,
+      "line": 179.0,
+      "sd": 70.4,
       "dist": "normal",
-      "n": 22.4,
+      "n": 7.3,
       "note": "listed starter"
      },
      "rb": [
       {
        "name": "Aaron Jones",
-       "mean": 56.7,
-       "line": 51.5,
-       "k": 3.581,
-       "theta": 15.843,
+       "mean": 53.2,
+       "line": 48.0,
+       "k": 3.486,
+       "theta": 15.265,
        "dist": "gamma",
        "car": 12.8,
        "n": 32.2
       },
       {
        "name": "Jordan Mason",
-       "mean": 46.5,
-       "line": 42.0,
-       "k": 3.278,
-       "theta": 14.179,
+       "mean": 43.6,
+       "line": 39.0,
+       "k": 3.176,
+       "theta": 13.723,
        "dist": "gamma",
        "car": 9.0,
        "n": 33.1
