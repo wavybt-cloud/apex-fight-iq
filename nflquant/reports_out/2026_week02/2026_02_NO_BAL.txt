@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Baltimore Ravens: 73.5%    New Orleans Saints: 26.5%
-  market-aware mode: Baltimore Ravens 78.0%
+  market-aware mode: Baltimore Ravens 77.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Baltimore Ravens 26 - New Orleans Saints 18
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   75.0%
   ridge_pure   74.5%
   gbm_pure     67.7%
-  market       77.2%
+  market       76.6%
   ensemble     73.5%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
