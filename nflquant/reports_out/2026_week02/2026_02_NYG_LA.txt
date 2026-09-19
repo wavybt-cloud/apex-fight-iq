@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Los Angeles Rams: 78.7%    New York Giants: 21.3%
-  market-aware mode: Los Angeles Rams 77.9%
+  market-aware mode: Los Angeles Rams 77.3%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Los Angeles Rams 27 - New York Giants 20
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   78.7%
   ridge_pure   75.4%
   gbm_pure     76.3%
-  market       75.7%
+  market       75.1%
   ensemble     78.7%
 
 CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)

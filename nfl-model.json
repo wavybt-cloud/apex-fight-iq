@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18T16:25:54.406908",
+ "generated": "2026-09-19T00:25:58.845983",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 2,
@@ -173,7 +173,7 @@
    "margin": 3.16,
    "total": 47.52,
    "p_home_cover": 0.5654,
-   "p_over": 0.5396,
+   "p_over": 0.5611,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1071,7 +1071,7 @@
    "p_home": 0.7904,
    "margin": 8.24,
    "total": 45.38,
-   "p_home_cover": 0.3624,
+   "p_home_cover": 0.3366,
    "p_over": 0.5155,
    "confidence": "VERY LOW",
    "props": {
@@ -1215,11 +1215,11 @@
    "away": "MIN",
    "home": "CHI",
    "gameday": "2026-09-20",
-   "p_home": 0.4824,
-   "margin": -0.03,
-   "total": 46.31,
-   "p_home_cover": 0.3515,
-   "p_over": 0.4588,
+   "p_home": 0.5688,
+   "margin": 2.57,
+   "total": 45.89,
+   "p_home_cover": 0.4275,
+   "p_over": 0.4167,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1379,7 +1379,7 @@
    "p_home": 0.7346,
    "margin": 7.67,
    "total": 44.5,
-   "p_home_cover": 0.4544,
+   "p_home_cover": 0.4303,
    "p_over": 0.445,
    "confidence": "VERY LOW",
    "props": {
