@@ -11,7 +11,7 @@
 - NYG @ LA: +8.1 (home)
 
 ## Largest model disagreement
-- CAR @ ATL: 22% spread across members
+- CAR @ ATL: 23% spread across members
 - CLE @ TB: 15% spread across members
 - CIN @ HOU: 14% spread across members
 

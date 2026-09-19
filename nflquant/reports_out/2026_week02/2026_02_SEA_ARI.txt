@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Arizona Cardinals: 31.8%    Seattle Seahawks: 68.2%
-  market-aware mode: Arizona Cardinals 30.9%
+  market-aware mode: Arizona Cardinals 32.0%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Arizona Cardinals 21 - Seattle Seahawks 26
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   35.0%
   ridge_pure   35.1%
   gbm_pure     32.5%
-  market       34.3%
+  market       35.5%
   ensemble     31.8%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
