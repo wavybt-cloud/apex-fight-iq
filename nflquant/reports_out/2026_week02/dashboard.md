@@ -12,8 +12,8 @@
 
 ## Largest model disagreement
 - CAR @ ATL: 23% spread across members
-- CLE @ TB: 16% spread across members
-- CIN @ HOU: 13% spread across members
+- CLE @ TB: 15% spread across members
+- WAS @ DAL: 13% spread across members
 
 ## Lowest uncertainty
 - PIT @ NE: 3% member spread, confidence LOW
@@ -43,8 +43,8 @@
 ## Largest model-vs-market gaps (information, not a bet slip)
 - CAR @ ATL: model +4.6 vs line -2.5 (7.1 pts toward ATL); cover 67% home
 - MIA @ SF: model +8.2 vs line +13.5 (5.3 pts toward MIA); cover 34% home
-- CLE @ TB: model +4.9 vs line +8.5 (3.6 pts toward CLE); cover 36% home
-- MIN @ CHI: model +2.6 vs line +4.5 (1.9 pts toward MIN); cover 43% home
-- LV @ LAC: model +4.8 vs line +6.5 (1.7 pts toward LV); cover 43% home
+- CLE @ TB: model +4.9 vs line +7.5 (2.6 pts toward CLE); cover 38% home
+- WAS @ DAL: model +2.1 vs line +4.5 (2.4 pts toward WAS); cover 42% home
+- LV @ LAC: model +4.8 vs line +7.0 (2.2 pts toward LV); cover 40% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*

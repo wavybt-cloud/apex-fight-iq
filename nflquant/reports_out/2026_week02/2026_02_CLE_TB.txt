@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Tampa Bay Buccaneers: 65.3%    Cleveland Browns: 34.7%
-  market-aware mode: Tampa Bay Buccaneers 78.5%
+  market-aware mode: Tampa Bay Buccaneers 77.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Tampa Bay Buccaneers 27 - Cleveland Browns 21
   80% range:      Tampa Bay Buccaneers 16-38, Cleveland Browns 10-34
   one-score game: 52%    overtime: 4.9%    blowout(17+): 23%
   upset (Cleveland Browns wins): 34%
-  vs spread (Tampa Bay Buccaneers -8.5): cover 35.5%
+  vs spread (Tampa Bay Buccaneers -7.5): cover 37.9%
   vs total (41.5): over 69.7%
 
 KEY FACTORS (points toward Tampa Bay Buccaneers)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   67.5%
   ridge_pure   65.4%
   gbm_pure     68.0%
-  market       79.1%
+  market       78.2%
   ensemble     65.3%
 
-CONFIDENCE: VERY LOW   (models disagree by 16%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)
