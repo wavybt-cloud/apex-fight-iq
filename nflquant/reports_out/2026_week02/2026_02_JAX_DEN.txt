@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Denver Broncos: 51.6%    Jacksonville Jaguars: 48.4%
-  market-aware mode: Denver Broncos 56.8%
+  market-aware mode: Denver Broncos 57.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Denver Broncos 24 - Jacksonville Jaguars 23
   80% range:      Denver Broncos 13-37, Jacksonville Jaguars 11-35
   one-score game: 54%    overtime: 5.4%    blowout(17+): 21%
   upset (Jacksonville Jaguars wins): 44%
-  vs spread (Denver Broncos -2.5): cover 53.0%
+  vs spread (Denver Broncos -3.0): cover 48.9%
   vs total (45.5): over 55.8%
 
 KEY FACTORS (points toward Denver Broncos)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   55.3%
   ridge_pure   55.4%
   gbm_pure     54.9%
-  market       57.2%
+  market       58.3%
   ensemble     51.6%
 
 CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)

@@ -12,13 +12,13 @@
 
 ## Largest model disagreement
 - CAR @ ATL: 23% spread across members
-- CLE @ TB: 15% spread across members
-- CIN @ HOU: 14% spread across members
+- CLE @ TB: 16% spread across members
+- CIN @ HOU: 13% spread across members
 
 ## Lowest uncertainty
-- JAX @ DEN: 3% member spread, confidence LOW
 - PIT @ NE: 3% member spread, confidence LOW
-- NYG @ LA: 4% member spread, confidence LOW
+- JAX @ DEN: 4% member spread, confidence LOW
+- GB @ NYJ: 5% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - MIN @ CHI: 54%
