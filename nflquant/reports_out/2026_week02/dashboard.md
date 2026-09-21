@@ -7,10 +7,10 @@
 - NYG @ LA: +7.7 (home)
 
 ## Largest model disagreement
-- NYG @ LA: 6% spread across members
+- NYG @ LA: 7% spread across members
 
 ## Lowest uncertainty
-- NYG @ LA: 6% member spread, confidence VERY LOW
+- NYG @ LA: 7% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - NYG @ LA: 47%
@@ -25,6 +25,6 @@
 - NYG @ LA: 26%
 
 ## Largest model-vs-market gaps (information, not a bet slip)
-- NYG @ LA: model +7.7 vs line +7.0 (0.7 pts toward LA); cover 49% home
+- NYG @ LA: model +7.7 vs line +6.5 (1.2 pts toward LA); cover 52% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*

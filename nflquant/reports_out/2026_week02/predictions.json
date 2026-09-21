@@ -6,10 +6,10 @@
     "gameday": "2026-09-21",
     "week": 2,
     "p_home": 0.771587742897843,
-    "p_home_mkt": 0.7462269999285351,
+    "p_home_mkt": 0.739181078339952,
     "margin": 7.708502127209125,
     "total": 47.15855608762601,
-    "spread_line": 7.0,
+    "spread_line": 6.5,
     "total_line": 47.5,
     "sim": {
       "n_sims": 50000,
@@ -50,8 +50,8 @@
       },
       "key_mass_3": 0.12528,
       "key_mass_7": 0.0894,
-      "p_home_cover": 0.49129,
-      "p_spread_push": 0.05946,
+      "p_home_cover": 0.52102,
+      "p_spread_push": 0.0,
       "p_over": 0.48402,
       "p_total_push": 0.0,
       "p_upset": 0.26237
@@ -61,7 +61,7 @@
       "logit_pure": 0.783284442263509,
       "ridge_pure": 0.7487230530050047,
       "gbm_pure": 0.7300083151934529,
-      "market": 0.7220792588780237
+      "market": 0.7135512302607419
     },
     "confidence": [
       "VERY LOW",
