@@ -17,51 +17,51 @@
    "props": {
     "home": {
      "team": "LA",
-     "exp_pts": 27.6,
-     "exp_off_tds": 3.22,
+     "exp_pts": 27.4,
+     "exp_off_tds": 3.19,
      "td": [
       {
        "name": "Kyren Williams",
        "pos": "RB",
-       "p": 0.491,
-       "odds": "+104"
+       "p": 0.4883,
+       "odds": "+105"
       },
       {
        "name": "Davante Adams",
        "pos": "WR",
-       "p": 0.4126,
-       "odds": "+142"
+       "p": 0.4102,
+       "odds": "+144"
       },
       {
        "name": "Puka Nacua",
        "pos": "WR",
-       "p": 0.3933,
-       "odds": "+154"
+       "p": 0.3909,
+       "odds": "+156"
       },
       {
        "name": "Colby Parkinson",
        "pos": "TE",
-       "p": 0.3054,
-       "odds": "+227"
+       "p": 0.3035,
+       "odds": "+229"
       },
       {
        "name": "Blake Corum",
        "pos": "RB",
-       "p": 0.2472,
-       "odds": "+305"
+       "p": 0.2456,
+       "odds": "+307"
       },
       {
        "name": "Tyler Higbee",
        "pos": "TE",
-       "p": 0.2213,
-       "odds": "+352"
+       "p": 0.2198,
+       "odds": "+355"
       }
      ],
      "qb": {
       "name": "Matthew Stafford",
-      "mean": 282.3,
-      "line": 282.5,
-      "sd": 75.0,
+      "mean": 281.4,
+      "line": 281.5,
+      "sd": 74.9,
       "dist": "normal",
       "n": 40.8,
       "note": "listed starter"
@@ -69,20 +69,20 @@
      "rb": [
       {
        "name": "Kyren Williams",
-       "mean": 84.1,
-       "line": 77.5,
-       "k": 4.112,
-       "theta": 20.448,
+       "mean": 83.9,
+       "line": 77.0,
+       "k": 4.109,
+       "theta": 20.412,
        "dist": "gamma",
        "car": 15.6,
        "n": 39.0
       },
       {
        "name": "Blake Corum",
-       "mean": 44.3,
-       "line": 40.0,
-       "k": 3.203,
-       "theta": 13.84,
+       "mean": 44.2,
+       "line": 39.5,
+       "k": 3.199,
+       "theta": 13.823,
        "dist": "gamma",
        "car": 7.6,
        "n": 28.8
@@ -97,38 +97,38 @@
       {
        "name": "Cam Skattebo",
        "pos": "RB",
-       "p": 0.2622,
-       "odds": "+281"
+       "p": 0.2618,
+       "odds": "+282"
       },
       {
        "name": "Devin Singletary",
        "pos": "RB",
-       "p": 0.2482,
+       "p": 0.2479,
        "odds": "+303"
       },
       {
        "name": "Najee Harris",
        "pos": "RB",
-       "p": 0.2424,
+       "p": 0.2421,
        "odds": "+313"
       },
       {
        "name": "Malik Nabers",
        "pos": "WR",
-       "p": 0.2385,
-       "odds": "+319"
+       "p": 0.2382,
+       "odds": "+320"
       },
       {
        "name": "Tyrone Tracy Jr.",
        "pos": "RB",
-       "p": 0.2346,
-       "odds": "+326"
+       "p": 0.2343,
+       "odds": "+327"
       },
       {
        "name": "Jaxson Dart",
        "pos": "QB",
-       "p": 0.222,
-       "odds": "+350"
+       "p": 0.2217,
+       "odds": "+351"
       }
      ],
      "qb": {
@@ -143,10 +143,10 @@
      "rb": [
       {
        "name": "Najee Harris",
-       "mean": 42.4,
+       "mean": 42.3,
        "line": 38.0,
-       "k": 3.13,
-       "theta": 13.532,
+       "k": 3.129,
+       "theta": 13.528,
        "dist": "gamma",
        "car": 12.0,
        "n": 26.6
@@ -155,8 +155,8 @@
        "name": "Tyrone Tracy Jr.",
        "mean": 42.8,
        "line": 38.5,
-       "k": 3.149,
-       "theta": 13.608,
+       "k": 3.148,
+       "theta": 13.605,
        "dist": "gamma",
        "car": 11.5,
        "n": 25.0
