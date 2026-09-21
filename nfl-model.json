@@ -17,44 +17,44 @@
    "props": {
     "home": {
      "team": "KC",
-     "exp_pts": 26.9,
-     "exp_off_tds": 3.19,
+     "exp_pts": 27.1,
+     "exp_off_tds": 3.21,
      "td": [
       {
        "name": "Rashee Rice",
        "pos": "WR",
-       "p": 0.4528,
-       "odds": "+121"
+       "p": 0.4547,
+       "odds": "+120"
       },
       {
        "name": "Kenneth Walker III",
        "pos": "RB",
-       "p": 0.4116,
-       "odds": "+143"
+       "p": 0.4133,
+       "odds": "+142"
       },
       {
        "name": "Xavier Worthy",
        "pos": "WR",
-       "p": 0.3875,
-       "odds": "+158"
+       "p": 0.3892,
+       "odds": "+157"
       },
       {
        "name": "Justin Fields",
        "pos": "QB",
-       "p": 0.3817,
-       "odds": "+162"
+       "p": 0.3834,
+       "odds": "+161"
       },
       {
        "name": "Travis Kelce",
        "pos": "TE",
-       "p": 0.3079,
-       "odds": "+225"
+       "p": 0.3093,
+       "odds": "+223"
       },
       {
        "name": "Patrick Mahomes",
        "pos": "QB",
-       "p": 0.2952,
-       "odds": "+239"
+       "p": 0.2965,
+       "odds": "+237"
       }
      ],
      "qb": {
@@ -81,51 +81,51 @@
     },
     "away": {
      "team": "IND",
-     "exp_pts": 21.4,
-     "exp_off_tds": 2.06,
+     "exp_pts": 21.8,
+     "exp_off_tds": 2.13,
      "td": [
       {
        "name": "Jonathan Taylor",
        "pos": "RB",
-       "p": 0.4255,
-       "odds": "+135"
+       "p": 0.4347,
+       "odds": "+130"
       },
       {
        "name": "Anthony Richardson",
        "pos": "QB",
-       "p": 0.2827,
-       "odds": "+254"
+       "p": 0.2892,
+       "odds": "+246"
       },
       {
        "name": "Alec Pierce",
        "pos": "WR",
-       "p": 0.2589,
-       "odds": "+286"
+       "p": 0.265,
+       "odds": "+277"
       },
       {
        "name": "DJ Giddens",
        "pos": "RB",
-       "p": 0.2049,
-       "odds": "+388"
+       "p": 0.2098,
+       "odds": "+377"
       },
       {
        "name": "Josh Downs",
        "pos": "WR",
-       "p": 0.1814,
-       "odds": "+451"
+       "p": 0.1858,
+       "odds": "+438"
       },
       {
        "name": "Tyler Warren",
        "pos": "TE",
-       "p": 0.1785,
-       "odds": "+460"
+       "p": 0.1829,
+       "odds": "+447"
       }
      ],
      "qb": {
       "name": "Daniel Jones",
-      "mean": 180.2,
-      "line": 180.0,
-      "sd": 70.5,
+      "mean": 182.2,
+      "line": 182.0,
+      "sd": 70.6,
       "dist": "normal",
       "n": 23.0,
       "note": "listed starter"
@@ -133,20 +133,20 @@
      "rb": [
       {
        "name": "Jonathan Taylor",
-       "mean": 76.9,
-       "line": 70.5,
-       "k": 3.999,
-       "theta": 19.217,
+       "mean": 77.5,
+       "line": 71.0,
+       "k": 4.011,
+       "theta": 19.335,
        "dist": "gamma",
        "car": 19.0,
        "n": 31.7
       },
       {
        "name": "DJ Giddens",
-       "mean": 30.3,
-       "line": 26.5,
-       "k": 2.579,
-       "theta": 11.767,
+       "mean": 30.6,
+       "line": 27.0,
+       "k": 2.594,
+       "theta": 11.804,
        "dist": "gamma",
        "car": 10.0,
        "n": 4.2
@@ -168,50 +168,50 @@
    "props": {
     "home": {
      "team": "LA",
-     "exp_pts": 27.5,
-     "exp_off_tds": 3.21,
+     "exp_pts": 27.6,
+     "exp_off_tds": 3.22,
      "td": [
       {
        "name": "Kyren Williams",
        "pos": "RB",
-       "p": 0.4903,
+       "p": 0.491,
        "odds": "+104"
       },
       {
        "name": "Davante Adams",
        "pos": "WR",
-       "p": 0.412,
-       "odds": "+143"
+       "p": 0.4126,
+       "odds": "+142"
       },
       {
        "name": "Puka Nacua",
        "pos": "WR",
-       "p": 0.3927,
-       "odds": "+155"
+       "p": 0.3933,
+       "odds": "+154"
       },
       {
        "name": "Colby Parkinson",
        "pos": "TE",
-       "p": 0.3049,
-       "odds": "+228"
+       "p": 0.3054,
+       "odds": "+227"
       },
       {
        "name": "Blake Corum",
        "pos": "RB",
-       "p": 0.2467,
+       "p": 0.2472,
        "odds": "+305"
       },
       {
        "name": "Tyler Higbee",
        "pos": "TE",
-       "p": 0.2209,
-       "odds": "+353"
+       "p": 0.2213,
+       "odds": "+352"
       }
      ],
      "qb": {
       "name": "Matthew Stafford",
-      "mean": 282.0,
-      "line": 282.0,
+      "mean": 282.3,
+      "line": 282.5,
       "sd": 75.0,
       "dist": "normal",
       "n": 40.8,
@@ -220,10 +220,10 @@
      "rb": [
       {
        "name": "Kyren Williams",
-       "mean": 84.0,
+       "mean": 84.1,
        "line": 77.5,
-       "k": 4.111,
-       "theta": 20.439,
+       "k": 4.112,
+       "theta": 20.448,
        "dist": "gamma",
        "car": 15.6,
        "n": 39.0
@@ -232,8 +232,8 @@
        "name": "Blake Corum",
        "mean": 44.3,
        "line": 40.0,
-       "k": 3.202,
-       "theta": 13.835,
+       "k": 3.203,
+       "theta": 13.84,
        "dist": "gamma",
        "car": 7.6,
        "n": 28.8
@@ -242,50 +242,50 @@
     },
     "away": {
      "team": "NYG",
-     "exp_pts": 19.4,
-     "exp_off_tds": 1.8,
+     "exp_pts": 19.7,
+     "exp_off_tds": 1.86,
      "td": [
       {
        "name": "Cam Skattebo",
        "pos": "RB",
-       "p": 0.2566,
-       "odds": "+290"
+       "p": 0.2622,
+       "odds": "+281"
       },
       {
        "name": "Devin Singletary",
        "pos": "RB",
-       "p": 0.2429,
-       "odds": "+312"
+       "p": 0.2482,
+       "odds": "+303"
       },
       {
        "name": "Najee Harris",
        "pos": "RB",
-       "p": 0.2372,
-       "odds": "+322"
+       "p": 0.2424,
+       "odds": "+313"
       },
       {
        "name": "Malik Nabers",
        "pos": "WR",
-       "p": 0.2334,
-       "odds": "+328"
+       "p": 0.2385,
+       "odds": "+319"
       },
       {
        "name": "Tyrone Tracy Jr.",
        "pos": "RB",
-       "p": 0.2296,
-       "odds": "+336"
+       "p": 0.2346,
+       "odds": "+326"
       },
       {
        "name": "Jaxson Dart",
        "pos": "QB",
-       "p": 0.2172,
-       "odds": "+360"
+       "p": 0.222,
+       "odds": "+350"
       }
      ],
      "qb": {
       "name": "Jaxson Dart",
-      "mean": 95.5,
-      "line": 95.5,
+      "mean": 96.4,
+      "line": 96.5,
       "sd": 66.8,
       "dist": "normal",
       "n": 11.9,
@@ -294,20 +294,20 @@
      "rb": [
       {
        "name": "Najee Harris",
-       "mean": 42.0,
-       "line": 37.5,
-       "k": 3.117,
-       "theta": 13.477,
+       "mean": 42.4,
+       "line": 38.0,
+       "k": 3.13,
+       "theta": 13.532,
        "dist": "gamma",
        "car": 12.0,
        "n": 26.6
       },
       {
        "name": "Tyrone Tracy Jr.",
-       "mean": 42.5,
-       "line": 38.0,
-       "k": 3.135,
-       "theta": 13.553,
+       "mean": 42.8,
+       "line": 38.5,
+       "k": 3.149,
+       "theta": 13.608,
        "dist": "gamma",
        "car": 11.5,
        "n": 25.0
