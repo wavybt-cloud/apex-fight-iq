@@ -23,3 +23,17 @@
 {"ts": "2026-09-14T00:28:04", "day": "2026-09-13", "source": "user", "bet": "Cowboys ML (2u)", "result": "loss", "note": "DAL 20-28 NYG"}
 {"ts": "2026-09-15T08:25:31", "day": "2026-09-14", "source": "consensus", "bet": "DEN ML +114", "stake": 25, "result": "loss", "pl": -25, "note": "DEN 10-31 KC"}
 {"ts": "2026-09-18T08:26:18", "day": "2026-09-17", "source": "consensus", "bet": "Under 54.5 DET@BUF", "stake": 25, "result": "loss", "pl": -25, "note": "DET 31-41 BUF, total 72"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "LV ML +320", "stake": 19, "result": "win", "pl": 60.8, "note": "LV 26-14 LAC"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "ATL +2.5", "stake": 25, "result": "loss", "pl": -25, "note": "CAR 34-3 ATL"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "MIA +13.5", "stake": 25, "result": "loss", "pl": -25, "note": "MIA 13-35 SF"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "CLE +7.5", "stake": 25, "result": "win", "pl": 22.73, "note": "CLE 23-19 TB"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "Over 41.5 PIT@NE", "stake": 24, "result": "loss", "pl": -24, "note": "PIT 3-20 NE"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "JAX ML +130", "stake": 22, "result": "loss", "pl": -22, "note": "JAX 13-20 DEN"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "LV +7.0", "stake": 19, "result": "win", "pl": 17.27, "note": "LV 26-14 LAC"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "WAS ML +164", "stake": 15, "result": "loss", "pl": -15, "note": "WAS 20-37 DAL"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "WAS +4.5", "stake": 15, "result": "loss", "pl": -15, "note": "WAS 20-37 DAL"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "Over 41.5 CLE@TB", "stake": 12, "result": "win", "pl": 10.91, "note": "CLE 23-19 TB"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "Over 40.5 SEA@ARI", "stake": 12, "result": "loss", "pl": -12, "note": "SEA 31-7 ARI"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "Over 39.5 PHI@TEN", "stake": 12, "result": "win", "pl": 10.91, "note": "PHI 24-20 TEN"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "Over 43.5 LV@LAC", "stake": 12, "result": "loss", "pl": -12, "note": "LV 26-14 LAC"}
+{"ts": "2026-09-21T00:25:46", "day": "2026-09-20", "source": "consensus", "bet": "NYJ ML +200", "stake": 6, "result": "loss", "pl": -6, "note": "GB 20-17 NYJ"}
