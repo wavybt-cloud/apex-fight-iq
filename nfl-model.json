@@ -1,169 +1,18 @@
 {
- "generated": "2026-09-21T00:25:45.713697",
+ "generated": "2026-09-21T08:26:20.626901",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 2,
  "games": [
   {
-   "away": "IND",
-   "home": "KC",
-   "gameday": "2026-09-20",
-   "p_home": 0.6346,
-   "margin": 5.26,
-   "total": 48.87,
-   "p_home_cover": 0.4614,
-   "p_over": 0.5783,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "KC",
-     "exp_pts": 27.1,
-     "exp_off_tds": 3.21,
-     "td": [
-      {
-       "name": "Rashee Rice",
-       "pos": "WR",
-       "p": 0.4547,
-       "odds": "+120"
-      },
-      {
-       "name": "Kenneth Walker III",
-       "pos": "RB",
-       "p": 0.4133,
-       "odds": "+142"
-      },
-      {
-       "name": "Xavier Worthy",
-       "pos": "WR",
-       "p": 0.3892,
-       "odds": "+157"
-      },
-      {
-       "name": "Justin Fields",
-       "pos": "QB",
-       "p": 0.3834,
-       "odds": "+161"
-      },
-      {
-       "name": "Travis Kelce",
-       "pos": "TE",
-       "p": 0.3093,
-       "odds": "+223"
-      },
-      {
-       "name": "Patrick Mahomes",
-       "pos": "QB",
-       "p": 0.2965,
-       "odds": "+237"
-      }
-     ],
-     "qb": {
-      "name": "Patrick Mahomes",
-      "mean": 292.0,
-      "line": 292.0,
-      "sd": 75.4,
-      "dist": "normal",
-      "n": 37.9,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Kenneth Walker III",
-       "mean": 76.0,
-       "line": 70.0,
-       "k": 3.985,
-       "theta": 19.073,
-       "dist": "gamma",
-       "car": 14.8,
-       "n": 34.2
-      }
-     ]
-    },
-    "away": {
-     "team": "IND",
-     "exp_pts": 21.8,
-     "exp_off_tds": 2.13,
-     "td": [
-      {
-       "name": "Jonathan Taylor",
-       "pos": "RB",
-       "p": 0.4347,
-       "odds": "+130"
-      },
-      {
-       "name": "Anthony Richardson",
-       "pos": "QB",
-       "p": 0.2892,
-       "odds": "+246"
-      },
-      {
-       "name": "Alec Pierce",
-       "pos": "WR",
-       "p": 0.265,
-       "odds": "+277"
-      },
-      {
-       "name": "DJ Giddens",
-       "pos": "RB",
-       "p": 0.2098,
-       "odds": "+377"
-      },
-      {
-       "name": "Josh Downs",
-       "pos": "WR",
-       "p": 0.1858,
-       "odds": "+438"
-      },
-      {
-       "name": "Tyler Warren",
-       "pos": "TE",
-       "p": 0.1829,
-       "odds": "+447"
-      }
-     ],
-     "qb": {
-      "name": "Daniel Jones",
-      "mean": 182.2,
-      "line": 182.0,
-      "sd": 70.6,
-      "dist": "normal",
-      "n": 23.0,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Jonathan Taylor",
-       "mean": 77.5,
-       "line": 71.0,
-       "k": 4.011,
-       "theta": 19.335,
-       "dist": "gamma",
-       "car": 19.0,
-       "n": 31.7
-      },
-      {
-       "name": "DJ Giddens",
-       "mean": 30.6,
-       "line": 27.0,
-       "k": 2.594,
-       "theta": 11.804,
-       "dist": "gamma",
-       "car": 10.0,
-       "n": 4.2
-      }
-     ]
-    }
-   }
-  },
-  {
    "away": "NYG",
    "home": "LAR",
    "gameday": "2026-09-21",
-   "p_home": 0.7733,
-   "margin": 7.82,
-   "total": 47.31,
-   "p_home_cover": 0.5252,
-   "p_over": 0.4921,
+   "p_home": 0.7716,
+   "margin": 7.71,
+   "total": 47.16,
+   "p_home_cover": 0.4913,
+   "p_over": 0.484,
    "confidence": "VERY LOW",
    "props": {
     "home": {
