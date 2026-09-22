@@ -1,21 +1,27 @@
 {
- "generated": "2026-09-22T08:25:38.362552",
- "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
- "season": 2026,
- "week": 3,
+ "generated": "2026-09-22T12:15",
+ "spreads": {
+  "pass": [
+   62.6111886376725,
+   0.04378292055269576
+  ],
+  "rush": [
+   6.151194353010878,
+   0.41999977840535674
+  ]
+ },
+ "platt": [
+  0.7504,
+  -0.2837
+ ],
  "games": [
   {
+   "id": "2026_03_ATL_GB",
    "away": "ATL",
    "home": "GB",
-   "gameday": "2026-09-24",
-   "p_home": 0.7111,
-   "margin": 6.74,
-   "total": 44.28,
-   "p_home_cover": 0.511,
-   "p_over": 0.4797,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-24",
+   "teams": [
+    {
      "team": "GB",
      "exp_pts": 25.5,
      "exp_off_tds": 3.33,
@@ -68,7 +74,7 @@
      },
      "rb": []
     },
-    "away": {
+    {
      "team": "ATL",
      "exp_pts": 18.8,
      "exp_off_tds": 1.67,
@@ -142,20 +148,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_ARI_SF",
    "away": "ARI",
    "home": "SF",
-   "gameday": "2026-09-27",
-   "p_home": 0.828,
-   "margin": 9.94,
-   "total": 46.61,
-   "p_home_cover": 0.5097,
-   "p_over": 0.4635,
-   "confidence": "MODERATE",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "SF",
      "exp_pts": 28.3,
      "exp_off_tds": 3.81,
@@ -219,7 +220,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "ARI",
      "exp_pts": 18.3,
      "exp_off_tds": 1.77,
@@ -293,20 +294,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_BAL_DAL",
    "away": "BAL",
    "home": "DAL",
-   "gameday": "2026-09-27",
-   "p_home": 0.4153,
-   "margin": -1.84,
-   "total": 47.14,
-   "p_home_cover": 0.5091,
-   "p_over": 0.3376,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "DAL",
      "exp_pts": 22.6,
      "exp_off_tds": 2.28,
@@ -370,7 +366,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "BAL",
      "exp_pts": 24.5,
      "exp_off_tds": 2.8,
@@ -434,20 +430,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_CAR_CLE",
    "away": "CAR",
    "home": "CLE",
-   "gameday": "2026-09-27",
-   "p_home": 0.5185,
-   "margin": 2.11,
-   "total": 47.24,
-   "p_home_cover": 0.5979,
-   "p_over": 0.6534,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "CLE",
      "exp_pts": 24.7,
      "exp_off_tds": 3.02,
@@ -521,7 +512,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "CAR",
      "exp_pts": 22.6,
      "exp_off_tds": 2.83,
@@ -595,20 +586,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_CIN_PIT",
    "away": "CIN",
    "home": "PIT",
-   "gameday": "2026-09-27",
-   "p_home": 0.4589,
-   "margin": -0.31,
-   "total": 47.78,
-   "p_home_cover": 0.5925,
-   "p_over": 0.6647,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "PIT",
      "exp_pts": 23.7,
      "exp_off_tds": 3.03,
@@ -682,7 +668,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "CIN",
      "exp_pts": 24.0,
      "exp_off_tds": 2.77,
@@ -746,20 +732,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_HOU_IND",
    "away": "HOU",
    "home": "IND",
-   "gameday": "2026-09-27",
-   "p_home": 0.4128,
-   "margin": -1.69,
-   "total": 46.75,
-   "p_home_cover": 0.4814,
-   "p_over": 0.6014,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "IND",
      "exp_pts": 22.5,
      "exp_off_tds": 2.27,
@@ -833,7 +814,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "HOU",
      "exp_pts": 24.2,
      "exp_off_tds": 2.51,
@@ -907,20 +888,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_KC_MIA",
    "away": "KC",
    "home": "MIA",
-   "gameday": "2026-09-27",
-   "p_home": 0.3745,
-   "margin": -3.04,
-   "total": 45.68,
-   "p_home_cover": 0.7682,
-   "p_over": 0.5048,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "MIA",
      "exp_pts": 21.3,
      "exp_off_tds": 2.39,
@@ -990,7 +966,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "KC",
      "exp_pts": 24.4,
      "exp_off_tds": 2.89,
@@ -1054,171 +1030,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
-   "away": "LAC",
-   "home": "BUF",
-   "gameday": "2026-09-27",
-   "p_home": 0.7941,
-   "margin": 8.75,
-   "total": 47.03,
-   "p_home_cover": 0.5291,
-   "p_over": 0.3968,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "BUF",
-     "exp_pts": 27.9,
-     "exp_off_tds": 3.58,
-     "td": [
-      {
-       "name": "James Cook",
-       "pos": "RB",
-       "p": 0.4254,
-       "odds": "+135"
-      },
-      {
-       "name": "Josh Allen",
-       "pos": "QB",
-       "p": 0.4114,
-       "odds": "+143"
-      },
-      {
-       "name": "DJ Moore",
-       "pos": "WR",
-       "p": 0.366,
-       "odds": "+173"
-      },
-      {
-       "name": "Ty Johnson",
-       "pos": "RB",
-       "p": 0.2985,
-       "odds": "+235"
-      },
-      {
-       "name": "Dalton Kincaid",
-       "pos": "TE",
-       "p": 0.2764,
-       "odds": "+262"
-      },
-      {
-       "name": "Keon Coleman",
-       "pos": "WR",
-       "p": 0.2588,
-       "odds": "+286"
-      }
-     ],
-     "qb": {
-      "name": "Josh Allen",
-      "mean": 226.8,
-      "line": 227.0,
-      "sd": 72.5,
-      "dist": "normal",
-      "n": 41.7,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "James Cook",
-       "mean": 85.1,
-       "line": 78.5,
-       "k": 4.127,
-       "theta": 20.626,
-       "dist": "gamma",
-       "car": 16.7,
-       "n": 42.5
-      }
-     ]
-    },
-    "away": {
-     "team": "LAC",
-     "exp_pts": 19.1,
-     "exp_off_tds": 1.92,
-     "td": [
-      {
-       "name": "Ladd McConkey",
-       "pos": "WR",
-       "p": 0.3101,
-       "odds": "+222"
-      },
-      {
-       "name": "Quentin Johnston",
-       "pos": "WR",
-       "p": 0.2813,
-       "odds": "+256"
-      },
-      {
-       "name": "Kimani Vidal",
-       "pos": "RB",
-       "p": 0.278,
-       "odds": "+260"
-      },
-      {
-       "name": "David Njoku",
-       "pos": "TE",
-       "p": 0.2654,
-       "odds": "+277"
-      },
-      {
-       "name": "Omarion Hampton",
-       "pos": "RB",
-       "p": 0.2552,
-       "odds": "+292"
-      },
-      {
-       "name": "Justin Herbert",
-       "pos": "QB",
-       "p": 0.1528,
-       "odds": "+555"
-      }
-     ],
-     "qb": {
-      "name": "Justin Herbert",
-      "mean": 195.9,
-      "line": 196.0,
-      "sd": 71.2,
-      "dist": "normal",
-      "n": 36.4,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Omarion Hampton",
-       "mean": 50.0,
-       "line": 45.0,
-       "k": 3.39,
-       "theta": 14.739,
-       "dist": "gamma",
-       "car": 13.5,
-       "n": 9.5
-      },
-      {
-       "name": "Kimani Vidal",
-       "mean": 34.0,
-       "line": 30.0,
-       "k": 2.769,
-       "theta": 12.277,
-       "dist": "gamma",
-       "car": 8.9,
-       "n": 18.4
-      }
-     ]
-    }
-   }
-  },
-  {
-   "away": "LAR",
+   "id": "2026_03_LA_DEN",
+   "away": "LA",
    "home": "DEN",
-   "gameday": "2026-09-27",
-   "p_home": 0.5033,
-   "margin": 0.97,
-   "total": 47.13,
-   "p_home_cover": 0.5611,
-   "p_over": 0.5457,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "DEN",
      "exp_pts": 24.0,
      "exp_off_tds": 2.84,
@@ -1292,7 +1112,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "LA",
      "exp_pts": 23.1,
      "exp_off_tds": 2.26,
@@ -1366,20 +1186,161 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_LAC_BUF",
+   "away": "LAC",
+   "home": "BUF",
+   "date": "2026-09-27",
+   "teams": [
+    {
+     "team": "BUF",
+     "exp_pts": 27.9,
+     "exp_off_tds": 3.58,
+     "td": [
+      {
+       "name": "James Cook",
+       "pos": "RB",
+       "p": 0.4254,
+       "odds": "+135"
+      },
+      {
+       "name": "Josh Allen",
+       "pos": "QB",
+       "p": 0.4114,
+       "odds": "+143"
+      },
+      {
+       "name": "DJ Moore",
+       "pos": "WR",
+       "p": 0.366,
+       "odds": "+173"
+      },
+      {
+       "name": "Ty Johnson",
+       "pos": "RB",
+       "p": 0.2985,
+       "odds": "+235"
+      },
+      {
+       "name": "Dalton Kincaid",
+       "pos": "TE",
+       "p": 0.2764,
+       "odds": "+262"
+      },
+      {
+       "name": "Keon Coleman",
+       "pos": "WR",
+       "p": 0.2588,
+       "odds": "+286"
+      }
+     ],
+     "qb": {
+      "name": "Josh Allen",
+      "mean": 226.8,
+      "line": 227.0,
+      "sd": 72.5,
+      "dist": "normal",
+      "n": 41.7,
+      "note": "listed starter"
+     },
+     "rb": [
+      {
+       "name": "James Cook",
+       "mean": 85.1,
+       "line": 78.5,
+       "k": 4.127,
+       "theta": 20.626,
+       "dist": "gamma",
+       "car": 16.7,
+       "n": 42.5
+      }
+     ]
+    },
+    {
+     "team": "LAC",
+     "exp_pts": 19.1,
+     "exp_off_tds": 1.92,
+     "td": [
+      {
+       "name": "Ladd McConkey",
+       "pos": "WR",
+       "p": 0.3101,
+       "odds": "+222"
+      },
+      {
+       "name": "Quentin Johnston",
+       "pos": "WR",
+       "p": 0.2813,
+       "odds": "+256"
+      },
+      {
+       "name": "Kimani Vidal",
+       "pos": "RB",
+       "p": 0.278,
+       "odds": "+260"
+      },
+      {
+       "name": "David Njoku",
+       "pos": "TE",
+       "p": 0.2654,
+       "odds": "+277"
+      },
+      {
+       "name": "Omarion Hampton",
+       "pos": "RB",
+       "p": 0.2552,
+       "odds": "+292"
+      },
+      {
+       "name": "Justin Herbert",
+       "pos": "QB",
+       "p": 0.1528,
+       "odds": "+555"
+      }
+     ],
+     "qb": {
+      "name": "Justin Herbert",
+      "mean": 195.9,
+      "line": 196.0,
+      "sd": 71.2,
+      "dist": "normal",
+      "n": 36.4,
+      "note": "listed starter"
+     },
+     "rb": [
+      {
+       "name": "Omarion Hampton",
+       "mean": 50.0,
+       "line": 45.0,
+       "k": 3.39,
+       "theta": 14.739,
+       "dist": "gamma",
+       "car": 13.5,
+       "n": 9.5
+      },
+      {
+       "name": "Kimani Vidal",
+       "mean": 34.0,
+       "line": 30.0,
+       "k": 2.769,
+       "theta": 12.277,
+       "dist": "gamma",
+       "car": 8.9,
+       "n": 18.4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2026_03_LV_NO",
    "away": "LV",
    "home": "NO",
-   "gameday": "2026-09-27",
-   "p_home": 0.5548,
-   "margin": 1.88,
-   "total": 45.17,
-   "p_home_cover": 0.4888,
-   "p_over": 0.5539,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "NO",
      "exp_pts": 23.5,
      "exp_off_tds": 2.86,
@@ -1453,7 +1414,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "LV",
      "exp_pts": 21.6,
      "exp_off_tds": 2.72,
@@ -1511,20 +1472,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_MIN_TB",
    "away": "MIN",
    "home": "TB",
-   "gameday": "2026-09-27",
-   "p_home": 0.411,
-   "margin": -1.39,
-   "total": 47.78,
-   "p_home_cover": 0.4731,
-   "p_over": 0.6735,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "TB",
      "exp_pts": 23.2,
      "exp_off_tds": 2.69,
@@ -1598,7 +1554,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "MIN",
      "exp_pts": 24.6,
      "exp_off_tds": 2.92,
@@ -1672,20 +1628,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_NE_JAX",
    "away": "NE",
    "home": "JAX",
-   "gameday": "2026-09-27",
-   "p_home": 0.4813,
-   "margin": -0.35,
-   "total": 46.71,
-   "p_home_cover": 0.4219,
-   "p_over": 0.531,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "JAX",
      "exp_pts": 23.2,
      "exp_off_tds": 2.33,
@@ -1759,7 +1710,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "NE",
      "exp_pts": 23.5,
      "exp_off_tds": 2.74,
@@ -1823,20 +1774,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_NYJ_DET",
    "away": "NYJ",
    "home": "DET",
-   "gameday": "2026-09-27",
-   "p_home": 0.7972,
-   "margin": 8.89,
-   "total": 47.72,
-   "p_home_cover": 0.5515,
-   "p_over": 0.4711,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "DET",
      "exp_pts": 28.3,
      "exp_off_tds": 3.55,
@@ -1900,7 +1846,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "NYJ",
      "exp_pts": 19.4,
      "exp_off_tds": 2.43,
@@ -1964,20 +1910,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_SEA_WAS",
    "away": "SEA",
    "home": "WAS",
-   "gameday": "2026-09-27",
-   "p_home": 0.3051,
-   "margin": -5.21,
-   "total": 45.25,
-   "p_home_cover": 0.588,
-   "p_over": 0.6475,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "WAS",
      "exp_pts": 20.0,
      "exp_off_tds": 2.14,
@@ -2051,7 +1992,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "SEA",
      "exp_pts": 25.2,
      "exp_off_tds": 2.61,
@@ -2115,20 +2056,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_TEN_NYG",
    "away": "TEN",
    "home": "NYG",
-   "gameday": "2026-09-27",
-   "p_home": 0.6924,
-   "margin": 6.14,
-   "total": 44.01,
-   "p_home_cover": 0.5783,
-   "p_over": 0.6132,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-27",
+   "teams": [
+    {
      "team": "NYG",
      "exp_pts": 25.1,
      "exp_off_tds": 3.01,
@@ -2202,7 +2138,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "TEN",
      "exp_pts": 18.9,
      "exp_off_tds": 2.03,
@@ -2276,20 +2212,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_03_PHI_CHI",
    "away": "PHI",
    "home": "CHI",
-   "gameday": "2026-09-28",
-   "p_home": 0.351,
-   "margin": -3.8,
-   "total": 43.02,
-   "p_home_cover": 0.4474,
-   "p_over": 0.4485,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-09-28",
+   "teams": [
+    {
      "team": "CHI",
      "exp_pts": 19.6,
      "exp_off_tds": 1.83,
@@ -2363,7 +2294,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "PHI",
      "exp_pts": 23.4,
      "exp_off_tds": 2.81,
@@ -2437,11 +2368,8 @@
       }
      ]
     }
-   }
+   ]
   }
  ],
- "props_platt": [
-  0.7504,
-  -0.2837
- ]
+ "note": "Fair lines/odds, no vig. TD = rush+rec TDs (QB rushing counts). Rookies without NFL games get no prop. Week-1 form = 2025 EWMA."
 }
