@@ -1,0 +1,35 @@
+================================================================
+GAME  Arizona Cardinals @ San Francisco 49ers   (2026-09-27, week 3)
+================================================================
+
+MODEL PROJECTION
+  San Francisco 49ers: 28.3    Arizona Cardinals: 18.6    (margin +9.8, total 46.9)
+
+WIN PROBABILITY (calibrated ensemble)
+  San Francisco 49ers: 82.8%    Arizona Cardinals: 17.2%
+  market-aware mode: San Francisco 49ers 80.9%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   San Francisco 49ers 27 - Arizona Cardinals 17
+  80% range:      San Francisco 49ers 17-41, Arizona Cardinals 7-31
+  one-score game: 42%    overtime: 3.9%    blowout(17+): 33%
+  upset (Arizona Cardinals wins): 21%
+  vs spread (San Francisco 49ers -8.5): cover 51.0%
+  vs total (47.5): over 46.4%
+
+KEY FACTORS (points toward San Francisco 49ers)
+  +5.94  Elo rating gap (incl. HFA, rest, QB)
+  -3.48  offensive EPA/play
+  +2.20  QB rating gap
+  +1.70  passing efficiency
+  +1.16  offensive success rate
+
+MODEL AGREEMENT (home win prob)
+  elo          80.2%
+  logit_pure   80.8%
+  ridge_pure   79.7%
+  gbm_pure     79.7%
+  market       78.7%
+  ensemble     82.8%
+
+CONFIDENCE: MODERATE   (early season: ratings lean on priors; QB situation unsettled)

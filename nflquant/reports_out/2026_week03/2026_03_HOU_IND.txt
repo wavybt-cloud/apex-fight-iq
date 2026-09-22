@@ -1,0 +1,35 @@
+================================================================
+GAME  Houston Texans @ Indianapolis Colts   (2026-09-27, week 3)
+================================================================
+
+MODEL PROJECTION
+  Indianapolis Colts: 22.9    Houston Texans: 24.4    (margin -1.5, total 47.2)
+
+WIN PROBABILITY (calibrated ensemble)
+  Indianapolis Colts: 41.3%    Houston Texans: 58.7%
+  market-aware mode: Indianapolis Colts 42.6%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Indianapolis Colts 23 - Houston Texans 24
+  80% range:      Indianapolis Colts 10-34, Houston Texans 13-36
+  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  upset (Indianapolis Colts wins): 45%
+  vs spread (Indianapolis Colts +2.5): cover 48.1%
+  vs total (43.5): over 60.1%
+
+KEY FACTORS (points toward Indianapolis Colts)
+  -3.75  Elo rating gap (incl. HFA, rest, QB)
+  -1.70  offensive EPA/play
+  +1.46  opponent-adjusted defensive EPA
+  -1.10  pass defense
+  +0.95  rushing efficiency
+
+MODEL AGREEMENT (home win prob)
+  elo          41.7%
+  logit_pure   43.3%
+  ridge_pure   43.6%
+  gbm_pure     50.1%
+  market       43.7%
+  ensemble     41.3%
+
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
