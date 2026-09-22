@@ -12,11 +12,11 @@
 
 ## Largest model disagreement
 - KC @ MIA: 28% spread across members
-- CAR @ CLE: 15% spread across members
 - CIN @ PIT: 15% spread across members
+- CAR @ CLE: 14% spread across members
 
 ## Lowest uncertainty
-- ARI @ SF: 2% member spread, confidence MODERATE
+- ARI @ SF: 1% member spread, confidence MODERATE
 - ATL @ GB: 6% member spread, confidence VERY LOW
 - NYJ @ DET: 7% member spread, confidence VERY LOW
 

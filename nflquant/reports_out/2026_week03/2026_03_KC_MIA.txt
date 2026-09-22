@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 54%    overtime: 5.3%    blowout(17+): 20%
   upset (Miami Dolphins wins): 40%
   vs spread (Miami Dolphins +11.5): cover 76.8%
-  vs total (45.5): over 50.5%
+  vs total (46.5): over 48.1%
 
 KEY FACTORS (points toward Miami Dolphins)
   -4.40  Elo rating gap (incl. HFA, rest, QB)

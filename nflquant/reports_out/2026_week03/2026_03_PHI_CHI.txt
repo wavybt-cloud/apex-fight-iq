@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 53%    overtime: 5.1%    blowout(17+): 22%
   upset (Chicago Bears wins): 38%
   vs spread (Chicago Bears +3.0): cover 44.7%
-  vs total (44.5): over 44.8%
+  vs total (43.5): over 49.1%
 
 KEY FACTORS (points toward Chicago Bears)
   -3.55  Elo rating gap (incl. HFA, rest, QB)
