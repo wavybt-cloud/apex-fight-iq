@@ -43,6 +43,25 @@ PBP_COLS = [
 ]
 
 
+def current_season(today=None) -> int:
+    """NFL season year for a date (a season spans the calendar-year boundary)."""
+    d = pd.Timestamp(today) if today is not None else pd.Timestamp.now()
+    return int(d.year if d.month >= 3 else d.year - 1)
+
+
+def needs_refresh(cache: Path, season: int, max_age_hours: float) -> bool:
+    """Completed seasons are immutable and cache forever; the in-progress one
+    gains a week of data every Sunday, so it must re-download once it ages out.
+    Without this the current season's files freeze at whatever existed the first
+    time they were fetched, and every downstream feature silently stops updating.
+    """
+    if not cache.exists():
+        return True
+    if season < current_season():
+        return False
+    return (time.time() - cache.stat().st_mtime) > max_age_hours * 3600
+
+
 def _download(url: str, dest: Path, verify) -> None:
     tmp = dest.with_suffix(dest.suffix + ".part")
     with requests.get(url, stream=True, timeout=300, verify=verify) as r:
@@ -78,10 +97,11 @@ def load_games(cfg: dict, force: bool = False, max_age_hours: float = 24.0) -> p
     return g
 
 
-def load_pbp_season(cfg: dict, season: int, force: bool = False) -> pd.DataFrame:
+def load_pbp_season(cfg: dict, season: int, force: bool = False,
+                    max_age_hours: float = 6.0) -> pd.DataFrame:
     """One season of play-by-play, reduced to the columns we consume."""
     cache = cache_dir(cfg) / f"pbp_{season}.parquet"
-    if force or not cache.exists():
+    if force or needs_refresh(cache, season, max_age_hours):
         url = cfg["data"]["pbp_url_tpl"].format(season=season)
         log.info("downloading pbp %s ...", season)
         raw = cache_dir(cfg) / f"pbp_{season}_raw.parquet"
@@ -109,11 +129,13 @@ def load_pbp(cfg: dict, seasons: list[int] | None = None, force: bool = False) -
 def load_injuries_season(cfg: dict, season: int, force: bool = False) -> pd.DataFrame | None:
     """Weekly injury reports; returns None when the release lacks this season."""
     cache = cache_dir(cfg) / f"injuries_{season}.parquet"
-    if force or not cache.exists():
+    if force or needs_refresh(cache, season, 6.0):
         url = cfg["data"]["injuries_url_tpl"].format(season=season)
         try:
             _download(url, cache, ca_bundle(cfg))
         except requests.HTTPError as e:
+            # a failed refresh must not throw away a cache we already hold
             log.warning("injuries %s unavailable: %s", season, e)
-            return None
+            if not cache.exists():
+                return None
     return pd.read_parquet(cache)

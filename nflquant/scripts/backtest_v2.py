@@ -8,7 +8,7 @@ import pandas as pd
 
 from nflquant.backtesting.rolling import evaluate_models, record_run
 from nflquant.config import cache_dir, load_config
-from nflquant.data.ingest import load_games, load_pbp
+from nflquant.data.ingest import current_season, load_games, load_pbp
 from nflquant.features.build import feature_columns
 from nflquant.models.baselines import LogisticModel, MarketBaseline, RidgeMarginModel
 from nflquant.models.gbm import GBMModel
@@ -21,12 +21,30 @@ INJ_COLS = ["d_inj", "home_inj", "away_inj"]
 EXTRA_COLS = QB_COLS + INJ_COLS
 
 
+def _stale(cache: Path, *inputs: Path) -> bool:
+    """A derived cache is stale once any input it was built from is newer.
+    Without this the feature caches freeze on the day they were first written
+    and keep serving preseason-era team form all year.
+    """
+    if not cache.exists():
+        return True
+    t = cache.stat().st_mtime
+    return any(p.exists() and p.stat().st_mtime > t for p in inputs)
+
+
 def load_enriched(cfg) -> pd.DataFrame:
-    """Features + Elo + QB model columns; cached."""
-    cache = cache_dir(cfg) / "features_enriched.parquet"
-    if cache.exists():
+    """Features + Elo + QB model columns; cached, invalidated by fresher inputs."""
+    cd = cache_dir(cfg)
+    cur = current_season()
+    raw = [cd / "games.csv", cd / f"pbp_{cur}.parquet", cd / f"injuries_{cur}.parquet"]
+    base = cd / "features.parquet"
+    cache = cd / "features_enriched.parquet"
+    if _stale(base, *raw):
+        import build_features as _bf
+        _bf.main(force=True)
+    if not _stale(cache, base, *raw):
         return pd.read_parquet(cache)
-    feats = pd.read_parquet(cache_dir(cfg) / "features.parquet")
+    feats = pd.read_parquet(base)
     games = load_games(cfg)
     elo = run_elo(
         games,

@@ -3,33 +3,33 @@ GAME  Kansas City Chiefs @ Miami Dolphins   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Miami Dolphins: 21.7    Kansas City Chiefs: 24.5    (margin -2.9, total 46.2)
+  Miami Dolphins: 20.8    Kansas City Chiefs: 24.6    (margin -3.8, total 45.3)
 
 WIN PROBABILITY (calibrated ensemble)
-  Miami Dolphins: 37.4%    Kansas City Chiefs: 62.6%
-  market-aware mode: Miami Dolphins 15.7%
+  Miami Dolphins: 34.6%    Kansas City Chiefs: 65.4%
+  market-aware mode: Miami Dolphins 15.4%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Miami Dolphins 21 - Kansas City Chiefs 24
-  80% range:      Miami Dolphins 10-34, Kansas City Chiefs 13-36
-  one-score game: 54%    overtime: 5.3%    blowout(17+): 20%
-  upset (Miami Dolphins wins): 40%
-  vs spread (Miami Dolphins +11.5): cover 76.8%
-  vs total (46.5): over 48.1%
+  median score:   Miami Dolphins 20 - Kansas City Chiefs 24
+  80% range:      Miami Dolphins 10-32, Kansas City Chiefs 13-36
+  one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
+  upset (Miami Dolphins wins): 37%
+  vs spread (Miami Dolphins +11.5): cover 74.7%
+  vs total (46.5): over 45.5%
 
 KEY FACTORS (points toward Miami Dolphins)
   -4.40  Elo rating gap (incl. HFA, rest, QB)
-  -1.13  offensive EPA/play
-  +0.85  passing efficiency
-  -0.71  QB rating gap
-  +0.53  offensive success rate
+  -1.23  rushing efficiency
+  -1.16  QB rating gap
+  +1.11  opponent-adjusted defensive EPA
+  -0.99  pass defense
 
 MODEL AGREEMENT (home win prob)
   elo          38.9%
-  logit_pure   40.6%
-  ridge_pure   39.3%
-  gbm_pure     42.6%
+  logit_pure   36.3%
+  ridge_pure   36.9%
+  gbm_pure     38.1%
   market       14.2%
-  ensemble     37.4%
+  ensemble     34.6%
 
-CONFIDENCE: VERY LOW   (models disagree by 28%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 25%; early season: ratings lean on priors; QB situation unsettled)

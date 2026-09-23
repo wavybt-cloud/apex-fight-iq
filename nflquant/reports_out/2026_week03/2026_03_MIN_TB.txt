@@ -3,33 +3,33 @@ GAME  Minnesota Vikings @ Tampa Bay Buccaneers   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Tampa Bay Buccaneers: 23.5    Minnesota Vikings: 24.8    (margin -1.3, total 48.3)
+  Tampa Bay Buccaneers: 23.5    Minnesota Vikings: 24.5    (margin -1.0, total 47.9)
 
 WIN PROBABILITY (calibrated ensemble)
-  Tampa Bay Buccaneers: 41.1%    Minnesota Vikings: 58.9%
+  Tampa Bay Buccaneers: 42.1%    Minnesota Vikings: 57.9%
   market-aware mode: Tampa Bay Buccaneers 45.6%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Tampa Bay Buccaneers 23 - Minnesota Vikings 24
-  80% range:      Tampa Bay Buccaneers 13-35, Minnesota Vikings 13-37
+  80% range:      Tampa Bay Buccaneers 13-35, Minnesota Vikings 13-36
   one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
   upset (Tampa Bay Buccaneers wins): 46%
-  vs spread (Tampa Bay Buccaneers +1.5): cover 47.3%
-  vs total (42.5): over 67.3%
+  vs spread (Tampa Bay Buccaneers +1.5): cover 48.4%
+  vs total (42.5): over 66.3%
 
 KEY FACTORS (points toward Tampa Bay Buccaneers)
-  -4.09  Elo rating gap (incl. HFA, rest, QB)
-  -2.00  offensive EPA/play
-  +1.48  opponent-adjusted defensive EPA
-  -1.13  pass defense
-  +1.10  passing efficiency
+  -4.10  Elo rating gap (incl. HFA, rest, QB)
+  +1.80  opponent-adjusted defensive EPA
+  -1.16  pass defense
+  +0.88  rushing efficiency
+  +0.72  offensive success rate
 
 MODEL AGREEMENT (home win prob)
   elo          40.2%
-  logit_pure   44.8%
-  ridge_pure   44.7%
-  gbm_pure     46.5%
+  logit_pure   47.0%
+  ridge_pure   46.3%
+  gbm_pure     45.7%
   market       47.8%
-  ensemble     41.1%
+  ensemble     42.1%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

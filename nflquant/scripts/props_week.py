@@ -119,7 +119,10 @@ def main():
     week_dir = pred_path.parent
     print("pricing props for", week_dir.name)
     preds = json.load(open(pred_path))
-    feats = pd.read_parquet(cache_dir(cfg) / "features_enriched.parquet").set_index("game_id")
+    # via load_enriched, not a bare read: the parquet is a derived cache and
+    # must be rebuilt when this season's pbp has moved on
+    from backtest_v2 import load_enriched
+    feats = load_enriched(cfg).set_index("game_id")
     # listed starters live in the games spine, NOT the feature frame
     games_csv = pd.read_csv(cache_dir(cfg) / "games.csv").set_index("game_id")
     qb_names = games_csv[["away_qb_name", "home_qb_name"]].to_dict("index")

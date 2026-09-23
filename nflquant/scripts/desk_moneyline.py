@@ -49,7 +49,6 @@ def edge_board(pred_path: Path) -> list[dict]:
                            (1 - s["p_over"], f"Under {g['total_line']}")]:
                 cands.append({"type": "total", "label": lab, "p": p,
                               "ev": p * (100 / 110) - (1 - p)})
-        # moneylines need prices from the feature cache
         rows.append({
             "game": f"{g['away']}@{g['home']}", "date": g["gameday"],
             "p_home": g["p_home"], "margin": g["margin"], "total": g["total"],
@@ -57,19 +56,23 @@ def edge_board(pred_path: Path) -> list[dict]:
             "members": g["members"],
             "cands": sorted(cands, key=lambda c: -c["ev"])[:2],
         })
-    # attach ML EV from moneylines in the enriched features
-    feats = pd.read_parquet(PACKAGE_ROOT / "data_cache" / "features_enriched.parquet")
-    ml = feats.set_index("game_id")[["away_moneyline", "home_moneyline"]]
+    # ML prices ride along with the prediction (written by predict_week from the
+    # freshly pulled games spine). The enriched feature parquet is a training
+    # cache that is not refreshed per slate - pricing off it served ten-day-old
+    # moneylines and manufactured edges that did not exist.
     for g, row in zip(preds, rows):
-        gid = g["game_id"]
-        if gid in ml.index and pd.notna(ml.loc[gid, "home_moneyline"]):
-            am, hm = float(ml.loc[gid, "away_moneyline"]), float(ml.loc[gid, "home_moneyline"])
+        if g.get("home_ml") is not None and g.get("away_ml") is not None:
+            am, hm = float(g["away_ml"]), float(g["home_ml"])
             for side, p, price, team in [("home", g["p_home"], hm, g["home"]),
                                          ("away", 1 - g["p_home"], am, g["away"])]:
                 d = float(american_to_decimal(price))
                 row["cands"].append({"type": "ml", "label": f"{team} ML {int(price):+d}",
                                      "p": p, "price": price, "ev": p * (d - 1) - (1 - p)})
             row["cands"] = sorted(row["cands"], key=lambda c: -c["ev"])[:3]
+    priced = sum(1 for g in preds if g.get("home_ml") is not None)
+    if priced == 0:
+        print("WARNING: no moneylines in predictions.json - the ML board is "
+              "spread/total only this shift", file=sys.stderr)
     return rows
 
 

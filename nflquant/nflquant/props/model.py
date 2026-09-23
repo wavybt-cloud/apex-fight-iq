@@ -26,6 +26,7 @@ from scipy.stats import gamma as gamma_dist
 from scipy.stats import norm
 
 from nflquant.config import cache_dir, ca_bundle
+from nflquant.data.ingest import needs_refresh
 from nflquant.logging_utils import get_logger
 
 log = get_logger(__name__)
@@ -47,13 +48,15 @@ def load_player_weeks(cfg, seasons) -> pd.DataFrame:
     frames = []
     for s in seasons:
         cache = cache_dir(cfg) / f"ps_{s}.parquet"
-        if not cache.exists():
+        if needs_refresh(cache, s, 6.0):
             import requests
             r = requests.get(PS_URL.format(season=s), timeout=300, verify=ca_bundle(cfg))
             if r.status_code != 200:
                 log.warning("player stats %s unavailable", s)
-                continue
-            cache.write_bytes(r.content)
+                if not cache.exists():
+                    continue
+            else:
+                cache.write_bytes(r.content)
         df = pd.read_parquet(cache)
         frames.append(df)
     ps = pd.concat(frames, ignore_index=True)
@@ -68,11 +71,13 @@ def load_player_weeks(cfg, seasons) -> pd.DataFrame:
 
 def load_roster(cfg, season: int) -> pd.DataFrame:
     cache = cache_dir(cfg) / f"roster_{season}.parquet"
-    if not cache.exists():
+    if needs_refresh(cache, season, 12.0):
         import requests
         r = requests.get(ROSTER_URL.format(season=season), timeout=300, verify=ca_bundle(cfg))
-        r.raise_for_status()
-        cache.write_bytes(r.content)
+        if r.status_code == 200:
+            cache.write_bytes(r.content)
+        elif not cache.exists():
+            r.raise_for_status()
     r = pd.read_parquet(cache)
     r["team"] = r["team"].replace(TEAM_REMAP)
     return r[r.status == "ACT"][["gsis_id", "team", "position", "full_name",

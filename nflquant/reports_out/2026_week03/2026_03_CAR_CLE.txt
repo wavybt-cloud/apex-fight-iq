@@ -3,33 +3,33 @@ GAME  Carolina Panthers @ Cleveland Browns   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Cleveland Browns: 24.9    Carolina Panthers: 22.9    (margin +1.9, total 47.8)
+  Cleveland Browns: 24.9    Carolina Panthers: 22.6    (margin +2.2, total 47.5)
 
 WIN PROBABILITY (calibrated ensemble)
-  Cleveland Browns: 51.9%    Carolina Panthers: 48.1%
-  market-aware mode: Cleveland Browns 44.1%
+  Cleveland Browns: 52.4%    Carolina Panthers: 47.6%
+  market-aware mode: Cleveland Browns 43.9%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Cleveland Browns 24 - Carolina Panthers 23
-  80% range:      Cleveland Browns 13-37, Carolina Panthers 10-35
-  one-score game: 54%    overtime: 5.0%    blowout(17+): 21%
-  upset (Carolina Panthers wins): 44%
-  vs spread (Cleveland Browns +2.5): cover 59.8%
-  vs total (42.5): over 65.3%
+  80% range:      Cleveland Browns 13-37, Carolina Panthers 10-34
+  one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
+  upset (Carolina Panthers wins): 43%
+  vs spread (Cleveland Browns +2.5): cover 60.7%
+  vs total (42.5): over 64.4%
 
 KEY FACTORS (points toward Cleveland Browns)
-  +2.69  offensive EPA/play
-  -1.49  passing efficiency
-  -1.28  opponent-adjusted defensive EPA
-  +1.05  pass defense
-  -1.05  offensive success rate
+  +8.13  offensive EPA/play
+  -3.52  passing efficiency
+  -1.50  rushing efficiency
+  -1.40  offensive success rate
+  -0.96  opponent-adjusted defensive EPA
 
 MODEL AGREEMENT (home win prob)
   elo          55.1%
-  logit_pure   54.1%
-  ridge_pure   56.2%
-  gbm_pure     56.9%
+  logit_pure   55.1%
+  ridge_pure   57.6%
+  gbm_pure     56.2%
   market       42.8%
-  ensemble     51.9%
+  ensemble     52.4%
 
-CONFIDENCE: VERY LOW   (models disagree by 14%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)

@@ -165,6 +165,10 @@ def main():
             "margin": float(margins[i]), "total": float(totals[i]),
             "spread_line": float(row.spread_line) if pd.notna(row.spread_line) else None,
             "total_line": float(row.total_line) if pd.notna(row.total_line) else None,
+            # carry the live moneylines with the prediction: downstream desks
+            # must never re-read them from a training-era feature cache
+            "away_ml": float(row.away_moneyline) if pd.notna(row.away_moneyline) else None,
+            "home_ml": float(row.home_moneyline) if pd.notna(row.home_moneyline) else None,
             "sim": s, "members": member_probs,
             "drivers": key_drivers(row, members["ridge_pure"], pure),
             "confidence": grade,
