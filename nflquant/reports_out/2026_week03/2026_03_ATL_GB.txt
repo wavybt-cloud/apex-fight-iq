@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Green Bay Packers: 69.0%    Atlanta Falcons: 31.0%
-  market-aware mode: Green Bay Packers 71.7%
+  market-aware mode: Green Bay Packers 71.2%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Green Bay Packers 24 - Atlanta Falcons 20
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 51%    overtime: 4.8%    blowout(17+): 25%
   upset (Atlanta Falcons wins): 31%
   vs spread (Green Bay Packers -5.5): cover 51.1%
-  vs total (43.5): over 52.4%
+  vs total (42.5): over 56.4%
 
 KEY FACTORS (points toward Green Bay Packers)
   +4.18  Elo rating gap (incl. HFA, rest, QB)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   71.7%
   ridge_pure   69.9%
   gbm_pure     63.5%
-  market       69.6%
+  market       69.1%
   ensemble     69.0%
 
 CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

@@ -16,7 +16,7 @@
 - CIN @ PIT: 16% spread across members
 
 ## Lowest uncertainty
-- ARI @ SF: 2% member spread, confidence MODERATE
+- ARI @ SF: 3% member spread, confidence MODERATE
 - BAL @ DAL: 6% member spread, confidence VERY LOW
 - NYJ @ DET: 7% member spread, confidence VERY LOW
 
