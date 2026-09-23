@@ -17,50 +17,50 @@
    "props": {
     "home": {
      "team": "GB",
-     "exp_pts": 25.3,
-     "exp_off_tds": 3.27,
+     "exp_pts": 25.2,
+     "exp_off_tds": 3.25,
      "td": [
       {
        "name": "Christian Watson",
        "pos": "WR",
-       "p": 0.4355,
-       "odds": "+130"
+       "p": 0.4337,
+       "odds": "+131"
       },
       {
        "name": "Tucker Kraft",
        "pos": "TE",
-       "p": 0.3443,
-       "odds": "+190"
+       "p": 0.3428,
+       "odds": "+192"
       },
       {
        "name": "Jayden Reed",
        "pos": "WR",
-       "p": 0.2902,
-       "odds": "+245"
+       "p": 0.289,
+       "odds": "+246"
       },
       {
        "name": "Jonnu Smith",
        "pos": "TE",
-       "p": 0.2381,
-       "odds": "+320"
+       "p": 0.237,
+       "odds": "+322"
       },
       {
        "name": "Matthew Golden",
        "pos": "WR",
-       "p": 0.1782,
-       "odds": "+461"
+       "p": 0.1773,
+       "odds": "+464"
       },
       {
        "name": "Tyrod Taylor",
        "pos": "QB",
-       "p": 0.1541,
-       "odds": "+549"
+       "p": 0.1534,
+       "odds": "+552"
       }
      ],
      "qb": {
       "name": "Jordan Love",
-      "mean": 236.3,
-      "line": 236.5,
+      "mean": 235.8,
+      "line": 236.0,
       "sd": 73.1,
       "dist": "normal",
       "n": 38.8,
@@ -70,50 +70,50 @@
     },
     "away": {
      "team": "ATL",
-     "exp_pts": 19.0,
-     "exp_off_tds": 1.7,
+     "exp_pts": 19.1,
+     "exp_off_tds": 1.73,
      "td": [
       {
        "name": "Bijan Robinson",
        "pos": "RB",
-       "p": 0.3783,
-       "odds": "+164"
+       "p": 0.382,
+       "odds": "+162"
       },
       {
        "name": "Drake London",
        "pos": "WR",
-       "p": 0.2782,
-       "odds": "+259"
+       "p": 0.281,
+       "odds": "+256"
       },
       {
        "name": "Kyle Pitts",
        "pos": "TE",
-       "p": 0.2073,
-       "odds": "+382"
+       "p": 0.2095,
+       "odds": "+377"
       },
       {
        "name": "Brian Robinson",
        "pos": "RB",
-       "p": 0.1861,
-       "odds": "+437"
+       "p": 0.188,
+       "odds": "+432"
       },
       {
        "name": "Olamide Zaccheaus",
        "pos": "WR",
-       "p": 0.185,
-       "odds": "+441"
+       "p": 0.187,
+       "odds": "+435"
       },
       {
        "name": "Austin Hooper",
        "pos": "TE",
-       "p": 0.1304,
-       "odds": "+667"
+       "p": 0.1318,
+       "odds": "+659"
       }
      ],
      "qb": {
       "name": "Michael Penix Jr.",
-      "mean": 126.7,
-      "line": 126.5,
+      "mean": 127.3,
+      "line": 127.5,
       "sd": 67.9,
       "dist": "normal",
       "n": 11.3,
@@ -122,20 +122,20 @@
      "rb": [
       {
        "name": "Bijan Robinson",
-       "mean": 75.8,
-       "line": 69.5,
-       "k": 3.99,
-       "theta": 18.985,
+       "mean": 76.1,
+       "line": 70.0,
+       "k": 3.996,
+       "theta": 19.035,
        "dist": "gamma",
        "car": 17.3,
        "n": 39.2
       },
       {
        "name": "Brian Robinson",
-       "mean": 26.3,
+       "mean": 26.4,
        "line": 22.5,
-       "k": 2.311,
-       "theta": 11.375,
+       "k": 2.318,
+       "theta": 11.387,
        "dist": "gamma",
        "car": 7.4,
        "n": 39.6
