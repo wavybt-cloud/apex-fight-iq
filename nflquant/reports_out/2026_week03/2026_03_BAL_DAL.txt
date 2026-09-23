@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Dallas Cowboys: 38.3%    Baltimore Ravens: 61.7%
-  market-aware mode: Dallas Cowboys 38.0%
+  market-aware mode: Dallas Cowboys 37.4%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Dallas Cowboys 22 - Baltimore Ravens 24
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   44.3%
   ridge_pure   40.7%
   gbm_pure     39.0%
-  market       39.1%
+  market       38.4%
   ensemble     38.3%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

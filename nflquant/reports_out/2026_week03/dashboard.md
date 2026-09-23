@@ -17,7 +17,7 @@
 
 ## Lowest uncertainty
 - ARI @ SF: 2% member spread, confidence MODERATE
-- BAL @ DAL: 5% member spread, confidence VERY LOW
+- BAL @ DAL: 6% member spread, confidence VERY LOW
 - NYJ @ DET: 7% member spread, confidence VERY LOW
 
 ## Most likely one-score game
@@ -44,7 +44,7 @@
 - KC @ MIA: model -3.9 vs line -11.5 (7.6 pts toward MIA); cover 75% home
 - CAR @ CLE: model +2.4 vs line -2.5 (4.9 pts toward CLE); cover 61% home
 - LA @ DEN: model +1.3 vs line -2.5 (3.8 pts toward DEN); cover 58% home
-- TEN @ NYG: model +6.1 vs line +3.0 (3.1 pts toward NYG); cover 62% home
+- TEN @ NYG: model +6.1 vs line +2.5 (3.6 pts toward NYG); cover 66% home
 - NE @ JAX: model -0.0 vs line +3.0 (3.0 pts toward NE); cover 43% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*

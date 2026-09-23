@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-23T00:30:01.164249",
+ "generated": "2026-09-23T08:25:22.410305",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 3,
@@ -8,11 +8,11 @@
    "away": "ATL",
    "home": "GB",
    "gameday": "2026-09-24",
-   "p_home": 0.6999,
-   "margin": 6.31,
-   "total": 44.27,
-   "p_home_cover": 0.4981,
-   "p_over": 0.5216,
+   "p_home": 0.6897,
+   "margin": 6.08,
+   "total": 44.33,
+   "p_home_cover": 0.511,
+   "p_over": 0.5242,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1356,7 +1356,7 @@
    "margin": 1.62,
    "total": 45.22,
    "p_home_cover": 0.4788,
-   "p_over": 0.5596,
+   "p_over": 0.516,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2104,7 +2104,7 @@
    "p_home": 0.684,
    "margin": 6.07,
    "total": 44.06,
-   "p_home_cover": 0.6214,
+   "p_home_cover": 0.6637,
    "p_over": 0.644,
    "confidence": "VERY LOW",
    "props": {
