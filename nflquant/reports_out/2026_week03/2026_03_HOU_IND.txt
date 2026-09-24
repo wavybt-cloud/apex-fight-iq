@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Indianapolis Colts: 42.6%    Houston Texans: 57.4%
-  market-aware mode: Indianapolis Colts 41.9%
+  market-aware mode: Indianapolis Colts 42.6%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Indianapolis Colts 23 - Houston Texans 24
   80% range:      Indianapolis Colts 12-35, Houston Texans 13-36
   one-score game: 55%    overtime: 5.1%    blowout(17+): 20%
   upset (Indianapolis Colts wins): 46%
-  vs spread (Indianapolis Colts +3.0): cover 53.3%
+  vs spread (Indianapolis Colts +2.5): cover 49.3%
   vs total (42.5): over 65.0%
 
 KEY FACTORS (points toward Indianapolis Colts)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   44.8%
   ridge_pure   45.1%
   gbm_pure     51.6%
-  market       42.8%
+  market       43.7%
   ensemble     42.6%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

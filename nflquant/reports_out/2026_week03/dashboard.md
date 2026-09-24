@@ -11,9 +11,9 @@
 - NYJ @ DET: +9.0 (home)
 
 ## Largest model disagreement
-- KC @ MIA: 25% spread across members
-- TEN @ NYG: 17% spread across members
+- KC @ MIA: 23% spread across members
 - CIN @ PIT: 16% spread across members
+- CAR @ CLE: 15% spread across members
 
 ## Lowest uncertainty
 - ARI @ SF: 3% member spread, confidence MODERATE
@@ -31,8 +31,8 @@
 - NYJ @ DET: 47.2
 
 ## Lowest projected total
-- PHI @ CHI: 43.1
-- TEN @ NYG: 44.1
+- TEN @ NYG: 43.4
+- PHI @ CHI: 44.2
 - ATL @ GB: 44.3
 
 ## Biggest upset chance
@@ -44,7 +44,7 @@
 - KC @ MIA: model -3.9 vs line -11.5 (7.6 pts toward MIA); cover 75% home
 - CAR @ CLE: model +2.4 vs line -2.5 (4.9 pts toward CLE); cover 61% home
 - LA @ DEN: model +1.3 vs line -2.5 (3.8 pts toward DEN); cover 58% home
-- TEN @ NYG: model +6.1 vs line +2.5 (3.6 pts toward NYG); cover 66% home
 - NE @ JAX: model -0.0 vs line +3.0 (3.0 pts toward NE); cover 43% home
+- CIN @ PIT: model -0.8 vs line -3.5 (2.7 pts toward PIT); cover 58% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*

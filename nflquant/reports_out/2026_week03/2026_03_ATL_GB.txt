@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Green Bay Packers: 69.0%    Atlanta Falcons: 31.0%
-  market-aware mode: Green Bay Packers 71.2%
+  market-aware mode: Green Bay Packers 70.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Green Bay Packers 24 - Atlanta Falcons 20
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   71.7%
   ridge_pure   69.9%
   gbm_pure     63.5%
-  market       69.1%
+  market       68.5%
   ensemble     69.0%
 
 CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)
