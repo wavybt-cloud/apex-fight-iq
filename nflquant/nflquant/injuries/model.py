@@ -56,8 +56,19 @@ def team_week_burden(cfg, seasons: list[int]) -> pd.DataFrame:
         g = df.groupby(["season", "week", "team"], as_index=False).agg(
             inj_burden=("burden", "sum"),
             inj_out_count=("report_status", lambda s_: (s_ == "Out").sum()),
+            n_listed=("burden", "size"),
+            n_designated=("report_status", lambda s_: s_.notna().sum()),
         )
-        frames.append(g)
+        # Game-status designations (Out/Doubtful/Questionable) are only published
+        # on the final report. A mid-week snapshot is a practice report: many
+        # names listed, none designated. Scoring it as real data feeds the models
+        # a burden built entirely from the 0.15 unlisted rate - out of
+        # distribution against training rows, which are final reports (~55-65%
+        # unlisted). Treat it as not-yet-filed and let the pipelines impute,
+        # otherwise every prediction drifts mid-week and snaps back on Friday.
+        g.loc[(g.n_listed >= 3) & (g.n_designated == 0),
+              ["inj_burden", "inj_out_count"]] = np.nan
+        frames.append(g.drop(columns=["n_listed", "n_designated"]))
     if not frames:
         return pd.DataFrame(columns=["season", "week", "team", "inj_burden", "inj_out_count"])
     out = pd.concat(frames, ignore_index=True)

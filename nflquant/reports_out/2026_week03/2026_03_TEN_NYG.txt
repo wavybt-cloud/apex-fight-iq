@@ -3,33 +3,33 @@ GAME  Tennessee Titans @ New York Giants   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  New York Giants: 24.1    Tennessee Titans: 19.9    (margin +4.2, total 44.0)
+  New York Giants: 24.0    Tennessee Titans: 19.8    (margin +4.2, total 43.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  New York Giants: 60.6%    Tennessee Titans: 39.4%
-  market-aware mode: New York Giants 58.7%
+  New York Giants: 60.9%    Tennessee Titans: 39.1%
+  market-aware mode: New York Giants 58.0%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New York Giants 24 - Tennessee Titans 20
   80% range:      New York Giants 13-36, Tennessee Titans 9-31
-  one-score game: 52%    overtime: 5.0%    blowout(17+): 23%
+  one-score game: 53%    overtime: 5.3%    blowout(17+): 23%
   upset (Tennessee Titans wins): 36%
-  vs spread (New York Giants -3.0): cover 57.0%
-  vs total (39.5): over 62.9%
+  vs spread (New York Giants -3.0): cover 56.6%
+  vs total (39.5): over 62.2%
 
 KEY FACTORS (points toward New York Giants)
-  -1.95  offensive EPA/play
+  -1.93  offensive EPA/play
   +1.55  Elo rating gap (incl. HFA, rest, QB)
-  +1.53  QB rating gap
-  +1.23  passing efficiency
+  +1.52  QB rating gap
+  +1.22  passing efficiency
   -0.59  opponent-adjusted defensive EPA
 
 MODEL AGREEMENT (home win prob)
   elo          64.8%
-  logit_pure   63.8%
+  logit_pure   64.0%
   ridge_pure   64.3%
-  gbm_pure     59.7%
-  market       57.2%
-  ensemble     60.6%
+  gbm_pure     60.4%
+  market       56.3%
+  ensemble     60.9%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

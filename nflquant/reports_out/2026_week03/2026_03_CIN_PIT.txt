@@ -3,7 +3,7 @@ GAME  Cincinnati Bengals @ Pittsburgh Steelers   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Pittsburgh Steelers: 23.5    Cincinnati Bengals: 24.2    (margin -0.7, total 47.7)
+  Pittsburgh Steelers: 23.8    Cincinnati Bengals: 24.5    (margin -0.8, total 48.3)
 
 WIN PROBABILITY (calibrated ensemble)
   Pittsburgh Steelers: 44.6%    Cincinnati Bengals: 55.4%
@@ -11,24 +11,24 @@ WIN PROBABILITY (calibrated ensemble)
 
 SIMULATION (50,000 possession-level sims)
   median score:   Pittsburgh Steelers 23 - Cincinnati Bengals 24
-  80% range:      Pittsburgh Steelers 13-35, Cincinnati Bengals 13-36
+  80% range:      Pittsburgh Steelers 13-35, Cincinnati Bengals 13-37
   one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
   upset (Pittsburgh Steelers wins): 47%
-  vs spread (Pittsburgh Steelers +3.5): cover 58.1%
-  vs total (42.5): over 65.7%
+  vs spread (Pittsburgh Steelers +3.5): cover 57.9%
+  vs total (42.5): over 67.3%
 
 KEY FACTORS (points toward Pittsburgh Steelers)
-  +4.67  offensive EPA/play
+  +4.64  offensive EPA/play
   -1.95  QB rating gap
-  -1.86  passing efficiency
+  -1.84  passing efficiency
   -1.28  rushing efficiency
   -1.25  Elo rating gap (incl. HFA, rest, QB)
 
 MODEL AGREEMENT (home win prob)
   elo          52.8%
-  logit_pure   46.7%
+  logit_pure   46.8%
   ridge_pure   46.2%
-  gbm_pure     51.5%
+  gbm_pure     51.0%
   market       36.9%
   ensemble     44.6%
 
