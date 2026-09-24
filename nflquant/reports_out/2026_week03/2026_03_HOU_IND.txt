@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Indianapolis Colts: 42.4%    Houston Texans: 57.6%
-  market-aware mode: Indianapolis Colts 42.6%
+  market-aware mode: Indianapolis Colts 44.4%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Indianapolis Colts 24 - Houston Texans 24
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   44.7%
   ridge_pure   45.1%
   gbm_pure     51.1%
-  market       43.7%
+  market       45.7%
   ensemble     42.4%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Cleveland Browns: 52.1%    Carolina Panthers: 47.9%
-  market-aware mode: Cleveland Browns 43.8%
+  market-aware mode: Cleveland Browns 42.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Cleveland Browns 24 - Carolina Panthers 23
   80% range:      Cleveland Browns 13-37, Carolina Panthers 10-35
   one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
   upset (Carolina Panthers wins): 43%
-  vs spread (Cleveland Browns +2.5): cover 60.9%
+  vs spread (Cleveland Browns +3.0): cover 63.8%
   vs total (42.5): over 66.5%
 
 KEY FACTORS (points toward Cleveland Browns)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   55.2%
   ridge_pure   57.6%
   gbm_pure     55.0%
-  market       42.8%
+  market       41.7%
   ensemble     52.1%
 
-CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 16%; early season: ratings lean on priors; QB situation unsettled)
