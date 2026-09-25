@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   New Orleans Saints: 52.1%    Las Vegas Raiders: 47.9%
-  market-aware mode: New Orleans Saints 62.8%
+  market-aware mode: New Orleans Saints 62.2%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New Orleans Saints 23 - Las Vegas Raiders 22
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   55.4%
   ridge_pure   54.5%
   gbm_pure     54.2%
-  market       62.2%
+  market       61.6%
   ensemble     52.1%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

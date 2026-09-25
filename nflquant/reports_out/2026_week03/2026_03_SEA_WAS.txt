@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Washington Commanders: 30.2%    Seattle Seahawks: 69.8%
-  market-aware mode: Washington Commanders 22.8%
+  market-aware mode: Washington Commanders 22.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Washington Commanders 20 - Seattle Seahawks 25
   80% range:      Washington Commanders 10-31, Seattle Seahawks 14-37
   one-score game: 51%    overtime: 5.0%    blowout(17+): 24%
   upset (Washington Commanders wins): 32%
-  vs spread (Washington Commanders +7.0): cover 57.4%
+  vs spread (Washington Commanders +7.5): cover 60.4%
   vs total (40.5): over 64.3%
 
 KEY FACTORS (points toward Washington Commanders)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   31.8%
   ridge_pure   32.6%
   gbm_pure     34.2%
-  market       25.6%
+  market       25.2%
   ensemble     30.2%
 
 CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)

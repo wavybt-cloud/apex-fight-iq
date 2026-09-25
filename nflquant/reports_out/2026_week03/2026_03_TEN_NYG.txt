@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   New York Giants: 60.9%    Tennessee Titans: 39.1%
-  market-aware mode: New York Giants 58.0%
+  market-aware mode: New York Giants 56.2%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New York Giants 24 - Tennessee Titans 20
   80% range:      New York Giants 13-36, Tennessee Titans 9-31
   one-score game: 53%    overtime: 5.3%    blowout(17+): 23%
   upset (Tennessee Titans wins): 36%
-  vs spread (New York Giants -3.0): cover 56.6%
+  vs spread (New York Giants -2.5): cover 60.8%
   vs total (38.5): over 63.9%
 
 KEY FACTORS (points toward New York Giants)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   64.0%
   ridge_pure   64.3%
   gbm_pure     60.4%
-  market       56.3%
+  market       54.3%
   ensemble     60.9%
 
-CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)
