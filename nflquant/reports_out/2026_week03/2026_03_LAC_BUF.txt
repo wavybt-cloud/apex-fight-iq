@@ -3,33 +3,33 @@ GAME  Los Angeles Chargers @ Buffalo Bills   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Buffalo Bills: 28.5    Los Angeles Chargers: 19.4    (margin +9.1, total 47.9)
+  Buffalo Bills: 28.3    Los Angeles Chargers: 19.2    (margin +9.1, total 47.5)
 
 WIN PROBABILITY (calibrated ensemble)
-  Buffalo Bills: 81.2%    Los Angeles Chargers: 18.8%
-  market-aware mode: Buffalo Bills 76.9%
+  Buffalo Bills: 80.7%    Los Angeles Chargers: 19.3%
+  market-aware mode: Buffalo Bills 76.8%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Buffalo Bills 28 - Los Angeles Chargers 20
+  median score:   Buffalo Bills 28 - Los Angeles Chargers 19
   80% range:      Buffalo Bills 17-41, Los Angeles Chargers 7-31
-  one-score game: 44%    overtime: 4.0%    blowout(17+): 32%
+  one-score game: 44%    overtime: 4.1%    blowout(17+): 32%
   upset (Los Angeles Chargers wins): 22%
-  vs spread (Buffalo Bills -7.0): cover 54.2%
-  vs total (50.5): over 41.9%
+  vs spread (Buffalo Bills -7.0): cover 53.8%
+  vs total (50.5): over 41.0%
 
 KEY FACTORS (points toward Buffalo Bills)
-  -8.17  offensive EPA/play
-  +6.43  Elo rating gap (incl. HFA, rest, QB)
-  +3.27  rushing efficiency
-  +2.37  passing efficiency
+  -8.20  offensive EPA/play
+  +6.35  Elo rating gap (incl. HFA, rest, QB)
+  +3.31  rushing efficiency
+  +2.41  passing efficiency
   +2.17  QB rating gap
 
 MODEL AGREEMENT (home win prob)
-  elo          81.5%
-  logit_pure   79.6%
-  ridge_pure   78.2%
-  gbm_pure     77.5%
+  elo          81.3%
+  logit_pure   79.3%
+  ridge_pure   77.9%
+  gbm_pure     76.9%
   market       73.4%
-  ensemble     81.2%
+  ensemble     80.7%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

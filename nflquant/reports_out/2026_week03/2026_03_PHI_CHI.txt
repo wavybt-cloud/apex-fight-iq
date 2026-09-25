@@ -3,7 +3,7 @@ GAME  Philadelphia Eagles @ Chicago Bears   (2026-09-28, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Chicago Bears: 21.0    Philadelphia Eagles: 23.9    (margin -2.8, total 44.9)
+  Chicago Bears: 21.1    Philadelphia Eagles: 24.1    (margin -3.0, total 45.2)
 
 WIN PROBABILITY (calibrated ensemble)
   Chicago Bears: 37.1%    Philadelphia Eagles: 62.9%
@@ -11,25 +11,25 @@ WIN PROBABILITY (calibrated ensemble)
 
 SIMULATION (50,000 possession-level sims)
   median score:   Chicago Bears 21 - Philadelphia Eagles 24
-  80% range:      Chicago Bears 10-33, Philadelphia Eagles 13-35
-  one-score game: 54%    overtime: 5.3%    blowout(17+): 22%
-  upset (Chicago Bears wins): 41%
-  vs spread (Chicago Bears +4.5): cover 56.6%
-  vs total (41.5): over 58.0%
+  80% range:      Chicago Bears 10-33, Philadelphia Eagles 13-36
+  one-score game: 53%    overtime: 5.3%    blowout(17+): 22%
+  upset (Chicago Bears wins): 40%
+  vs spread (Chicago Bears +4.5): cover 55.6%
+  vs total (41.5): over 58.8%
 
 KEY FACTORS (points toward Chicago Bears)
-  -3.56  Elo rating gap (incl. HFA, rest, QB)
+  -3.64  Elo rating gap (incl. HFA, rest, QB)
   -2.06  QB rating gap
   -1.37  offensive EPA/play
-  +0.77  opponent-adjusted defensive EPA
-  -0.71  pass defense
+  +0.76  opponent-adjusted defensive EPA
+  -0.72  pass defense
 
 MODEL AGREEMENT (home win prob)
-  elo          42.5%
-  logit_pure   36.9%
-  ridge_pure   40.3%
-  gbm_pure     44.6%
+  elo          42.2%
+  logit_pure   36.7%
+  ridge_pure   40.1%
+  gbm_pure     45.1%
   market       33.6%
   ensemble     37.1%
 
-CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 12%; early season: ratings lean on priors; QB situation unsettled)
