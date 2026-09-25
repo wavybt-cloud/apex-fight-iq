@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Detroit Lions: 78.2%    New York Jets: 21.8%
-  market-aware mode: Detroit Lions 74.4%
+  market-aware mode: Detroit Lions 74.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Detroit Lions 28 - New York Jets 20
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   76.6%
   ridge_pure   76.3%
   gbm_pure     77.0%
-  market       71.8%
+  market       72.2%
   ensemble     78.2%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

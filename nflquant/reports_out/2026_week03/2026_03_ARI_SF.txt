@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   San Francisco 49ers: 83.3%    Arizona Cardinals: 16.7%
-  market-aware mode: San Francisco 49ers 81.0%
+  market-aware mode: San Francisco 49ers 80.6%
 
 SIMULATION (50,000 possession-level sims)
   median score:   San Francisco 49ers 28 - Arizona Cardinals 18
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 43%    overtime: 4.0%    blowout(17+): 34%
   upset (Arizona Cardinals wins): 21%
   vs spread (San Francisco 49ers -8.5): cover 50.5%
-  vs total (47.5): over 49.3%
+  vs total (48.5): over 45.6%
 
 KEY FACTORS (points toward San Francisco 49ers)
   -6.15  offensive EPA/play
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   82.0%
   ridge_pure   79.9%
   gbm_pure     79.2%
-  market       78.7%
+  market       78.2%
   ensemble     83.3%
 
 CONFIDENCE: MODERATE   (early season: ratings lean on priors; QB situation unsettled)
