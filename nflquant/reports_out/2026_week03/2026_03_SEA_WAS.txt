@@ -3,19 +3,19 @@ GAME  Seattle Seahawks @ Washington Commanders   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Washington Commanders: 20.0    Seattle Seahawks: 25.6    (margin -5.6, total 45.6)
+  Washington Commanders: 19.3    Seattle Seahawks: 25.8    (margin -6.4, total 45.1)
 
 WIN PROBABILITY (calibrated ensemble)
-  Washington Commanders: 29.4%    Seattle Seahawks: 70.6%
-  market-aware mode: Washington Commanders 20.8%
+  Washington Commanders: 27.2%    Seattle Seahawks: 72.8%
+  market-aware mode: Washington Commanders 20.6%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Washington Commanders 20 - Seattle Seahawks 25
-  80% range:      Washington Commanders 9-31, Seattle Seahawks 14-37
-  one-score game: 51%    overtime: 5.0%    blowout(17+): 24%
-  upset (Washington Commanders wins): 32%
-  vs spread (Washington Commanders +7.5): cover 60.3%
-  vs total (40.5): over 64.3%
+  median score:   Washington Commanders 19 - Seattle Seahawks 26
+  80% range:      Washington Commanders 7-31, Seattle Seahawks 14-38
+  one-score game: 50%    overtime: 4.7%    blowout(17+): 26%
+  upset (Washington Commanders wins): 29%
+  vs spread (Washington Commanders +7.5): cover 57.6%
+  vs total (40.5): over 62.9%
 
 KEY FACTORS (points toward Washington Commanders)
   -8.90  Elo rating gap (incl. HFA, rest, QB)
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Washington Commanders)
 
 MODEL AGREEMENT (home win prob)
   elo          22.2%
-  logit_pure   31.6%
-  ridge_pure   32.4%
-  gbm_pure     30.9%
+  logit_pure   27.7%
+  ridge_pure   29.2%
+  gbm_pure     27.5%
   market       23.4%
-  ensemble     29.4%
+  ensemble     27.2%
 
-CONFIDENCE: VERY LOW   (models disagree by 10%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

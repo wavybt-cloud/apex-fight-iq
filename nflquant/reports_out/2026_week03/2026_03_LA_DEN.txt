@@ -3,19 +3,19 @@ GAME  Los Angeles Rams @ Denver Broncos   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  Denver Broncos: 24.7    Los Angeles Rams: 23.6    (margin +1.1, total 48.2)
+  Denver Broncos: 24.4    Los Angeles Rams: 23.0    (margin +1.4, total 47.4)
 
 WIN PROBABILITY (calibrated ensemble)
-  Denver Broncos: 49.9%    Los Angeles Rams: 50.1%
-  market-aware mode: Denver Broncos 46.9%
+  Denver Broncos: 51.3%    Los Angeles Rams: 48.7%
+  market-aware mode: Denver Broncos 47.1%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Denver Broncos 24 - Los Angeles Rams 24
-  80% range:      Denver Broncos 13-37, Los Angeles Rams 13-35
-  one-score game: 54%    overtime: 5.2%    blowout(17+): 20%
+  median score:   Denver Broncos 24 - Los Angeles Rams 23
+  80% range:      Denver Broncos 13-36, Los Angeles Rams 10-35
+  one-score game: 55%    overtime: 5.0%    blowout(17+): 20%
   upset (Los Angeles Rams wins): 46%
-  vs spread (Denver Broncos +2.5): cover 57.4%
-  vs total (44.5): over 59.3%
+  vs spread (Denver Broncos +2.5): cover 58.0%
+  vs total (44.5): over 56.9%
 
 KEY FACTORS (points toward Denver Broncos)
   +4.17  offensive EPA/play
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Denver Broncos)
 
 MODEL AGREEMENT (home win prob)
   elo          56.3%
-  logit_pure   52.3%
-  ridge_pure   53.8%
-  gbm_pure     54.4%
+  logit_pure   53.6%
+  ridge_pure   54.6%
+  gbm_pure     56.9%
   market       45.7%
-  ensemble     49.9%
+  ensemble     51.3%
 
 CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

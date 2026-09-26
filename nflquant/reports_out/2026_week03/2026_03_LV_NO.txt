@@ -3,19 +3,19 @@ GAME  Las Vegas Raiders @ New Orleans Saints   (2026-09-27, week 3)
 ================================================================
 
 MODEL PROJECTION
-  New Orleans Saints: 23.7    Las Vegas Raiders: 22.3    (margin +1.4, total 46.0)
+  New Orleans Saints: 23.6    Las Vegas Raiders: 22.1    (margin +1.5, total 45.7)
 
 WIN PROBABILITY (calibrated ensemble)
-  New Orleans Saints: 52.5%    Las Vegas Raiders: 47.5%
-  market-aware mode: New Orleans Saints 62.9%
+  New Orleans Saints: 53.0%    Las Vegas Raiders: 47.0%
+  market-aware mode: New Orleans Saints 63.0%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   New Orleans Saints 24 - Las Vegas Raiders 22
+  median score:   New Orleans Saints 23 - Las Vegas Raiders 21
   80% range:      New Orleans Saints 13-35, Las Vegas Raiders 10-34
-  one-score game: 55%    overtime: 5.3%    blowout(17+): 20%
+  one-score game: 55%    overtime: 5.5%    blowout(17+): 20%
   upset (Las Vegas Raiders wins): 45%
-  vs spread (New Orleans Saints -3.0): cover 47.7%
-  vs total (43.5): over 56.6%
+  vs spread (New Orleans Saints -3.0): cover 48.0%
+  vs total (43.5): over 55.6%
 
 KEY FACTORS (points toward New Orleans Saints)
   -2.60  offensive EPA/play
@@ -26,10 +26,10 @@ KEY FACTORS (points toward New Orleans Saints)
 
 MODEL AGREEMENT (home win prob)
   elo          61.8%
-  logit_pure   55.1%
-  ridge_pure   54.3%
-  gbm_pure     56.5%
+  logit_pure   55.3%
+  ridge_pure   54.4%
+  gbm_pure     57.9%
   market       62.2%
-  ensemble     52.5%
+  ensemble     53.0%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
