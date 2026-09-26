@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
   upset (Jacksonville Jaguars wins): 50%
   vs spread (Jacksonville Jaguars -3.0): cover 42.8%
-  vs total (45.5): over 58.2%
+  vs total (46.5): over 56.3%
 
 KEY FACTORS (points toward Jacksonville Jaguars)
   -3.28  offensive EPA/play

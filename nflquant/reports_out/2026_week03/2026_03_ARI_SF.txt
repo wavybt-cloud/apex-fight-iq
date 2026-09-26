@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 43%    overtime: 4.0%    blowout(17+): 34%
   upset (Arizona Cardinals wins): 21%
   vs spread (San Francisco 49ers -8.5): cover 50.5%
-  vs total (48.5): over 45.6%
+  vs total (47.5): over 49.3%
 
 KEY FACTORS (points toward San Francisco 49ers)
   -6.15  offensive EPA/play

@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 45%    overtime: 4.3%    blowout(17+): 30%
   upset (New York Jets wins): 24%
   vs spread (Detroit Lions -6.5): cover 55.4%
-  vs total (47.5): over 51.5%
+  vs total (48.5): over 48.2%
 
 KEY FACTORS (points toward Detroit Lions)
   +4.80  Elo rating gap (incl. HFA, rest, QB)
