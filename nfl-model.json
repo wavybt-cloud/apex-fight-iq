@@ -51,10 +51,10 @@
        "odds": "+252"
       },
       {
-       "name": "Demarcus Robinson",
-       "pos": "WR",
-       "p": 0.2744,
-       "odds": "+264"
+       "name": "Mac Jones",
+       "pos": "QB",
+       "p": 0.0878,
+       "odds": "+1039"
       }
      ],
      "qb": {
@@ -397,10 +397,10 @@
        "odds": "+306"
       },
       {
-       "name": "AJ Dillon",
-       "pos": "RB",
-       "p": 0.1837,
-       "odds": "+444"
+       "name": "David Moore",
+       "pos": "WR",
+       "p": 0.2098,
+       "odds": "+377"
       }
      ],
      "qb": {
@@ -558,10 +558,10 @@
        "odds": "+400"
       },
       {
-       "name": "Andrei Iosivas",
-       "pos": "WR",
-       "p": 0.188,
-       "odds": "+432"
+       "name": "Tanner Hudson",
+       "pos": "TE",
+       "p": 0.1607,
+       "odds": "+522"
       }
      ],
      "qb": {
@@ -617,12 +617,6 @@
        "odds": "+216"
       },
       {
-       "name": "Alec Pierce",
-       "pos": "WR",
-       "p": 0.2794,
-       "odds": "+258"
-      },
-      {
        "name": "DJ Giddens",
        "pos": "RB",
        "p": 0.2312,
@@ -633,6 +627,12 @@
        "pos": "TE",
        "p": 0.2206,
        "odds": "+353"
+      },
+      {
+       "name": "Nick Westbrook-Ikhine",
+       "pos": "WR",
+       "p": 0.2039,
+       "odds": "+390"
       },
       {
        "name": "Josh Downs",
