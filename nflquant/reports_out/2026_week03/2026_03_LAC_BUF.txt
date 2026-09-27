@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 42%    overtime: 3.9%    blowout(17+): 34%
   upset (Los Angeles Chargers wins): 20%
   vs spread (Buffalo Bills -7.0): cover 57.5%
-  vs total (49.5): over 39.9%
+  vs total (50.5): over 38.0%
 
 KEY FACTORS (points toward Buffalo Bills)
   -8.20  offensive EPA/play

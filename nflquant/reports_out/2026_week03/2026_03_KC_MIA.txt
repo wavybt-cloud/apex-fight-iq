@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Miami Dolphins: 34.6%    Kansas City Chiefs: 65.4%
-  market-aware mode: Miami Dolphins 18.3%
+  market-aware mode: Miami Dolphins 19.2%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Miami Dolphins 20 - Kansas City Chiefs 24
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   35.8%
   ridge_pure   36.5%
   gbm_pure     39.5%
-  market       17.3%
+  market       18.3%
   ensemble     34.6%
 
-CONFIDENCE: VERY LOW   (models disagree by 22%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 21%; early season: ratings lean on priors; QB situation unsettled)
