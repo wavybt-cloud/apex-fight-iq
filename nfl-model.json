@@ -2131,50 +2131,50 @@
    "props": {
     "home": {
      "team": "CHI",
-     "exp_pts": 19.3,
-     "exp_off_tds": 1.77,
+     "exp_pts": 18.9,
+     "exp_off_tds": 1.7,
      "td": [
       {
        "name": "D'Andre Swift",
        "pos": "RB",
-       "p": 0.307,
-       "odds": "+226"
+       "p": 0.2995,
+       "odds": "+234"
       },
       {
        "name": "Roschon Johnson",
        "pos": "RB",
-       "p": 0.1925,
-       "odds": "+419"
+       "p": 0.1876,
+       "odds": "+433"
       },
       {
        "name": "Kyle Monangai",
        "pos": "RB",
-       "p": 0.1854,
-       "odds": "+439"
+       "p": 0.1807,
+       "odds": "+454"
       },
       {
        "name": "Cole Kmet",
        "pos": "TE",
-       "p": 0.1645,
-       "odds": "+508"
+       "p": 0.1602,
+       "odds": "+524"
       },
       {
        "name": "Rome Odunze",
        "pos": "WR",
-       "p": 0.1632,
-       "odds": "+513"
+       "p": 0.159,
+       "odds": "+529"
       },
       {
        "name": "Colston Loveland",
        "pos": "TE",
-       "p": 0.1618,
-       "odds": "+518"
+       "p": 0.1576,
+       "odds": "+534"
       }
      ],
      "qb": {
       "name": "Tyson Bagent",
-      "mean": 57.0,
-      "line": 57.0,
+      "mean": 56.4,
+      "line": 56.5,
       "sd": 64.5,
       "dist": "normal",
       "n": 8.7,
@@ -2183,20 +2183,20 @@
      "rb": [
       {
        "name": "D'Andre Swift",
-       "mean": 55.5,
-       "line": 50.5,
-       "k": 3.547,
-       "theta": 15.66,
+       "mean": 55.0,
+       "line": 50.0,
+       "k": 3.533,
+       "theta": 15.571,
        "dist": "gamma",
        "car": 14.3,
        "n": 40.0
       },
       {
        "name": "Kyle Monangai",
-       "mean": 32.2,
-       "line": 28.5,
-       "k": 2.682,
-       "theta": 12.006,
+       "mean": 31.9,
+       "line": 28.0,
+       "k": 2.666,
+       "theta": 11.963,
        "dist": "gamma",
        "car": 8.0,
        "n": 18.1
@@ -2206,7 +2206,7 @@
     "away": {
      "team": "PHI",
      "exp_pts": 23.3,
-     "exp_off_tds": 2.78,
+     "exp_off_tds": 2.77,
      "td": [
       {
        "name": "Dallas Goedert",
@@ -2236,12 +2236,12 @@
        "name": "DeVonta Smith",
        "pos": "WR",
        "p": 0.2751,
-       "odds": "+263"
+       "odds": "+264"
       },
       {
        "name": "Dontayvion Wicks",
        "pos": "WR",
-       "p": 0.232,
+       "p": 0.2319,
        "odds": "+331"
       }
      ],
@@ -2270,7 +2270,7 @@
        "mean": 29.9,
        "line": 26.0,
        "k": 2.556,
-       "theta": 11.681,
+       "theta": 11.68,
        "dist": "gamma",
        "car": 6.4,
        "n": 35.1
