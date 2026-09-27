@@ -11,7 +11,7 @@
 - NYJ @ DET: +9.0 (home)
 
 ## Largest model disagreement
-- KC @ MIA: 23% spread across members
+- KC @ MIA: 22% spread across members
 - CAR @ CLE: 15% spread across members
 - CIN @ PIT: 15% spread across members
 
@@ -31,9 +31,9 @@
 - BAL @ DAL: 47.4
 
 ## Lowest projected total
+- PHI @ CHI: 42.6
 - TEN @ NYG: 42.9
 - SEA @ WAS: 44.6
-- PHI @ CHI: 44.6
 
 ## Biggest upset chance
 - NE @ JAX: 49%

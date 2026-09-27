@@ -14,7 +14,7 @@ SIMULATION (50,000 possession-level sims)
   80% range:      Dallas Cowboys 10-34, Baltimore Ravens 13-38
   one-score game: 53%    overtime: 5.1%    blowout(17+): 22%
   upset (Dallas Cowboys wins): 41%
-  vs spread (Dallas Cowboys +3.5): cover 52.0%
+  vs spread (Dallas Cowboys +3.0): cover 48.0%
   vs total (53.5): over 33.3%
 
 KEY FACTORS (points toward Dallas Cowboys)
