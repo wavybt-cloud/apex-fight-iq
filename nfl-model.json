@@ -2131,68 +2131,72 @@
    "props": {
     "home": {
      "team": "CHI",
-     "exp_pts": 20.8,
-     "exp_off_tds": 2.05,
+     "exp_pts": 19.3,
+     "exp_off_tds": 1.77,
      "td": [
       {
        "name": "D'Andre Swift",
        "pos": "RB",
-       "p": 0.337,
-       "odds": "+197"
+       "p": 0.307,
+       "odds": "+226"
       },
       {
        "name": "Roschon Johnson",
        "pos": "RB",
-       "p": 0.2125,
-       "odds": "+371"
+       "p": 0.1925,
+       "odds": "+419"
       },
       {
        "name": "Kyle Monangai",
        "pos": "RB",
-       "p": 0.2048,
-       "odds": "+388"
+       "p": 0.1854,
+       "odds": "+439"
       },
       {
        "name": "Cole Kmet",
        "pos": "TE",
-       "p": 0.1819,
-       "odds": "+450"
+       "p": 0.1645,
+       "odds": "+508"
       },
       {
        "name": "Rome Odunze",
        "pos": "WR",
-       "p": 0.1805,
-       "odds": "+454"
+       "p": 0.1632,
+       "odds": "+513"
       },
       {
        "name": "Colston Loveland",
        "pos": "TE",
-       "p": 0.1789,
-       "odds": "+459"
+       "p": 0.1618,
+       "odds": "+518"
       }
      ],
      "qb": {
-      "name": "Case Keenum",
-      "line": null,
-      "note": "listed starter, insufficient NFL sample"
+      "name": "Tyson Bagent",
+      "mean": 57.0,
+      "line": 57.0,
+      "sd": 64.5,
+      "dist": "normal",
+      "n": 8.7,
+      "note": "listed starter"
      },
      "rb": [
       {
        "name": "D'Andre Swift",
-       "mean": 57.7,
-       "line": 52.5,
-       "k": 3.601,
-       "theta": 16.009,
+       "mean": 55.5,
+       "line": 50.5,
+       "k": 3.547,
+       "theta": 15.66,
        "dist": "gamma",
        "car": 14.3,
        "n": 40.0
       },
       {
        "name": "Kyle Monangai",
-       "mean": 33.4,
-       "line": 29.5,
-       "k": 2.744,
-       "theta": 12.181,
+       "mean": 32.2,
+       "line": 28.5,
+       "k": 2.682,
+       "theta": 12.006,
        "dist": "gamma",
        "car": 8.0,
        "n": 18.1
@@ -2201,51 +2205,51 @@
     },
     "away": {
      "team": "PHI",
-     "exp_pts": 23.8,
-     "exp_off_tds": 2.91,
+     "exp_pts": 23.3,
+     "exp_off_tds": 2.78,
      "td": [
       {
        "name": "Dallas Goedert",
        "pos": "TE",
-       "p": 0.417,
-       "odds": "+140"
+       "p": 0.4054,
+       "odds": "+147"
       },
       {
        "name": "Saquon Barkley",
        "pos": "RB",
-       "p": 0.3767,
-       "odds": "+165"
+       "p": 0.366,
+       "odds": "+173"
       },
       {
        "name": "Jalen Hurts",
        "pos": "QB",
-       "p": 0.3292,
-       "odds": "+204"
+       "p": 0.3196,
+       "odds": "+213"
       },
       {
        "name": "Tank Bigsby",
        "pos": "RB",
-       "p": 0.2841,
-       "odds": "+252"
+       "p": 0.2757,
+       "odds": "+263"
       },
       {
        "name": "DeVonta Smith",
        "pos": "WR",
-       "p": 0.2835,
-       "odds": "+253"
+       "p": 0.2751,
+       "odds": "+263"
       },
       {
        "name": "Dontayvion Wicks",
        "pos": "WR",
-       "p": 0.2392,
-       "odds": "+318"
+       "p": 0.232,
+       "odds": "+331"
       }
      ],
      "qb": {
       "name": "Jalen Hurts",
-      "mean": 211.7,
-      "line": 211.5,
-      "sd": 71.9,
+      "mean": 208.8,
+      "line": 209.0,
+      "sd": 71.8,
       "dist": "normal",
       "n": 41.2,
       "note": "listed starter"
@@ -2253,20 +2257,20 @@
      "rb": [
       {
        "name": "Saquon Barkley",
-       "mean": 89.2,
-       "line": 82.0,
-       "k": 4.173,
-       "theta": 21.367,
+       "mean": 88.1,
+       "line": 81.0,
+       "k": 4.159,
+       "theta": 21.187,
        "dist": "gamma",
        "car": 18.0,
        "n": 39.5
       },
       {
        "name": "Tank Bigsby",
-       "mean": 30.2,
-       "line": 26.5,
-       "k": 2.576,
-       "theta": 11.729,
+       "mean": 29.9,
+       "line": 26.0,
+       "k": 2.556,
+       "theta": 11.681,
        "dist": "gamma",
        "car": 6.4,
        "n": 35.1
