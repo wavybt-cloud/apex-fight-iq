@@ -14,7 +14,7 @@ SIMULATION (50,000 possession-level sims)
   80% range:      Denver Broncos 13-36, Los Angeles Rams 10-35
   one-score game: 55%    overtime: 5.0%    blowout(17+): 20%
   upset (Los Angeles Rams wins): 46%
-  vs spread (Denver Broncos +2.5): cover 58.0%
+  vs spread (Denver Broncos +1.5): cover 56.8%
   vs total (43.5): over 61.1%
 
 KEY FACTORS (points toward Denver Broncos)

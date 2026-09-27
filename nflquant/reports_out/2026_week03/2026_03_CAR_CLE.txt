@@ -14,8 +14,8 @@ SIMULATION (50,000 possession-level sims)
   80% range:      Cleveland Browns 13-37, Carolina Panthers 10-34
   one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
   upset (Carolina Panthers wins): 42%
-  vs spread (Cleveland Browns +1.5): cover 60.2%
-  vs total (42.5): over 62.3%
+  vs spread (Cleveland Browns +2.5): cover 61.3%
+  vs total (41.5): over 63.8%
 
 KEY FACTORS (points toward Cleveland Browns)
   +8.09  offensive EPA/play
