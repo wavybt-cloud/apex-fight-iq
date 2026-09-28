@@ -1,50 +1,39 @@
 # NFL week 3, 2026 - model dashboard
 
 ## Most confident winner
-- LAC @ BUF: BUF 84%
-- ARI @ SF: SF 82%
-- NYJ @ DET: DET 79%
+- PHI @ CHI: PHI 66%
+- LA @ DEN: DEN 52%
 
 ## Largest projected margin
-- LAC @ BUF: +10.4 (home)
-- ARI @ SF: +9.4 (home)
-- NYJ @ DET: +9.0 (home)
+- PHI @ CHI: -4.3 (home)
+- LA @ DEN: +1.7 (home)
 
 ## Largest model disagreement
-- KC @ MIA: 22% spread across members
-- CIN @ PIT: 14% spread across members
-- CAR @ CLE: 14% spread across members
+- PHI @ CHI: 12% spread across members
+- LA @ DEN: 8% spread across members
 
 ## Lowest uncertainty
-- ARI @ SF: 3% member spread, confidence MODERATE
-- NYJ @ DET: 4% member spread, confidence LOW
-- BAL @ DAL: 5% member spread, confidence VERY LOW
+- LA @ DEN: 8% member spread, confidence VERY LOW
+- PHI @ CHI: 12% member spread, confidence VERY LOW
 
 ## Most likely one-score game
-- CIN @ PIT: 55%
-- MIN @ TB: 55%
-- LV @ NO: 55%
+- LA @ DEN: 54%
+- PHI @ CHI: 53%
 
 ## Highest projected total
-- MIN @ TB: 48.3
-- HOU @ IND: 48.0
-- BAL @ DAL: 47.4
+- LA @ DEN: 47.0
+- PHI @ CHI: 42.7
 
 ## Lowest projected total
-- PHI @ CHI: 42.2
-- TEN @ NYG: 42.9
-- SEA @ WAS: 44.6
+- PHI @ CHI: 42.7
+- LA @ DEN: 47.0
 
 ## Biggest upset chance
-- NE @ JAX: 49%
-- HOU @ IND: 47%
-- CIN @ PIT: 46%
+- LA @ DEN: 45%
+- PHI @ CHI: 36%
 
 ## Largest model-vs-market gaps (information, not a bet slip)
-- KC @ MIA: model -4.1 vs line -10.0 (5.9 pts toward MIA); cover 71% home
-- CAR @ CLE: model +2.5 vs line -2.5 (5.0 pts toward CLE); cover 61% home
-- LAC @ BUF: model +10.4 vs line +7.0 (3.4 pts toward BUF); cover 57% home
-- LA @ DEN: model +1.5 vs line -1.5 (3.0 pts toward DEN); cover 57% home
-- NE @ JAX: model +0.2 vs line +3.0 (2.8 pts toward NE); cover 44% home
+- LA @ DEN: model +1.7 vs line +1.5 (0.2 pts toward DEN); cover 54% home
+- PHI @ CHI: model -4.3 vs line -4.5 (0.2 pts toward CHI); cover 53% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*
