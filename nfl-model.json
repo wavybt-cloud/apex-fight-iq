@@ -17,51 +17,51 @@
    "props": {
     "home": {
      "team": "DEN",
-     "exp_pts": 24.2,
-     "exp_off_tds": 2.88,
+     "exp_pts": 24.4,
+     "exp_off_tds": 2.91,
      "td": [
       {
        "name": "J.K. Dobbins",
        "pos": "RB",
-       "p": 0.381,
-       "odds": "+162"
+       "p": 0.383,
+       "odds": "+161"
       },
       {
        "name": "RJ Harvey",
        "pos": "RB",
-       "p": 0.362,
-       "odds": "+176"
+       "p": 0.364,
+       "odds": "+175"
       },
       {
        "name": "Courtland Sutton",
        "pos": "WR",
-       "p": 0.344,
-       "odds": "+191"
+       "p": 0.3458,
+       "odds": "+189"
       },
       {
        "name": "Lil'Jordan Humphrey",
        "pos": "WR",
-       "p": 0.2664,
-       "odds": "+275"
+       "p": 0.2678,
+       "odds": "+273"
       },
       {
        "name": "Bo Nix",
        "pos": "QB",
-       "p": 0.2607,
-       "odds": "+284"
+       "p": 0.2621,
+       "odds": "+281"
       },
       {
        "name": "Jaylen Waddle",
        "pos": "WR",
-       "p": 0.2578,
-       "odds": "+288"
+       "p": 0.2592,
+       "odds": "+286"
       }
      ],
      "qb": {
       "name": "Bo Nix",
-      "mean": 239.2,
-      "line": 239.0,
-      "sd": 73.2,
+      "mean": 239.8,
+      "line": 240.0,
+      "sd": 72.9,
       "dist": "normal",
       "n": 30.3,
       "note": "listed starter"
@@ -69,20 +69,20 @@
      "rb": [
       {
        "name": "J.K. Dobbins",
-       "mean": 61.0,
+       "mean": 61.1,
        "line": 55.5,
-       "k": 3.682,
-       "theta": 16.569,
+       "k": 3.707,
+       "theta": 16.493,
        "dist": "gamma",
        "car": 13.1,
        "n": 21.2
       },
       {
        "name": "RJ Harvey",
-       "mean": 43.2,
-       "line": 38.5,
-       "k": 3.161,
-       "theta": 13.657,
+       "mean": 43.3,
+       "line": 39.0,
+       "k": 3.178,
+       "theta": 13.614,
        "dist": "gamma",
        "car": 8.4,
        "n": 17.1
@@ -92,50 +92,50 @@
     "away": {
      "team": "LA",
      "exp_pts": 22.7,
-     "exp_off_tds": 2.19,
+     "exp_off_tds": 2.18,
      "td": [
       {
        "name": "Kyren Williams",
        "pos": "RB",
-       "p": 0.3886,
-       "odds": "+157"
+       "p": 0.3873,
+       "odds": "+158"
       },
       {
        "name": "Davante Adams",
        "pos": "WR",
-       "p": 0.345,
-       "odds": "+190"
+       "p": 0.3438,
+       "odds": "+191"
       },
       {
        "name": "Puka Nacua",
        "pos": "WR",
-       "p": 0.3065,
-       "odds": "+226"
+       "p": 0.3054,
+       "odds": "+227"
       },
       {
        "name": "Colby Parkinson",
        "pos": "TE",
-       "p": 0.2268,
-       "odds": "+341"
+       "p": 0.226,
+       "odds": "+343"
       },
       {
        "name": "Blake Corum",
        "pos": "RB",
-       "p": 0.1842,
-       "odds": "+443"
+       "p": 0.1835,
+       "odds": "+445"
       },
       {
        "name": "Tyler Higbee",
        "pos": "TE",
-       "p": 0.1695,
-       "odds": "+490"
+       "p": 0.1688,
+       "odds": "+492"
       }
      ],
      "qb": {
       "name": "Matthew Stafford",
-      "mean": 216.4,
-      "line": 216.5,
-      "sd": 72.1,
+      "mean": 216.0,
+      "line": 216.0,
+      "sd": 71.9,
       "dist": "normal",
       "n": 41.8,
       "note": "listed starter"
@@ -143,20 +143,20 @@
      "rb": [
       {
        "name": "Kyren Williams",
-       "mean": 65.1,
+       "mean": 65.0,
        "line": 59.5,
-       "k": 3.773,
-       "theta": 17.258,
+       "k": 3.794,
+       "theta": 17.137,
        "dist": "gamma",
        "car": 15.3,
        "n": 40.0
       },
       {
        "name": "Blake Corum",
-       "mean": 36.4,
-       "line": 32.5,
-       "k": 2.884,
-       "theta": 12.615,
+       "mean": 36.3,
+       "line": 32.0,
+       "k": 2.891,
+       "theta": 12.566,
        "dist": "gamma",
        "car": 7.9,
        "n": 29.8
@@ -178,51 +178,51 @@
    "props": {
     "home": {
      "team": "CHI",
-     "exp_pts": 18.9,
-     "exp_off_tds": 1.7,
+     "exp_pts": 19.2,
+     "exp_off_tds": 1.75,
      "td": [
       {
        "name": "D'Andre Swift",
        "pos": "RB",
-       "p": 0.2995,
-       "odds": "+234"
+       "p": 0.3048,
+       "odds": "+228"
       },
       {
        "name": "Roschon Johnson",
        "pos": "RB",
-       "p": 0.1876,
-       "odds": "+433"
+       "p": 0.1911,
+       "odds": "+423"
       },
       {
        "name": "Kyle Monangai",
        "pos": "RB",
-       "p": 0.1807,
-       "odds": "+454"
+       "p": 0.1841,
+       "odds": "+443"
       },
       {
        "name": "Cole Kmet",
        "pos": "TE",
-       "p": 0.1602,
-       "odds": "+524"
+       "p": 0.1633,
+       "odds": "+512"
       },
       {
        "name": "Rome Odunze",
        "pos": "WR",
-       "p": 0.159,
-       "odds": "+529"
+       "p": 0.162,
+       "odds": "+517"
       },
       {
        "name": "Colston Loveland",
        "pos": "TE",
-       "p": 0.1576,
-       "odds": "+534"
+       "p": 0.1606,
+       "odds": "+523"
       }
      ],
      "qb": {
       "name": "Tyson Bagent",
-      "mean": 56.4,
-      "line": 56.5,
-      "sd": 64.5,
+      "mean": 56.8,
+      "line": 57.0,
+      "sd": 64.7,
       "dist": "normal",
       "n": 8.7,
       "note": "listed starter"
@@ -230,19 +230,19 @@
      "rb": [
       {
        "name": "D'Andre Swift",
-       "mean": 55.0,
-       "line": 50.0,
-       "k": 3.533,
-       "theta": 15.571,
+       "mean": 55.4,
+       "line": 50.5,
+       "k": 3.562,
+       "theta": 15.55,
        "dist": "gamma",
        "car": 14.3,
        "n": 40.0
       },
       {
        "name": "Kyle Monangai",
-       "mean": 31.9,
+       "mean": 32.1,
        "line": 28.0,
-       "k": 2.666,
+       "k": 2.685,
        "theta": 11.963,
        "dist": "gamma",
        "car": 8.0,
@@ -252,51 +252,51 @@
     },
     "away": {
      "team": "PHI",
-     "exp_pts": 23.3,
-     "exp_off_tds": 2.77,
+     "exp_pts": 23.5,
+     "exp_off_tds": 2.82,
      "td": [
       {
        "name": "Dallas Goedert",
        "pos": "TE",
-       "p": 0.4054,
-       "odds": "+147"
+       "p": 0.4096,
+       "odds": "+144"
       },
       {
        "name": "Saquon Barkley",
        "pos": "RB",
-       "p": 0.366,
-       "odds": "+173"
+       "p": 0.3699,
+       "odds": "+170"
       },
       {
        "name": "Jalen Hurts",
        "pos": "QB",
-       "p": 0.3196,
-       "odds": "+213"
+       "p": 0.3231,
+       "odds": "+210"
       },
       {
        "name": "Tank Bigsby",
        "pos": "RB",
-       "p": 0.2757,
-       "odds": "+263"
+       "p": 0.2787,
+       "odds": "+259"
       },
       {
        "name": "DeVonta Smith",
        "pos": "WR",
-       "p": 0.2751,
-       "odds": "+264"
+       "p": 0.2781,
+       "odds": "+260"
       },
       {
        "name": "Dontayvion Wicks",
        "pos": "WR",
-       "p": 0.2319,
-       "odds": "+331"
+       "p": 0.2346,
+       "odds": "+326"
       }
      ],
      "qb": {
       "name": "Jalen Hurts",
-      "mean": 208.8,
-      "line": 209.0,
-      "sd": 71.8,
+      "mean": 209.8,
+      "line": 210.0,
+      "sd": 71.6,
       "dist": "normal",
       "n": 41.2,
       "note": "listed starter"
@@ -304,20 +304,20 @@
      "rb": [
       {
        "name": "Saquon Barkley",
-       "mean": 88.1,
-       "line": 81.0,
-       "k": 4.159,
-       "theta": 21.187,
+       "mean": 88.5,
+       "line": 81.5,
+       "k": 4.194,
+       "theta": 21.098,
        "dist": "gamma",
        "car": 18.0,
        "n": 39.5
       },
       {
        "name": "Tank Bigsby",
-       "mean": 29.9,
+       "mean": 30.0,
        "line": 26.0,
-       "k": 2.556,
-       "theta": 11.68,
+       "k": 2.569,
+       "theta": 11.673,
        "dist": "gamma",
        "car": 6.4,
        "n": 35.1
