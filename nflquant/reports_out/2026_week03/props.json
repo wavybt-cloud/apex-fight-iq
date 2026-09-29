@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T20:16",
+ "generated": "2026-09-29T04:15",
  "spreads": {
   "pass": [
    61.77587112629908,
@@ -23,72 +23,68 @@
    "teams": [
     {
      "team": "CHI",
-     "exp_pts": 18.9,
-     "exp_off_tds": 1.71,
+     "exp_pts": 20.6,
+     "exp_off_tds": 2.01,
      "td": [
       {
        "name": "D'Andre Swift",
        "pos": "RB",
-       "p": 0.3003,
-       "odds": "+233"
+       "p": 0.3332,
+       "odds": "+200"
       },
       {
        "name": "Roschon Johnson",
        "pos": "RB",
-       "p": 0.1881,
-       "odds": "+432"
+       "p": 0.21,
+       "odds": "+376"
       },
       {
        "name": "Kyle Monangai",
        "pos": "RB",
-       "p": 0.1812,
-       "odds": "+452"
+       "p": 0.2023,
+       "odds": "+394"
       },
       {
        "name": "Cole Kmet",
        "pos": "TE",
-       "p": 0.1607,
-       "odds": "+522"
+       "p": 0.1796,
+       "odds": "+457"
       },
       {
        "name": "Rome Odunze",
        "pos": "WR",
-       "p": 0.1595,
-       "odds": "+527"
+       "p": 0.1783,
+       "odds": "+461"
       },
       {
        "name": "Colston Loveland",
        "pos": "TE",
-       "p": 0.1581,
-       "odds": "+533"
+       "p": 0.1767,
+       "odds": "+466"
       }
      ],
      "qb": {
-      "name": "Tyson Bagent",
-      "mean": 56.4,
-      "line": 56.5,
-      "sd": 64.4,
-      "dist": "normal",
-      "n": 8.7,
-      "note": "listed starter"
+      "name": "Case Keenum",
+      "line": null,
+      "note": "listed starter, insufficient NFL sample"
      },
      "rb": [
       {
        "name": "D'Andre Swift",
-       "mean": 55.1,
-       "line": 50.0,
-       "k": 3.556,
-       "theta": 15.484,
+       "mean": 57.4,
+       "line": 52.0,
+       "k": 3.618,
+       "theta": 15.862,
        "dist": "gamma",
        "car": 14.3,
        "n": 40.0
       },
       {
        "name": "Kyle Monangai",
-       "mean": 31.9,
-       "line": 28.0,
-       "k": 2.676,
-       "theta": 11.93,
+       "mean": 33.3,
+       "line": 29.5,
+       "k": 2.746,
+       "theta": 12.118,
        "dist": "gamma",
        "car": 8.0,
        "n": 18.1
@@ -97,51 +93,51 @@
     },
     {
      "team": "PHI",
-     "exp_pts": 22.9,
-     "exp_off_tds": 2.69,
+     "exp_pts": 23.7,
+     "exp_off_tds": 2.87,
      "td": [
       {
        "name": "Dallas Goedert",
        "pos": "TE",
-       "p": 0.3983,
-       "odds": "+151"
+       "p": 0.4133,
+       "odds": "+142"
       },
       {
        "name": "Saquon Barkley",
        "pos": "RB",
-       "p": 0.3594,
-       "odds": "+178"
+       "p": 0.3733,
+       "odds": "+168"
       },
       {
        "name": "Jalen Hurts",
        "pos": "QB",
-       "p": 0.3138,
-       "odds": "+219"
+       "p": 0.3261,
+       "odds": "+207"
       },
       {
        "name": "Tank Bigsby",
        "pos": "RB",
-       "p": 0.2705,
-       "odds": "+270"
+       "p": 0.2814,
+       "odds": "+255"
       },
       {
        "name": "DeVonta Smith",
        "pos": "WR",
-       "p": 0.27,
-       "odds": "+270"
+       "p": 0.2808,
+       "odds": "+256"
       },
       {
        "name": "Dontayvion Wicks",
        "pos": "WR",
-       "p": 0.2275,
-       "odds": "+339"
+       "p": 0.2369,
+       "odds": "+322"
       }
      ],
      "qb": {
       "name": "Jalen Hurts",
-      "mean": 206.9,
-      "line": 207.0,
-      "sd": 71.4,
+      "mean": 210.8,
+      "line": 211.0,
+      "sd": 71.6,
       "dist": "normal",
       "n": 41.2,
       "note": "listed starter"
@@ -149,20 +145,20 @@
      "rb": [
       {
        "name": "Saquon Barkley",
-       "mean": 87.5,
-       "line": 80.5,
-       "k": 4.184,
-       "theta": 20.903,
+       "mean": 88.8,
+       "line": 82.0,
+       "k": 4.203,
+       "theta": 21.133,
        "dist": "gamma",
        "car": 18.0,
        "n": 39.5
       },
       {
        "name": "Tank Bigsby",
-       "mean": 29.6,
-       "line": 26.0,
-       "k": 2.55,
-       "theta": 11.621,
+       "mean": 30.1,
+       "line": 26.5,
+       "k": 2.576,
+       "theta": 11.681,
        "dist": "gamma",
        "car": 6.4,
        "n": 35.1
