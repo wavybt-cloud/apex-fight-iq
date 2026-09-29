@@ -1,0 +1,35 @@
+================================================================
+GAME  Tennessee Titans @ Baltimore Ravens   (2026-10-04, week 4)
+================================================================
+
+MODEL PROJECTION
+  Baltimore Ravens: 28.8    Tennessee Titans: 16.3    (margin +12.6, total 45.1)
+
+WIN PROBABILITY (calibrated ensemble)
+  Baltimore Ravens: 89.5%    Tennessee Titans: 10.5%
+  market-aware mode: Baltimore Ravens 86.5%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Baltimore Ravens 28 - Tennessee Titans 16
+  80% range:      Baltimore Ravens 17-41, Tennessee Titans 6-28
+  one-score game: 37%    overtime: 3.3%    blowout(17+): 40%
+  upset (Tennessee Titans wins): 14%
+  vs spread (Baltimore Ravens -11.5): cover 51.9%
+  vs total (43.5): over 54.3%
+
+KEY FACTORS (points toward Baltimore Ravens)
+  +7.47  Elo rating gap (incl. HFA, rest, QB)
+  -6.46  offensive EPA/play
+  +3.62  QB rating gap
+  +3.33  passing efficiency
+  +1.64  offensive success rate
+
+MODEL AGREEMENT (home win prob)
+  elo          84.2%
+  logit_pure   86.8%
+  ridge_pure   85.9%
+  gbm_pure     84.3%
+  market       84.7%
+  ensemble     89.5%
+
+CONFIDENCE: MODERATE   (early season: ratings lean on priors; QB situation unsettled)

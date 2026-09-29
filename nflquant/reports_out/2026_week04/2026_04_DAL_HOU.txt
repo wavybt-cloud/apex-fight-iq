@@ -1,0 +1,35 @@
+================================================================
+GAME  Dallas Cowboys @ Houston Texans   (2026-10-04, week 4)
+================================================================
+
+MODEL PROJECTION
+  Houston Texans: 25.0    Dallas Cowboys: 22.7    (margin +2.3, total 47.8)
+
+WIN PROBABILITY (calibrated ensemble)
+  Houston Texans: 56.2%    Dallas Cowboys: 43.8%
+  market-aware mode: Houston Texans 58.5%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Houston Texans 24 - Dallas Cowboys 23
+  80% range:      Houston Texans 13-37, Dallas Cowboys 10-34
+  one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
+  upset (Dallas Cowboys wins): 42%
+  vs spread (Houston Texans -2.5): cover 54.9%
+  vs total (47.5): over 48.8%
+
+KEY FACTORS (points toward Houston Texans)
+  +5.00  offensive EPA/play
+  +2.28  Elo rating gap (incl. HFA, rest, QB)
+  -2.21  opponent-adjusted defensive EPA
+  -1.99  passing efficiency
+  -1.89  QB rating gap
+
+MODEL AGREEMENT (home win prob)
+  elo          67.8%
+  logit_pure   58.6%
+  ridge_pure   59.6%
+  gbm_pure     56.5%
+  market       56.3%
+  ensemble     56.2%
+
+CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)
