@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T16:25:42.359819",
+ "generated": "2026-09-29T00:25:50.841774",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 3,
@@ -8,11 +8,11 @@
    "away": "PHI",
    "home": "CHI",
    "gameday": "2026-09-28",
-   "p_home": 0.3446,
-   "margin": -4.0,
-   "total": 41.89,
-   "p_home_cover": 0.4835,
-   "p_over": 0.5026,
+   "p_home": 0.3633,
+   "margin": -3.08,
+   "total": 44.24,
+   "p_home_cover": 0.5132,
+   "p_over": 0.5531,
    "confidence": "VERY LOW",
    "props": {
     "home": {
