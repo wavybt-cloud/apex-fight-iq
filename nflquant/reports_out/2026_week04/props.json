@@ -1,21 +1,27 @@
 {
- "generated": "2026-09-30T08:26:25.000768",
- "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
- "season": 2026,
- "week": 4,
+ "generated": "2026-09-30T04:15",
+ "spreads": {
+  "pass": [
+   61.74194296097903,
+   0.04685237909781295
+  ],
+  "rush": [
+   6.233065837678101,
+   0.41697541201761734
+  ]
+ },
+ "platt": [
+  0.7504,
+  -0.2837
+ ],
  "games": [
   {
+   "id": "2026_04_PIT_CLE",
    "away": "PIT",
    "home": "CLE",
-   "gameday": "2026-10-01",
-   "p_home": 0.4474,
-   "margin": -0.49,
-   "total": 46.45,
-   "p_home_cover": 0.5165,
-   "p_over": 0.7402,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-01",
+   "teams": [
+    {
      "team": "CLE",
      "exp_pts": 23.0,
      "exp_off_tds": 2.81,
@@ -79,7 +85,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "PIT",
      "exp_pts": 23.5,
      "exp_off_tds": 2.96,
@@ -153,20 +159,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_ARI_NYG",
    "away": "ARI",
    "home": "NYG",
-   "gameday": "2026-10-04",
-   "p_home": 0.5871,
-   "margin": 3.38,
-   "total": 45.49,
-   "p_home_cover": 0.6348,
-   "p_over": 0.5214,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "NYG",
      "exp_pts": 24.4,
      "exp_off_tds": 2.85,
@@ -240,7 +241,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "ARI",
      "exp_pts": 21.1,
      "exp_off_tds": 2.33,
@@ -314,20 +315,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_DAL_HOU",
    "away": "DAL",
    "home": "HOU",
-   "gameday": "2026-10-04",
-   "p_home": 0.5622,
-   "margin": 2.42,
-   "total": 47.33,
-   "p_home_cover": 0.5491,
-   "p_over": 0.4604,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "HOU",
      "exp_pts": 24.9,
      "exp_off_tds": 2.64,
@@ -401,7 +397,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "DAL",
      "exp_pts": 22.5,
      "exp_off_tds": 2.24,
@@ -465,20 +461,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_DEN_SF",
    "away": "DEN",
    "home": "SF",
-   "gameday": "2026-10-04",
-   "p_home": 0.6339,
-   "margin": 4.35,
-   "total": 45.97,
-   "p_home_cover": 0.57,
-   "p_over": 0.4591,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "SF",
      "exp_pts": 25.2,
      "exp_off_tds": 3.1,
@@ -552,7 +543,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "DEN",
      "exp_pts": 20.8,
      "exp_off_tds": 2.12,
@@ -626,20 +617,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_DET_CAR",
    "away": "DET",
    "home": "CAR",
-   "gameday": "2026-10-04",
-   "p_home": 0.3537,
-   "margin": -4.12,
-   "total": 46.91,
-   "p_home_cover": 0.4812,
-   "p_over": 0.404,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "CAR",
      "exp_pts": 21.4,
      "exp_off_tds": 2.54,
@@ -713,7 +699,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "DET",
      "exp_pts": 25.5,
      "exp_off_tds": 2.89,
@@ -777,20 +763,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_GB_TB",
    "away": "GB",
    "home": "TB",
-   "gameday": "2026-10-04",
-   "p_home": 0.3586,
-   "margin": -2.97,
-   "total": 43.55,
-   "p_home_cover": 0.5104,
-   "p_over": 0.6324,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "TB",
      "exp_pts": 20.3,
      "exp_off_tds": 2.06,
@@ -860,7 +841,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "GB",
      "exp_pts": 23.3,
      "exp_off_tds": 2.77,
@@ -924,20 +905,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_IND_WAS",
    "away": "IND",
    "home": "WAS",
-   "gameday": "2026-10-04",
-   "p_home": 0.4462,
-   "margin": -0.37,
-   "total": 45.54,
-   "p_home_cover": 0.6018,
-   "p_over": 0.4369,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "WAS",
      "exp_pts": 22.6,
      "exp_off_tds": 2.72,
@@ -1011,7 +987,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "IND",
      "exp_pts": 23.0,
      "exp_off_tds": 2.36,
@@ -1085,20 +1061,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_JAX_CIN",
    "away": "JAX",
    "home": "CIN",
-   "gameday": "2026-10-04",
-   "p_home": 0.4455,
-   "margin": 0.04,
-   "total": 47.84,
-   "p_home_cover": 0.4674,
-   "p_over": 0.3841,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "CIN",
      "exp_pts": 23.9,
      "exp_off_tds": 2.74,
@@ -1162,7 +1133,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "JAX",
      "exp_pts": 23.9,
      "exp_off_tds": 2.48,
@@ -1236,20 +1207,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_KC_LV",
    "away": "KC",
    "home": "LV",
-   "gameday": "2026-10-04",
-   "p_home": 0.3757,
-   "margin": -3.06,
-   "total": 47.45,
-   "p_home_cover": 0.5559,
-   "p_over": 0.4922,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "LV",
      "exp_pts": 22.2,
      "exp_off_tds": 2.79,
@@ -1323,7 +1289,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "KC",
      "exp_pts": 25.3,
      "exp_off_tds": 3.0,
@@ -1397,181 +1363,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
-   "away": "LAC",
-   "home": "SEA",
-   "gameday": "2026-10-04",
-   "p_home": 0.7984,
-   "margin": 7.63,
-   "total": 45.06,
-   "p_home_cover": 0.485,
-   "p_over": 0.587,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "SEA",
-     "exp_pts": 26.3,
-     "exp_off_tds": 2.85,
-     "td": [
-      {
-       "name": "Jaxon Smith-Njigba",
-       "pos": "WR",
-       "p": 0.4674,
-       "odds": "+114"
-      },
-      {
-       "name": "AJ Barner",
-       "pos": "TE",
-       "p": 0.2804,
-       "odds": "+257"
-      },
-      {
-       "name": "Jadarian Price",
-       "pos": "RB",
-       "p": 0.2718,
-       "odds": "+268"
-      },
-      {
-       "name": "Cooper Kupp",
-       "pos": "WR",
-       "p": 0.242,
-       "odds": "+313"
-      },
-      {
-       "name": "Emanuel Wilson",
-       "pos": "RB",
-       "p": 0.2095,
-       "odds": "+377"
-      },
-      {
-       "name": "George Holani",
-       "pos": "RB",
-       "p": 0.1876,
-       "odds": "+433"
-      }
-     ],
-     "qb": {
-      "name": "Drew Lock",
-      "mean": 99.5,
-      "line": 99.5,
-      "sd": 66.4,
-      "dist": "normal",
-      "n": 12.1,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Jadarian Price",
-       "mean": 50.1,
-       "line": 45.5,
-       "k": 3.411,
-       "theta": 14.679,
-       "dist": "gamma",
-       "car": 9.9,
-       "n": 3.0
-      },
-      {
-       "name": "Emanuel Wilson",
-       "mean": 29.3,
-       "line": 25.5,
-       "k": 2.524,
-       "theta": 11.622,
-       "dist": "gamma",
-       "car": 7.6,
-       "n": 35.6
-      }
-     ]
-    },
-    "away": {
-     "team": "LAC",
-     "exp_pts": 18.7,
-     "exp_off_tds": 1.83,
-     "td": [
-      {
-       "name": "Ladd McConkey",
-       "pos": "WR",
-       "p": 0.2855,
-       "odds": "+250"
-      },
-      {
-       "name": "Quentin Johnston",
-       "pos": "WR",
-       "p": 0.2581,
-       "odds": "+287"
-      },
-      {
-       "name": "Omarion Hampton",
-       "pos": "RB",
-       "p": 0.2578,
-       "odds": "+288"
-      },
-      {
-       "name": "Kimani Vidal",
-       "pos": "RB",
-       "p": 0.2575,
-       "odds": "+288"
-      },
-      {
-       "name": "Keaton Mitchell",
-       "pos": "RB",
-       "p": 0.1737,
-       "odds": "+476"
-      },
-      {
-       "name": "Oronde Gadsden II",
-       "pos": "TE",
-       "p": 0.1667,
-       "odds": "+500"
-      }
-     ],
-     "qb": {
-      "name": "Justin Herbert",
-      "mean": 186.3,
-      "line": 186.5,
-      "sd": 70.5,
-      "dist": "normal",
-      "n": 38.4,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Omarion Hampton",
-       "mean": 44.3,
-       "line": 40.0,
-       "k": 3.215,
-       "theta": 13.774,
-       "dist": "gamma",
-       "car": 14.2,
-       "n": 11.5
-      },
-      {
-       "name": "Kimani Vidal",
-       "mean": 25.0,
-       "line": 21.5,
-       "k": 2.251,
-       "theta": 11.096,
-       "dist": "gamma",
-       "car": 7.9,
-       "n": 20.4
-      }
-     ]
-    }
-   }
-  },
-  {
-   "away": "LAR",
+   "id": "2026_04_LA_PHI",
+   "away": "LA",
    "home": "PHI",
-   "gameday": "2026-10-04",
-   "p_home": 0.4342,
-   "margin": -0.45,
-   "total": 45.39,
-   "p_home_cover": 0.5569,
-   "p_over": 0.5639,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "PHI",
      "exp_pts": 22.5,
      "exp_off_tds": 2.58,
@@ -1645,7 +1445,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "LA",
      "exp_pts": 22.9,
      "exp_off_tds": 2.23,
@@ -1719,20 +1519,171 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_LAC_SEA",
+   "away": "LAC",
+   "home": "SEA",
+   "date": "2026-10-04",
+   "teams": [
+    {
+     "team": "SEA",
+     "exp_pts": 26.3,
+     "exp_off_tds": 2.85,
+     "td": [
+      {
+       "name": "Jaxon Smith-Njigba",
+       "pos": "WR",
+       "p": 0.4674,
+       "odds": "+114"
+      },
+      {
+       "name": "AJ Barner",
+       "pos": "TE",
+       "p": 0.2804,
+       "odds": "+257"
+      },
+      {
+       "name": "Jadarian Price",
+       "pos": "RB",
+       "p": 0.2718,
+       "odds": "+268"
+      },
+      {
+       "name": "Cooper Kupp",
+       "pos": "WR",
+       "p": 0.242,
+       "odds": "+313"
+      },
+      {
+       "name": "Emanuel Wilson",
+       "pos": "RB",
+       "p": 0.2095,
+       "odds": "+377"
+      },
+      {
+       "name": "George Holani",
+       "pos": "RB",
+       "p": 0.1876,
+       "odds": "+433"
+      }
+     ],
+     "qb": {
+      "name": "Drew Lock",
+      "mean": 99.5,
+      "line": 99.5,
+      "sd": 66.4,
+      "dist": "normal",
+      "n": 12.1,
+      "note": "listed starter"
+     },
+     "rb": [
+      {
+       "name": "Jadarian Price",
+       "mean": 50.1,
+       "line": 45.5,
+       "k": 3.411,
+       "theta": 14.679,
+       "dist": "gamma",
+       "car": 9.9,
+       "n": 3.0
+      },
+      {
+       "name": "Emanuel Wilson",
+       "mean": 29.3,
+       "line": 25.5,
+       "k": 2.524,
+       "theta": 11.622,
+       "dist": "gamma",
+       "car": 7.6,
+       "n": 35.6
+      }
+     ]
+    },
+    {
+     "team": "LAC",
+     "exp_pts": 18.7,
+     "exp_off_tds": 1.83,
+     "td": [
+      {
+       "name": "Ladd McConkey",
+       "pos": "WR",
+       "p": 0.2855,
+       "odds": "+250"
+      },
+      {
+       "name": "Quentin Johnston",
+       "pos": "WR",
+       "p": 0.2581,
+       "odds": "+287"
+      },
+      {
+       "name": "Omarion Hampton",
+       "pos": "RB",
+       "p": 0.2578,
+       "odds": "+288"
+      },
+      {
+       "name": "Kimani Vidal",
+       "pos": "RB",
+       "p": 0.2575,
+       "odds": "+288"
+      },
+      {
+       "name": "Keaton Mitchell",
+       "pos": "RB",
+       "p": 0.1737,
+       "odds": "+476"
+      },
+      {
+       "name": "Oronde Gadsden II",
+       "pos": "TE",
+       "p": 0.1667,
+       "odds": "+500"
+      }
+     ],
+     "qb": {
+      "name": "Justin Herbert",
+      "mean": 186.3,
+      "line": 186.5,
+      "sd": 70.5,
+      "dist": "normal",
+      "n": 38.4,
+      "note": "listed starter"
+     },
+     "rb": [
+      {
+       "name": "Omarion Hampton",
+       "mean": 44.3,
+       "line": 40.0,
+       "k": 3.215,
+       "theta": 13.774,
+       "dist": "gamma",
+       "car": 14.2,
+       "n": 11.5
+      },
+      {
+       "name": "Kimani Vidal",
+       "mean": 25.0,
+       "line": 21.5,
+       "k": 2.251,
+       "theta": 11.096,
+       "dist": "gamma",
+       "car": 7.9,
+       "n": 20.4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2026_04_MIA_MIN",
    "away": "MIA",
    "home": "MIN",
-   "gameday": "2026-10-04",
-   "p_home": 0.8227,
-   "margin": 9.31,
-   "total": 46.57,
-   "p_home_cover": 0.4273,
-   "p_over": 0.738,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "MIN",
      "exp_pts": 27.9,
      "exp_off_tds": 3.39,
@@ -1796,7 +1747,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "MIA",
      "exp_pts": 18.6,
      "exp_off_tds": 1.83,
@@ -1860,20 +1811,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_NE_BUF",
    "away": "NE",
    "home": "BUF",
-   "gameday": "2026-10-04",
-   "p_home": 0.6735,
-   "margin": 5.35,
-   "total": 46.35,
-   "p_home_cover": 0.4282,
-   "p_over": 0.4292,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "BUF",
      "exp_pts": 25.8,
      "exp_off_tds": 3.08,
@@ -1937,7 +1883,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "NE",
      "exp_pts": 20.5,
      "exp_off_tds": 2.08,
@@ -2011,20 +1957,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_NYJ_CHI",
    "away": "NYJ",
    "home": "CHI",
-   "gameday": "2026-10-04",
-   "p_home": 0.7225,
-   "margin": 6.71,
-   "total": 45.9,
-   "p_home_cover": 0.5964,
-   "p_over": 0.5766,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "CHI",
      "exp_pts": 26.3,
      "exp_off_tds": 3.29,
@@ -2094,7 +2035,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "NYJ",
      "exp_pts": 19.6,
      "exp_off_tds": 2.48,
@@ -2158,20 +2099,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_TEN_BAL",
    "away": "TEN",
    "home": "BAL",
-   "gameday": "2026-10-04",
-   "p_home": 0.8953,
-   "margin": 12.86,
-   "total": 44.95,
-   "p_home_cover": 0.5191,
-   "p_over": 0.5426,
-   "confidence": "MODERATE",
-   "props": {
-    "home": {
+   "date": "2026-10-04",
+   "teams": [
+    {
      "team": "BAL",
      "exp_pts": 28.9,
      "exp_off_tds": 3.89,
@@ -2235,7 +2171,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "TEN",
      "exp_pts": 16.0,
      "exp_off_tds": 1.46,
@@ -2309,20 +2245,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_04_ATL_NO",
    "away": "ATL",
    "home": "NO",
-   "gameday": "2026-10-05",
-   "p_home": 0.3999,
-   "margin": -2.63,
-   "total": 43.98,
-   "p_home_cover": 0.3507,
-   "p_over": 0.3573,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-05",
+   "teams": [
+    {
      "team": "NO",
      "exp_pts": 20.7,
      "exp_off_tds": 2.21,
@@ -2396,7 +2327,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "ATL",
      "exp_pts": 23.3,
      "exp_off_tds": 2.57,
@@ -2470,11 +2401,8 @@
       }
      ]
     }
-   }
+   ]
   }
  ],
- "props_platt": [
-  0.7504,
-  -0.2837
- ]
+ "note": "Fair lines/odds, no vig. TD = rush+rec TDs (QB rushing counts). Rookies without NFL games get no prop. Week-1 form = 2025 EWMA."
 }

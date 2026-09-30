@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
   upset (Dallas Cowboys wins): 42%
   vs spread (Houston Texans -2.5): cover 54.9%
-  vs total (47.5): over 48.8%
+  vs total (48.5): over 46.0%
 
 KEY FACTORS (points toward Houston Texans)
   +5.00  offensive EPA/play

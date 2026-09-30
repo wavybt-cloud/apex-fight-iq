@@ -128,10 +128,22 @@ def build(sims_per_game: int, out_dir: Path) -> None:
     props_path = week_dir / "props.json"
     if props_path.exists():
         props = json.load(open(props_path))
-        js = ("const PROPS=" + json.dumps(props.get("games", props)) +
-              ";const PROP_META=" + json.dumps({"spreads": props.get("spreads", {})}))
-        (out_dir / "propsdata.js").write_text(js)
-        print(f"wrote {out_dir/'propsdata.js'}")
+        # props.json stores a list of games each holding a `teams` list; the page
+        # wants {game_id: {away: {...}, home: {...}}}, matched by team code rather
+        # than list position so a reordering upstream cannot silently swap sides.
+        by_game = {}
+        for g in props["games"]:
+            sides = {}
+            for t in g["teams"]:
+                sides["home" if t["team"] == g["home"] else "away"] = t
+            if set(sides) != {"home", "away"}:
+                raise SystemExit(f"props.json: cannot match sides for {g['id']}")
+            by_game[g["id"]] = sides
+        meta = {"spreads": props.get("spreads", {}), "platt": props.get("platt"),
+                "generated": props.get("generated", "")}
+        (out_dir / "propsdata.js").write_text(
+            "const PROPS=" + json.dumps(by_game) + ";const PROP_META=" + json.dumps(meta) + ";")
+        print(f"wrote {out_dir/'propsdata.js'}: {len(by_game)} games")
     else:
         print("no props.json for this week yet - skipping propsdata.js")
 
