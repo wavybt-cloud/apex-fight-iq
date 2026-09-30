@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 49%    overtime: 4.7%    blowout(17+): 26%
   upset (New York Jets wins): 29%
   vs spread (Chicago Bears -3.5): cover 59.6%
-  vs total (43.5): over 57.7%
+  vs total (42.5): over 60.7%
 
 KEY FACTORS (points toward Chicago Bears)
   +5.37  Elo rating gap (incl. HFA, rest, QB)

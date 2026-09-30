@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T08:26:25.000768",
+ "generated": "2026-09-30T16:25:44.812744",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -162,7 +162,7 @@
    "p_home": 0.5871,
    "margin": 3.38,
    "total": 45.49,
-   "p_home_cover": 0.6348,
+   "p_home_cover": 0.6459,
    "p_over": 0.5214,
    "confidence": "VERY LOW",
    "props": {
@@ -636,7 +636,7 @@
    "margin": -4.12,
    "total": 46.91,
    "p_home_cover": 0.4812,
-   "p_over": 0.404,
+   "p_over": 0.358,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -973,10 +973,10 @@
        "odds": "+209"
       },
       {
-       "name": "Rachaad White",
+       "name": "Austin Ekeler",
        "pos": "RB",
-       "p": 0.2747,
-       "odds": "+264"
+       "p": 0.2955,
+       "odds": "+238"
       }
      ],
      "qb": {
@@ -1000,14 +1000,14 @@
        "n": 17.4
       },
       {
-       "name": "Rachaad White",
-       "mean": 36.9,
-       "line": 33.0,
-       "k": 2.915,
-       "theta": 12.672,
+       "name": "Austin Ekeler",
+       "mean": 42.5,
+       "line": 38.0,
+       "k": 3.15,
+       "theta": 13.508,
        "dist": "gamma",
-       "car": 8.2,
-       "n": 40.7
+       "car": 8.9,
+       "n": 21.1
       }
      ]
     },
@@ -1134,10 +1134,10 @@
        "odds": "+419"
       },
       {
-       "name": "Erick All",
+       "name": "Tanner Hudson",
        "pos": "TE",
-       "p": 0.1489,
-       "odds": "+571"
+       "p": 0.1544,
+       "odds": "+548"
       }
      ],
      "qb": {
@@ -1607,10 +1607,10 @@
        "odds": "+286"
       },
       {
-       "name": "Zach Ertz",
-       "pos": "TE",
-       "p": 0.2391,
-       "odds": "+318"
+       "name": "Dontayvion Wicks",
+       "pos": "WR",
+       "p": 0.2182,
+       "odds": "+358"
       }
      ],
      "qb": {
@@ -1869,7 +1869,7 @@
    "p_home": 0.6735,
    "margin": 5.35,
    "total": 46.35,
-   "p_home_cover": 0.4282,
+   "p_home_cover": 0.4561,
    "p_over": 0.4292,
    "confidence": "VERY LOW",
    "props": {
@@ -2021,7 +2021,7 @@
    "margin": 6.71,
    "total": 45.9,
    "p_home_cover": 0.5964,
-   "p_over": 0.5766,
+   "p_over": 0.6067,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2298,14 +2298,14 @@
        "n": 40.1
       },
       {
-       "name": "Tyjae Spears",
-       "mean": 19.6,
-       "line": 16.0,
-       "k": 1.847,
-       "theta": 10.585,
+       "name": "Michael Carter",
+       "mean": 20.0,
+       "line": 16.5,
+       "k": 1.88,
+       "theta": 10.615,
        "dist": "gamma",
-       "car": 5.7,
-       "n": 33.2
+       "car": 5.8,
+       "n": 22.4
       }
      ]
     }
