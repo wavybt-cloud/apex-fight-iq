@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T16:25:44.812744",
+ "generated": "2026-10-01T08:26:07.830563",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -323,7 +323,7 @@
    "p_home": 0.5622,
    "margin": 2.42,
    "total": 47.33,
-   "p_home_cover": 0.5491,
+   "p_home_cover": 0.5072,
    "p_over": 0.4604,
    "confidence": "VERY LOW",
    "props": {
@@ -787,7 +787,7 @@
    "margin": -2.97,
    "total": 43.55,
    "p_home_cover": 0.5104,
-   "p_over": 0.6324,
+   "p_over": 0.652,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -930,11 +930,11 @@
    "away": "IND",
    "home": "WAS",
    "gameday": "2026-10-04",
-   "p_home": 0.4462,
-   "margin": -0.37,
+   "p_home": 0.4454,
+   "margin": -0.35,
    "total": 45.54,
-   "p_home_cover": 0.6018,
-   "p_over": 0.4369,
+   "p_home_cover": 0.6022,
+   "p_over": 0.4346,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -945,43 +945,43 @@
       {
        "name": "Jacory Croskey-Merritt",
        "pos": "RB",
-       "p": 0.386,
+       "p": 0.3861,
        "odds": "+159"
       },
       {
        "name": "Antonio Williams",
        "pos": "WR",
-       "p": 0.3432,
+       "p": 0.3434,
        "odds": "+191"
       },
       {
        "name": "Terry McLaurin",
        "pos": "WR",
-       "p": 0.3425,
+       "p": 0.3426,
        "odds": "+192"
       },
       {
        "name": "Stefon Diggs",
        "pos": "WR",
-       "p": 0.3268,
+       "p": 0.3269,
        "odds": "+206"
       },
       {
        "name": "Jayden Daniels",
        "pos": "QB",
-       "p": 0.3237,
+       "p": 0.3239,
        "odds": "+209"
       },
       {
        "name": "Austin Ekeler",
        "pos": "RB",
-       "p": 0.2955,
+       "p": 0.2957,
        "odds": "+238"
       }
      ],
      "qb": {
       "name": "Jayden Daniels",
-      "mean": 208.3,
+      "mean": 208.4,
       "line": 208.5,
       "sd": 71.5,
       "dist": "normal",
@@ -991,20 +991,20 @@
      "rb": [
       {
        "name": "Jacory Croskey-Merritt",
-       "mean": 58.2,
+       "mean": 58.3,
        "line": 53.0,
        "k": 3.642,
-       "theta": 15.991,
+       "theta": 15.993,
        "dist": "gamma",
        "car": 11.4,
        "n": 17.4
       },
       {
        "name": "Austin Ekeler",
-       "mean": 42.5,
+       "mean": 42.6,
        "line": 38.0,
        "k": 3.15,
-       "theta": 13.508,
+       "theta": 13.51,
        "dist": "gamma",
        "car": 8.9,
        "n": 21.1
@@ -1013,49 +1013,49 @@
     },
     "away": {
      "team": "IND",
-     "exp_pts": 23.0,
+     "exp_pts": 22.9,
      "exp_off_tds": 2.36,
      "td": [
       {
        "name": "Jonathan Taylor",
        "pos": "RB",
-       "p": 0.4706,
-       "odds": "+112"
+       "p": 0.4704,
+       "odds": "+113"
       },
       {
        "name": "Anthony Richardson",
        "pos": "QB",
-       "p": 0.315,
-       "odds": "+217"
+       "p": 0.3148,
+       "odds": "+218"
       },
       {
        "name": "DJ Giddens",
        "pos": "RB",
-       "p": 0.2245,
-       "odds": "+345"
+       "p": 0.2243,
+       "odds": "+346"
       },
       {
        "name": "Keenan Allen",
        "pos": "WR",
-       "p": 0.2123,
+       "p": 0.2121,
        "odds": "+371"
       },
       {
        "name": "Tyler Warren",
        "pos": "TE",
-       "p": 0.2118,
+       "p": 0.2117,
        "odds": "+372"
       },
       {
        "name": "Josh Downs",
        "pos": "WR",
-       "p": 0.1885,
-       "odds": "+430"
+       "p": 0.1884,
+       "odds": "+431"
       }
      ],
      "qb": {
       "name": "Daniel Jones",
-      "mean": 219.5,
+      "mean": 219.4,
       "line": 219.5,
       "sd": 72.0,
       "dist": "normal",
@@ -1068,7 +1068,7 @@
        "mean": 89.3,
        "line": 82.5,
        "k": 4.221,
-       "theta": 21.168,
+       "theta": 21.165,
        "dist": "gamma",
        "car": 19.6,
        "n": 33.7
@@ -1077,8 +1077,8 @@
        "name": "DJ Giddens",
        "mean": 35.7,
        "line": 31.5,
-       "k": 2.858,
-       "theta": 12.495,
+       "k": 2.857,
+       "theta": 12.493,
        "dist": "gamma",
        "car": 10.0,
        "n": 4.2
@@ -2021,7 +2021,7 @@
    "margin": 6.71,
    "total": 45.9,
    "p_home_cover": 0.5964,
-   "p_over": 0.6067,
+   "p_over": 0.5766,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2168,7 +2168,7 @@
    "margin": 12.86,
    "total": 44.95,
    "p_home_cover": 0.5191,
-   "p_over": 0.5426,
+   "p_over": 0.5697,
    "confidence": "MODERATE",
    "props": {
     "home": {
@@ -2318,8 +2318,8 @@
    "p_home": 0.3999,
    "margin": -2.63,
    "total": 43.98,
-   "p_home_cover": 0.3507,
-   "p_over": 0.3573,
+   "p_home_cover": 0.3815,
+   "p_over": 0.3876,
    "confidence": "VERY LOW",
    "props": {
     "home": {

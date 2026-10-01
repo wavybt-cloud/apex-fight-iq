@@ -7,15 +7,15 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   New Orleans Saints: 40.0%    Atlanta Falcons: 60.0%
-  market-aware mode: New Orleans Saints 56.7%
+  market-aware mode: New Orleans Saints 55.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New Orleans Saints 20 - Atlanta Falcons 23
   80% range:      New Orleans Saints 10-33, Atlanta Falcons 13-35
   one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
   upset (New Orleans Saints wins): 42%
-  vs spread (New Orleans Saints -3.0): cover 35.1%
-  vs total (48.5): over 35.7%
+  vs spread (New Orleans Saints -2.5): cover 38.2%
+  vs total (47.5): over 38.8%
 
 KEY FACTORS (points toward New Orleans Saints)
   -2.21  Elo rating gap (incl. HFA, rest, QB)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   40.8%
   ridge_pure   41.2%
   gbm_pure     48.0%
-  market       58.3%
+  market       57.2%
   ensemble     40.0%
 
-CONFIDENCE: VERY LOW   (models disagree by 17%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 16%; early season: ratings lean on priors; QB situation unsettled)
