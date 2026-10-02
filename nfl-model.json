@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T08:25:35.937884",
+ "generated": "2026-10-02T16:25:26.706258",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -779,11 +779,11 @@
    "away": "IND",
    "home": "WAS",
    "gameday": "2026-10-04",
-   "p_home": 0.4498,
-   "margin": -0.37,
-   "total": 45.82,
-   "p_home_cover": 0.601,
-   "p_over": 0.4146,
+   "p_home": 0.3932,
+   "margin": -1.94,
+   "total": 44.06,
+   "p_home_cover": 0.5527,
+   "p_over": 0.3637,
    "confidence": "VERY LOW",
    "props": {
     "home": {
