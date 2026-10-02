@@ -1,130 +1,34 @@
 [
   {
-    "game_id": "2026_04_PIT_CLE",
-    "away": "PIT",
-    "home": "CLE",
-    "gameday": "2026-10-01",
-    "week": 4,
-    "p_home": 0.44743742964487343,
-    "p_home_mkt": 0.42583360679147353,
-    "margin": -0.49259826951044317,
-    "total": 46.44857399489167,
-    "spread_line": -2.5,
-    "total_line": 38.5,
-    "away_ml": -148.0,
-    "home_ml": 124.0,
-    "sim": {
-      "n_sims": 50000,
-      "p_home": 0.48229,
-      "p_away": 0.51771,
-      "p_tie": 0.00346,
-      "mean_home": 23.22744,
-      "mean_away": 23.71918,
-      "median_home": 23.0,
-      "median_away": 23.0,
-      "mean_margin": -0.49174,
-      "sd_margin": 12.473578948016483,
-      "mean_total": 46.94662,
-      "sd_total": 12.838961429009748,
-      "p_ot": 0.05438,
-      "p_one_score": 0.55374,
-      "p_blowout_17": 0.19726,
-      "margin_pctiles": {
-        "10": -17.0,
-        "25": -8.0,
-        "50": -1.0,
-        "75": 7.0,
-        "90": 16.0
-      },
-      "home_pctiles": {
-        "10": 13.0,
-        "25": 17.0,
-        "50": 23.0,
-        "75": 29.0,
-        "90": 34.0
-      },
-      "away_pctiles": {
-        "10": 13.0,
-        "25": 17.0,
-        "50": 23.0,
-        "75": 30.0,
-        "90": 35.0
-      },
-      "key_mass_3": 0.1494,
-      "key_mass_7": 0.10086,
-      "p_home_cover": 0.5165,
-      "p_spread_push": 0.0,
-      "p_over": 0.74022,
-      "p_total_push": 0.0,
-      "p_upset": 0.48229
-    },
-    "members": {
-      "elo": 0.4656196284843474,
-      "logit_pure": 0.4897449505599166,
-      "ridge_pure": 0.48316991773443396,
-      "gbm_pure": 0.4887540575781063,
-      "market": 0.42794036443953615
-    },
-    "confidence": [
-      "VERY LOW",
-      [
-        "early season: ratings lean on priors",
-        "QB situation unsettled"
-      ]
-    ],
-    "drivers": [
-      [
-        "offensive EPA/play",
-        3.711
-      ],
-      [
-        "Elo rating gap (incl. HFA, rest, QB)",
-        -2.637
-      ],
-      [
-        "passing efficiency",
-        -1.384
-      ],
-      [
-        "rushing efficiency",
-        -1.325
-      ],
-      [
-        "offensive success rate",
-        -0.894
-      ]
-    ]
-  },
-  {
     "game_id": "2026_04_ARI_NYG",
     "away": "ARI",
     "home": "NYG",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.587111749942915,
-    "p_home_mkt": 0.46926849797868764,
-    "margin": 3.375744892599671,
-    "total": 45.4911956317948,
+    "p_home": 0.5816585850481618,
+    "p_home_mkt": 0.4677401799017933,
+    "margin": 3.342899452457771,
+    "total": 45.90944553921091,
     "spread_line": -2.5,
     "total_line": 44.5,
     "away_ml": -142.0,
     "home_ml": 120.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.61495,
-      "p_away": 0.38504999999999995,
-      "p_tie": 0.0025,
-      "mean_home": 24.68594,
-      "mean_away": 21.33824,
+      "p_home": 0.60703,
+      "p_away": 0.39297,
+      "p_tie": 0.00278,
+      "mean_home": 24.82186,
+      "mean_away": 21.55412,
       "median_home": 24.0,
-      "median_away": 20.0,
-      "mean_margin": 3.3477,
-      "sd_margin": 12.519060855751121,
-      "mean_total": 46.02418,
-      "sd_total": 12.871784465550999,
-      "p_ot": 0.05204,
-      "p_one_score": 0.5363,
-      "p_blowout_17": 0.21486,
+      "median_away": 21.0,
+      "mean_margin": 3.26774,
+      "sd_margin": 12.534021513161688,
+      "mean_total": 46.37598,
+      "sd_total": 12.958320070117116,
+      "p_ot": 0.05164,
+      "p_one_score": 0.53642,
+      "p_blowout_17": 0.21202,
       "margin_pctiles": {
         "10": -13.0,
         "25": -5.0,
@@ -136,35 +40,35 @@
         "10": 13.0,
         "25": 19.0,
         "50": 24.0,
-        "75": 30.0,
+        "75": 31.0,
         "90": 37.0
       },
       "away_pctiles": {
         "10": 10.0,
-        "25": 15.0,
-        "50": 20.0,
+        "25": 16.0,
+        "50": 21.0,
         "75": 27.0,
-        "90": 33.0
+        "90": 34.0
       },
-      "key_mass_3": 0.14382,
-      "key_mass_7": 0.10012,
-      "p_home_cover": 0.64588,
+      "key_mass_3": 0.14358,
+      "key_mass_7": 0.09696,
+      "p_home_cover": 0.6396,
       "p_spread_push": 0.0,
-      "p_over": 0.52136,
+      "p_over": 0.53228,
       "p_total_push": 0.0,
-      "p_upset": 0.38504999999999995
+      "p_upset": 0.39297
     },
     "members": {
-      "elo": 0.621174411284054,
-      "logit_pure": 0.6013114783582968,
-      "ridge_pure": 0.6015663525095409,
-      "gbm_pure": 0.6415611826067793,
+      "elo": 0.6216361804606797,
+      "logit_pure": 0.602810740960125,
+      "ridge_pure": 0.6020137697925392,
+      "gbm_pure": 0.62114095233857,
       "market": 0.43650793650793646
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 21%",
+        "models disagree by 19%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -172,11 +76,11 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        0.894
+        0.905
       ],
       [
         "pass defense",
-        0.682
+        0.683
       ],
       [
         "rushing efficiency",
@@ -184,7 +88,7 @@
       ],
       [
         "run defense",
-        -0.529
+        -0.53
       ],
       [
         "passing efficiency",
@@ -198,41 +102,41 @@
     "home": "HOU",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.562203234583718,
-    "p_home_mkt": 0.6103352756066167,
-    "margin": 2.421508021812332,
-    "total": 47.33430168447363,
+    "p_home": 0.564520318223347,
+    "p_home_mkt": 0.6109484669551116,
+    "margin": 2.618364084419756,
+    "total": 47.41333078110737,
     "spread_line": 3.0,
     "total_line": 48.5,
     "away_ml": 136.0,
     "home_ml": -162.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.57954,
-      "p_away": 0.42046,
-      "p_tie": 0.00268,
-      "mean_home": 25.04216,
-      "mean_away": 22.72838,
-      "median_home": 24.0,
+      "p_home": 0.58504,
+      "p_away": 0.41496,
+      "p_tie": 0.00264,
+      "mean_home": 25.24978,
+      "mean_away": 22.68594,
+      "median_home": 25.0,
       "median_away": 23.0,
-      "mean_margin": 2.31378,
-      "sd_margin": 12.540719361806962,
-      "mean_total": 47.77054,
-      "sd_total": 12.948785584308668,
-      "p_ot": 0.052,
-      "p_one_score": 0.54492,
-      "p_blowout_17": 0.2071,
+      "mean_margin": 2.56384,
+      "sd_margin": 12.631598649988844,
+      "mean_total": 47.93572,
+      "sd_total": 13.026518647804561,
+      "p_ot": 0.0522,
+      "p_one_score": 0.54006,
+      "p_blowout_17": 0.21056,
       "margin_pctiles": {
         "10": -14.0,
         "25": -6.0,
         "50": 3.0,
         "75": 10.0,
-        "90": 18.0
+        "90": 19.0
       },
       "home_pctiles": {
         "10": 13.0,
-        "25": 19.0,
-        "50": 24.0,
+        "25": 20.0,
+        "50": 25.0,
         "75": 31.0,
         "90": 37.0
       },
@@ -243,19 +147,19 @@
         "75": 28.0,
         "90": 34.0
       },
-      "key_mass_3": 0.14358,
-      "key_mass_7": 0.09846,
-      "p_home_cover": 0.5072300000000001,
-      "p_spread_push": 0.0837,
-      "p_over": 0.46038,
+      "key_mass_3": 0.14582,
+      "key_mass_7": 0.09598,
+      "p_home_cover": 0.51278,
+      "p_spread_push": 0.08464,
+      "p_over": 0.46668,
       "p_total_push": 0.0,
-      "p_upset": 0.42046
+      "p_upset": 0.41496
     },
     "members": {
-      "elo": 0.6775414173995296,
-      "logit_pure": 0.5862604907476305,
-      "ridge_pure": 0.5956217362894497,
-      "gbm_pure": 0.5646563362422159,
+      "elo": 0.6779700979999167,
+      "logit_pure": 0.5876992265748391,
+      "ridge_pure": 0.5960073570201734,
+      "gbm_pure": 0.5696656735894057,
       "market": 0.593369754159424
     },
     "confidence": [
@@ -269,15 +173,15 @@
     "drivers": [
       [
         "offensive EPA/play",
-        4.999
+        4.991
       ],
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        2.279
+        2.29
       ],
       [
         "opponent-adjusted defensive EPA",
-        -2.211
+        -2.206
       ],
       [
         "passing efficiency",
@@ -285,7 +189,7 @@
       ],
       [
         "QB rating gap",
-        -1.892
+        -1.894
       ]
     ]
   },
@@ -295,32 +199,32 @@
     "home": "SF",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.6338603709612323,
-    "p_home_mkt": 0.591424233248527,
-    "margin": 4.349854351847815,
-    "total": 45.97336138639727,
+    "p_home": 0.64069376885845,
+    "p_home_mkt": 0.5932440405375912,
+    "margin": 4.479164597203328,
+    "total": 46.059175557210445,
     "spread_line": 3.0,
     "total_line": 47.5,
     "away_ml": 124.0,
     "home_ml": -148.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.64027,
-      "p_away": 0.35973,
-      "p_tie": 0.0025,
-      "mean_home": 25.37552,
-      "mean_away": 21.15486,
+      "p_home": 0.64885,
+      "p_away": 0.35115,
+      "p_tie": 0.00266,
+      "mean_home": 25.5255,
+      "mean_away": 21.02838,
       "median_home": 24.0,
       "median_away": 20.0,
-      "mean_margin": 4.22066,
-      "sd_margin": 12.722699759264934,
-      "mean_total": 46.53038,
-      "sd_total": 13.132554856371247,
-      "p_ot": 0.049,
-      "p_one_score": 0.5205,
-      "p_blowout_17": 0.23208,
+      "mean_margin": 4.49712,
+      "sd_margin": 12.733293042477268,
+      "mean_total": 46.55388,
+      "sd_total": 13.225752793153212,
+      "p_ot": 0.05248,
+      "p_one_score": 0.51878,
+      "p_blowout_17": 0.23526,
       "margin_pctiles": {
-        "10": -12.0,
+        "10": -11.0,
         "25": -4.0,
         "50": 4.0,
         "75": 13.0,
@@ -340,25 +244,25 @@
         "75": 27.0,
         "90": 33.0
       },
-      "key_mass_3": 0.13946,
-      "key_mass_7": 0.09656,
-      "p_home_cover": 0.57001,
-      "p_spread_push": 0.07826,
-      "p_over": 0.4591,
+      "key_mass_3": 0.13824,
+      "key_mass_7": 0.09816,
+      "p_home_cover": 0.57853,
+      "p_spread_push": 0.0769,
+      "p_over": 0.45902,
       "p_total_push": 0.0,
-      "p_upset": 0.35973
+      "p_upset": 0.35115
     },
     "members": {
-      "elo": 0.5978985222977432,
-      "logit_pure": 0.6554759847650612,
-      "ridge_pure": 0.6238577322540761,
-      "gbm_pure": 0.6912460952523478,
+      "elo": 0.598370319175255,
+      "logit_pure": 0.6562817466256153,
+      "ridge_pure": 0.6242339378339088,
+      "gbm_pure": 0.7093432859813684,
       "market": 0.5720596355604638
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 12%",
+        "models disagree by 14%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -366,11 +270,11 @@
     "drivers": [
       [
         "offensive EPA/play",
-        -6.653
+        -6.645
       ],
       [
         "passing efficiency",
-        3.828
+        3.829
       ],
       [
         "offensive success rate",
@@ -378,11 +282,11 @@
       ],
       [
         "QB rating gap",
-        1.811
+        1.812
       ],
       [
         "opponent-adjusted defensive EPA",
-        1.148
+        1.145
       ]
     ]
   },
@@ -392,36 +296,36 @@
     "home": "CAR",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.3537037376611052,
-    "p_home_mkt": 0.37223757446281147,
-    "margin": -4.1215090276544295,
-    "total": 46.90920129669588,
+    "p_home": 0.35230821971828535,
+    "p_home_mkt": 0.3717063752731614,
+    "margin": -4.372847231691591,
+    "total": 46.64545691698593,
     "spread_line": -3.5,
     "total_line": 50.5,
     "away_ml": -185.0,
     "home_ml": 154.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.37045,
-      "p_away": 0.62955,
-      "p_tie": 0.00286,
-      "mean_home": 21.72328,
-      "mean_away": 25.67318,
+      "p_home": 0.35648,
+      "p_away": 0.64352,
+      "p_tie": 0.00256,
+      "mean_home": 21.4401,
+      "mean_away": 25.78334,
       "median_home": 21.0,
       "median_away": 25.0,
-      "mean_margin": -3.9499,
-      "sd_margin": 12.818795184805786,
-      "mean_total": 47.39646,
-      "sd_total": 13.134632064447029,
-      "p_ot": 0.04946,
-      "p_one_score": 0.5219,
-      "p_blowout_17": 0.23052,
+      "mean_margin": -4.34324,
+      "sd_margin": 12.74658645686758,
+      "mean_total": 47.22344,
+      "sd_total": 13.182133156905978,
+      "p_ot": 0.04918,
+      "p_one_score": 0.52154,
+      "p_blowout_17": 0.23026,
       "margin_pctiles": {
         "10": -21.0,
         "25": -13.0,
         "50": -4.0,
-        "75": 5.0,
-        "90": 13.0
+        "75": 4.0,
+        "90": 11.0
       },
       "home_pctiles": {
         "10": 10.0,
@@ -437,19 +341,19 @@
         "75": 31.0,
         "90": 38.0
       },
-      "key_mass_3": 0.13902,
+      "key_mass_3": 0.13906,
       "key_mass_7": 0.09658,
-      "p_home_cover": 0.48122,
+      "p_home_cover": 0.46734,
       "p_spread_push": 0.0,
-      "p_over": 0.40398,
+      "p_over": 0.39902,
       "p_total_push": 0.0,
-      "p_upset": 0.37045
+      "p_upset": 0.35648
     },
     "members": {
-      "elo": 0.4108889191196095,
-      "logit_pure": 0.36738107612148,
-      "ridge_pure": 0.35721439975877134,
-      "gbm_pure": 0.4139952315023938,
+      "elo": 0.4113641153049505,
+      "logit_pure": 0.36732569761110695,
+      "ridge_pure": 0.35749758432721634,
+      "gbm_pure": 0.40685543345586783,
       "market": 0.3775334481388264
     },
     "confidence": [
@@ -462,15 +366,15 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -3.88
+        -3.868
       ],
       [
         "QB rating gap",
-        -2.878
+        -2.879
       ],
       [
         "offensive EPA/play",
-        1.907
+        1.902
       ],
       [
         "passing efficiency",
@@ -478,7 +382,7 @@
       ],
       [
         "offensive success rate",
-        -1.095
+        -1.094
       ]
     ]
   },
@@ -488,30 +392,30 @@
     "home": "TB",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.3585738843851168,
-    "p_home_mkt": 0.3625781779953727,
-    "margin": -2.971863125450391,
-    "total": 43.54939947770415,
+    "p_home": 0.35520967628255073,
+    "p_home_mkt": 0.3613316299658939,
+    "margin": -3.0589952184630387,
+    "total": 43.56027055696275,
     "spread_line": -3.5,
     "total_line": 38.5,
     "away_ml": -185.0,
     "home_ml": 154.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.39742000000000005,
-      "p_away": 0.60258,
-      "p_tie": 0.00316,
-      "mean_home": 20.56242,
-      "mean_away": 23.46332,
+      "p_home": 0.39765,
+      "p_away": 0.6023499999999999,
+      "p_tie": 0.0023,
+      "mean_home": 20.53398,
+      "mean_away": 23.52454,
       "median_home": 20.0,
-      "median_away": 23.0,
-      "mean_margin": -2.9009,
-      "sd_margin": 12.428081074325192,
-      "mean_total": 44.02574,
-      "sd_total": 12.744890641052987,
-      "p_ot": 0.05328,
-      "p_one_score": 0.545,
-      "p_blowout_17": 0.20496,
+      "median_away": 24.0,
+      "mean_margin": -2.99056,
+      "sd_margin": 12.411507196404472,
+      "mean_total": 44.05852,
+      "sd_total": 12.635832200911818,
+      "p_ot": 0.05142,
+      "p_one_score": 0.54544,
+      "p_blowout_17": 0.20648,
       "margin_pctiles": {
         "10": -19.0,
         "25": -11.0,
@@ -529,23 +433,23 @@
       "away_pctiles": {
         "10": 13.0,
         "25": 17.0,
-        "50": 23.0,
+        "50": 24.0,
         "75": 30.0,
         "90": 35.0
       },
-      "key_mass_3": 0.1429,
-      "key_mass_7": 0.09756,
-      "p_home_cover": 0.51038,
+      "key_mass_3": 0.14284,
+      "key_mass_7": 0.09606,
+      "p_home_cover": 0.5074,
       "p_spread_push": 0.0,
-      "p_over": 0.652,
+      "p_over": 0.65514,
       "p_total_push": 0.0,
-      "p_upset": 0.39742000000000005
+      "p_upset": 0.39765
     },
     "members": {
-      "elo": 0.41016047862810967,
-      "logit_pure": 0.3503271577207381,
-      "ridge_pure": 0.3998631828852086,
-      "gbm_pure": 0.42889262058144384,
+      "elo": 0.4106354195877505,
+      "logit_pure": 0.3518451566046568,
+      "ridge_pure": 0.40026210935041395,
+      "gbm_pure": 0.4094680293419122,
       "market": 0.3775334481388264
     },
     "confidence": [
@@ -558,11 +462,11 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -3.897
+        -3.885
       ],
       [
         "QB rating gap",
-        -3.116
+        -3.114
       ],
       [
         "rushing efficiency",
@@ -570,7 +474,7 @@
       ],
       [
         "offensive EPA/play",
-        1.825
+        1.821
       ],
       [
         "passing efficiency",
@@ -584,30 +488,30 @@
     "home": "WAS",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.44538665309149394,
-    "p_home_mkt": 0.3771030830793555,
-    "margin": -0.3492480888430535,
-    "total": 45.53586680611983,
+    "p_home": 0.4497779340637706,
+    "p_home_mkt": 0.3784164436945272,
+    "margin": -0.3671165466821647,
+    "total": 45.821614874556495,
     "spread_line": -3.5,
     "total_line": 48.5,
     "away_ml": -192.0,
     "home_ml": 160.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.49109,
-      "p_away": 0.50891,
-      "p_tie": 0.00294,
-      "mean_home": 22.90684,
-      "mean_away": 23.15924,
+      "p_home": 0.49341,
+      "p_away": 0.50659,
+      "p_tie": 0.00282,
+      "mean_home": 23.03642,
+      "mean_away": 23.29132,
       "median_home": 23.0,
       "median_away": 23.0,
-      "mean_margin": -0.2524,
-      "sd_margin": 12.497856385796725,
-      "mean_total": 46.06608,
-      "sd_total": 12.911479908732383,
-      "p_ot": 0.05482,
-      "p_one_score": 0.55416,
-      "p_blowout_17": 0.19666,
+      "mean_margin": -0.2549,
+      "sd_margin": 12.504093969176655,
+      "mean_total": 46.32774,
+      "sd_total": 12.848427393747455,
+      "p_ot": 0.05246,
+      "p_one_score": 0.55564,
+      "p_blowout_17": 0.197,
       "margin_pctiles": {
         "10": -17.0,
         "25": -7.0,
@@ -616,7 +520,7 @@
         "90": 16.0
       },
       "home_pctiles": {
-        "10": 10.0,
+        "10": 12.0,
         "25": 17.0,
         "50": 23.0,
         "75": 29.0,
@@ -629,19 +533,19 @@
         "75": 29.0,
         "90": 34.0
       },
-      "key_mass_3": 0.14926,
-      "key_mass_7": 0.10232,
-      "p_home_cover": 0.60222,
+      "key_mass_3": 0.14634,
+      "key_mass_7": 0.10092,
+      "p_home_cover": 0.60102,
       "p_spread_push": 0.0,
-      "p_over": 0.40742,
+      "p_over": 0.41458,
       "p_total_push": 0.0,
-      "p_upset": 0.49109
+      "p_upset": 0.49341
     },
     "members": {
       "elo": 0.4955377232582487,
-      "logit_pure": 0.5052647921598812,
-      "ridge_pure": 0.48789587386246747,
-      "gbm_pure": 0.43949335083908286,
+      "logit_pure": 0.5054432270429898,
+      "ridge_pure": 0.4879373590912146,
+      "gbm_pure": 0.4564220469503131,
       "market": 0.3690596562184025
     },
     "confidence": [
@@ -667,11 +571,11 @@
       ],
       [
         "QB rating gap",
-        0.808
+        0.809
       ],
       [
         "drive FG rate",
-        -0.586
+        -0.587
       ]
     ]
   },
@@ -681,30 +585,30 @@
     "home": "CIN",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.44554513608990504,
-    "p_home_mkt": 0.5384574881387728,
-    "margin": 0.03747698756721303,
-    "total": 47.84486599234057,
+    "p_home": 0.44829200662576396,
+    "p_home_mkt": 0.5393211783050261,
+    "margin": -0.0526500948355636,
+    "total": 48.22423211315928,
     "spread_line": 2.5,
     "total_line": 51.5,
     "away_ml": 120.0,
     "home_ml": -142.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.4972,
-      "p_away": 0.5028,
-      "p_tie": 0.00284,
-      "mean_home": 24.12824,
-      "mean_away": 24.14866,
+      "p_home": 0.49413,
+      "p_away": 0.5058699999999999,
+      "p_tie": 0.0027,
+      "mean_home": 24.33018,
+      "mean_away": 24.45752,
       "median_home": 24.0,
       "median_away": 24.0,
-      "mean_margin": -0.02042,
-      "sd_margin": 12.772714786747569,
-      "mean_total": 48.2769,
-      "sd_total": 13.256234246195259,
-      "p_ot": 0.05178,
-      "p_one_score": 0.54102,
-      "p_blowout_17": 0.20672,
+      "mean_margin": -0.12734,
+      "sd_margin": 12.824384762022698,
+      "mean_total": 48.7877,
+      "sd_total": 13.279754090720203,
+      "p_ot": 0.05,
+      "p_one_score": 0.54026,
+      "p_blowout_17": 0.21024,
       "margin_pctiles": {
         "10": -17.0,
         "25": -8.0,
@@ -717,34 +621,34 @@
         "25": 17.0,
         "50": 24.0,
         "75": 30.0,
-        "90": 36.0
+        "90": 37.0
       },
       "away_pctiles": {
         "10": 13.0,
         "25": 17.0,
         "50": 24.0,
         "75": 31.0,
-        "90": 36.0
+        "90": 37.0
       },
-      "key_mass_3": 0.14512,
-      "key_mass_7": 0.09782,
-      "p_home_cover": 0.4674,
+      "key_mass_3": 0.1447,
+      "key_mass_7": 0.09904,
+      "p_home_cover": 0.46482,
       "p_spread_push": 0.0,
-      "p_over": 0.3841,
+      "p_over": 0.39476,
       "p_total_push": 0.0,
-      "p_upset": 0.4972
+      "p_upset": 0.49413
     },
     "members": {
-      "elo": 0.4652839527149548,
-      "logit_pure": 0.4953308064052491,
-      "ridge_pure": 0.5045661782629886,
-      "gbm_pure": 0.4538681617012581,
+      "elo": 0.4657723196396797,
+      "logit_pure": 0.4958078523430228,
+      "ridge_pure": 0.5049329801599802,
+      "gbm_pure": 0.463434816055432,
       "market": 0.5634920634920635
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 11%",
+        "models disagree by 10%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -752,19 +656,19 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -2.644
+        -2.633
       ],
       [
         "offensive EPA/play",
-        1.547
+        1.543
       ],
       [
         "opponent-adjusted defensive EPA",
-        1.249
+        1.246
       ],
       [
         "pass defense",
-        -1.066
+        -1.068
       ],
       [
         "passing efficiency",
@@ -778,36 +682,36 @@
     "home": "LV",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.37574518306588867,
-    "p_home_mkt": 0.34452265928643777,
-    "margin": -3.0628395701663322,
-    "total": 47.4534589860934,
+    "p_home": 0.37635823617367264,
+    "p_home_mkt": 0.3447126399478627,
+    "margin": -3.196274866144311,
+    "total": 47.229949193327094,
     "spread_line": -4.5,
     "total_line": 47.5,
     "away_ml": -218.0,
     "home_ml": 180.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.4037,
-      "p_away": 0.5962999999999999,
-      "p_tie": 0.00308,
-      "mean_home": 22.5094,
-      "mean_away": 25.4417,
+      "p_home": 0.39757,
+      "p_away": 0.60243,
+      "p_tie": 0.00274,
+      "mean_home": 22.27048,
+      "mean_away": 25.39062,
       "median_home": 22.0,
       "median_away": 25.0,
-      "mean_margin": -2.9323,
-      "sd_margin": 12.704682471829038,
-      "mean_total": 47.9511,
-      "sd_total": 13.0032514699209,
-      "p_ot": 0.05202,
-      "p_one_score": 0.53196,
-      "p_blowout_17": 0.21632,
+      "mean_margin": -3.12014,
+      "sd_margin": 12.591904795558136,
+      "mean_total": 47.6611,
+      "sd_total": 12.965597818457889,
+      "p_ot": 0.05124,
+      "p_one_score": 0.53764,
+      "p_blowout_17": 0.21446,
       "margin_pctiles": {
-        "10": -19.099999999999454,
+        "10": -20.0,
         "25": -11.0,
         "50": -3.0,
         "75": 5.0,
-        "90": 14.0
+        "90": 13.0
       },
       "home_pctiles": {
         "10": 10.0,
@@ -823,19 +727,19 @@
         "75": 31.0,
         "90": 37.0
       },
-      "key_mass_3": 0.14258,
-      "key_mass_7": 0.09584,
-      "p_home_cover": 0.55586,
+      "key_mass_3": 0.14228,
+      "key_mass_7": 0.09734,
+      "p_home_cover": 0.55198,
       "p_spread_push": 0.0,
-      "p_over": 0.49224,
+      "p_over": 0.4835,
       "p_total_push": 0.0,
-      "p_upset": 0.4037
+      "p_upset": 0.39757
     },
     "members": {
-      "elo": 0.41524041495095976,
-      "logit_pure": 0.37612806224089196,
-      "ridge_pure": 0.37956740795294486,
-      "gbm_pure": 0.48208083752372427,
+      "elo": 0.41571709237119014,
+      "logit_pure": 0.37723028326039443,
+      "ridge_pure": 0.37998802065102943,
+      "gbm_pure": 0.4824620629361064,
       "market": 0.34252477380439467
     },
     "confidence": [
@@ -849,15 +753,15 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -3.78
+        -3.768
       ],
       [
         "offensive EPA/play",
-        2.862
+        2.857
       ],
       [
         "rushing efficiency",
-        -2.179
+        -2.178
       ],
       [
         "offensive success rate",
@@ -865,7 +769,7 @@
       ],
       [
         "QB rating gap",
-        -1.029
+        -1.03
       ]
     ]
   },
@@ -875,33 +779,33 @@
     "home": "SEA",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.7984476650347613,
-    "p_home_mkt": 0.8005544206236915,
-    "margin": 7.632042155901103,
-    "total": 45.06490080491106,
+    "p_home": 0.7872138460762605,
+    "p_home_mkt": 0.7980442615143728,
+    "margin": 7.475892875892101,
+    "total": 44.96396787277057,
     "spread_line": 7.0,
     "total_line": 42.5,
     "away_ml": 295.0,
     "home_ml": -375.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.73603,
-      "p_away": 0.26397000000000004,
-      "p_tie": 0.00226,
-      "mean_home": 26.47982,
-      "mean_away": 19.08344,
+      "p_home": 0.73092,
+      "p_away": 0.26908000000000004,
+      "p_tie": 0.00216,
+      "mean_home": 26.35894,
+      "mean_away": 19.002,
       "median_home": 27.0,
       "median_away": 19.0,
-      "mean_margin": 7.39638,
-      "sd_margin": 12.509781089035892,
-      "mean_total": 45.56326,
-      "sd_total": 12.906714460791328,
-      "p_ot": 0.04476,
-      "p_one_score": 0.4795,
-      "p_blowout_17": 0.27322,
+      "mean_margin": 7.35694,
+      "sd_margin": 12.52404941847484,
+      "mean_total": 45.36094,
+      "sd_total": 12.823855204906206,
+      "p_ot": 0.04552,
+      "p_one_score": 0.47676,
+      "p_blowout_17": 0.27394,
       "margin_pctiles": {
         "10": -8.0,
-        "25": -1.0,
+        "25": -2.0,
         "50": 7.0,
         "75": 16.0,
         "90": 24.0
@@ -910,7 +814,7 @@
         "10": 15.0,
         "25": 20.0,
         "50": 27.0,
-        "75": 33.0,
+        "75": 32.0,
         "90": 38.0
       },
       "away_pctiles": {
@@ -920,19 +824,19 @@
         "75": 24.0,
         "90": 31.0
       },
-      "key_mass_3": 0.12762,
-      "key_mass_7": 0.08984,
-      "p_home_cover": 0.485,
-      "p_spread_push": 0.05996,
-      "p_over": 0.58702,
+      "key_mass_3": 0.12872,
+      "key_mass_7": 0.09022,
+      "p_home_cover": 0.4849,
+      "p_spread_push": 0.05828,
+      "p_over": 0.5814,
       "p_total_push": 0.0,
-      "p_upset": 0.26397000000000004
+      "p_upset": 0.26908000000000004
     },
     "members": {
-      "elo": 0.8340914628716952,
-      "logit_pure": 0.7784088143422316,
-      "ridge_pure": 0.7264788225466905,
-      "gbm_pure": 0.798241654240084,
+      "elo": 0.8343629023863817,
+      "logit_pure": 0.7784264003351755,
+      "ridge_pure": 0.7268199610925541,
+      "gbm_pure": 0.7650119385536667,
       "market": 0.7571884984025559
     },
     "confidence": [
@@ -946,19 +850,19 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        7.151
+        7.161
       ],
       [
         "offensive EPA/play",
-        -4.666
+        -4.661
       ],
       [
         "passing efficiency",
-        2.585
+        2.586
       ],
       [
         "opponent-adjusted defensive EPA",
-        -1.296
+        -1.293
       ],
       [
         "offensive success rate",
@@ -972,30 +876,30 @@
     "home": "PHI",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.43419587044713687,
-    "p_home_mkt": 0.39514511539003405,
-    "margin": -0.4535723035845638,
-    "total": 45.390758352001875,
+    "p_home": 0.44467896905890814,
+    "p_home_mkt": 0.39204031458697547,
+    "margin": -0.5047081903656286,
+    "total": 46.38364689843446,
     "spread_line": -3.5,
     "total_line": 42.5,
-    "away_ml": -175.0,
-    "home_ml": 145.0,
+    "away_ml": -180.0,
+    "home_ml": 150.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.4882,
-      "p_away": 0.5117999999999999,
-      "p_tie": 0.00304,
-      "mean_home": 22.7621,
-      "mean_away": 23.1696,
+      "p_home": 0.48522000000000004,
+      "p_away": 0.51478,
+      "p_tie": 0.0026,
+      "mean_home": 23.26392,
+      "mean_away": 23.80276,
       "median_home": 23.0,
-      "median_away": 23.0,
-      "mean_margin": -0.4075,
-      "sd_margin": 12.669148501379247,
-      "mean_total": 45.9317,
-      "sd_total": 13.115791821693419,
-      "p_ot": 0.0544,
-      "p_one_score": 0.54954,
-      "p_blowout_17": 0.20478,
+      "median_away": 24.0,
+      "mean_margin": -0.53884,
+      "sd_margin": 12.790409354449919,
+      "mean_total": 47.06668,
+      "sd_total": 13.148258963741169,
+      "p_ot": 0.05204,
+      "p_one_score": 0.54158,
+      "p_blowout_17": 0.2089,
       "margin_pctiles": {
         "10": -17.0,
         "25": -8.0,
@@ -1004,38 +908,38 @@
         "90": 16.0
       },
       "home_pctiles": {
-        "10": 10.0,
-        "25": 17.0,
-        "50": 23.0,
-        "75": 28.0,
-        "90": 34.0
-      },
-      "away_pctiles": {
         "10": 12.0,
         "25": 17.0,
         "50": 23.0,
-        "75": 29.0,
+        "75": 30.0,
         "90": 35.0
       },
-      "key_mass_3": 0.15016,
-      "key_mass_7": 0.10434,
-      "p_home_cover": 0.59574,
+      "away_pctiles": {
+        "10": 13.0,
+        "25": 17.0,
+        "50": 24.0,
+        "75": 30.0,
+        "90": 35.0
+      },
+      "key_mass_3": 0.14784,
+      "key_mass_7": 0.10246,
+      "p_home_cover": 0.5912,
       "p_spread_push": 0.0,
-      "p_over": 0.59164,
+      "p_over": 0.62484,
       "p_total_push": 0.0,
-      "p_upset": 0.4882
+      "p_upset": 0.48522000000000004
     },
     "members": {
-      "elo": 0.5046392161845451,
-      "logit_pure": 0.4752313321642708,
-      "ridge_pure": 0.4821568469243337,
-      "gbm_pure": 0.4444022213639074,
-      "market": 0.39076376554174075
+      "elo": 0.5051298686904413,
+      "logit_pure": 0.47720953837306296,
+      "ridge_pure": 0.482616633159634,
+      "gbm_pure": 0.48264351960540625,
+      "market": 0.3835616438356164
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 11%",
+        "models disagree by 12%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -1043,19 +947,19 @@
     "drivers": [
       [
         "offensive EPA/play",
-        3.933
+        3.925
       ],
       [
         "passing efficiency",
-        -2.261
+        -2.262
       ],
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -1.764
+        -1.753
       ],
       [
         "QB rating gap",
-        -1.413
+        -1.414
       ],
       [
         "offensive success rate",
@@ -1069,30 +973,30 @@
     "home": "MIN",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.8227121375184133,
-    "p_home_mkt": 0.8495853628143334,
-    "margin": 9.305279772299329,
-    "total": 46.57381145694018,
+    "p_home": 0.8199626201423359,
+    "p_home_mkt": 0.8490340185529164,
+    "margin": 9.383449857244479,
+    "total": 46.524023661754676,
     "spread_line": 10.5,
     "total_line": 38.5,
     "away_ml": 455.0,
     "home_ml": -625.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.77886,
-      "p_away": 0.22114,
-      "p_tie": 0.00188,
-      "mean_home": 27.92002,
-      "mean_away": 18.91106,
+      "p_home": 0.7809799999999999,
+      "p_away": 0.21902,
+      "p_tie": 0.00212,
+      "mean_home": 27.98382,
+      "mean_away": 18.8414,
       "median_home": 27.0,
-      "median_away": 19.0,
-      "mean_margin": 9.00896,
-      "sd_margin": 12.424717289274634,
-      "mean_total": 46.83108,
-      "sd_total": 12.724704555847259,
-      "p_ot": 0.03858,
-      "p_one_score": 0.44618,
-      "p_blowout_17": 0.30228,
+      "median_away": 18.0,
+      "mean_margin": 9.14242,
+      "sd_margin": 12.426575414956448,
+      "mean_total": 46.82522,
+      "sd_total": 12.733451690394087,
+      "p_ot": 0.03926,
+      "p_one_score": 0.4429,
+      "p_blowout_17": 0.30466,
       "margin_pctiles": {
         "10": -7.0,
         "25": 3.0,
@@ -1101,7 +1005,7 @@
         "90": 25.0
       },
       "home_pctiles": {
-        "10": 16.0,
+        "10": 17.0,
         "25": 22.0,
         "50": 27.0,
         "75": 34.0,
@@ -1110,23 +1014,23 @@
       "away_pctiles": {
         "10": 7.0,
         "25": 13.0,
-        "50": 19.0,
+        "50": 18.0,
         "75": 24.0,
-        "90": 31.0
+        "90": 30.0
       },
-      "key_mass_3": 0.11106,
-      "key_mass_7": 0.0723,
-      "p_home_cover": 0.42734,
+      "key_mass_3": 0.1108,
+      "key_mass_7": 0.07234,
+      "p_home_cover": 0.432,
       "p_spread_push": 0.0,
-      "p_over": 0.73804,
+      "p_over": 0.7394,
       "p_total_push": 0.0,
-      "p_upset": 0.22114
+      "p_upset": 0.21902
     },
     "members": {
-      "elo": 0.8330918754930962,
-      "logit_pure": 0.7926526520785724,
-      "ridge_pure": 0.7753165291690656,
-      "gbm_pure": 0.8105447023968448,
+      "elo": 0.8333646236897603,
+      "logit_pure": 0.7933451827372452,
+      "ridge_pure": 0.7756646860834873,
+      "gbm_pure": 0.8009968924467086,
       "market": 0.827123695976155
     },
     "confidence": [
@@ -1139,19 +1043,19 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        7.11
+        7.121
       ],
       [
         "opponent-adjusted defensive EPA",
-        -2.247
+        -2.242
       ],
       [
         "offensive EPA/play",
-        2.126
+        2.122
       ],
       [
         "pass defense",
-        1.897
+        1.9
       ],
       [
         "passing efficiency",
@@ -1165,42 +1069,42 @@
     "home": "BUF",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.6735255180764971,
-    "p_home_mkt": 0.7346467276433379,
-    "margin": 5.347088227621389,
-    "total": 46.346986626652594,
+    "p_home": 0.6647412066336583,
+    "p_home_mkt": 0.729184431366787,
+    "margin": 5.045385203170508,
+    "total": 46.254832375924714,
     "spread_line": 7.0,
     "total_line": 48.5,
-    "away_ml": 245.0,
-    "home_ml": -305.0,
+    "away_ml": 240.0,
+    "home_ml": -298.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.6729,
-      "p_away": 0.3271,
-      "p_tie": 0.00268,
-      "mean_home": 26.08584,
-      "mean_away": 20.76546,
-      "median_home": 26.0,
+      "p_home": 0.6676,
+      "p_away": 0.33240000000000003,
+      "p_tie": 0.00248,
+      "mean_home": 25.89314,
+      "mean_away": 20.84214,
+      "median_home": 25.0,
       "median_away": 20.0,
-      "mean_margin": 5.32038,
-      "sd_margin": 12.77375812576706,
-      "mean_total": 46.8513,
-      "sd_total": 13.212269612371676,
-      "p_ot": 0.04706,
-      "p_one_score": 0.50574,
-      "p_blowout_17": 0.24492,
+      "mean_margin": 5.051,
+      "sd_margin": 12.767926965643248,
+      "mean_total": 46.73528,
+      "sd_total": 13.163741235742975,
+      "p_ot": 0.0479,
+      "p_one_score": 0.51048,
+      "p_blowout_17": 0.23878,
       "margin_pctiles": {
-        "10": -10.0,
+        "10": -11.0,
         "25": -3.0,
         "50": 5.0,
         "75": 14.0,
-        "90": 22.0
+        "90": 21.0
       },
       "home_pctiles": {
         "10": 14.0,
         "25": 20.0,
-        "50": 26.0,
-        "75": 32.0,
+        "50": 25.0,
+        "75": 31.0,
         "90": 38.0
       },
       "away_pctiles": {
@@ -1210,20 +1114,20 @@
         "75": 27.0,
         "90": 33.0
       },
-      "key_mass_3": 0.12778,
-      "key_mass_7": 0.08878,
-      "p_home_cover": 0.42818,
-      "p_spread_push": 0.05588,
-      "p_over": 0.42922,
+      "key_mass_3": 0.12868,
+      "key_mass_7": 0.09088,
+      "p_home_cover": 0.41973,
+      "p_spread_push": 0.0561,
+      "p_over": 0.42874,
       "p_total_push": 0.0,
-      "p_upset": 0.3271
+      "p_upset": 0.33240000000000003
     },
     "members": {
-      "elo": 0.6781459042882856,
-      "logit_pure": 0.6694805842410184,
-      "ridge_pure": 0.6539419082743341,
-      "gbm_pure": 0.7313282199106605,
-      "market": 0.7220792588780237
+      "elo": 0.6785741625100778,
+      "logit_pure": 0.6700156481604237,
+      "ridge_pure": 0.654311051892371,
+      "gbm_pure": 0.705205987845255,
+      "market": 0.7179705215419501
     },
     "confidence": [
       "VERY LOW",
@@ -1235,11 +1139,11 @@
     "drivers": [
       [
         "offensive EPA/play",
-        -5.201
+        -5.195
       ],
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        2.294
+        2.305
       ],
       [
         "passing efficiency",
@@ -1247,7 +1151,7 @@
       ],
       [
         "QB rating gap",
-        1.582
+        1.583
       ],
       [
         "rushing efficiency",
@@ -1261,30 +1165,30 @@
     "home": "CHI",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.7224801689841706,
-    "p_home_mkt": 0.656742314192016,
-    "margin": 6.705072300978066,
-    "total": 45.89938585240338,
+    "p_home": 0.7251840677515748,
+    "p_home_mkt": 0.6574714293711247,
+    "margin": 6.743099427921222,
+    "total": 45.95520257064063,
     "spread_line": 3.5,
     "total_line": 43.5,
     "away_ml": 145.0,
     "home_ml": -175.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.70985,
-      "p_away": 0.29015,
-      "p_tie": 0.00238,
-      "mean_home": 26.3961,
-      "mean_away": 19.87426,
+      "p_home": 0.70923,
+      "p_away": 0.29077,
+      "p_tie": 0.0031,
+      "mean_home": 26.53608,
+      "mean_away": 19.90906,
       "median_home": 27.0,
       "median_away": 20.0,
-      "mean_margin": 6.52184,
-      "sd_margin": 12.63491048699594,
-      "mean_total": 46.27036,
-      "sd_total": 12.99136426517246,
-      "p_ot": 0.04728,
-      "p_one_score": 0.49296,
-      "p_blowout_17": 0.26066,
+      "mean_margin": 6.62702,
+      "sd_margin": 12.722286976782122,
+      "mean_total": 46.44514,
+      "sd_total": 13.125279059143848,
+      "p_ot": 0.04694,
+      "p_one_score": 0.48486,
+      "p_blowout_17": 0.26762,
       "margin_pctiles": {
         "10": -9.0,
         "25": -3.0,
@@ -1296,29 +1200,29 @@
         "10": 14.0,
         "25": 20.0,
         "50": 27.0,
-        "75": 32.0,
+        "75": 33.0,
         "90": 38.0
       },
       "away_pctiles": {
         "10": 9.0,
-        "25": 14.0,
+        "25": 13.0,
         "50": 20.0,
         "75": 26.0,
         "90": 31.0
       },
-      "key_mass_3": 0.13118,
-      "key_mass_7": 0.09454,
-      "p_home_cover": 0.59642,
+      "key_mass_3": 0.1331,
+      "key_mass_7": 0.09096,
+      "p_home_cover": 0.5987,
       "p_spread_push": 0.0,
-      "p_over": 0.5766,
+      "p_over": 0.57718,
       "p_total_push": 0.0,
-      "p_upset": 0.29015
+      "p_upset": 0.29077
     },
     "members": {
-      "elo": 0.7851185127714989,
-      "logit_pure": 0.7225656167536033,
-      "ridge_pure": 0.7118657243101713,
-      "gbm_pure": 0.699075337739388,
+      "elo": 0.7854494659831114,
+      "logit_pure": 0.722837230978497,
+      "ridge_pure": 0.7121223248155039,
+      "gbm_pure": 0.7066023402976579,
       "market": 0.6092362344582594
     },
     "confidence": [
@@ -1332,23 +1236,23 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        5.368
+        5.379
       ],
       [
         "offensive EPA/play",
-        -3.541
+        -3.538
       ],
       [
         "rushing efficiency",
-        1.374
+        1.375
       ],
       [
         "passing efficiency",
-        1.35
+        1.351
       ],
       [
         "pass defense",
-        1.118
+        1.119
       ]
     ]
   },
@@ -1358,64 +1262,64 @@
     "home": "BAL",
     "gameday": "2026-10-04",
     "week": 4,
-    "p_home": 0.8953458358042625,
-    "p_home_mkt": 0.8531992838344683,
-    "margin": 12.860377495300657,
-    "total": 44.94828834157177,
+    "p_home": 0.8933825373225284,
+    "p_home_mkt": 0.8526301573373978,
+    "margin": 12.873298208445485,
+    "total": 45.063802418318204,
     "spread_line": 11.5,
     "total_line": 42.5,
     "away_ml": 470.0,
     "home_ml": -650.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.8551,
-      "p_away": 0.1449,
-      "p_tie": 0.00216,
-      "mean_home": 28.8419,
-      "mean_away": 16.27536,
+      "p_home": 0.85386,
+      "p_away": 0.14614,
+      "p_tie": 0.00192,
+      "mean_home": 28.83392,
+      "mean_away": 16.33798,
       "median_home": 28.0,
       "median_away": 16.0,
-      "mean_margin": 12.56654,
-      "sd_margin": 12.6351878667632,
-      "mean_total": 45.11726,
-      "sd_total": 12.895938511500434,
+      "mean_margin": 12.49594,
+      "sd_margin": 12.576245207390002,
+      "mean_total": 45.1719,
+      "sd_total": 12.874172221544965,
       "p_ot": 0.03256,
-      "p_one_score": 0.36564,
-      "p_blowout_17": 0.40094,
+      "p_one_score": 0.36584,
+      "p_blowout_17": 0.40218,
       "margin_pctiles": {
         "10": -4.0,
         "25": 4.0,
         "50": 13.0,
         "75": 21.0,
-        "90": 29.0
+        "90": 28.0
       },
       "home_pctiles": {
         "10": 17.0,
         "25": 23.0,
         "50": 28.0,
-        "75": 35.0,
+        "75": 34.0,
         "90": 41.0
       },
       "away_pctiles": {
         "10": 6.0,
         "25": 10.0,
         "50": 16.0,
-        "75": 21.0,
+        "75": 22.0,
         "90": 28.0
       },
-      "key_mass_3": 0.09542,
-      "key_mass_7": 0.07078,
-      "p_home_cover": 0.51906,
+      "key_mass_3": 0.09682,
+      "key_mass_7": 0.0705,
+      "p_home_cover": 0.51798,
       "p_spread_push": 0.0,
-      "p_over": 0.56972,
+      "p_over": 0.57196,
       "p_total_push": 0.0,
-      "p_upset": 0.1449
+      "p_upset": 0.14614
     },
     "members": {
-      "elo": 0.8417885838262913,
-      "logit_pure": 0.8684717350716973,
-      "ridge_pure": 0.8592222394796706,
-      "gbm_pure": 0.8433422380454099,
+      "elo": 0.8420498149705373,
+      "logit_pure": 0.8689603210315929,
+      "ridge_pure": 0.85947247150019,
+      "gbm_pure": 0.8347267919688041,
       "market": 0.8316498316498315
     },
     "confidence": [
@@ -1428,15 +1332,15 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        7.467
+        7.478
       ],
       [
         "offensive EPA/play",
-        -6.459
+        -6.451
       ],
       [
         "QB rating gap",
-        3.618
+        3.621
       ],
       [
         "passing efficiency",
@@ -1454,32 +1358,32 @@
     "home": "NO",
     "gameday": "2026-10-05",
     "week": 4,
-    "p_home": 0.39994137534465823,
-    "p_home_mkt": 0.5569892497968252,
-    "margin": -2.6264986669247827,
-    "total": 43.979116851274014,
+    "p_home": 0.40327527554411674,
+    "p_home_mkt": 0.5506030224260663,
+    "margin": -2.461052958160438,
+    "total": 44.132642897555094,
     "spread_line": 2.5,
     "total_line": 47.5,
-    "away_ml": 124.0,
-    "home_ml": -148.0,
+    "away_ml": 120.0,
+    "home_ml": -142.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.41564,
-      "p_away": 0.58436,
-      "p_tie": 0.00316,
-      "mean_home": 20.93826,
-      "mean_away": 23.50028,
-      "median_home": 20.0,
+      "p_home": 0.42101,
+      "p_away": 0.57899,
+      "p_tie": 0.00258,
+      "mean_home": 21.14512,
+      "mean_away": 23.5548,
+      "median_home": 20.5,
       "median_away": 23.0,
-      "mean_margin": -2.56202,
-      "sd_margin": 12.5246426503753,
-      "mean_total": 44.43854,
-      "sd_total": 12.841217335922634,
-      "p_ot": 0.05238,
-      "p_one_score": 0.5437,
-      "p_blowout_17": 0.20668,
+      "mean_margin": -2.40968,
+      "sd_margin": 12.601269868453736,
+      "mean_total": 44.69992,
+      "sd_total": 12.88326790816678,
+      "p_ot": 0.05232,
+      "p_one_score": 0.54296,
+      "p_blowout_17": 0.20918,
       "margin_pctiles": {
-        "10": -19.0,
+        "10": -18.0,
         "25": -10.0,
         "50": -3.0,
         "75": 6.0,
@@ -1488,7 +1392,7 @@
       "home_pctiles": {
         "10": 10.0,
         "25": 14.0,
-        "50": 20.0,
+        "50": 20.5,
         "75": 27.0,
         "90": 33.0
       },
@@ -1499,25 +1403,25 @@
         "75": 30.0,
         "90": 35.0
       },
-      "key_mass_3": 0.14812,
-      "key_mass_7": 0.09846,
-      "p_home_cover": 0.38152,
+      "key_mass_3": 0.14842,
+      "key_mass_7": 0.10052,
+      "p_home_cover": 0.3875,
       "p_spread_push": 0.0,
-      "p_over": 0.3876,
+      "p_over": 0.39782,
       "p_total_push": 0.0,
-      "p_upset": 0.41564
+      "p_upset": 0.42101
     },
     "members": {
-      "elo": 0.4847998269122262,
-      "logit_pure": 0.4081595242914636,
-      "ridge_pure": 0.41169380120044696,
-      "gbm_pure": 0.4797826313810838,
-      "market": 0.5720596355604638
+      "elo": 0.4852900872618085,
+      "logit_pure": 0.4085737485982823,
+      "ridge_pure": 0.41198202396009664,
+      "gbm_pure": 0.49322052780710035,
+      "market": 0.5634920634920635
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 16%",
+        "models disagree by 15%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -1525,7 +1429,7 @@
     "drivers": [
       [
         "Elo rating gap (incl. HFA, rest, QB)",
-        -2.207
+        -2.196
       ],
       [
         "offensive EPA/play",
@@ -1533,7 +1437,7 @@
       ],
       [
         "passing efficiency",
-        0.995
+        0.996
       ],
       [
         "QB rating gap",

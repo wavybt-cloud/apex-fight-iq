@@ -1,169 +1,18 @@
 {
- "generated": "2026-10-02T00:26:26.095580",
+ "generated": "2026-10-02T08:25:35.937884",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
  "games": [
   {
-   "away": "PIT",
-   "home": "CLE",
-   "gameday": "2026-10-01",
-   "p_home": 0.4474,
-   "margin": -0.49,
-   "total": 46.45,
-   "p_home_cover": 0.5165,
-   "p_over": 0.7402,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "CLE",
-     "exp_pts": 23.0,
-     "exp_off_tds": 2.81,
-     "td": [
-      {
-       "name": "Raheim Sanders",
-       "pos": "RB",
-       "p": 0.4572,
-       "odds": "+119"
-      },
-      {
-       "name": "Denzel Boston",
-       "pos": "WR",
-       "p": 0.4235,
-       "odds": "+136"
-      },
-      {
-       "name": "Harold Fannin Jr.",
-       "pos": "TE",
-       "p": 0.3938,
-       "odds": "+154"
-      },
-      {
-       "name": "Deshaun Watson",
-       "pos": "QB",
-       "p": 0.3395,
-       "odds": "+195"
-      },
-      {
-       "name": "Quinshon Judkins",
-       "pos": "RB",
-       "p": 0.3149,
-       "odds": "+218"
-      },
-      {
-       "name": "Jerry Jeudy",
-       "pos": "WR",
-       "p": 0.2225,
-       "odds": "+349"
-      }
-     ],
-     "qb": {
-      "name": "Deshaun Watson",
-      "mean": 184.5,
-      "line": 184.5,
-      "sd": 70.4,
-      "dist": "normal",
-      "n": 11.7,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Quinshon Judkins",
-       "mean": 59.2,
-       "line": 54.0,
-       "k": 3.665,
-       "theta": 16.14,
-       "dist": "gamma",
-       "car": 13.8,
-       "n": 14.9
-      }
-     ]
-    },
-    "away": {
-     "team": "PIT",
-     "exp_pts": 23.5,
-     "exp_off_tds": 2.96,
-     "td": [
-      {
-       "name": "DK Metcalf",
-       "pos": "WR",
-       "p": 0.3718,
-       "odds": "+169"
-      },
-      {
-       "name": "Jaylen Warren",
-       "pos": "RB",
-       "p": 0.3268,
-       "odds": "+206"
-      },
-      {
-       "name": "Rico Dowdle",
-       "pos": "RB",
-       "p": 0.3172,
-       "odds": "+215"
-      },
-      {
-       "name": "Pat Freiermuth",
-       "pos": "TE",
-       "p": 0.3092,
-       "odds": "+223"
-      },
-      {
-       "name": "Michael Pittman",
-       "pos": "WR",
-       "p": 0.299,
-       "odds": "+234"
-      },
-      {
-       "name": "Roman Wilson",
-       "pos": "WR",
-       "p": 0.2366,
-       "odds": "+323"
-      }
-     ],
-     "qb": {
-      "name": "Aaron Rodgers",
-      "mean": 189.2,
-      "line": 189.0,
-      "sd": 70.6,
-      "dist": "normal",
-      "n": 30.3,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Rico Dowdle",
-       "mean": 55.1,
-       "line": 50.0,
-       "k": 3.558,
-       "theta": 15.478,
-       "dist": "gamma",
-       "car": 12.2,
-       "n": 39.3
-      },
-      {
-       "name": "Jaylen Warren",
-       "mean": 60.8,
-       "line": 55.5,
-       "k": 3.706,
-       "theta": 16.414,
-       "dist": "gamma",
-       "car": 11.5,
-       "n": 40.1
-      }
-     ]
-    }
-   }
-  },
-  {
    "away": "ARI",
    "home": "NYG",
    "gameday": "2026-10-04",
-   "p_home": 0.5871,
-   "margin": 3.38,
-   "total": 45.49,
-   "p_home_cover": 0.6459,
-   "p_over": 0.5214,
+   "p_home": 0.5817,
+   "margin": 3.34,
+   "total": 45.91,
+   "p_home_cover": 0.6396,
+   "p_over": 0.5323,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -320,11 +169,11 @@
    "away": "DAL",
    "home": "HOU",
    "gameday": "2026-10-04",
-   "p_home": 0.5622,
-   "margin": 2.42,
-   "total": 47.33,
-   "p_home_cover": 0.5072,
-   "p_over": 0.4604,
+   "p_home": 0.5645,
+   "margin": 2.62,
+   "total": 47.41,
+   "p_home_cover": 0.5128,
+   "p_over": 0.4667,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -471,11 +320,11 @@
    "away": "DEN",
    "home": "SF",
    "gameday": "2026-10-04",
-   "p_home": 0.6339,
-   "margin": 4.35,
-   "total": 45.97,
-   "p_home_cover": 0.57,
-   "p_over": 0.4591,
+   "p_home": 0.6407,
+   "margin": 4.48,
+   "total": 46.06,
+   "p_home_cover": 0.5785,
+   "p_over": 0.459,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -632,11 +481,11 @@
    "away": "DET",
    "home": "CAR",
    "gameday": "2026-10-04",
-   "p_home": 0.3537,
-   "margin": -4.12,
-   "total": 46.91,
-   "p_home_cover": 0.4812,
-   "p_over": 0.404,
+   "p_home": 0.3523,
+   "margin": -4.37,
+   "total": 46.65,
+   "p_home_cover": 0.4673,
+   "p_over": 0.399,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -783,11 +632,11 @@
    "away": "GB",
    "home": "TB",
    "gameday": "2026-10-04",
-   "p_home": 0.3586,
-   "margin": -2.97,
-   "total": 43.55,
-   "p_home_cover": 0.5104,
-   "p_over": 0.652,
+   "p_home": 0.3552,
+   "margin": -3.06,
+   "total": 43.56,
+   "p_home_cover": 0.5074,
+   "p_over": 0.6551,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -930,11 +779,11 @@
    "away": "IND",
    "home": "WAS",
    "gameday": "2026-10-04",
-   "p_home": 0.4454,
-   "margin": -0.35,
-   "total": 45.54,
-   "p_home_cover": 0.6022,
-   "p_over": 0.4074,
+   "p_home": 0.4498,
+   "margin": -0.37,
+   "total": 45.82,
+   "p_home_cover": 0.601,
+   "p_over": 0.4146,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1091,11 +940,11 @@
    "away": "JAX",
    "home": "CIN",
    "gameday": "2026-10-04",
-   "p_home": 0.4455,
-   "margin": 0.04,
-   "total": 47.84,
-   "p_home_cover": 0.4674,
-   "p_over": 0.3841,
+   "p_home": 0.4483,
+   "margin": -0.05,
+   "total": 48.22,
+   "p_home_cover": 0.4648,
+   "p_over": 0.3948,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1242,11 +1091,11 @@
    "away": "KC",
    "home": "LV",
    "gameday": "2026-10-04",
-   "p_home": 0.3757,
-   "margin": -3.06,
-   "total": 47.45,
-   "p_home_cover": 0.5559,
-   "p_over": 0.4922,
+   "p_home": 0.3764,
+   "margin": -3.2,
+   "total": 47.23,
+   "p_home_cover": 0.552,
+   "p_over": 0.4835,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1403,11 +1252,11 @@
    "away": "LAC",
    "home": "SEA",
    "gameday": "2026-10-04",
-   "p_home": 0.7984,
-   "margin": 7.63,
-   "total": 45.06,
-   "p_home_cover": 0.485,
-   "p_over": 0.587,
+   "p_home": 0.7872,
+   "margin": 7.48,
+   "total": 44.96,
+   "p_home_cover": 0.4849,
+   "p_over": 0.5814,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1564,11 +1413,11 @@
    "away": "LAR",
    "home": "PHI",
    "gameday": "2026-10-04",
-   "p_home": 0.4342,
-   "margin": -0.45,
-   "total": 45.39,
-   "p_home_cover": 0.5957,
-   "p_over": 0.5916,
+   "p_home": 0.4447,
+   "margin": -0.5,
+   "total": 46.38,
+   "p_home_cover": 0.5912,
+   "p_over": 0.6248,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1725,11 +1574,11 @@
    "away": "MIA",
    "home": "MIN",
    "gameday": "2026-10-04",
-   "p_home": 0.8227,
-   "margin": 9.31,
-   "total": 46.57,
-   "p_home_cover": 0.4273,
-   "p_over": 0.738,
+   "p_home": 0.82,
+   "margin": 9.38,
+   "total": 46.52,
+   "p_home_cover": 0.432,
+   "p_over": 0.7394,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1866,11 +1715,11 @@
    "away": "NE",
    "home": "BUF",
    "gameday": "2026-10-04",
-   "p_home": 0.6735,
-   "margin": 5.35,
-   "total": 46.35,
-   "p_home_cover": 0.4282,
-   "p_over": 0.4292,
+   "p_home": 0.6647,
+   "margin": 5.05,
+   "total": 46.25,
+   "p_home_cover": 0.4197,
+   "p_over": 0.4287,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2017,11 +1866,11 @@
    "away": "NYJ",
    "home": "CHI",
    "gameday": "2026-10-04",
-   "p_home": 0.7225,
-   "margin": 6.71,
-   "total": 45.9,
-   "p_home_cover": 0.5964,
-   "p_over": 0.5766,
+   "p_home": 0.7252,
+   "margin": 6.74,
+   "total": 45.96,
+   "p_home_cover": 0.5987,
+   "p_over": 0.5772,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -2164,11 +2013,11 @@
    "away": "TEN",
    "home": "BAL",
    "gameday": "2026-10-04",
-   "p_home": 0.8953,
-   "margin": 12.86,
-   "total": 44.95,
-   "p_home_cover": 0.5191,
-   "p_over": 0.5697,
+   "p_home": 0.8934,
+   "margin": 12.87,
+   "total": 45.06,
+   "p_home_cover": 0.518,
+   "p_over": 0.572,
    "confidence": "MODERATE",
    "props": {
     "home": {
@@ -2315,11 +2164,11 @@
    "away": "ATL",
    "home": "NO",
    "gameday": "2026-10-05",
-   "p_home": 0.3999,
-   "margin": -2.63,
-   "total": 43.98,
-   "p_home_cover": 0.3815,
-   "p_over": 0.3876,
+   "p_home": 0.4033,
+   "margin": -2.46,
+   "total": 44.13,
+   "p_home_cover": 0.3875,
+   "p_over": 0.3978,
    "confidence": "VERY LOW",
    "props": {
     "home": {
