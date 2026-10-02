@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T12:16",
+ "generated": "2026-10-02T20:16",
  "spreads": {
   "pass": [
    62.06067397018374,
@@ -769,72 +769,72 @@
    "teams": [
     {
      "team": "WAS",
-     "exp_pts": 22.7,
-     "exp_off_tds": 2.76,
+     "exp_pts": 21.1,
+     "exp_off_tds": 2.37,
      "td": [
       {
        "name": "Jacory Croskey-Merritt",
        "pos": "RB",
-       "p": 0.3889,
-       "odds": "+157"
+       "p": 0.3543,
+       "odds": "+182"
       },
       {
        "name": "Antonio Williams",
        "pos": "WR",
-       "p": 0.3459,
-       "odds": "+189"
+       "p": 0.3145,
+       "odds": "+218"
       },
       {
        "name": "Terry McLaurin",
        "pos": "WR",
-       "p": 0.3451,
-       "odds": "+190"
+       "p": 0.3138,
+       "odds": "+219"
       },
       {
        "name": "Stefon Diggs",
        "pos": "WR",
-       "p": 0.3293,
-       "odds": "+204"
+       "p": 0.2992,
+       "odds": "+234"
       },
       {
        "name": "Jayden Daniels",
        "pos": "QB",
-       "p": 0.3263,
-       "odds": "+206"
+       "p": 0.2964,
+       "odds": "+237"
       },
       {
        "name": "Austin Ekeler",
        "pos": "RB",
-       "p": 0.2979,
-       "odds": "+236"
+       "p": 0.2703,
+       "odds": "+270"
       }
      ],
      "qb": {
-      "name": "Jayden Daniels",
-      "mean": 209.1,
-      "line": 209.0,
-      "sd": 71.6,
+      "name": "Marcus Mariota",
+      "mean": 114.8,
+      "line": 115.0,
+      "sd": 67.3,
       "dist": "normal",
-      "n": 22.4,
+      "n": 15.3,
       "note": "listed starter"
      },
      "rb": [
       {
        "name": "Jacory Croskey-Merritt",
-       "mean": 58.4,
-       "line": 53.0,
-       "k": 3.649,
-       "theta": 16.009,
+       "mean": 56.2,
+       "line": 51.0,
+       "k": 3.593,
+       "theta": 15.654,
        "dist": "gamma",
        "car": 11.4,
        "n": 17.4
       },
       {
        "name": "Austin Ekeler",
-       "mean": 42.7,
-       "line": 38.5,
-       "k": 3.16,
-       "theta": 13.507,
+       "mean": 41.1,
+       "line": 37.0,
+       "k": 3.097,
+       "theta": 13.264,
        "dist": "gamma",
        "car": 8.9,
        "n": 21.1
@@ -843,50 +843,50 @@
     },
     {
      "team": "IND",
-     "exp_pts": 23.1,
-     "exp_off_tds": 2.39,
+     "exp_pts": 23.0,
+     "exp_off_tds": 2.37,
      "td": [
       {
        "name": "Jonathan Taylor",
        "pos": "RB",
-       "p": 0.474,
-       "odds": "+111"
+       "p": 0.4717,
+       "odds": "+112"
       },
       {
        "name": "Anthony Richardson",
        "pos": "QB",
-       "p": 0.3174,
-       "odds": "+215"
+       "p": 0.3157,
+       "odds": "+217"
       },
       {
        "name": "DJ Giddens",
        "pos": "RB",
-       "p": 0.2263,
-       "odds": "+342"
+       "p": 0.225,
+       "odds": "+344"
       },
       {
        "name": "Keenan Allen",
        "pos": "WR",
-       "p": 0.214,
-       "odds": "+367"
+       "p": 0.2128,
+       "odds": "+370"
       },
       {
        "name": "Tyler Warren",
        "pos": "TE",
-       "p": 0.2135,
-       "odds": "+368"
+       "p": 0.2123,
+       "odds": "+371"
       },
       {
        "name": "Josh Downs",
        "pos": "WR",
-       "p": 0.1901,
-       "odds": "+426"
+       "p": 0.189,
+       "odds": "+429"
       }
      ],
      "qb": {
       "name": "Daniel Jones",
-      "mean": 220.3,
-      "line": 220.5,
+      "mean": 219.7,
+      "line": 219.5,
       "sd": 72.1,
       "dist": "normal",
       "n": 25.0,
@@ -895,20 +895,20 @@
      "rb": [
       {
        "name": "Jonathan Taylor",
-       "mean": 89.6,
+       "mean": 89.4,
        "line": 82.5,
-       "k": 4.224,
-       "theta": 21.219,
+       "k": 4.221,
+       "theta": 21.187,
        "dist": "gamma",
        "car": 19.6,
        "n": 33.7
       },
       {
        "name": "DJ Giddens",
-       "mean": 35.8,
-       "line": 32.0,
-       "k": 2.869,
-       "theta": 12.484,
+       "mean": 35.7,
+       "line": 31.5,
+       "k": 2.866,
+       "theta": 12.473,
        "dist": "gamma",
        "car": 10.0,
        "n": 4.2
