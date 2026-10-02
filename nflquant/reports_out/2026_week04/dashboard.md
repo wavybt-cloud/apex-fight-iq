@@ -11,7 +11,7 @@
 - LAC @ SEA: +7.6 (home)
 
 ## Largest model disagreement
-- ARI @ NYG: 21% spread across members
+- ARI @ NYG: 19% spread across members
 - NYJ @ CHI: 18% spread across members
 - ATL @ NO: 16% spread across members
 

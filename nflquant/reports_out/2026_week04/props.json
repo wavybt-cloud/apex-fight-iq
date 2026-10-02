@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01T12:16",
+ "generated": "2026-10-01T20:15",
  "spreads": {
   "pass": [
    61.74194296097903,
@@ -661,10 +661,10 @@
        "odds": "+326"
       },
       {
-       "name": "John Metchie III",
+       "name": "David Moore",
        "pos": "WR",
-       "p": 0.1926,
-       "odds": "+419"
+       "p": 0.2001,
+       "odds": "+400"
       }
      ],
      "qb": {
@@ -783,12 +783,6 @@
        "odds": "+180"
       },
       {
-       "name": "Jalen McMillan",
-       "pos": "WR",
-       "p": 0.3118,
-       "odds": "+221"
-      },
-      {
        "name": "Sean Tucker",
        "pos": "RB",
        "p": 0.2823,
@@ -811,6 +805,12 @@
        "pos": "WR",
        "p": 0.2193,
        "odds": "+356"
+      },
+      {
+       "name": "Ted Hurst III",
+       "pos": "WR",
+       "p": 0.1831,
+       "odds": "+446"
       }
      ],
      "qb": {
@@ -865,12 +865,6 @@
        "odds": "+273"
       },
       {
-       "name": "Jayden Reed",
-       "pos": "WR",
-       "p": 0.2628,
-       "odds": "+281"
-      },
-      {
        "name": "Jonnu Smith",
        "pos": "TE",
        "p": 0.2072,
@@ -881,6 +875,12 @@
        "pos": "WR",
        "p": 0.1886,
        "odds": "+430"
+      },
+      {
+       "name": "Kaleb Johnson",
+       "pos": "RB",
+       "p": 0.1833,
+       "odds": "+446"
       }
      ],
      "qb": {
