@@ -11,12 +11,12 @@
 - LAC @ SEA: +7.6 (home)
 
 ## Largest model disagreement
-- ARI @ NYG: 19% spread across members
+- ARI @ NYG: 21% spread across members
 - NYJ @ CHI: 18% spread across members
 - ATL @ NO: 16% spread across members
 
 ## Lowest uncertainty
-- TEN @ BAL: 3% member spread, confidence MODERATE
+- TEN @ BAL: 4% member spread, confidence MODERATE
 - DET @ CAR: 6% member spread, confidence VERY LOW
 - MIA @ MIN: 6% member spread, confidence LOW
 
@@ -45,6 +45,6 @@
 - ATL @ NO: model -2.6 vs line +2.5 (5.1 pts toward ATL); cover 38% home
 - NYJ @ CHI: model +6.7 vs line +3.5 (3.2 pts toward CHI); cover 60% home
 - IND @ WAS: model -0.3 vs line -3.5 (3.2 pts toward WAS); cover 60% home
-- LA @ PHI: model -0.5 vs line -3.0 (2.5 pts toward PHI); cover 56% home
+- LA @ PHI: model -0.5 vs line -3.5 (3.0 pts toward PHI); cover 60% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*
