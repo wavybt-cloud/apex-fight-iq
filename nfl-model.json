@@ -816,16 +816,16 @@
        "odds": "+253"
       },
       {
-       "name": "Jayden Daniels",
-       "pos": "QB",
-       "p": 0.2806,
-       "odds": "+256"
-      },
-      {
        "name": "Austin Ekeler",
        "pos": "RB",
        "p": 0.2557,
        "odds": "+291"
+      },
+      {
+       "name": "Treylon Burks",
+       "pos": "WR",
+       "p": 0.1532,
+       "odds": "+553"
       }
      ],
      "qb": {
@@ -1277,12 +1277,6 @@
        "odds": "+257"
       },
       {
-       "name": "Jadarian Price",
-       "pos": "RB",
-       "p": 0.2714,
-       "odds": "+268"
-      },
-      {
        "name": "Cooper Kupp",
        "pos": "WR",
        "p": 0.2415,
@@ -1299,6 +1293,12 @@
        "pos": "RB",
        "p": 0.1873,
        "odds": "+434"
+      },
+      {
+       "name": "Rashid Shaheed",
+       "pos": "WR",
+       "p": 0.1825,
+       "odds": "+448"
       }
      ],
      "qb": {
@@ -1311,16 +1311,6 @@
       "note": "listed starter"
      },
      "rb": [
-      {
-       "name": "Jadarian Price",
-       "mean": 50.0,
-       "line": 45.0,
-       "k": 3.414,
-       "theta": 14.657,
-       "dist": "gamma",
-       "car": 9.9,
-       "n": 3.0
-      },
       {
        "name": "Emanuel Wilson",
        "mean": 29.3,
@@ -1426,12 +1416,6 @@
      "exp_off_tds": 2.58,
      "td": [
       {
-       "name": "Dallas Goedert",
-       "pos": "TE",
-       "p": 0.3977,
-       "odds": "+151"
-      },
-      {
        "name": "Saquon Barkley",
        "pos": "RB",
        "p": 0.3454,
@@ -1450,16 +1434,22 @@
        "odds": "+285"
       },
       {
-       "name": "DeVonta Smith",
-       "pos": "WR",
-       "p": 0.259,
-       "odds": "+286"
-      },
-      {
        "name": "Dontayvion Wicks",
        "pos": "WR",
        "p": 0.2182,
        "odds": "+358"
+      },
+      {
+       "name": "Makai Lemon",
+       "pos": "WR",
+       "p": 0.1997,
+       "odds": "+401"
+      },
+      {
+       "name": "Elijah Moore",
+       "pos": "WR",
+       "p": 0.1421,
+       "odds": "+604"
       }
      ],
      "qb": {
@@ -1611,16 +1601,16 @@
        "odds": "+171"
       },
       {
-       "name": "Justin Jefferson",
-       "pos": "WR",
-       "p": 0.328,
-       "odds": "+205"
-      },
-      {
        "name": "Kyler Murray",
        "pos": "QB",
        "p": 0.3252,
        "odds": "+208"
+      },
+      {
+       "name": "T.J. Hockenson",
+       "pos": "TE",
+       "p": 0.2765,
+       "odds": "+262"
       }
      ],
      "qb": {
@@ -1961,12 +1951,6 @@
        "odds": "+170"
       },
       {
-       "name": "Breece Hall",
-       "pos": "RB",
-       "p": 0.3652,
-       "odds": "+174"
-      },
-      {
        "name": "Braelon Allen",
        "pos": "RB",
        "p": 0.2466,
@@ -1979,10 +1963,16 @@
        "odds": "+436"
       },
       {
-       "name": "Adonai Mitchell",
+       "name": "Isaiah Williams",
        "pos": "WR",
-       "p": 0.1709,
-       "odds": "+485"
+       "p": 0.1002,
+       "odds": "+898"
+      },
+      {
+       "name": "Geno Smith",
+       "pos": "QB",
+       "p": 0.0753,
+       "odds": "+1228"
       }
      ],
      "qb": {
@@ -1994,18 +1984,7 @@
       "n": 37.2,
       "note": "listed starter"
      },
-     "rb": [
-      {
-       "name": "Breece Hall",
-       "mean": 67.4,
-       "line": 61.5,
-       "k": 3.854,
-       "theta": 17.482,
-       "dist": "gamma",
-       "car": 14.9,
-       "n": 38.6
-      }
-     ]
+     "rb": []
     }
    }
   },
