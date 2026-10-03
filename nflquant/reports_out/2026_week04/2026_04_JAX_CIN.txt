@@ -3,19 +3,19 @@ GAME  Jacksonville Jaguars @ Cincinnati Bengals   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  Cincinnati Bengals: 24.3    Jacksonville Jaguars: 24.5    (margin -0.1, total 48.8)
+  Cincinnati Bengals: 23.8    Jacksonville Jaguars: 24.4    (margin -0.6, total 48.2)
 
 WIN PROBABILITY (calibrated ensemble)
-  Cincinnati Bengals: 44.8%    Jacksonville Jaguars: 55.2%
+  Cincinnati Bengals: 43.3%    Jacksonville Jaguars: 56.7%
   market-aware mode: Cincinnati Bengals 53.9%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Cincinnati Bengals 24 - Jacksonville Jaguars 24
-  80% range:      Cincinnati Bengals 13-37, Jacksonville Jaguars 13-37
-  one-score game: 54%    overtime: 5.0%    blowout(17+): 21%
-  upset (Cincinnati Bengals wins): 49%
-  vs spread (Cincinnati Bengals -2.5): cover 46.5%
-  vs total (51.5): over 39.5%
+  80% range:      Cincinnati Bengals 13-35, Jacksonville Jaguars 13-37
+  one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
+  upset (Cincinnati Bengals wins): 48%
+  vs spread (Cincinnati Bengals -2.5): cover 45.2%
+  vs total (51.5): over 38.2%
 
 KEY FACTORS (points toward Cincinnati Bengals)
   -2.63  Elo rating gap (incl. HFA, rest, QB)
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Cincinnati Bengals)
 
 MODEL AGREEMENT (home win prob)
   elo          46.6%
-  logit_pure   49.6%
-  ridge_pure   50.5%
-  gbm_pure     46.3%
+  logit_pure   47.5%
+  ridge_pure   48.8%
+  gbm_pure     45.1%
   market       56.3%
-  ensemble     44.8%
+  ensemble     43.3%
 
-CONFIDENCE: VERY LOW   (models disagree by 10%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 11%; early season: ratings lean on priors; QB situation unsettled)

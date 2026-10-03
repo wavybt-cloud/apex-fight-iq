@@ -3,19 +3,19 @@ GAME  New York Jets @ Chicago Bears   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  Chicago Bears: 26.5    New York Jets: 19.9    (margin +6.6, total 46.4)
+  Chicago Bears: 26.0    New York Jets: 20.2    (margin +5.8, total 46.2)
 
 WIN PROBABILITY (calibrated ensemble)
-  Chicago Bears: 72.5%    New York Jets: 27.5%
-  market-aware mode: Chicago Bears 66.8%
+  Chicago Bears: 69.4%    New York Jets: 30.6%
+  market-aware mode: Chicago Bears 66.5%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Chicago Bears 27 - New York Jets 20
-  80% range:      Chicago Bears 14-38, New York Jets 9-31
-  one-score game: 48%    overtime: 4.7%    blowout(17+): 27%
-  upset (New York Jets wins): 29%
-  vs spread (Chicago Bears -3.5): cover 59.9%
-  vs total (43.5): over 57.7%
+  median score:   Chicago Bears 26 - New York Jets 20
+  80% range:      Chicago Bears 14-38, New York Jets 10-31
+  one-score game: 50%    overtime: 4.8%    blowout(17+): 25%
+  upset (New York Jets wins): 31%
+  vs spread (Chicago Bears -3.5): cover 57.5%
+  vs total (43.5): over 57.0%
 
 KEY FACTORS (points toward Chicago Bears)
   +5.38  Elo rating gap (incl. HFA, rest, QB)
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Chicago Bears)
 
 MODEL AGREEMENT (home win prob)
   elo          78.5%
-  logit_pure   72.3%
-  ridge_pure   71.2%
-  gbm_pure     70.7%
+  logit_pure   69.9%
+  ridge_pure   69.4%
+  gbm_pure     66.7%
   market       62.2%
-  ensemble     72.5%
+  ensemble     69.4%
 
 CONFIDENCE: VERY LOW   (models disagree by 16%; early season: ratings lean on priors; QB situation unsettled)

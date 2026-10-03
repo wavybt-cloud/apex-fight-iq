@@ -3,19 +3,19 @@ GAME  Los Angeles Rams @ Philadelphia Eagles   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  Philadelphia Eagles: 23.3    Los Angeles Rams: 23.8    (margin -0.5, total 47.1)
+  Philadelphia Eagles: 22.8    Los Angeles Rams: 23.8    (margin -1.0, total 46.6)
 
 WIN PROBABILITY (calibrated ensemble)
-  Philadelphia Eagles: 44.5%    Los Angeles Rams: 55.5%
-  market-aware mode: Philadelphia Eagles 38.7%
+  Philadelphia Eagles: 43.0%    Los Angeles Rams: 57.0%
+  market-aware mode: Philadelphia Eagles 38.6%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Philadelphia Eagles 23 - Los Angeles Rams 24
-  80% range:      Philadelphia Eagles 12-35, Los Angeles Rams 13-35
-  one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
-  upset (Philadelphia Eagles wins): 49%
-  vs spread (Philadelphia Eagles +3.5): cover 59.1%
-  vs total (42.5): over 62.5%
+  80% range:      Philadelphia Eagles 10-35, Los Angeles Rams 13-35
+  one-score game: 55%    overtime: 5.1%    blowout(17+): 21%
+  upset (Philadelphia Eagles wins): 47%
+  vs spread (Philadelphia Eagles +3.5): cover 57.6%
+  vs total (42.5): over 61.2%
 
 KEY FACTORS (points toward Philadelphia Eagles)
   +3.93  offensive EPA/play
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Philadelphia Eagles)
 
 MODEL AGREEMENT (home win prob)
   elo          50.5%
-  logit_pure   47.7%
-  ridge_pure   48.3%
-  gbm_pure     48.3%
+  logit_pure   45.5%
+  ridge_pure   46.6%
+  gbm_pure     47.5%
   market       37.8%
-  ensemble     44.5%
+  ensemble     43.0%
 
 CONFIDENCE: VERY LOW   (models disagree by 13%; early season: ratings lean on priors; QB situation unsettled)

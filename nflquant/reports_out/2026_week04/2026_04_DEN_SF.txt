@@ -3,19 +3,19 @@ GAME  Denver Broncos @ San Francisco 49ers   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  San Francisco 49ers: 25.5    Denver Broncos: 21.0    (margin +4.5, total 46.6)
+  San Francisco 49ers: 25.0    Denver Broncos: 21.3    (margin +3.7, total 46.3)
 
 WIN PROBABILITY (calibrated ensemble)
-  San Francisco 49ers: 64.1%    Denver Broncos: 35.9%
-  market-aware mode: San Francisco 49ers 59.3%
+  San Francisco 49ers: 61.9%    Denver Broncos: 38.1%
+  market-aware mode: San Francisco 49ers 59.5%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   San Francisco 49ers 24 - Denver Broncos 20
+  median score:   San Francisco 49ers 24 - Denver Broncos 21
   80% range:      San Francisco 49ers 14-38, Denver Broncos 10-33
-  one-score game: 52%    overtime: 5.2%    blowout(17+): 24%
-  upset (Denver Broncos wins): 35%
-  vs spread (San Francisco 49ers -3.0): cover 57.9%
-  vs total (47.5): over 45.9%
+  one-score game: 53%    overtime: 5.3%    blowout(17+): 23%
+  upset (Denver Broncos wins): 37%
+  vs spread (San Francisco 49ers -3.0): cover 55.5%
+  vs total (47.5): over 45.1%
 
 KEY FACTORS (points toward San Francisco 49ers)
   -6.64  offensive EPA/play
@@ -26,10 +26,10 @@ KEY FACTORS (points toward San Francisco 49ers)
 
 MODEL AGREEMENT (home win prob)
   elo          59.8%
-  logit_pure   65.6%
-  ridge_pure   62.4%
-  gbm_pure     70.9%
+  logit_pure   62.1%
+  ridge_pure   59.5%
+  gbm_pure     71.9%
   market       57.2%
-  ensemble     64.1%
+  ensemble     61.9%
 
-CONFIDENCE: VERY LOW   (models disagree by 14%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)

@@ -3,19 +3,19 @@ GAME  Arizona Cardinals @ New York Giants   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  New York Giants: 24.8    Arizona Cardinals: 21.6    (margin +3.3, total 46.4)
+  New York Giants: 24.8    Arizona Cardinals: 21.8    (margin +3.0, total 46.5)
 
 WIN PROBABILITY (calibrated ensemble)
-  New York Giants: 58.2%    Arizona Cardinals: 41.8%
+  New York Giants: 57.4%    Arizona Cardinals: 42.6%
   market-aware mode: New York Giants 46.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   New York Giants 24 - Arizona Cardinals 21
   80% range:      New York Giants 13-37, Arizona Cardinals 10-34
   one-score game: 54%    overtime: 5.2%    blowout(17+): 21%
-  upset (Arizona Cardinals wins): 39%
-  vs spread (New York Giants +2.5): cover 64.0%
-  vs total (44.5): over 53.2%
+  upset (Arizona Cardinals wins): 40%
+  vs spread (New York Giants +2.5): cover 63.3%
+  vs total (44.5): over 53.8%
 
 KEY FACTORS (points toward New York Giants)
   +0.91  Elo rating gap (incl. HFA, rest, QB)
@@ -26,10 +26,10 @@ KEY FACTORS (points toward New York Giants)
 
 MODEL AGREEMENT (home win prob)
   elo          62.2%
-  logit_pure   60.3%
-  ridge_pure   60.2%
-  gbm_pure     62.1%
+  logit_pure   59.8%
+  ridge_pure   59.2%
+  gbm_pure     61.2%
   market       43.7%
-  ensemble     58.2%
+  ensemble     57.4%
 
 CONFIDENCE: VERY LOW   (models disagree by 19%; early season: ratings lean on priors; QB situation unsettled)

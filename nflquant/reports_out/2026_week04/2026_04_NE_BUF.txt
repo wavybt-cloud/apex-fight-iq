@@ -3,19 +3,19 @@ GAME  New England Patriots @ Buffalo Bills   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  Buffalo Bills: 25.9    New England Patriots: 20.8    (margin +5.1, total 46.7)
+  Buffalo Bills: 26.0    New England Patriots: 20.3    (margin +5.7, total 46.3)
 
 WIN PROBABILITY (calibrated ensemble)
-  Buffalo Bills: 66.5%    New England Patriots: 33.5%
+  Buffalo Bills: 68.5%    New England Patriots: 31.5%
   market-aware mode: Buffalo Bills 73.3%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Buffalo Bills 25 - New England Patriots 20
-  80% range:      Buffalo Bills 14-38, New England Patriots 10-33
-  one-score game: 51%    overtime: 4.8%    blowout(17+): 24%
-  upset (New England Patriots wins): 33%
-  vs spread (Buffalo Bills -7.0): cover 42.0%
-  vs total (49.5): over 40.6%
+  median score:   Buffalo Bills 26 - New England Patriots 20
+  80% range:      Buffalo Bills 14-38, New England Patriots 10-32
+  one-score game: 50%    overtime: 4.8%    blowout(17+): 25%
+  upset (New England Patriots wins): 31%
+  vs spread (Buffalo Bills -7.0): cover 43.7%
+  vs total (49.5): over 39.1%
 
 KEY FACTORS (points toward Buffalo Bills)
   -5.20  offensive EPA/play
@@ -26,10 +26,10 @@ KEY FACTORS (points toward Buffalo Bills)
 
 MODEL AGREEMENT (home win prob)
   elo          67.9%
-  logit_pure   67.0%
-  ridge_pure   65.4%
-  gbm_pure     70.5%
+  logit_pure   69.3%
+  ridge_pure   67.4%
+  gbm_pure     71.3%
   market       72.2%
-  ensemble     66.5%
+  ensemble     68.5%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
