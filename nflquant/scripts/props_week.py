@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 
 from nflquant.config import cache_dir, load_config, PACKAGE_ROOT
+from nflquant.data.ingest import load_injuries_season
 from nflquant.props.model import (PlayerState, anytime_td_prob, build_state,
                                   exp_offensive_tds, fit_yard_spreads,
                                   load_player_weeks, load_roster,
@@ -130,6 +131,24 @@ def main():
     lg_dr = feats[feats.season == 2025]["home_def_rush_epa"].mean()
 
     roster_by_team = {t: g for t, g in roster.groupby("team")}
+
+    # Players the official report rules out cannot score: the roster only
+    # filters to ACT, which does not capture game-week inactives. Without this
+    # the desk published live anytime-TD prices for players who would not take
+    # a snap (week 4: Goedert 40%, Breece Hall 37%, both designated Out).
+    # Doubtful is ~85% to miss, which is not a price worth publishing either.
+    week_no = int(preds[0]["week"])
+    season_no = int(str(preds[0]["game_id"]).split("_")[0])
+    unavailable = set()
+    inj_df = load_injuries_season(cfg, season_no)
+    if inj_df is not None and len(inj_df):
+        sit = inj_df[(inj_df.week == week_no)
+                     & inj_df.report_status.isin(["Out", "Doubtful"])]
+        unavailable = set(sit.gsis_id.dropna())
+        print(f"excluding {len(unavailable)} players designated Out/Doubtful")
+    else:
+        print("WARNING: no injury report for this season - props may include "
+              "players who are ruled out")
     out_games = []
     for g in sorted(preds, key=lambda x: (x["gameday"], x["away"])):
         frow = feats.loc[g["game_id"]]
@@ -147,6 +166,8 @@ def main():
             ros = roster_by_team.get(team, pd.DataFrame())
             cands = []
             for r in ros.itertuples(index=False):
+                if r.gsis_id in unavailable:
+                    continue
                 s = st.p.get(r.gsis_id)
                 if not s or s["n"] < 3:
                     continue
