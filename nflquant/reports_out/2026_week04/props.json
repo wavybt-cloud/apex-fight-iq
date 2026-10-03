@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T20:16",
+ "generated": "2026-10-03T04:15",
  "spreads": {
   "pass": [
    62.06067397018374,
@@ -2113,12 +2113,6 @@
      "exp_off_tds": 2.24,
      "td": [
       {
-       "name": "Travis Etienne",
-       "pos": "RB",
-       "p": 0.3762,
-       "odds": "+166"
-      },
-      {
        "name": "Chris Olave",
        "pos": "WR",
        "p": 0.3322,
@@ -2147,6 +2141,12 @@
        "pos": "RB",
        "p": 0.2168,
        "odds": "+361"
+      },
+      {
+       "name": "Alvin Kamara",
+       "pos": "RB",
+       "p": 0.2154,
+       "odds": "+364"
       }
      ],
      "qb": {
@@ -2160,16 +2160,6 @@
      },
      "rb": [
       {
-       "name": "Travis Etienne",
-       "mean": 53.8,
-       "line": 49.0,
-       "k": 3.526,
-       "theta": 15.264,
-       "dist": "gamma",
-       "car": 13.3,
-       "n": 39.6
-      },
-      {
        "name": "Alvin Kamara",
        "mean": 46.1,
        "line": 41.5,
@@ -2178,6 +2168,16 @@
        "dist": "gamma",
        "car": 12.4,
        "n": 29.4
+      },
+      {
+       "name": "Kendre Miller",
+       "mean": 26.6,
+       "line": 23.0,
+       "k": 2.367,
+       "theta": 11.251,
+       "dist": "gamma",
+       "car": 7.0,
+       "n": 16.6
       }
      ]
     },
