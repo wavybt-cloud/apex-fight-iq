@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
   upset (Washington Commanders wins): 39%
   vs spread (Washington Commanders +4.5): cover 54.4%
-  vs total (47.5): over 37.9%
+  vs total (46.5): over 41.9%
 
 KEY FACTORS (points toward Washington Commanders)
   -3.73  Elo rating gap (incl. HFA, rest, QB)

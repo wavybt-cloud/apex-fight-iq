@@ -17,8 +17,8 @@
 
 ## Lowest uncertainty
 - TEN @ BAL: 3% member spread, confidence MODERATE
-- NE @ BUF: 5% member spread, confidence VERY LOW
 - MIA @ MIN: 5% member spread, confidence LOW
+- NE @ BUF: 5% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - LA @ PHI: 55%

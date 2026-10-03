@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-03T08:25:40.157289",
+ "generated": "2026-10-03T16:25:12.017004",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -783,7 +783,7 @@
    "margin": -3.41,
    "total": 43.76,
    "p_home_cover": 0.5437,
-   "p_over": 0.3785,
+   "p_over": 0.419,
    "confidence": "VERY LOW",
    "props": {
     "home": {
