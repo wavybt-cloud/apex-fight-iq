@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T16:25:26.706258",
+ "generated": "2026-10-03T00:26:04.175295",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -635,8 +635,8 @@
    "p_home": 0.3552,
    "margin": -3.06,
    "total": 43.56,
-   "p_home_cover": 0.5074,
-   "p_over": 0.6551,
+   "p_home_cover": 0.4701,
+   "p_over": 0.6345,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -782,8 +782,8 @@
    "p_home": 0.3932,
    "margin": -1.94,
    "total": 44.06,
-   "p_home_cover": 0.5527,
-   "p_over": 0.3637,
+   "p_home_cover": 0.5903,
+   "p_over": 0.3916,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1577,7 +1577,7 @@
    "p_home": 0.82,
    "margin": 9.38,
    "total": 46.52,
-   "p_home_cover": 0.432,
+   "p_home_cover": 0.4496,
    "p_over": 0.7394,
    "confidence": "LOW",
    "props": {
@@ -1719,7 +1719,7 @@
    "margin": 5.05,
    "total": 46.25,
    "p_home_cover": 0.4197,
-   "p_over": 0.4287,
+   "p_over": 0.4058,
    "confidence": "VERY LOW",
    "props": {
     "home": {

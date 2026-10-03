@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Buffalo Bills: 66.5%    New England Patriots: 33.5%
-  market-aware mode: Buffalo Bills 72.9%
+  market-aware mode: Buffalo Bills 73.3%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Buffalo Bills 25 - New England Patriots 20
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 51%    overtime: 4.8%    blowout(17+): 24%
   upset (New England Patriots wins): 33%
   vs spread (Buffalo Bills -7.0): cover 42.0%
-  vs total (48.5): over 42.9%
+  vs total (49.5): over 40.6%
 
 KEY FACTORS (points toward Buffalo Bills)
   -5.20  offensive EPA/play
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   67.0%
   ridge_pure   65.4%
   gbm_pure     70.5%
-  market       71.8%
+  market       72.2%
   ensemble     66.5%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
