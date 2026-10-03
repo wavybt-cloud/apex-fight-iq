@@ -431,16 +431,16 @@
        "odds": "+324"
       },
       {
-       "name": "Lil'Jordan Humphrey",
-       "pos": "WR",
-       "p": 0.2189,
-       "odds": "+357"
-      },
-      {
        "name": "Jaylen Waddle",
        "pos": "WR",
        "p": 0.2038,
        "odds": "+391"
+      },
+      {
+       "name": "Troy Franklin",
+       "pos": "WR",
+       "p": 0.2032,
+       "odds": "+392"
       }
      ],
      "qb": {
