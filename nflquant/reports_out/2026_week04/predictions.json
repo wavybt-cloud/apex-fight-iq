@@ -6,13 +6,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.5737237581342401,
-    "p_home_mkt": 0.4680983379897015,
+    "p_home_mkt": 0.4787632307360322,
     "margin": 3.1317242584179077,
     "total": 46.04637046762675,
     "spread_line": -2.5,
     "total_line": 44.5,
-    "away_ml": -142.0,
-    "home_ml": 120.0,
+    "away_ml": -135.0,
+    "home_ml": 114.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.6022099999999999,
@@ -63,12 +63,12 @@
       "logit_pure": 0.5976442811300475,
       "ridge_pure": 0.5923140751522089,
       "gbm_pure": 0.6117444089934958,
-      "market": 0.43650793650793646
+      "market": 0.448558885283451
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 19%",
+        "models disagree by 17%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -103,13 +103,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.544716861770883,
-    "p_home_mkt": 0.600399234941079,
+    "p_home_mkt": 0.5909478595219765,
     "margin": 2.0372961933742904,
     "total": 47.27955745072074,
     "spread_line": 3.0,
     "total_line": 48.5,
-    "away_ml": 130.0,
-    "home_ml": -155.0,
+    "away_ml": 124.0,
+    "home_ml": -148.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.5673999999999999,
@@ -160,7 +160,7 @@
       "logit_pure": 0.5686407366576474,
       "ridge_pure": 0.5804817720995037,
       "gbm_pure": 0.5464001513473167,
-      "market": 0.5829926410466066
+      "market": 0.5720596355604638
     },
     "confidence": [
       "VERY LOW",
@@ -297,13 +297,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.3385191897955915,
-    "p_home_mkt": 0.3728391060345037,
+    "p_home_mkt": 0.3654520026113226,
     "margin": -5.05581616157208,
     "total": 46.35735438827771,
     "spread_line": -3.5,
-    "total_line": 50.5,
-    "away_ml": -185.0,
-    "home_ml": 154.0,
+    "total_line": 51.5,
+    "away_ml": -192.0,
+    "home_ml": 160.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.33377999999999997,
@@ -345,7 +345,7 @@
       "key_mass_7": 0.09402,
       "p_home_cover": 0.44596,
       "p_spread_push": 0.0,
-      "p_over": 0.39026,
+      "p_over": 0.34462,
       "p_total_push": 0.0,
       "p_upset": 0.33377999999999997
     },
@@ -354,7 +354,7 @@
       "logit_pure": 0.3361351296683322,
       "ridge_pure": 0.3318614660817867,
       "gbm_pure": 0.41569048138769044,
-      "market": 0.3775334481388264
+      "market": 0.3690596562184025
     },
     "confidence": [
       "VERY LOW",
@@ -393,13 +393,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.3414168053732729,
-    "p_home_mkt": 0.37678771689659946,
+    "p_home_mkt": 0.38032795310850276,
     "margin": -3.6240692580187037,
     "total": 43.4902712131068,
     "spread_line": -3.0,
     "total_line": 38.5,
-    "away_ml": -170.0,
-    "home_ml": 142.0,
+    "away_ml": -166.0,
+    "home_ml": 140.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.37828,
@@ -450,7 +450,7 @@
       "logit_pure": 0.327115886158052,
       "ridge_pure": 0.3806418652905287,
       "gbm_pure": 0.40202366633066955,
-      "market": 0.3962430290578221
+      "market": 0.4003612281757977
     },
     "confidence": [
       "VERY LOW",
@@ -489,13 +489,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.3494591329923668,
-    "p_home_mkt": 0.3453743143837201,
+    "p_home_mkt": 0.3343498952079323,
     "margin": -3.408975939270189,
     "total": 43.7552104626819,
     "spread_line": -4.5,
     "total_line": 46.5,
-    "away_ml": -205.0,
-    "home_ml": 170.0,
+    "away_ml": -218.0,
+    "home_ml": 180.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.39294,
@@ -546,7 +546,7 @@
       "logit_pure": 0.3615197556788011,
       "ridge_pure": 0.38346294810889825,
       "gbm_pure": 0.3775165657335796,
-      "market": 0.35527082119976705
+      "market": 0.34252477380439467
     },
     "confidence": [
       "VERY LOW",
@@ -875,13 +875,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.43016651617287016,
-    "p_home_mkt": 0.38607384010279117,
+    "p_home_mkt": 0.39139538372733046,
     "margin": -0.9935312383587809,
     "total": 45.93233442557011,
     "spread_line": -3.5,
     "total_line": 42.5,
-    "away_ml": -185.0,
-    "home_ml": 154.0,
+    "away_ml": -180.0,
+    "home_ml": 150.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.46777,
@@ -932,12 +932,12 @@
       "logit_pure": 0.45452134583413883,
       "ridge_pure": 0.4658859586977966,
       "gbm_pure": 0.47543568205720055,
-      "market": 0.3775334481388264
+      "market": 0.3835616438356164
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 13%",
+        "models disagree by 12%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]
@@ -972,13 +972,13 @@
     "gameday": "2026-10-04",
     "week": 4,
     "p_home": 0.8283660230731668,
-    "p_home_mkt": 0.8345196490478501,
+    "p_home_mkt": 0.8315064980236035,
     "margin": 9.64630448683667,
     "total": 45.65068113040795,
     "spread_line": 10.0,
     "total_line": 38.5,
-    "away_ml": 400.0,
-    "home_ml": -535.0,
+    "away_ml": 390.0,
+    "home_ml": -520.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.7891400000000001,
@@ -1029,7 +1029,7 @@
       "logit_pure": 0.8012549626352357,
       "ridge_pure": 0.7829690982470265,
       "gbm_pure": 0.8078023578005915,
-      "market": 0.8081570996978852
+      "market": 0.8042929292929294
     },
     "confidence": [
       "LOW",
@@ -1072,7 +1072,7 @@
     "margin": 5.680293171206512,
     "total": 45.86552323465565,
     "spread_line": 7.0,
-    "total_line": 49.5,
+    "total_line": 50.5,
     "away_ml": 245.0,
     "home_ml": -305.0,
     "sim": {
@@ -1116,7 +1116,7 @@
       "key_mass_7": 0.08952,
       "p_home_cover": 0.43735,
       "p_spread_push": 0.0575,
-      "p_over": 0.39066,
+      "p_over": 0.37076,
       "p_total_push": 0.0,
       "p_upset": 0.31307
     },
@@ -1265,7 +1265,7 @@
     "margin": 11.700802302202963,
     "total": 45.32796396943971,
     "spread_line": 11.5,
-    "total_line": 42.5,
+    "total_line": 41.5,
     "away_ml": 500.0,
     "home_ml": -700.0,
     "sim": {
@@ -1309,7 +1309,7 @@
       "key_mass_7": 0.07652,
       "p_home_cover": 0.4829,
       "p_spread_push": 0.0,
-      "p_over": 0.57904,
+      "p_over": 0.59728,
       "p_total_push": 0.0,
       "p_upset": 0.16866
     },
@@ -1356,70 +1356,70 @@
     "home": "NO",
     "gameday": "2026-10-05",
     "week": 4,
-    "p_home": 0.40327527554409587,
-    "p_home_mkt": 0.5399957232952056,
-    "margin": -2.4610529581604377,
-    "total": 44.132642897555094,
-    "spread_line": 2.5,
+    "p_home": 0.3843753499826118,
+    "p_home_mkt": 0.5310506782313749,
+    "margin": -2.9292489915446045,
+    "total": 44.240957040677024,
+    "spread_line": 1.5,
     "total_line": 47.5,
-    "away_ml": 114.0,
-    "home_ml": -135.0,
+    "away_ml": 110.0,
+    "home_ml": -130.0,
     "sim": {
       "n_sims": 50000,
-      "p_home": 0.42101,
-      "p_away": 0.57899,
-      "p_tie": 0.00258,
-      "mean_home": 21.14512,
-      "mean_away": 23.5548,
-      "median_home": 20.5,
-      "median_away": 23.0,
-      "mean_margin": -2.40968,
-      "sd_margin": 12.601269868453736,
-      "mean_total": 44.69992,
-      "sd_total": 12.88326790816678,
-      "p_ot": 0.05232,
-      "p_one_score": 0.54296,
-      "p_blowout_17": 0.20918,
+      "p_home": 0.40304,
+      "p_away": 0.5969599999999999,
+      "p_tie": 0.0026,
+      "mean_home": 20.95422,
+      "mean_away": 23.83736,
+      "median_home": 20.0,
+      "median_away": 24.0,
+      "mean_margin": -2.88314,
+      "sd_margin": 12.515015131449102,
+      "mean_total": 44.79158,
+      "sd_total": 12.863609956135953,
+      "p_ot": 0.05106,
+      "p_one_score": 0.5389,
+      "p_blowout_17": 0.2111,
       "margin_pctiles": {
-        "10": -18.0,
-        "25": -10.0,
+        "10": -19.0,
+        "25": -11.0,
         "50": -3.0,
-        "75": 6.0,
+        "75": 5.0,
         "90": 14.0
       },
       "home_pctiles": {
         "10": 10.0,
         "25": 14.0,
-        "50": 20.5,
+        "50": 20.0,
         "75": 27.0,
         "90": 33.0
       },
       "away_pctiles": {
         "10": 13.0,
         "25": 17.0,
-        "50": 23.0,
+        "50": 24.0,
         "75": 30.0,
         "90": 35.0
       },
-      "key_mass_3": 0.14842,
-      "key_mass_7": 0.10052,
-      "p_home_cover": 0.3875,
+      "key_mass_3": 0.14456,
+      "key_mass_7": 0.09726,
+      "p_home_cover": 0.38068,
       "p_spread_push": 0.0,
-      "p_over": 0.39782,
+      "p_over": 0.4003,
       "p_total_push": 0.0,
-      "p_upset": 0.42101
+      "p_upset": 0.40304
     },
     "members": {
       "elo": 0.4852900872618085,
-      "logit_pure": 0.40857374859822837,
-      "ridge_pure": 0.41198202396009664,
-      "gbm_pure": 0.49322052780710035,
-      "market": 0.551441114716549
+      "logit_pure": 0.3825202206054294,
+      "ridge_pure": 0.39035797843725484,
+      "gbm_pure": 0.47256447494413656,
+      "market": 0.5427435387673957
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 14%",
+        "models disagree by 16%",
         "early season: ratings lean on priors",
         "QB situation unsettled"
       ]

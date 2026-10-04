@@ -11,9 +11,9 @@
 - LAC @ SEA: +8.2 (home)
 
 ## Largest model disagreement
-- ARI @ NYG: 19% spread across members
+- ARI @ NYG: 17% spread across members
 - NYJ @ CHI: 16% spread across members
-- DEN @ SF: 15% spread across members
+- ATL @ NO: 16% spread across members
 
 ## Lowest uncertainty
 - TEN @ BAL: 3% member spread, confidence MODERATE
@@ -22,8 +22,8 @@
 
 ## Most likely one-score game
 - LA @ PHI: 55%
-- ATL @ NO: 54%
 - ARI @ NYG: 54%
+- JAX @ CIN: 54%
 
 ## Highest projected total
 - JAX @ CIN: 47.7
@@ -33,7 +33,7 @@
 ## Lowest projected total
 - GB @ TB: 43.5
 - IND @ WAS: 43.8
-- ATL @ NO: 44.1
+- ATL @ NO: 44.2
 
 ## Biggest upset chance
 - JAX @ CIN: 48%
@@ -42,7 +42,7 @@
 
 ## Largest model-vs-market gaps (information, not a bet slip)
 - ARI @ NYG: model +3.1 vs line -2.5 (5.6 pts toward NYG); cover 63% home
-- ATL @ NO: model -2.5 vs line +2.5 (5.0 pts toward ATL); cover 39% home
+- ATL @ NO: model -2.9 vs line +1.5 (4.4 pts toward ATL); cover 38% home
 - JAX @ CIN: model -0.5 vs line +2.5 (3.0 pts toward JAX); cover 45% home
 - LA @ PHI: model -1.0 vs line -3.5 (2.5 pts toward PHI); cover 58% home
 - NYJ @ CHI: model +5.9 vs line +3.5 (2.4 pts toward CHI); cover 58% home

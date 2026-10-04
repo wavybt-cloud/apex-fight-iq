@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Carolina Panthers: 33.9%    Detroit Lions: 66.1%
-  market-aware mode: Carolina Panthers 37.3%
+  market-aware mode: Carolina Panthers 36.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Carolina Panthers 20 - Detroit Lions 26
@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 51%    overtime: 4.9%    blowout(17+): 24%
   upset (Carolina Panthers wins): 33%
   vs spread (Carolina Panthers +3.5): cover 44.6%
-  vs total (50.5): over 39.0%
+  vs total (51.5): over 34.5%
 
 KEY FACTORS (points toward Carolina Panthers)
   -3.87  Elo rating gap (incl. HFA, rest, QB)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   33.6%
   ridge_pure   33.2%
   gbm_pure     41.6%
-  market       37.8%
+  market       36.9%
   ensemble     33.9%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

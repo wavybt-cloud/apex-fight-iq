@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T00:25:47.640041",
+ "generated": "2026-10-04T08:25:20.974487",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
@@ -485,7 +485,7 @@
    "margin": -5.06,
    "total": 46.36,
    "p_home_cover": 0.446,
-   "p_over": 0.3903,
+   "p_over": 0.3446,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1709,7 +1709,7 @@
    "margin": 5.68,
    "total": 45.87,
    "p_home_cover": 0.4374,
-   "p_over": 0.3907,
+   "p_over": 0.3708,
    "confidence": "VERY LOW",
    "props": {
     "home": {
@@ -1996,7 +1996,7 @@
    "margin": 11.7,
    "total": 45.33,
    "p_home_cover": 0.4829,
-   "p_over": 0.579,
+   "p_over": 0.5973,
    "confidence": "MODERATE",
    "props": {
     "home": {
@@ -2143,11 +2143,11 @@
    "away": "ATL",
    "home": "NO",
    "gameday": "2026-10-05",
-   "p_home": 0.4033,
-   "margin": -2.46,
-   "total": 44.13,
-   "p_home_cover": 0.3875,
-   "p_over": 0.3978,
+   "p_home": 0.3844,
+   "margin": -2.93,
+   "total": 44.24,
+   "p_home_cover": 0.3807,
+   "p_over": 0.4003,
    "confidence": "VERY LOW",
    "props": {
     "home": {
