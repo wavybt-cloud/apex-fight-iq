@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T04:15",
+ "generated": "2026-10-04T12:15",
  "spreads": {
   "pass": [
    62.06067397018374,
@@ -877,10 +877,10 @@
        "odds": "+356"
       },
       {
-       "name": "Josh Downs",
+       "name": "Nick Westbrook-Ikhine",
        "pos": "WR",
-       "p": 0.1955,
-       "odds": "+412"
+       "p": 0.2087,
+       "odds": "+379"
       }
      ],
      "qb": {
@@ -1249,6 +1249,12 @@
        "odds": "+285"
       },
       {
+       "name": "Zach Ertz",
+       "pos": "TE",
+       "p": 0.2391,
+       "odds": "+318"
+      },
+      {
        "name": "Dontayvion Wicks",
        "pos": "WR",
        "p": 0.2182,
@@ -1259,12 +1265,6 @@
        "pos": "WR",
        "p": 0.1997,
        "odds": "+401"
-      },
-      {
-       "name": "Elijah Moore",
-       "pos": "WR",
-       "p": 0.1421,
-       "odds": "+604"
       }
      ],
      "qb": {
@@ -1909,16 +1909,16 @@
        "odds": "+436"
       },
       {
+       "name": "Sterling Shepard",
+       "pos": "WR",
+       "p": 0.1432,
+       "odds": "+598"
+      },
+      {
        "name": "Isaiah Williams",
        "pos": "WR",
        "p": 0.1002,
        "odds": "+898"
-      },
-      {
-       "name": "Geno Smith",
-       "pos": "QB",
-       "p": 0.0753,
-       "odds": "+1228"
       }
      ],
      "qb": {
@@ -2088,50 +2088,50 @@
    "teams": [
     {
      "team": "NO",
-     "exp_pts": 20.8,
-     "exp_off_tds": 2.24,
+     "exp_pts": 20.7,
+     "exp_off_tds": 2.2,
      "td": [
       {
        "name": "Chris Olave",
        "pos": "WR",
-       "p": 0.3322,
-       "odds": "+201"
+       "p": 0.3286,
+       "odds": "+204"
       },
       {
        "name": "Juwan Johnson",
        "pos": "TE",
-       "p": 0.2664,
-       "odds": "+275"
+       "p": 0.2634,
+       "odds": "+280"
       },
       {
        "name": "Noah Fant",
        "pos": "TE",
-       "p": 0.256,
-       "odds": "+291"
+       "p": 0.2532,
+       "odds": "+295"
       },
       {
        "name": "CJ Donaldson",
        "pos": "RB",
-       "p": 0.2329,
-       "odds": "+329"
+       "p": 0.2303,
+       "odds": "+334"
       },
       {
        "name": "Kendre Miller",
        "pos": "RB",
-       "p": 0.2168,
-       "odds": "+361"
+       "p": 0.2143,
+       "odds": "+367"
       },
       {
        "name": "Alvin Kamara",
        "pos": "RB",
-       "p": 0.2154,
-       "odds": "+364"
+       "p": 0.2129,
+       "odds": "+370"
       }
      ],
      "qb": {
       "name": "Tyler Shough",
-      "mean": 151.8,
-      "line": 152.0,
+      "mean": 151.0,
+      "line": 151.0,
       "sd": 69.0,
       "dist": "normal",
       "n": 12.3,
@@ -2140,20 +2140,20 @@
      "rb": [
       {
        "name": "Alvin Kamara",
-       "mean": 46.1,
+       "mean": 45.9,
        "line": 41.5,
-       "k": 3.284,
-       "theta": 14.035,
+       "k": 3.277,
+       "theta": 14.004,
        "dist": "gamma",
        "car": 12.4,
        "n": 29.4
       },
       {
        "name": "Kendre Miller",
-       "mean": 26.6,
+       "mean": 26.5,
        "line": 23.0,
-       "k": 2.367,
-       "theta": 11.251,
+       "k": 2.359,
+       "theta": 11.238,
        "dist": "gamma",
        "car": 7.0,
        "n": 16.6
@@ -2162,51 +2162,51 @@
     },
     {
      "team": "ATL",
-     "exp_pts": 23.3,
-     "exp_off_tds": 2.57,
+     "exp_pts": 23.6,
+     "exp_off_tds": 2.63,
      "td": [
       {
        "name": "Bijan Robinson",
        "pos": "RB",
-       "p": 0.495,
-       "odds": "+102"
+       "p": 0.502,
+       "odds": "-101"
       },
       {
        "name": "Drake London",
        "pos": "WR",
-       "p": 0.3346,
-       "odds": "+199"
+       "p": 0.3397,
+       "odds": "+194"
       },
       {
        "name": "Brian Robinson",
        "pos": "RB",
-       "p": 0.2663,
-       "odds": "+275"
+       "p": 0.2706,
+       "odds": "+270"
       },
       {
        "name": "Kyle Pitts",
        "pos": "TE",
-       "p": 0.2512,
-       "odds": "+298"
+       "p": 0.2552,
+       "odds": "+292"
       },
       {
        "name": "Olamide Zaccheaus",
        "pos": "WR",
-       "p": 0.2258,
-       "odds": "+343"
+       "p": 0.2295,
+       "odds": "+336"
       },
       {
        "name": "Austin Hooper",
        "pos": "TE",
-       "p": 0.2062,
-       "odds": "+385"
+       "p": 0.2095,
+       "odds": "+377"
       }
      ],
      "qb": {
       "name": "Michael Penix Jr.",
-      "mean": 144.1,
-      "line": 144.0,
-      "sd": 68.6,
+      "mean": 145.2,
+      "line": 145.0,
+      "sd": 68.7,
       "dist": "normal",
       "n": 12.3,
       "note": "listed starter"
@@ -2214,20 +2214,20 @@
      "rb": [
       {
        "name": "Bijan Robinson",
-       "mean": 98.4,
-       "line": 91.0,
-       "k": 4.333,
-       "theta": 22.707,
+       "mean": 99.0,
+       "line": 91.5,
+       "k": 4.34,
+       "theta": 22.81,
        "dist": "gamma",
        "car": 18.1,
        "n": 40.2
       },
       {
        "name": "Brian Robinson",
-       "mean": 32.9,
+       "mean": 33.1,
        "line": 29.0,
-       "k": 2.727,
-       "theta": 12.072,
+       "k": 2.737,
+       "theta": 12.101,
        "dist": "gamma",
        "car": 7.6,
        "n": 40.6
