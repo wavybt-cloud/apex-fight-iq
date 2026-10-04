@@ -12,13 +12,13 @@
 
 ## Largest model disagreement
 - ARI @ NYG: 17% spread across members
-- NYJ @ CHI: 16% spread across members
 - ATL @ NO: 16% spread across members
+- NYJ @ CHI: 15% spread across members
 
 ## Lowest uncertainty
 - TEN @ BAL: 3% member spread, confidence MODERATE
-- NE @ BUF: 5% member spread, confidence VERY LOW
 - MIA @ MIN: 5% member spread, confidence LOW
+- NE @ BUF: 6% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - LA @ PHI: 55%

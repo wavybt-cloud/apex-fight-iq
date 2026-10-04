@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   San Francisco 49ers: 61.9%    Denver Broncos: 38.1%
-  market-aware mode: San Francisco 49ers 59.5%
+  market-aware mode: San Francisco 49ers 61.3%
 
 SIMULATION (50,000 possession-level sims)
   median score:   San Francisco 49ers 24 - Denver Broncos 21
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   62.1%
   ridge_pure   59.5%
   gbm_pure     71.9%
-  market       57.2%
+  market       59.3%
   ensemble     61.9%
 
-CONFIDENCE: VERY LOW   (models disagree by 15%; early season: ratings lean on priors; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 13%; early season: ratings lean on priors; QB situation unsettled)

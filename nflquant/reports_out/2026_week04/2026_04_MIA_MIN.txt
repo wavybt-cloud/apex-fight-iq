@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Minnesota Vikings: 82.8%    Miami Dolphins: 17.2%
-  market-aware mode: Minnesota Vikings 83.2%
+  market-aware mode: Minnesota Vikings 83.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Minnesota Vikings 27 - Miami Dolphins 17
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   80.1%
   ridge_pure   78.3%
   gbm_pure     80.8%
-  market       80.4%
+  market       80.8%
   ensemble     82.8%
 
 CONFIDENCE: LOW   (early season: ratings lean on priors; QB situation unsettled)

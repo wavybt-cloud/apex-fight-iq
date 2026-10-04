@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Washington Commanders: 34.9%    Indianapolis Colts: 65.1%
-  market-aware mode: Washington Commanders 33.4%
+  market-aware mode: Washington Commanders 32.4%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Washington Commanders 20 - Indianapolis Colts 23
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   36.2%
   ridge_pure   38.3%
   gbm_pure     37.8%
-  market       34.3%
+  market       33.1%
   ensemble     34.9%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)
