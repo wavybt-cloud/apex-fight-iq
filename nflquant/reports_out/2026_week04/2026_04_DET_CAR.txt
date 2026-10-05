@@ -3,33 +3,33 @@ GAME  Detroit Lions @ Carolina Panthers   (2026-10-04, week 4)
 ================================================================
 
 MODEL PROJECTION
-  Carolina Panthers: 20.9    Detroit Lions: 26.0    (margin -5.0, total 46.9)
+  Carolina Panthers: 20.9    Detroit Lions: 25.6    (margin -4.8, total 46.5)
 
 WIN PROBABILITY (calibrated ensemble)
-  Carolina Panthers: 33.9%    Detroit Lions: 66.1%
-  market-aware mode: Carolina Panthers 36.0%
+  Carolina Panthers: 33.6%    Detroit Lions: 66.4%
+  market-aware mode: Carolina Panthers 33.6%
 
 SIMULATION (50,000 possession-level sims)
-  median score:   Carolina Panthers 20 - Detroit Lions 26
+  median score:   Carolina Panthers 20 - Detroit Lions 25
   80% range:      Carolina Panthers 10-33, Detroit Lions 14-38
-  one-score game: 51%    overtime: 4.9%    blowout(17+): 24%
-  upset (Carolina Panthers wins): 33%
-  vs spread (Carolina Panthers +3.5): cover 44.6%
-  vs total (51.5): over 34.5%
+  one-score game: 52%    overtime: 4.9%    blowout(17+): 24%
+  upset (Carolina Panthers wins): 34%
+  vs spread (Carolina Panthers +4.5): cover 50.4%
+  vs total (52.5): over 30.8%
 
 KEY FACTORS (points toward Carolina Panthers)
-  -3.87  Elo rating gap (incl. HFA, rest, QB)
-  -2.88  QB rating gap
-  +1.90  offensive EPA/play
+  -3.85  Elo rating gap (incl. HFA, rest, QB)
+  -2.87  QB rating gap
+  +1.91  offensive EPA/play
   -1.28  passing efficiency
-  -1.09  offensive success rate
+  -1.10  offensive success rate
 
 MODEL AGREEMENT (home win prob)
-  elo          41.1%
+  elo          41.2%
   logit_pure   33.6%
   ridge_pure   33.2%
-  gbm_pure     41.6%
-  market       36.3%
-  ensemble     33.9%
+  gbm_pure     40.0%
+  market       33.6%
+  ensemble     33.6%
 
 CONFIDENCE: VERY LOW   (early season: ratings lean on priors; QB situation unsettled)

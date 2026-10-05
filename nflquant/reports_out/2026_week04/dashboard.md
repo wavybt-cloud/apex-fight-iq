@@ -1,50 +1,39 @@
 # NFL week 4, 2026 - model dashboard
 
 ## Most confident winner
-- TEN @ BAL: BAL 87%
-- MIA @ MIN: MIN 83%
-- LAC @ SEA: SEA 81%
+- DET @ CAR: DET 66%
+- ATL @ NO: ATL 61%
 
 ## Largest projected margin
-- TEN @ BAL: +11.7 (home)
-- MIA @ MIN: +9.6 (home)
-- LAC @ SEA: +8.2 (home)
+- DET @ CAR: -4.9 (home)
+- ATL @ NO: -2.9 (home)
 
 ## Largest model disagreement
-- ARI @ NYG: 17% spread across members
 - ATL @ NO: 16% spread across members
-- NYJ @ CHI: 15% spread across members
+- DET @ CAR: 8% spread across members
 
 ## Lowest uncertainty
-- TEN @ BAL: 3% member spread, confidence MODERATE
-- MIA @ MIN: 5% member spread, confidence LOW
-- NE @ BUF: 6% member spread, confidence VERY LOW
+- DET @ CAR: 8% member spread, confidence VERY LOW
+- ATL @ NO: 16% member spread, confidence VERY LOW
 
 ## Most likely one-score game
-- LA @ PHI: 55%
-- ARI @ NYG: 54%
-- JAX @ CIN: 54%
+- ATL @ NO: 55%
+- DET @ CAR: 52%
 
 ## Highest projected total
-- JAX @ CIN: 47.7
-- DAL @ HOU: 47.3
-- KC @ LV: 46.9
+- DET @ CAR: 46.1
+- ATL @ NO: 44.5
 
 ## Lowest projected total
-- GB @ TB: 43.5
-- IND @ WAS: 43.8
-- ATL @ NO: 44.2
+- ATL @ NO: 44.5
+- DET @ CAR: 46.1
 
 ## Biggest upset chance
-- JAX @ CIN: 48%
-- LA @ PHI: 47%
-- DAL @ HOU: 43%
+- ATL @ NO: 41%
+- DET @ CAR: 34%
 
 ## Largest model-vs-market gaps (information, not a bet slip)
-- ARI @ NYG: model +3.1 vs line -2.5 (5.6 pts toward NYG); cover 63% home
-- ATL @ NO: model -2.9 vs line +1.5 (4.4 pts toward ATL); cover 38% home
-- JAX @ CIN: model -0.5 vs line +2.5 (3.0 pts toward JAX); cover 45% home
-- LA @ PHI: model -1.0 vs line -3.5 (2.5 pts toward PHI); cover 58% home
-- NYJ @ CHI: model +5.9 vs line +3.5 (2.4 pts toward CHI); cover 58% home
+- ATL @ NO: model -2.9 vs line +1.5 (4.4 pts toward ATL); cover 39% home
+- DET @ CAR: model -4.9 vs line -4.5 (0.4 pts toward DET); cover 50% home
 
 *Backtest note: 2023-2025, edges vs closing lines returned negative ROI at every threshold. Treat gaps as research signals.*
