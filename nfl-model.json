@@ -1,169 +1,18 @@
 {
- "generated": "2026-10-05T00:26:11.271550",
+ "generated": "2026-10-05T08:25:46.653955",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 4,
  "games": [
   {
-   "away": "DET",
-   "home": "CAR",
-   "gameday": "2026-10-04",
-   "p_home": 0.3355,
-   "margin": -4.89,
-   "total": 46.12,
-   "p_home_cover": 0.5044,
-   "p_over": 0.3076,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "CAR",
-     "exp_pts": 20.6,
-     "exp_off_tds": 2.36,
-     "td": [
-      {
-       "name": "Chuba Hubbard",
-       "pos": "RB",
-       "p": 0.3701,
-       "odds": "+170"
-      },
-      {
-       "name": "Darren Waller",
-       "pos": "TE",
-       "p": 0.2735,
-       "odds": "+266"
-      },
-      {
-       "name": "Jalen Coker",
-       "pos": "WR",
-       "p": 0.269,
-       "odds": "+272"
-      },
-      {
-       "name": "Tetairoa McMillan",
-       "pos": "WR",
-       "p": 0.2253,
-       "odds": "+344"
-      },
-      {
-       "name": "Bryce Young",
-       "pos": "QB",
-       "p": 0.2236,
-       "odds": "+347"
-      },
-      {
-       "name": "David Moore",
-       "pos": "WR",
-       "p": 0.1905,
-       "odds": "+425"
-      }
-     ],
-     "qb": {
-      "name": "Bryce Young",
-      "mean": 204.9,
-      "line": 205.0,
-      "sd": 71.4,
-      "dist": "normal",
-      "n": 37.4,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Chuba Hubbard",
-       "mean": 49.6,
-       "line": 45.0,
-       "k": 3.399,
-       "theta": 14.589,
-       "dist": "gamma",
-       "car": 11.6,
-       "n": 37.9
-      },
-      {
-       "name": "AJ Dillon",
-       "mean": 23.1,
-       "line": 19.5,
-       "k": 2.102,
-       "theta": 10.976,
-       "dist": "gamma",
-       "car": 7.8,
-       "n": 17.3
-      }
-     ]
-    },
-    "away": {
-     "team": "DET",
-     "exp_pts": 25.5,
-     "exp_off_tds": 2.89,
-     "td": [
-      {
-       "name": "Jahmyr Gibbs",
-       "pos": "RB",
-       "p": 0.5171,
-       "odds": "-107"
-      },
-      {
-       "name": "Amon-Ra St. Brown",
-       "pos": "WR",
-       "p": 0.3916,
-       "odds": "+155"
-      },
-      {
-       "name": "Sam LaPorta",
-       "pos": "TE",
-       "p": 0.272,
-       "odds": "+268"
-      },
-      {
-       "name": "Jameson Williams",
-       "pos": "WR",
-       "p": 0.2511,
-       "odds": "+298"
-      },
-      {
-       "name": "Joshua Dobbs",
-       "pos": "QB",
-       "p": 0.2396,
-       "odds": "+317"
-      },
-      {
-       "name": "Tyler Conklin",
-       "pos": "TE",
-       "p": 0.2044,
-       "odds": "+389"
-      }
-     ],
-     "qb": {
-      "name": "Jared Goff",
-      "mean": 302.2,
-      "line": 302.0,
-      "sd": 75.9,
-      "dist": "normal",
-      "n": 42.7,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Jahmyr Gibbs",
-       "mean": 88.1,
-       "line": 81.0,
-       "k": 4.227,
-       "theta": 20.838,
-       "dist": "gamma",
-       "car": 15.6,
-       "n": 41.5
-      }
-     ]
-    }
-   }
-  },
-  {
    "away": "ATL",
    "home": "NO",
    "gameday": "2026-10-05",
-   "p_home": 0.3886,
-   "margin": -2.92,
-   "total": 44.49,
-   "p_home_cover": 0.3861,
-   "p_over": 0.4065,
+   "p_home": 0.3846,
+   "margin": -3.16,
+   "total": 44.37,
+   "p_home_cover": 0.3763,
+   "p_over": 0.3999,
    "confidence": "VERY LOW",
    "props": {
     "home": {
