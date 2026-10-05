@@ -7,10 +7,10 @@
 - ATL @ NO: -3.2 (home)
 
 ## Largest model disagreement
-- ATL @ NO: 15% spread across members
+- ATL @ NO: 14% spread across members
 
 ## Lowest uncertainty
-- ATL @ NO: 15% member spread, confidence VERY LOW
+- ATL @ NO: 14% member spread, confidence VERY LOW
 
 ## Most likely one-score game
 - ATL @ NO: 54%
