@@ -1,0 +1,35 @@
+================================================================
+GAME  Buffalo Bills @ Los Angeles Rams   (2026-10-12, week 5)
+================================================================
+
+MODEL PROJECTION
+  Los Angeles Rams: 24.6    Buffalo Bills: 24.3    (margin +0.4, total 48.9)
+
+WIN PROBABILITY (calibrated ensemble)
+  Los Angeles Rams: 49.6%    Buffalo Bills: 50.4%
+  market-aware mode: Los Angeles Rams 57.7%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Los Angeles Rams 24 - Buffalo Bills 24
+  80% range:      Los Angeles Rams 13-37, Buffalo Bills 13-37
+  one-score game: 54%    overtime: 5.1%    blowout(17+): 21%
+  upset (Buffalo Bills wins): 49%
+  vs spread (Los Angeles Rams -2.5): cover 48.3%
+  vs total (54.5): over 33.1%
+
+KEY FACTORS (points toward Los Angeles Rams)
+  -1.69  Elo rating gap (incl. HFA, rest, QB)
+  -1.46  rushing efficiency
+  +1.26  offensive EPA/play
+  +0.51  run defense
+  -0.45  opponent-adjusted defensive EPA
+
+MODEL AGREEMENT (home win prob)
+  elo          50.8%
+  logit_pure   55.6%
+  ridge_pure   51.1%
+  gbm_pure     52.6%
+  market       58.3%
+  ensemble     49.6%
+
+CONFIDENCE: LOW   (QB situation unsettled)

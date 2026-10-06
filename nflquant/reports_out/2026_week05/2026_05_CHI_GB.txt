@@ -1,0 +1,35 @@
+================================================================
+GAME  Chicago Bears @ Green Bay Packers   (2026-10-11, week 5)
+================================================================
+
+MODEL PROJECTION
+  Green Bay Packers: 23.5    Chicago Bears: 22.0    (margin +1.5, total 45.5)
+
+WIN PROBABILITY (calibrated ensemble)
+  Green Bay Packers: 50.1%    Chicago Bears: 49.9%
+  market-aware mode: Green Bay Packers 41.7%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Green Bay Packers 24 - Chicago Bears 21
+  80% range:      Green Bay Packers 13-35, Chicago Bears 10-34
+  one-score game: 54%    overtime: 5.2%    blowout(17+): 20%
+  upset (Chicago Bears wins): 45%
+  vs spread (Green Bay Packers +3.0): cover 61.7%
+  vs total (45.5): over 47.4%
+
+KEY FACTORS (points toward Green Bay Packers)
+  +3.00  QB rating gap
+  +2.42  offensive EPA/play
+  -2.12  rushing efficiency
+  -1.99  Elo rating gap (incl. HFA, rest, QB)
+  -0.92  offensive success rate
+
+MODEL AGREEMENT (home win prob)
+  elo          49.4%
+  logit_pure   58.2%
+  ridge_pure   56.6%
+  gbm_pure     45.9%
+  market       41.7%
+  ensemble     50.1%
+
+CONFIDENCE: VERY LOW   (models disagree by 17%; QB situation unsettled)

@@ -1,169 +1,173 @@
 {
- "generated": "2026-10-06T00:26:05.911772",
+ "generated": "2026-10-06T08:25:39.793968",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
- "week": 4,
+ "week": 5,
  "games": [
   {
-   "away": "ATL",
+   "away": "TB",
+   "home": "DAL",
+   "gameday": "2026-10-08",
+   "p_home": 0.684,
+   "margin": 5.16,
+   "total": 46.73,
+   "p_home_cover": 0.3438,
+   "p_over": 0.4683,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "BAL",
+   "home": "ATL",
+   "gameday": "2026-10-11",
+   "p_home": 0.445,
+   "margin": -0.43,
+   "total": 44.7,
+   "p_home_cover": 0.5169,
+   "p_over": 0.4698,
+   "confidence": "LOW"
+  },
+  {
+   "away": "CHI",
+   "home": "GB",
+   "gameday": "2026-10-11",
+   "p_home": 0.5015,
+   "margin": 1.53,
+   "total": 44.98,
+   "p_home_cover": 0.6169,
+   "p_over": 0.4742,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "CIN",
+   "home": "MIA",
+   "gameday": "2026-10-11",
+   "p_home": 0.3398,
+   "margin": -3.73,
+   "total": 45.35,
+   "p_home_cover": 0.6263,
+   "p_over": 0.6008,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "CLE",
+   "home": "NYJ",
+   "gameday": "2026-10-11",
+   "p_home": 0.3895,
+   "margin": -2.11,
+   "total": 47.56,
+   "p_home_cover": 0.3987,
+   "p_over": 0.7437,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "DEN",
+   "home": "LAC",
+   "gameday": "2026-10-11",
+   "p_home": 0.3589,
+   "margin": -2.6,
+   "total": 47.46,
+   "p_home_cover": 0.5293,
+   "p_over": 0.6641,
+   "confidence": "LOW"
+  },
+  {
+   "away": "DET",
+   "home": "ARI",
+   "gameday": "2026-10-11",
+   "p_home": 0.317,
+   "margin": -4.99,
+   "total": 47.82,
+   "p_home_cover": 0.4989,
+   "p_over": 0.3087,
+   "confidence": "LOW"
+  },
+  {
+   "away": "HOU",
+   "home": "TEN",
+   "gameday": "2026-10-11",
+   "p_home": 0.2737,
+   "margin": -6.98,
+   "total": 44.03,
+   "p_home_cover": 0.541,
+   "p_over": 0.6466,
+   "confidence": "MODERATE"
+  },
+  {
+   "away": "IND",
+   "home": "PIT",
+   "gameday": "2026-10-11",
+   "p_home": 0.553,
+   "margin": 2.49,
+   "total": 47.76,
+   "p_home_cover": 0.5503,
+   "p_over": 0.5901,
+   "confidence": "LOW"
+  },
+  {
+   "away": "LV",
+   "home": "NE",
+   "gameday": "2026-10-11",
+   "p_home": 0.6848,
+   "margin": 6.23,
+   "total": 45.41,
+   "p_home_cover": 0.5829,
+   "p_over": 0.4923,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "MIN",
    "home": "NO",
-   "gameday": "2026-10-05",
-   "p_home": 0.3846,
-   "margin": -3.16,
-   "total": 44.37,
-   "p_home_cover": 0.3763,
-   "p_over": 0.3999,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
-     "team": "NO",
-     "exp_pts": 20.6,
-     "exp_off_tds": 2.19,
-     "td": [
-      {
-       "name": "Chris Olave",
-       "pos": "WR",
-       "p": 0.3276,
-       "odds": "+205"
-      },
-      {
-       "name": "Juwan Johnson",
-       "pos": "TE",
-       "p": 0.2626,
-       "odds": "+281"
-      },
-      {
-       "name": "Noah Fant",
-       "pos": "TE",
-       "p": 0.2524,
-       "odds": "+296"
-      },
-      {
-       "name": "CJ Donaldson",
-       "pos": "RB",
-       "p": 0.2295,
-       "odds": "+336"
-      },
-      {
-       "name": "Kendre Miller",
-       "pos": "RB",
-       "p": 0.2136,
-       "odds": "+368"
-      },
-      {
-       "name": "Alvin Kamara",
-       "pos": "RB",
-       "p": 0.2122,
-       "odds": "+371"
-      }
-     ],
-     "qb": {
-      "name": "Tyler Shough",
-      "mean": 150.8,
-      "line": 151.0,
-      "sd": 68.8,
-      "dist": "normal",
-      "n": 12.3,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Alvin Kamara",
-       "mean": 45.8,
-       "line": 41.0,
-       "k": 3.265,
-       "theta": 14.036,
-       "dist": "gamma",
-       "car": 12.4,
-       "n": 29.4
-      },
-      {
-       "name": "Kendre Miller",
-       "mean": 26.5,
-       "line": 23.0,
-       "k": 2.33,
-       "theta": 11.363,
-       "dist": "gamma",
-       "car": 7.0,
-       "n": 16.6
-      }
-     ]
-    },
-    "away": {
-     "team": "ATL",
-     "exp_pts": 23.8,
-     "exp_off_tds": 2.67,
-     "td": [
-      {
-       "name": "Bijan Robinson",
-       "pos": "RB",
-       "p": 0.5063,
-       "odds": "-103"
-      },
-      {
-       "name": "Drake London",
-       "pos": "WR",
-       "p": 0.3429,
-       "odds": "+192"
-      },
-      {
-       "name": "Brian Robinson",
-       "pos": "RB",
-       "p": 0.2732,
-       "odds": "+266"
-      },
-      {
-       "name": "Kyle Pitts",
-       "pos": "TE",
-       "p": 0.2577,
-       "odds": "+288"
-      },
-      {
-       "name": "Olamide Zaccheaus",
-       "pos": "WR",
-       "p": 0.2317,
-       "odds": "+332"
-      },
-      {
-       "name": "Austin Hooper",
-       "pos": "TE",
-       "p": 0.2116,
-       "odds": "+373"
-      }
-     ],
-     "qb": {
-      "name": "Michael Penix Jr.",
-      "mean": 145.8,
-      "line": 146.0,
-      "sd": 68.6,
-      "dist": "normal",
-      "n": 12.3,
-      "note": "listed starter"
-     },
-     "rb": [
-      {
-       "name": "Bijan Robinson",
-       "mean": 99.4,
-       "line": 92.0,
-       "k": 4.368,
-       "theta": 22.744,
-       "dist": "gamma",
-       "car": 18.1,
-       "n": 40.2
-      },
-      {
-       "name": "Brian Robinson",
-       "mean": 33.2,
-       "line": 29.5,
-       "k": 2.722,
-       "theta": 12.212,
-       "dist": "gamma",
-       "car": 7.6,
-       "n": 40.6
-      }
-     ]
-    }
-   }
+   "gameday": "2026-10-11",
+   "p_home": 0.29,
+   "margin": -6.73,
+   "total": 44.66,
+   "p_home_cover": 0.3025,
+   "p_over": 0.5724,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "NYG",
+   "home": "WAS",
+   "gameday": "2026-10-11",
+   "p_home": 0.4451,
+   "margin": -0.24,
+   "total": 43.96,
+   "p_home_cover": 0.4217,
+   "p_over": 0.516,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "PHI",
+   "home": "JAX",
+   "gameday": "2026-10-11",
+   "p_home": 0.6656,
+   "margin": 5.41,
+   "total": 48.1,
+   "p_home_cover": 0.4198,
+   "p_over": 0.6735,
+   "confidence": "LOW"
+  },
+  {
+   "away": "SF",
+   "home": "SEA",
+   "gameday": "2026-10-11",
+   "p_home": 0.4781,
+   "margin": -0.24,
+   "total": 45.34,
+   "p_home_cover": 0.4599,
+   "p_over": 0.4433,
+   "confidence": "VERY LOW"
+  },
+  {
+   "away": "BUF",
+   "home": "LAR",
+   "gameday": "2026-10-12",
+   "p_home": 0.4962,
+   "margin": 0.4,
+   "total": 48.31,
+   "p_home_cover": 0.4833,
+   "p_over": 0.3308,
+   "confidence": "LOW"
   }
  ],
  "props_platt": [

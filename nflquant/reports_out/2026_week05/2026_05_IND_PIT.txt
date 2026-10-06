@@ -1,0 +1,35 @@
+================================================================
+GAME  Indianapolis Colts @ Pittsburgh Steelers   (2026-10-11, week 5)
+================================================================
+
+MODEL PROJECTION
+  Pittsburgh Steelers: 25.3    Indianapolis Colts: 22.9    (margin +2.5, total 48.2)
+
+WIN PROBABILITY (calibrated ensemble)
+  Pittsburgh Steelers: 55.3%    Indianapolis Colts: 44.7%
+  market-aware mode: Pittsburgh Steelers 56.8%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Pittsburgh Steelers 25 - Indianapolis Colts 23
+  80% range:      Pittsburgh Steelers 13-37, Indianapolis Colts 12-34
+  one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
+  upset (Indianapolis Colts wins): 42%
+  vs spread (Pittsburgh Steelers -2.5): cover 55.0%
+  vs total (44.5): over 59.0%
+
+KEY FACTORS (points toward Pittsburgh Steelers)
+  +1.02  Elo rating gap (incl. HFA, rest, QB)
+  -0.82  rushing efficiency
+  -0.62  drive FG rate
+  +0.45  pass defense
+  +0.40  offensive EPA/play
+
+MODEL AGREEMENT (home win prob)
+  elo          62.7%
+  logit_pure   57.2%
+  ridge_pure   57.6%
+  gbm_pure     59.5%
+  market       55.1%
+  ensemble     55.3%
+
+CONFIDENCE: LOW   (QB situation unsettled)

@@ -1,0 +1,35 @@
+================================================================
+GAME  Tampa Bay Buccaneers @ Dallas Cowboys   (2026-10-08, week 5)
+================================================================
+
+MODEL PROJECTION
+  Dallas Cowboys: 26.1    Tampa Bay Buccaneers: 21.0    (margin +5.1, total 47.1)
+
+WIN PROBABILITY (calibrated ensemble)
+  Dallas Cowboys: 68.4%    Tampa Bay Buccaneers: 31.6%
+  market-aware mode: Dallas Cowboys 79.3%
+
+SIMULATION (50,000 possession-level sims)
+  median score:   Dallas Cowboys 26 - Tampa Bay Buccaneers 20
+  80% range:      Dallas Cowboys 14-38, Tampa Bay Buccaneers 10-33
+  one-score game: 52%    overtime: 4.9%    blowout(17+): 24%
+  upset (Tampa Bay Buccaneers wins): 33%
+  vs spread (Dallas Cowboys -9.5): cover 34.4%
+  vs total (47.5): over 46.8%
+
+KEY FACTORS (points toward Dallas Cowboys)
+  -5.55  offensive EPA/play
+  +3.20  QB rating gap
+  +2.93  passing efficiency
+  +1.49  Elo rating gap (incl. HFA, rest, QB)
+  +1.18  offensive success rate
+
+MODEL AGREEMENT (home win prob)
+  elo          64.6%
+  logit_pure   71.4%
+  ridge_pure   65.5%
+  gbm_pure     70.3%
+  market       79.1%
+  ensemble     68.4%
+
+CONFIDENCE: VERY LOW   (models disagree by 15%; QB situation unsettled)
