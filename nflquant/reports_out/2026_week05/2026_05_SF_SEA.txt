@@ -7,14 +7,14 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Seattle Seahawks: 47.8%    San Francisco 49ers: 52.2%
-  market-aware mode: Seattle Seahawks 58.4%
+  market-aware mode: Seattle Seahawks 60.5%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Seattle Seahawks 23 - San Francisco 49ers 23
   80% range:      Seattle Seahawks 10-34, San Francisco 49ers 11-35
   one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
   upset (Seattle Seahawks wins): 49%
-  vs spread (Seattle Seahawks -2.5): cover 46.0%
+  vs spread (Seattle Seahawks -3.0): cover 42.1%
   vs total (47.5): over 44.3%
 
 KEY FACTORS (points toward Seattle Seahawks)
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   50.1%
   ridge_pure   49.4%
   gbm_pure     51.5%
-  market       57.2%
+  market       59.7%
   ensemble     47.8%
 
 CONFIDENCE: VERY LOW   (models disagree by 13%; QB situation unsettled)

@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Los Angeles Rams: 49.6%    Buffalo Bills: 50.4%
-  market-aware mode: Los Angeles Rams 57.7%
+  market-aware mode: Los Angeles Rams 56.8%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Los Angeles Rams 24 - Buffalo Bills 24
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   55.6%
   ridge_pure   51.1%
   gbm_pure     52.6%
-  market       58.3%
+  market       57.2%
   ensemble     49.6%
 
 CONFIDENCE: LOW   (QB situation unsettled)
