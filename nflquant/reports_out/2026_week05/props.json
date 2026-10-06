@@ -1,21 +1,27 @@
 {
- "generated": "2026-10-06T08:25:39.793968",
- "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
- "season": 2026,
- "week": 5,
+ "generated": "2026-10-06T12:16",
+ "spreads": {
+  "pass": [
+   61.55086733831193,
+   0.04788927676873669
+  ],
+  "rush": [
+   6.316412572975953,
+   0.41528572623951493
+  ]
+ },
+ "platt": [
+  0.7504,
+  -0.2837
+ ],
  "games": [
   {
+   "id": "2026_05_TB_DAL",
    "away": "TB",
    "home": "DAL",
-   "gameday": "2026-10-08",
-   "p_home": 0.684,
-   "margin": 5.16,
-   "total": 46.73,
-   "p_home_cover": 0.3438,
-   "p_over": 0.4683,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-08",
+   "teams": [
+    {
      "team": "DAL",
      "exp_pts": 25.9,
      "exp_off_tds": 2.99,
@@ -79,7 +85,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "TB",
      "exp_pts": 20.8,
      "exp_off_tds": 2.16,
@@ -149,20 +155,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_BAL_ATL",
    "away": "BAL",
    "home": "ATL",
-   "gameday": "2026-10-11",
-   "p_home": 0.445,
-   "margin": -0.43,
-   "total": 44.7,
-   "p_home_cover": 0.5169,
-   "p_over": 0.4698,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "ATL",
      "exp_pts": 22.1,
      "exp_off_tds": 2.32,
@@ -236,7 +237,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "BAL",
      "exp_pts": 22.6,
      "exp_off_tds": 2.37,
@@ -300,20 +301,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_CHI_GB",
    "away": "CHI",
    "home": "GB",
-   "gameday": "2026-10-11",
-   "p_home": 0.5015,
-   "margin": 1.53,
-   "total": 44.98,
-   "p_home_cover": 0.6169,
-   "p_over": 0.4742,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "GB",
      "exp_pts": 23.3,
      "exp_off_tds": 2.77,
@@ -377,7 +373,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "CHI",
      "exp_pts": 21.7,
      "exp_off_tds": 2.24,
@@ -451,20 +447,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_CIN_MIA",
    "away": "CIN",
    "home": "MIA",
-   "gameday": "2026-10-11",
-   "p_home": 0.3398,
-   "margin": -3.73,
-   "total": 45.35,
-   "p_home_cover": 0.6263,
-   "p_over": 0.6008,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "MIA",
      "exp_pts": 20.8,
      "exp_off_tds": 2.28,
@@ -528,7 +519,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "CIN",
      "exp_pts": 24.5,
      "exp_off_tds": 2.88,
@@ -592,20 +583,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_CLE_NYJ",
    "away": "CLE",
    "home": "NYJ",
-   "gameday": "2026-10-11",
-   "p_home": 0.3895,
-   "margin": -2.11,
-   "total": 47.56,
-   "p_home_cover": 0.3987,
-   "p_over": 0.7437,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "NYJ",
      "exp_pts": 22.7,
      "exp_off_tds": 2.89,
@@ -669,7 +655,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "CLE",
      "exp_pts": 24.8,
      "exp_off_tds": 3.04,
@@ -733,20 +719,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_DEN_LAC",
    "away": "DEN",
    "home": "LAC",
-   "gameday": "2026-10-11",
-   "p_home": 0.3589,
-   "margin": -2.6,
-   "total": 47.46,
-   "p_home_cover": 0.5293,
-   "p_over": 0.6641,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "LAC",
      "exp_pts": 22.4,
      "exp_off_tds": 2.63,
@@ -820,7 +801,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "DEN",
      "exp_pts": 25.0,
      "exp_off_tds": 3.07,
@@ -894,20 +875,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_DET_ARI",
    "away": "DET",
    "home": "ARI",
-   "gameday": "2026-10-11",
-   "p_home": 0.317,
-   "margin": -4.99,
-   "total": 47.82,
-   "p_home_cover": 0.4989,
-   "p_over": 0.3087,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "ARI",
      "exp_pts": 21.4,
      "exp_off_tds": 2.41,
@@ -981,7 +957,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "DET",
      "exp_pts": 26.4,
      "exp_off_tds": 3.09,
@@ -1039,20 +1015,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_HOU_TEN",
    "away": "HOU",
    "home": "TEN",
-   "gameday": "2026-10-11",
-   "p_home": 0.2737,
-   "margin": -6.98,
-   "total": 44.03,
-   "p_home_cover": 0.541,
-   "p_over": 0.6466,
-   "confidence": "MODERATE",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "TEN",
      "exp_pts": 18.5,
      "exp_off_tds": 1.94,
@@ -1126,7 +1097,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "HOU",
      "exp_pts": 25.5,
      "exp_off_tds": 2.78,
@@ -1200,20 +1171,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_IND_PIT",
    "away": "IND",
    "home": "PIT",
-   "gameday": "2026-10-11",
-   "p_home": 0.553,
-   "margin": 2.49,
-   "total": 47.76,
-   "p_home_cover": 0.5503,
-   "p_over": 0.5901,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "PIT",
      "exp_pts": 25.1,
      "exp_off_tds": 3.27,
@@ -1277,7 +1243,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "IND",
      "exp_pts": 22.6,
      "exp_off_tds": 2.3,
@@ -1341,20 +1307,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_LV_NE",
    "away": "LV",
    "home": "NE",
-   "gameday": "2026-10-11",
-   "p_home": 0.6848,
-   "margin": 6.23,
-   "total": 45.41,
-   "p_home_cover": 0.5829,
-   "p_over": 0.4923,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "NE",
      "exp_pts": 25.8,
      "exp_off_tds": 3.3,
@@ -1428,7 +1389,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "LV",
      "exp_pts": 19.6,
      "exp_off_tds": 2.39,
@@ -1502,20 +1463,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_MIN_NO",
    "away": "MIN",
    "home": "NO",
-   "gameday": "2026-10-11",
-   "p_home": 0.29,
-   "margin": -6.73,
-   "total": 44.66,
-   "p_home_cover": 0.3025,
-   "p_over": 0.5724,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "NO",
      "exp_pts": 19.0,
      "exp_off_tds": 1.86,
@@ -1589,7 +1545,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "MIN",
      "exp_pts": 25.7,
      "exp_off_tds": 3.12,
@@ -1653,20 +1609,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_NYG_WAS",
    "away": "NYG",
    "home": "WAS",
-   "gameday": "2026-10-11",
-   "p_home": 0.4451,
-   "margin": -0.24,
-   "total": 43.96,
-   "p_home_cover": 0.4217,
-   "p_over": 0.516,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "WAS",
      "exp_pts": 21.9,
      "exp_off_tds": 2.55,
@@ -1736,7 +1687,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "NYG",
      "exp_pts": 22.1,
      "exp_off_tds": 2.33,
@@ -1810,20 +1761,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_PHI_JAX",
    "away": "PHI",
    "home": "JAX",
-   "gameday": "2026-10-11",
-   "p_home": 0.6656,
-   "margin": 5.41,
-   "total": 48.1,
-   "p_home_cover": 0.4198,
-   "p_over": 0.6735,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "JAX",
      "exp_pts": 26.8,
      "exp_off_tds": 3.1,
@@ -1897,7 +1843,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "PHI",
      "exp_pts": 21.3,
      "exp_off_tds": 2.33,
@@ -1971,20 +1917,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_SF_SEA",
    "away": "SF",
    "home": "SEA",
-   "gameday": "2026-10-11",
-   "p_home": 0.4781,
-   "margin": -0.24,
-   "total": 45.34,
-   "p_home_cover": 0.4599,
-   "p_over": 0.4433,
-   "confidence": "VERY LOW",
-   "props": {
-    "home": {
+   "date": "2026-10-11",
+   "teams": [
+    {
      "team": "SEA",
      "exp_pts": 22.6,
      "exp_off_tds": 2.09,
@@ -2048,7 +1989,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "SF",
      "exp_pts": 22.8,
      "exp_off_tds": 2.54,
@@ -2122,20 +2063,15 @@
       }
      ]
     }
-   }
+   ]
   },
   {
+   "id": "2026_05_BUF_LA",
    "away": "BUF",
-   "home": "LAR",
-   "gameday": "2026-10-12",
-   "p_home": 0.4962,
-   "margin": 0.4,
-   "total": 48.31,
-   "p_home_cover": 0.4833,
-   "p_over": 0.3308,
-   "confidence": "LOW",
-   "props": {
-    "home": {
+   "home": "LA",
+   "date": "2026-10-12",
+   "teams": [
+    {
      "team": "LA",
      "exp_pts": 24.4,
      "exp_off_tds": 2.51,
@@ -2209,7 +2145,7 @@
       }
      ]
     },
-    "away": {
+    {
      "team": "BUF",
      "exp_pts": 24.0,
      "exp_off_tds": 2.64,
@@ -2273,11 +2209,8 @@
       }
      ]
     }
-   }
+   ]
   }
  ],
- "props_platt": [
-  0.7504,
-  -0.2837
- ]
+ "note": "Fair lines/odds, no vig. TD = rush+rec TDs (QB rushing counts). Rookies without NFL games get no prop. Week-1 form = 2025 EWMA."
 }
