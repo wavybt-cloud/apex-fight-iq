@@ -7,7 +7,7 @@ MODEL PROJECTION
 
 WIN PROBABILITY (calibrated ensemble)
   Green Bay Packers: 50.1%    Chicago Bears: 49.9%
-  market-aware mode: Green Bay Packers 42.6%
+  market-aware mode: Green Bay Packers 41.7%
 
 SIMULATION (50,000 possession-level sims)
   median score:   Green Bay Packers 24 - Chicago Bears 21
@@ -29,7 +29,7 @@ MODEL AGREEMENT (home win prob)
   logit_pure   58.2%
   ridge_pure   56.6%
   gbm_pure     45.9%
-  market       42.8%
+  market       41.7%
   ensemble     50.1%
 
-CONFIDENCE: VERY LOW   (models disagree by 15%; QB situation unsettled)
+CONFIDENCE: VERY LOW   (models disagree by 17%; QB situation unsettled)

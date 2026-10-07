@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07T08:26:02.696891",
+ "generated": "2026-10-07T16:25:19.926606",
  "engine": "nflquant v0.1 (calibrated ensemble + 50k possession sims)",
  "season": 2026,
  "week": 5,
@@ -911,10 +911,10 @@
    "home": "ARI",
    "gameday": "2026-10-11",
    "p_home": 0.317,
-   "margin": -4.99,
+   "margin": -5.0,
    "total": 47.82,
-   "p_home_cover": 0.4989,
-   "p_over": 0.3087,
+   "p_home_cover": 0.52,
+   "p_over": 0.3092,
    "confidence": "LOW",
    "props": {
     "home": {
@@ -1066,7 +1066,7 @@
    "total": 44.03,
    "p_home_cover": 0.5673,
    "p_over": 0.6876,
-   "confidence": "MODERATE",
+   "confidence": "LOW",
    "props": {
     "home": {
      "team": "TEN",

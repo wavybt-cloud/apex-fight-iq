@@ -11,13 +11,13 @@
 - LV @ NE: +6.2 (home)
 
 ## Largest model disagreement
-- MIN @ NO: 20% spread across members
+- MIN @ NO: 21% spread across members
 - NYG @ WAS: 19% spread across members
-- CHI @ GB: 15% spread across members
+- CHI @ GB: 17% spread across members
 
 ## Lowest uncertainty
-- HOU @ TEN: 4% member spread, confidence MODERATE
-- DET @ ARI: 5% member spread, confidence LOW
+- HOU @ TEN: 5% member spread, confidence LOW
+- IND @ PIT: 5% member spread, confidence LOW
 - DEN @ LAC: 6% member spread, confidence LOW
 
 ## Most likely one-score game
