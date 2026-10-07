@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07T12:16",
+ "generated": "2026-10-07T20:16",
  "spreads": {
   "pass": [
    61.55086733831193,
@@ -913,13 +913,13 @@
       {
        "name": "Tyler Allgeier",
        "pos": "RB",
-       "p": 0.3049,
+       "p": 0.3048,
        "odds": "+228"
       },
       {
        "name": "Michael Wilson",
        "pos": "WR",
-       "p": 0.3038,
+       "p": 0.3037,
        "odds": "+229"
       },
       {
@@ -950,7 +950,7 @@
        "mean": 45.8,
        "line": 41.0,
        "k": 3.267,
-       "theta": 14.015,
+       "theta": 14.014,
        "dist": "gamma",
        "car": 11.7,
        "n": 4.0
@@ -960,7 +960,7 @@
        "mean": 32.7,
        "line": 29.0,
        "k": 2.704,
-       "theta": 12.113,
+       "theta": 12.112,
        "dist": "gamma",
        "car": 8.4,
        "n": 41.2
@@ -975,13 +975,13 @@
       {
        "name": "Jahmyr Gibbs",
        "pos": "RB",
-       "p": 0.5415,
+       "p": 0.5416,
        "odds": "-118"
       },
       {
        "name": "Amon-Ra St. Brown",
        "pos": "WR",
-       "p": 0.3993,
+       "p": 0.3994,
        "odds": "+150"
       },
       {
@@ -1005,13 +1005,13 @@
       {
        "name": "Tyler Conklin",
        "pos": "TE",
-       "p": 0.214,
+       "p": 0.2141,
        "odds": "+367"
       }
      ],
      "qb": {
       "name": "Jared Goff",
-      "mean": 334.1,
+      "mean": 334.2,
       "line": 334.0,
       "sd": 77.6,
       "dist": "normal",
@@ -1024,7 +1024,7 @@
        "mean": 84.2,
        "line": 77.5,
        "k": 4.16,
-       "theta": 20.248,
+       "theta": 20.249,
        "dist": "gamma",
        "car": 15.5,
        "n": 42.5
@@ -1913,15 +1913,15 @@
        "odds": "+309"
       },
       {
-       "name": "Tank Bigsby",
-       "pos": "RB",
-       "p": 0.2362,
-       "odds": "+323"
-      },
-      {
        "name": "Marquise Brown",
        "pos": "WR",
        "p": 0.1982,
+       "odds": "+405"
+      },
+      {
+       "name": "Dontayvion Wicks",
+       "pos": "WR",
+       "p": 0.198,
        "odds": "+405"
       }
      ],
@@ -1944,16 +1944,6 @@
        "dist": "gamma",
        "car": 16.7,
        "n": 41.5
-      },
-      {
-       "name": "Tank Bigsby",
-       "mean": 26.9,
-       "line": 23.0,
-       "k": 2.366,
-       "theta": 11.369,
-       "dist": "gamma",
-       "car": 6.5,
-       "n": 37.1
       }
      ]
     }
