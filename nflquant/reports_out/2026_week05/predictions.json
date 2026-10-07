@@ -102,13 +102,13 @@
     "gameday": "2026-10-11",
     "week": 5,
     "p_home": 0.44498744383508215,
-    "p_home_mkt": 0.5877750908811412,
+    "p_home_mkt": 0.5828949642819964,
     "margin": -0.4337740714532071,
     "total": 44.69740122644599,
     "spread_line": 3.5,
     "total_line": 43.5,
-    "away_ml": 145.0,
-    "home_ml": -175.0,
+    "away_ml": 142.0,
+    "home_ml": -170.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.48522,
@@ -159,12 +159,12 @@
       "logit_pure": 0.4812786406254254,
       "ridge_pure": 0.48462710063190506,
       "gbm_pure": 0.48151127268170013,
-      "market": 0.6092362344582594
+      "market": 0.6037569709421778
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 13%",
+        "models disagree by 12%",
         "QB situation unsettled"
       ]
     ],
@@ -676,13 +676,13 @@
     "gameday": "2026-10-11",
     "week": 5,
     "p_home": 0.27366956275752063,
-    "p_home_mkt": 0.22928263758949183,
+    "p_home_mkt": 0.2317882833809183,
     "margin": -6.981546091007177,
     "total": 44.02833572046337,
     "spread_line": -7.5,
     "total_line": 37.5,
-    "away_ml": -360.0,
-    "home_ml": 285.0,
+    "away_ml": -355.0,
+    "home_ml": 280.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.28216,
@@ -733,7 +733,7 @@
       "logit_pure": 0.26383035267608274,
       "ridge_pure": 0.28001223184821844,
       "gbm_pure": 0.29378041775632535,
-      "market": 0.2491874322860238
+      "market": 0.2522172949002217
     },
     "confidence": [
       "MODERATE",
@@ -1058,13 +1058,13 @@
     "gameday": "2026-10-11",
     "week": 5,
     "p_home": 0.445136913740104,
-    "p_home_mkt": 0.5762082405079734,
+    "p_home_mkt": 0.5826862461938404,
     "margin": -0.2363632548238812,
     "total": 43.96208650070966,
     "spread_line": 3.5,
     "total_line": 43.5,
-    "away_ml": 145.0,
-    "home_ml": -175.0,
+    "away_ml": 150.0,
+    "home_ml": -180.0,
     "sim": {
       "n_sims": 50000,
       "p_home": 0.4901,
@@ -1115,12 +1115,12 @@
       "logit_pure": 0.48548146473462855,
       "ridge_pure": 0.49376081895830537,
       "gbm_pure": 0.4917066201931036,
-      "market": 0.6092362344582594
+      "market": 0.6164383561643836
     },
     "confidence": [
       "VERY LOW",
       [
-        "models disagree by 18%",
+        "models disagree by 19%",
         "QB situation unsettled"
       ]
     ],

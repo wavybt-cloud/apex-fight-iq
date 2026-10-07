@@ -12,7 +12,7 @@
 
 ## Largest model disagreement
 - MIN @ NO: 20% spread across members
-- NYG @ WAS: 18% spread across members
+- NYG @ WAS: 19% spread across members
 - CHI @ GB: 15% spread across members
 
 ## Lowest uncertainty
