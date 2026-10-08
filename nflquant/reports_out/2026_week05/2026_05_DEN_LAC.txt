@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 55%    overtime: 5.4%    blowout(17+): 20%
   upset (Los Angeles Chargers wins): 42%
   vs spread (Los Angeles Chargers +3.5): cover 52.9%
-  vs total (42.5): over 66.4%
+  vs total (41.5): over 67.9%
 
 KEY FACTORS (points toward Los Angeles Chargers)
   +5.26  offensive EPA/play

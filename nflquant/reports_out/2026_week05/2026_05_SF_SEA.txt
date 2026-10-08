@@ -15,7 +15,7 @@ SIMULATION (50,000 possession-level sims)
   one-score game: 54%    overtime: 5.3%    blowout(17+): 21%
   upset (Seattle Seahawks wins): 49%
   vs spread (Seattle Seahawks -2.5): cover 46.0%
-  vs total (46.5): over 47.2%
+  vs total (45.5): over 48.9%
 
 KEY FACTORS (points toward Seattle Seahawks)
   +4.35  offensive EPA/play
